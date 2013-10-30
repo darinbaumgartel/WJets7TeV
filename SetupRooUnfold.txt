@@ -1,0 +1,8 @@
+svn co https://svnsrv.desy.de/public/unfolding/RooUnfold/trunk RooUnfold
+cd RooUnfold
+sed -i 's/_NToys=50/_NToys=100/g' src/RooUnfold.cxx
+source /afs/cern.ch/sw/lcg/external/gcc/4.3.2/x86_64-slc5/setup.csh
+source /afs/cern.ch/sw/lcg/app/releases/ROOT/5.30.02/x86_64-slc5-gcc43-opt/root/bin/thisroot.csh 
+make
+cd ../ 
+
