@@ -4950,7 +4950,7 @@ def BeautifiedEntry(entry):
 	decimal = 10**rplace
 	# print 'd', decimal
 
-	entry = [str(round(float(e) * 1.0*decimal) / (1.0*decimal)) for e in rentry]
+	entry = [str(round(float(e) * 1.0*decimal) / (1.0*decimal)) for e in entry]
 
 	# print 'sigmod:', entry
 
