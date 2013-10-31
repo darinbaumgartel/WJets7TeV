@@ -1,0 +1,22 @@
+Use Batcher.py to run and Gather.py to sum the results after completion. For LXPlus5 with CMSSW_5_0_0. Setup Rivet as:
+
+mkdir RIVET_WJets
+cd RIVET_WJets
+cmsrel CMSSW_5_0_0
+cd CMSSW_5_0_0/src/
+cmsenv 
+
+cvs co -r V01-01-41 Configuration/GenProduction/python/WToMuNu_TuneZ2_7TeV_pythia6_cff.py
+cvs co Configuration/GenProduction/python/rivet_customize.py 
+cvs co GeneratorInterface/RivetInterface 
+scramv1 b -j 16
+
+cvs co -d WJetsAnalysis UserCode/baumgartel/LQ/NTupleAnalyzerV2/WJetsAnalysis/
+cp WJetsAnalysis/CMS_SMP_12_23.cc GeneratorInterface/RivetInterface/src/CMS_SMP_12_23.cc
+cp WJetsAnalysis/CMS_SMP_12_23.plot GeneratorInterface/RivetInterface/data/CMS_SMP_12_23.plot
+cp WJetsAnalysis/CMS_SMP_12_23.info GeneratorInterface/RivetInterface/data/CMS_SMP_12_23.info
+cp WJetsAnalysis/CMS_SMP_12_23.aida GeneratorInterface/RivetInterface/data/CMS_SMP_12_23.aida
+scramv1 b -j 16
+cd WJetsAnalysis
+
+
