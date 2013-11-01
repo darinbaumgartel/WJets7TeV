@@ -14,6 +14,9 @@
 //    meaningful statistical uncertianties.
 //
 // Joe Haley (jhaley@cern.ch)
+// 
+// Modifications for PDF error windows
+// Darin Baumgartel (darinb@cern.ch)
 /////////////////////////////////////////////////////////////////////
 
 #include "NtuplesReader.h"
