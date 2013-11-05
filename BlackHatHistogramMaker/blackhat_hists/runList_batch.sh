@@ -38,15 +38,19 @@ echo $dir
 echo -n "COPY: "
 date
 
-echo "Copying blackhat files: "
+echo "Concatenating List Files "
+
+list=" "
 for f in `cat $listfile` ; do
-    to=$dir/`basename $f`
-    echo xrdcp root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/$f $to
-    xrdcp root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/$f $to
-    ls -l $to
-    list="$list  $to"
+    # to=$dir/`basename $f`
+    # echo xrdcp root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/$f $to
+    # xrdcp root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/$f $to
+    # ls -l $to
+    list="$list  root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/$f"
 done
 
+echo "HERE HERE HERE"
+echo $list
 
 if ! [ -d $histsdir ] ; then 
     echo "mkdir -p $histsdir"
