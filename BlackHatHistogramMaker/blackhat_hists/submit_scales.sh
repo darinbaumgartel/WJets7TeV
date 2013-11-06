@@ -13,13 +13,14 @@ pdf=CT10.LHgrid
  
 ren=$1
 fac=$1
-    
+nmem=0
+
 for l in $list ; do
     
     job=`basename $l`
-    echo ./submitBatch.perl $job $exe $l $pdf $ren $fac
-    ./submitBatch.perl $job $exe $l $pdf $ren $fac
-    sleep 1
+    echo ./submitBatch.perl $job $exe $l $pdf $ren $fac $nmem
+    ./submitBatch.perl $job $exe $l $pdf $ren $fac $nmem
+    #sleep 1
     python wait_bjobs.py 
     
 done

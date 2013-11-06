@@ -25,6 +25,12 @@ if [ $# -gt 3 ] ; then
     fac=$4
 fi
 
+NPDFMEMBERS=0
+if [ $# -gt 4 ] ; then
+    NPDFMEMBERS=$5
+fi
+
+
 source rc.bash
 . ./setup.sh
 
@@ -61,15 +67,19 @@ if ! [ -d $logsdir ] ; then
     mkdir -p $logsdir
 fi
 
-outname=$histsdir/`basename $listfile`_${pdf}_r${ren}_f${fac}.root
-log=$logsdir/`basename $listfile`_${pdf}_r${ren}_f${fac}.log
+touch $log
+for i in $(seq 0 $NPDFMEMBERS); do
+    outname=$histsdir/`basename $listfile`_${pdf}_r${ren}_f${fac}_m$i.root
+    log=$logsdir/`basename $listfile`_${pdf}_r${ren}_f${fac}_m$i.log
 
-echo -n "RUN: "
-date
+    echo -n "RUN: "
+    date
 
-# run the list
-echo ./makeHistograms.exe -outfile $outname -pdf $pdf -ren $ren -fac $fac $list
-./makeHistograms.exe -outfile $outname -pdf $pdf -ren $ren -fac $fac $list >& $log 
+    # run the list
+    echo ./makeHistograms.exe -outfile $outname -pdf $pdf -ren $ren -fac $fac -member $i $list
+    ./makeHistograms.exe -outfile $outname -pdf $pdf -ren $ren -fac $fac -member $i $list >> $log 
+done
+
 
 echo -n "DONE: "
 date
