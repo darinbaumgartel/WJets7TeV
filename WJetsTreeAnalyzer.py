@@ -371,18 +371,20 @@ weight += triggerweight + idisoweight
 ########      Put all uses of the plotting funcs into main()      ########
 ##########################################################################
 
+
+
 # The main function, called at the end of the script after all other function definitions. If just running analysis on a variable, modify only here.
 def main():
 
 	WRenorm = "(1.0)"
-	CleanUpAndMakeTables()
+	# CleanUpAndMakeTables()
 	# sys.exit()
 	ParseTablesToFinalResults(WRenorm,basic_selection)	
 	# ParseTablesToRecoHistograms()	
 	# ParseTablesToRecoHistograms()	
 	# ParseTablesToFinalResults(WRenorm,basic_selection)	
-	CleanUpAndMakeTables()
-	CleanUpAndMakeTables()
+	# CleanUpAndMakeTables()
+	# CleanUpAndMakeTables()
 
 	sys.exit()
 
@@ -3584,7 +3586,7 @@ def CreateHistoFromLists(binning, name, label, mean, up, down, style,normalizati
 
 
 	if plottype=="SubPlot":
-		hout.GetYaxis().SetNdivisions(308)
+		hout.GetYaxis().SetNdivisions(307,True)
 		hout.GetYaxis().SetTitleFont(42)
 		hout.GetXaxis().SetTitleSize(.13)
 		hout.GetYaxis().SetTitleSize(.13)
@@ -3835,7 +3837,7 @@ def CreateBandHistoFromLists(binning, name, label, mean, up, down, style,normali
 
 
 	if plottype=="SubPlot":
-		hout.GetYaxis().SetNdivisions(508)
+		hout.GetYaxis().SetNdivisions(308,True)
 		hout.GetYaxis().SetTitleFont(42)
 		hout.GetXaxis().SetTitleSize(.13)
 		hout.GetYaxis().SetTitleSize(.13)
@@ -4127,8 +4129,8 @@ def BlackHatHisto(rivetvariable, binning, standard_name, label, style, quantity,
 	BlackHatOutputHisto[0].GetYaxis().SetTitleSize(.1);
 	BlackHatOutputHisto[0].GetXaxis().CenterTitle();
 	BlackHatOutputHisto[0].GetYaxis().CenterTitle();
-	BlackHatOutputHisto[0].GetXaxis().SetTitleOffset(1.1);
-	BlackHatOutputHisto[0].GetYaxis().SetTitleOffset(1.1);
+	BlackHatOutputHisto[0].GetXaxis().SetTitleOffset(1.3);
+	BlackHatOutputHisto[0].GetYaxis().SetTitleOffset(1.3);
 	BlackHatOutputHisto[0].GetYaxis().SetLabelSize(.1);
 	BlackHatOutputHisto[0].GetXaxis().SetLabelSize(.1);
 
@@ -4579,16 +4581,16 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	MadGraphStyle=[3254,21,.5,1,4]
 	MadGraphSubStyle=[3254,21,.5,1,4]
 
-	SherpaStyle=[3254+1001,20,.0000005,1,28]
+	SherpaStyle=[3254+1001,26,.0000005,1,kGreen+4]
 
-	SherpaRivetStyle=[3254,20,.0000005,1,28]
+	SherpaRivetStyle=[3254,26,.0000005,1,kGreen+4]
 	# SherpaRivetSubStyle=[3254,22,.9,1,2]
-	SherpaRivetSubStyle=[0,32,1.0,1,28]
-	BlackHatSubStyle=[0,26,1.0,1,2]
+	SherpaRivetSubStyle=[0,26,1.0,1,kGreen+4]
+	BlackHatSubStyle=[0,24,1.0,1,kBlue]
 
 
 	# MadGraphRivetSubStyle=[3245,21,.9,1,4]
-	MadGraphRivetSubStyle=[0,25,1.0,1,4]
+	MadGraphRivetSubStyle=[0,25,1.0,1,2]
 
 	MadGraphAODSubStyle=[0,27,1.0,1,6]
 
@@ -4598,7 +4600,7 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 
 	# CentralBandStyle = [3001,20,1,1,8]
 	# CentralBandStyle = [3001,20,1,1,33]
-	CentralBandStyle = [1001,20,1,1,kGreen -9]
+	CentralBandStyle = [3004,20,1,1,1]
 	# CentralBandStyle = [1001,20,0.00001,1,3]
 
 	
@@ -4657,7 +4659,7 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 
 
 		if "Count" in filename:
-			label = [label0, '#sigma [GeV]']
+			label = [label0, 'd#sigma/dN [pb]']
 			units = '[pb]'
 
 		Max=Max/normalization
@@ -4675,6 +4677,23 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	[Exp,Exp_verbose] = CreateHistoFromLists(binning, name,label, mean_value, plus_errors, minus_errors, style,normalization,"TopPlot")
 
 
+	arange = Exp_verbose[-1][-1]-Exp_verbose[-1][0]
+	allbins = Exp_verbose[-1]
+	minbin = 9999999
+	for ibin in range(len(allbins)-1):
+		dbin = allbins[ibin+1] - allbins[ibin] 
+		dbin = abs(dbin)
+		if dbin<minbin:
+			minbin=dbin
+
+	neffbins = int(round(float(arange)/float(minbin)))
+	opt_n1 = neffbins
+	opt_n2 = 0
+	opt_n3 = 0
+	opt_ndiv = 100*opt_n1+10*opt_n2+1*opt_n3
+
+	# print arange
+	# sys.exit()
 
 	for nn in range(6):
 		nn+=2
@@ -4813,7 +4832,7 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	[Blackhat_Result_pdfV2,Blackhat_Result_verbose_pdfV2] = CreateWindowFromVerbseWindows([Blackhat_Result_verbose, Blackhat_Result_verbose_ct10window, Blackhat_Result_verbose_mstwwindow, Blackhat_Result_verbose_nnpdwindow],"BlackhatPDFV2",rivetlabel,BlackHatSubStyle,normalization,"TopPlot",False)	
 
 
-	if False:
+	if True:
 		print ' ====================== Defaulting to non-PDF4LHC Method =========================='		
 		[Blackhat_Result_pdfV2,Blackhat_Result_verbose_pdfV2] = [Blackhat_Result_pdf,Blackhat_Result_verbose_pdf]
 
@@ -4835,7 +4854,7 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 
 	# Meas.GetYaxis().SetTitleFont(42);
 	Meas.GetXaxis().SetTitleSize(.18);
-	Meas.GetXaxis().SetTitleOffset(.12);
+	Meas.GetXaxis().SetTitleOffset(.01);
 
 	# Meas.GetYaxis().SetTitleSize(.14);
 	# Meas.GetXaxis().CenterTitle(0);
@@ -4997,12 +5016,19 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 
 	# Meas.SetMarkerSize(0.0001)
 	# Meas.SetLineColor(1)
-
+	Meas.GetXaxis().SetNdivisions(500)
 	Meas.SetMarkerColor(1)
 	Meas.Draw("A2")
 	Meas.Draw("PX")
 
-	Rivet_MadGraph_Result.Draw("P")
+	# Meas.GetYaxis().SetTitle(" func test ")
+	Meas.GetYaxis().SetTitleOffset(.85);
+	Meas.GetXaxis().SetTitleSize(.05);
+	Meas.GetYaxis().SetTitleSize(.05);
+
+
+	Rivet_MadGraph_Result.Draw("P2")
+
 
 	# AOD_MadGraph_Result.Draw("P")
 	Rivet_Sherpa_Result.Draw("P")
@@ -5024,18 +5050,32 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	# Blackhat_Result_cteq6.Draw("L")
 	# Exp.Draw("P")
 
-	leg = TLegend(0.5,0.64,0.84,0.84,"","brNDC")
+	Rivet_MadGraph_Result_L=Rivet_MadGraph_Result.Clone()
+	Rivet_Sherpa_Result_L=Rivet_Sherpa_Result.Clone()
+	Blackhat_Result_L=Blackhat_Result.Clone()
+
+	Rivet_MadGraph_Result_L.SetFillColor(kOrange-3)
+	Rivet_Sherpa_Result_L.SetFillColor(kGreen-8)
+	Blackhat_Result_L.SetFillColor(kBlue-10)
+
+	Rivet_MadGraph_Result_L.SetFillStyle(1001)
+	Rivet_Sherpa_Result_L.SetFillStyle(1001)
+	Blackhat_Result_L.SetFillStyle(1001)	
+
+	leg = TLegend(0.63,0.64,0.86,0.84,"","brNDC")
 	leg.SetTextFont(42)
 	leg.SetFillColor(0)
 	leg.SetBorderSize(0)
-	leg.SetTextSize(.05)
-	leg.SetHeader("W #rightarrow #mu#nu + jets");	
+	leg.SetTextSize(.035)
+	leg.SetBorderSize(1)
+	# leg.SetHeader("W #rightarrow #mu#nu + jets");	
 	leg.AddEntry(Meas,"Data");
-	leg.AddEntry(Rivet_MadGraph_Result,"MadGraph+Pythia")
 	# leg.AddEntry(AOD_MadGraph_Result,"MadGraph AOD")
 	# leg.AddEntry(Exp,"MadGraph AOD");
-	leg.AddEntry(Rivet_Sherpa_Result,"Sherpa")
-	leg.AddEntry(Blackhat_Result,"BlackHat+Sherpa")
+	leg.AddEntry(Blackhat_Result_L,"BlackHat+Sherpa")
+	leg.AddEntry(Rivet_Sherpa_Result_L,"Sherpa")
+	leg.AddEntry(Rivet_MadGraph_Result_L,"MadGraph+Pythia")
+
 	leg.Draw()
 
 
@@ -5047,8 +5087,8 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	l1.SetTextAlign(12)
 	l1.SetTextFont(42)
 	l1.SetNDC()
-	l1.SetTextSize(0.05)
-	l1.DrawLatex(0.15,0.92,"CMS Preliminary     "+sqrts+"      #int L = 5.0 fb^{-1}")
+	l1.SetTextSize(0.04)
+	l1.DrawLatex(0.15,0.90,"CMS Preliminary                         "+sqrts+"                        L_{int} = 5.0 fb^{-1}")
 	# l1.DrawLatex(0.19,0.87,"CMS Preliminary ")
 	# l1.DrawLatex(0.19,0.81,sqrts+"  #int L = 5.0 fb^{-1}")
 
@@ -5066,15 +5106,25 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 		l2.DrawLatex(0.64,0.57,"Data/Sherpa   = "+ str(round(sherparescale,3)))
 
 
+	l3=TLatex()
+	l3.SetTextAlign(12)
+	l3.SetTextFont(42)
+	l3.SetNDC()
+	l3.SetTextSize(0.035)
+	l3.DrawLatex(0.15,0.33,"anti-k_{T} (R = 0.5) Jets")
+	l3.DrawLatex(0.15,0.28,"p_{T}^{jet}>30 GeV, |#eta^{jet}|<2.4")
+	l3.DrawLatex(0.15,0.23,"W#rightarrow#mu#nu channel")
+
+
 	############################
 	### GO TO SUBPLOT        ###
 	############################
-	pad2.cd()
-	pad2.SetGridy()
-	pad2.Draw()
+	pad4.cd()
+	# pad2.SetGridy()
+	pad4.Draw()
 
 	[cent1,[cent2up,cent2down]] = CentralRatioBand(Meas_verbose, CentralBandStyle)
-
+	cent1.GetXaxis().SetNdivisions(500)
 	# print Meas_verbose
 	# print Rivet_Sherpa_Result_verbose
 	# print 'Dividing Meas/Sherpa'
@@ -5124,12 +5174,12 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	cent1.SetMaximum(grat2up)
 	cent1.SetMinimum(grat2down)
 	cent1.GetXaxis().SetTitle(label[0])
-	cent1.GetYaxis().SetTitle("MC/Data")
-	cent1.GetXaxis().SetTitleOffset(.73);
+	cent1.GetYaxis().SetTitle("Theory/Data")
+	cent1.GetXaxis().SetTitleOffset(.9);
+	cent1.GetYaxis().SetTitleOffset(.4);
 
 	cent1.GetYaxis().SetTitleFont(42);
-	cent1.GetXaxis().SetTitleSize(.07);
-	cent1.GetYaxis().SetTitleSize(.07);
+
 	# cent1.GetXaxis().CenterTitle(1);
 	# cent1.GetYaxis().CenterTitle(1);
 	# cent1.GetXaxis().SetTitleOffset(0.7);
@@ -5144,18 +5194,27 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	# grat3aod.SetMinimum(grat2down)
 	# grat3aod.SetMaximum(grat2up)
 	
-	
+	# cent1.Draw("A2")
+	# cent1.Draw
+
+	grat3window = grat3.Clone()
+
+	grat3window.SetFillColor(kOrange-2)
+	grat3window.SetFillStyle(1001)
 	cent1.Draw("A2")
-	unity.Draw("SAME")
+	grat3window.Draw("2")
 	grat3.Draw("p")
+	cent1.Draw("2")
+	unity.Draw("SAME")
+
 	# grat3aod.Draw("p")
 
 	lb2=TLatex()
 	lb2.SetTextAlign(12)
 	lb2.SetTextFont(42)
 	lb2.SetNDC()
-	lb2.SetTextSize(0.1)
-	lb2.DrawLatex(0.18,0.5,"Madgraph+Pythia")
+	lb2.SetTextSize(0.09)
+	lb2.DrawLatex(0.15,0.5,"Madgraph (LO+PS)")
 
 
 
@@ -5163,28 +5222,56 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 
 
 
-	pad3.SetGridy()
-	pad4.SetGridy()
+	# pad3.SetGridy()
+	# pad4.SetGridy()
 
-	pad2.RedrawAxis()
+	pad4.RedrawAxis()
 	pad3.cd()
+
+	grat2window = grat2.Clone()
+
 	cent1.Draw("A2")
-	unity.Draw("SAME")
+	grat2window.SetFillColor(kGreen-8)
+	grat2window.SetFillStyle(1001)
+	grat2window.Draw("2")
 	grat2.Draw("p")
+	cent1.Draw("2")
+	unity.Draw("SAME")
+
+
+	# cent1.Draw("A2")
+	# unity.Draw("SAME")
+	# grat2.Draw("p")
 	pad3.RedrawAxis()
 
 	lb3=TLatex()
 	lb3.SetTextAlign(12)
 	lb3.SetTextFont(42)
 	lb3.SetNDC()
-	lb3.SetTextSize(0.1)
-	lb3.DrawLatex(0.18,0.5,"Sherpa")
+	lb3.SetTextSize(0.09)
+	lb3.DrawLatex(0.15,0.5,"Sherpa (LO+PS)")
 
 
-	pad4.cd()
+	pad2.cd()
+	# cent1.Draw("A2")
+	# unity.Draw("SAME")	
+	# grat4.Draw("p")
+
+
+	grat4window = grat4.Clone()
+
+	grat4window.SetFillColor(kBlue-10)
+	grat4window.SetFillStyle(1001)
 	cent1.Draw("A2")
-	unity.Draw("SAME")	
+
+	grat4window.Draw("2")
 	grat4.Draw("p")
+	cent1.Draw("2")
+	unity.Draw("SAME")
+
+
+
+
 	# grat4b.Draw("||")
 	# grat6.Draw("L")
 	# grat6b.Draw("L")
@@ -5194,13 +5281,13 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	lb4.SetTextAlign(12)
 	lb4.SetTextFont(42)
 	lb4.SetNDC()
-	lb4.SetTextSize(0.1)
-	lb4.DrawLatex(0.18,0.5,"Blackhat+Sherpa")
+	lb4.SetTextSize(0.09)
+	lb4.DrawLatex(0.15,0.5,"Blackhat+Sherpa (#geq 3 jets NLO, 4 jets LO)")
 
-	cent1.GetXaxis().SetTitleSize(.14);
-	cent1.GetYaxis().SetTitleSize(.14);
+	cent1.GetXaxis().SetTitleSize(.12);
+	cent1.GetYaxis().SetTitleSize(.10);
 
-	pad4.RedrawAxis()
+	pad2.RedrawAxis()
 
 	print 'Creating: ',filename+'pdf/png'
 	c1.Print(filename+'pdf')
@@ -5433,7 +5520,7 @@ def ParseTablesToRecoHistograms():
 	relabels.append(['Eta_pfjet3','Third Leading Jet #eta','#eta'])
 	relabels.append(['Eta_pfjet4','Fourth Leading Jet #eta','#eta'])
 	relabels.append(['Eta_pfjet5','Fifth Leading Jet #eta','#eta'])
-	relabels.append(['preexc','Jet Count (Inclusive)','N_{Jet}'])
+	relabels.append(['preexc','Inclusive Jet Multiplicity','N_{Jet}'])
 	relabels.append(['PFJet30Count','Exclusive Jet Multiplicity','N_{Jet}'])
 	if 'BTagOff' in 'pyplots':
 		relabels[-1][1]+=' (No b-tag veto)'
@@ -5846,7 +5933,7 @@ def ParseTablesToRecoHistogramsB():
 	relabels.append(['Eta_pfjet3','Third Leading Jet #eta','#eta'])
 	relabels.append(['Eta_pfjet4','Fourth Leading Jet #eta','#eta'])
 	relabels.append(['Eta_pfjet5','Fifth Leading Jet #eta','#eta'])
-	relabels.append(['preexc','Jet Count (Inclusive)','N_{Jet}'])
+	relabels.append(['preexc','Inclusive Jet Multiplicity','N_{Jet}'])
 	relabels.append(['PFJet30Count','Exclusive Jet Multiplicity','N_{Jet}'])
 	if 'BTagOff' in 'pyplots':
 		relabels[-1][1]+=' (No b-tag veto)'
@@ -6354,11 +6441,11 @@ def ParseTablesToFinalResults(WRenorm,sel):
 			quantity = '#eta'				
 
 		if label=='PFJet30Count':
-			label = 'Jet Count (Exclusive)'
+			label = 'Exclusive Jet Multiplicity'
 			quantity = 'N_{Jet}'
 
 		if label=='PFJet30Count_preexc':
-			label = 'Jet Count (Inclusive)'
+			label = 'Inclusive Jet Multiplicity'
 			quantity = 'N_{Jet}'
 
 		if label=='MT_muon1METR':
@@ -6392,7 +6479,7 @@ def ParseTablesToFinalResults(WRenorm,sel):
 		
 		# print "USING W RENORMALIZATION: ",WRenorm
 		# print " -"*40
-		FinalHisto(rootbinning,label,quantity, output+'PlotCount.', prediction_means, prediction_errors, prediction_names, meas_mean, meas_err_plus, meas_err_minus,0,WRenorm,sel)
+		# FinalHisto(rootbinning,label,quantity, output+'PlotCount.', prediction_means, prediction_errors, prediction_names, meas_mean, meas_err_plus, meas_err_minus,0,WRenorm,sel)
 		FinalHisto(rootbinning,label,quantity, output+'PlotXSec.', prediction_means, prediction_errors, prediction_names, meas_mean, meas_err_plus, meas_err_minus,4955.0,WRenorm,sel)
 		# sys.exit()
 
@@ -6513,7 +6600,7 @@ def setTDRStyle():
 	# For the axis:
 
 	gStyle.SetAxisColor(1, "XYZ");
-	gStyle.SetStripDecimals(1); # kTRUE
+	gStyle.SetStripDecimals(1); # True
 	gStyle.SetTickLength(0.03, "XYZ");
 	gStyle.SetNdivisions(510, "XYZ");
 	gStyle.SetPadTickX(1);  # To get tick marks on the opposite side of the frame
@@ -6536,7 +6623,7 @@ def setTDRStyle():
 	# gStyle.SetPaintTextFormat(const char* format = "g");
 	# gStyle.SetPalette(Int_t ncolors = 0, Int_t* colors = 0);
 	# gStyle.SetTimeOffset(Double_t toffset);
-	# gStyle.SetHistMinimumZero(kTRUE);
+	# gStyle.SetHistMinimumZero(True);
 
 def CleanUpAndMakeTables():
 	allfiles = glob('pyplots/*.*')
@@ -6909,7 +6996,7 @@ def CleanUpAndMakeTables():
 		# For the axis:
 
 		gStyle.SetAxisColor(1, "XYZ");
-		gStyle.SetStripDecimals(1); # kTRUE
+		gStyle.SetStripDecimals(1); # True
 		gStyle.SetTickLength(0.03, "XYZ");
 		gStyle.SetNdivisions(510, "XYZ");
 		gStyle.SetPadTickX(1);  # To get tick marks on the opposite side of the frame
@@ -6932,7 +7019,7 @@ def CleanUpAndMakeTables():
 		# gStyle.SetPaintTextFormat(const char* format = "g");
 		# gStyle.SetPalette(Int_t ncolors = 0, Int_t* colors = 0);
 		# gStyle.SetTimeOffset(Double_t toffset);
-		# gStyle.SetHistMinimumZero(kTRUE);
+		# gStyle.SetHistMinimumZero(True);
 
 	setTDRStyle2()
 
