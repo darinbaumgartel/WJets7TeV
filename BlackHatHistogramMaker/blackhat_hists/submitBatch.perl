@@ -26,7 +26,7 @@ if ($#ARGV<0){
 $debug=1;
 $promptuser=0;
 #$QUEUE="8nm"; 	# 8nm 1nh 8nh 1nd 2nd 1nw 2nw (to get list of queues: bqueues -u jhaley)
-$QUEUE="8nh";
+$QUEUE="2nd";
 $POOL="5000"; 	# Scratch space for job in MB (probably doesn't matter because job will run in submition area)
 $MEM="";     	# I don't know how to specify this yet
 
@@ -118,6 +118,6 @@ print "\n";
 
 # submit the job
 system "@bsub_command";
-system "sleep 1";
+#system "sleep 1";
 
 exit(0);
