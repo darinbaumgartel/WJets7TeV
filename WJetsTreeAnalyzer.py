@@ -10,24 +10,6 @@ afsdir = '/afs/cern.ch/work/d/darinb/WAnalysis/CMSSW_4_2_8/src/WJetsAnalysis/'
 eosdir = '/store/group/phys_smp/WPlusJets/AnalyzerOutput/Oct9/'
 
 # Set of all ntuples
-NormalDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Oct3_2013_10_03_22_30_04/SummaryFiles"
-JetScaleDownDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Oct3_JetScaleDown_2013_10_03_23_29_40/SummaryFiles"
-JetScaleUpDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Oct3_JetScaleUp_2013_10_03_22_59_31/SummaryFiles"
-JetSmearDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Oct3_JetSmear_2013_10_04_00_41_55/SummaryFiles"
-PhiCorrDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Oct3_MetPhiMod_2013_10_04_01_14_41/SummaryFiles"
-MuScaleDownDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Oct3_MuScaleDown_2013_10_04_00_24_34/SummaryFiles"
-MuScaleUpDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Oct3_MuScaleUp_2013_10_04_00_06_46/SummaryFiles"
-MuSmearDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Oct3_MuSmear_2013_10_04_00_57_07/SummaryFiles"
-
-NormalDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Oct4_2013_10_04_22_09_10/SummaryFiles"
-JetScaleDownDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Oct4_JetScaleDown_2013_10_04_23_47_52/SummaryFiles"
-JetScaleUpDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Oct4_JetScaleUp_2013_10_04_22_45_33/SummaryFiles"
-JetSmearDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Oct4_JetSmear_2013_10_05_01_26_37/SummaryFiles"
-PhiCorrDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Oct4_MetPhiMod_2013_10_05_02_09_43/SummaryFiles"
-MuScaleDownDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Oct4_MuScaleDown_2013_10_05_01_00_03/SummaryFiles"
-MuScaleUpDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Oct4_MuScaleUp_2013_10_05_00_29_48/SummaryFiles"
-MuSmearDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Oct4_MuSmear_2013_10_05_01_45_31/SummaryFiles"
-
 
 NormalDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Oct9_2013_10_09_19_52_12/SummaryFiles"
 JetScaleDownDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Oct9_JetScaleDown_2013_10_09_21_14_48/SummaryFiles"
@@ -38,6 +20,12 @@ MuScaleDownDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_
 MuScaleUpDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Oct9_MuScaleUp_2013_10_09_22_53_04/SummaryFiles"
 MuSmearDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Oct9_MuSmear_2013_10_10_00_35_04/SummaryFiles"
 
+
+# for x in [NormalDirectory,JetScaleDownDirectory,JetScaleUpDirectory,JetSmearDirectory,PhiCorrDirectory,MuScaleDownDirectory,MuScaleUpDirectory,MuSmearDirectory]:
+# 	print x
+# 	os.system('cmsLs '+x)
+# 	print ' '
+# sys.exit()
 
 # This is the Rivet NTuple for MadGraph
 RIVETMadGraph='/afs/cern.ch/work/d/darinb/LQAnalyzerOutput/RIVET/Madgraph_treeV3Dressed_NEvents_93671821.root'
@@ -182,6 +170,8 @@ _qcd_selection += j1
 basic_selection = '(Pt_muon1>25)*(RelIso_muon1<0.15)*(Pt_muon2<0.000001)*(abs(Eta_muon1)<2.1)*(IsoMu24Pass>0)'
 basic_selection += '*(MT_muon1METR>50)*(PFJet30TCHEMCountCentral<0.5)'
 basic_selection += filters
+
+# Systematic variations with PFJet30TCHEMCountCountEffUp or PFJet30TCHEMCountCountEffDown  ## Do not remove this comment 
 
 # Gen selection for xini (bare) distribution. 
 baregen_selection = '(MT_genmuon1genMET>50)*(Eta_genmuon1>-2.1)*(Eta_genmuon1<2.1)*(Pt_genmuon1>25)'
@@ -370,7 +360,12 @@ idisosysweight += ')'
 # Define baic weight - including PU, trigger, int lumi, and id/iso SF
 
 weight = '*weight_pu_central*4955'
+#weight = '*weight_pu_sysplus*4955'
+#weight = '*weight_pu_sysminus*4955'
+
+
 weight += triggerweight + idisoweight
+
 
 ##########################################################################
 ########      Put all uses of the plotting funcs into main()      ########
@@ -380,23 +375,23 @@ weight += triggerweight + idisoweight
 def main():
 
 	WRenorm = "(1.0)"
-	# CleanUpAndMakeTables()
+	CleanUpAndMakeTables()
 	# sys.exit()
-	# ParseTablesToFinalResults(WRenorm,basic_selection)	
+	ParseTablesToFinalResults(WRenorm,basic_selection)	
 	# ParseTablesToRecoHistograms()	
 	# ParseTablesToRecoHistograms()	
 	# ParseTablesToFinalResults(WRenorm,basic_selection)	
-	# CleanUpAndMakeTables()
-	# CleanUpAndMakeTables()
+	CleanUpAndMakeTables()
+	CleanUpAndMakeTables()
 
-	# sys.exit()
+	sys.exit()
 
-	htunfbinningB1 = [58,0,1740]
-	htunfbinningB2 = [57,30,1740]
-	htunfbinningB3 = [56,60,1740]
-	htunfbinningB4 = [55,90,1740]
-	htbinningB = [30,60,90,120,150,180,240,300,360,420,510,600,720,870,1110,1590]
-
+	htunfbinningB1 = [55,30,1680]
+	htunfbinningB2 = [54,60,1680]
+	htunfbinningB3 = [53,90,1680]
+	htunfbinningB4 = [26,120,1680]
+	htbinningB = [30,60,90,120,180,240,300,360,420,510,600,720,870,1110,1590]
+	htbinningB = [30,60,90,120,180,240,300,360,420,540,660,840,1680]
 
 	_zmetbins = [0,2.5,5.0,7.5,10.0,12.5,15.0,17.5,20.0,22.5,25.0,30,35,40,45,50,60,70,80,100,135,200]
 	_zmetbins = [0,2,4,6,8,10,12,14,16,18,20,23,27,33,43,61,95,161,300]
@@ -419,45 +414,35 @@ def main():
 	# F#ullAnalysisWithUncertainty(['M_muon1muon2','M_muon1muon2'],'M_muon1muon2',-1,["M_{#mu #mu} [GeV]","Z_j3"],[100,0,500],_zuubins,Sels_ZCont3_Pt_MET_reco,Sels_ZCont3_Pt_MET_gen,weight,'c',22)
 	# F#ullAnalysisWithUncertainty(['M_muon1muon2','M_muon1muon2'],'M_muon1muon2',-1,["M_{#mu #mu} [GeV]","Z_j4"],[100,0,500],_zuubins,Sels_ZCont4_Pt_MET_reco,Sels_ZCont4_Pt_MET_gen,weight,'c',22)
 
-
-
-
-
-
-
-
-
-	# sys.exit()
-
+	# F#ullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[4,4])
 
 	FullAnalysisWithUncertainty(['GenJet30Count','GenJet30Count'],'PFJet30Count',-1,["N_{Jet}",""],[11,-.5,10.5],[6 ,0.5,6.5],Sel_PFJet30Count_reco,Sel_PFJet30Count_gen,weight,'c',[5,5])	
 	FullAnalysisWithUncertainty(['GenJet30Count','GenJet30Count'],'PFJet30Count',-1,["N_{Jet}","_preexc"],[11,-.5,10.5],[8 ,0.5,8.5],Sel_PFJet30Count_reco,Sel_PFJet30Count_gen,weight,'c',[5,5])	
 
 
-	FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]",""],[80,20,820],[30,50,70,90,110,150,190,250,310,410,750],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[31,27])
-	FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]",""],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[26,29])
-	FullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV]",""],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[13,9])
-	FullAnalysisWithUncertainty(['Pt_genjet4','Pt_genjet4'],'Pt_pfjet4_pt20',0,["p_{T}(jet_{4}) [GeV]",""],[40,20,420],[30,50,70,90,350],Sel_Pt_pfjet4_reco, Sel_Pt_pfjet4_gen,weight,'c',[7,5])
+	FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]",""],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[14,14])
+	FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]",""],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[15,15])
+	FullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV]",""],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[6,6])
+	FullAnalysisWithUncertainty(['Pt_genjet4','Pt_genjet4'],'Pt_pfjet4_pt20',0,["p_{T}(jet_{4}) [GeV]",""],[40,20,420],[30,50,70,90,350],Sel_Pt_pfjet4_reco, Sel_Pt_pfjet4_gen,weight,'c',[5,5])
 
 
-	FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[16,13])
-	FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[16,14])
-	FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[19,17])
-	FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[14,15])
+	FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[11,11])
+	FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[8,8])
+	FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[7,7])
+	FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[7,7])
 
-	FullAnalysisWithUncertainty(['Eta_genjet1','Eta_genjet1'],'Eta_pfjet1_eta2p5',-2.5,["#eta(jet_{1}) ",""],[50,-2.5,2.5],[24,-2.4,2.4],Sel_Eta_pfjet1_reco, Sel_Eta_pfjet1_gen,weight,'c',[15,15])
-	FullAnalysisWithUncertainty(['Eta_genjet2','Eta_genjet2'],'Eta_pfjet2_eta2p5',-2.5,["#eta(jet_{2}) ",""],[50,-2.5,2.5],[24,-2.4,2.4],Sel_Eta_pfjet2_reco, Sel_Eta_pfjet2_gen,weight,'c',[14,12])
-	FullAnalysisWithUncertainty(['Eta_genjet3','Eta_genjet3'],'Eta_pfjet3_eta2p5',-2.5,["#eta(jet_{3}) ",""],[50,-2.5,2.5],[8,-2.4,2.4],Sel_Eta_pfjet3_reco, Sel_Eta_pfjet3_gen,weight,'c',[12,12])
-	FullAnalysisWithUncertainty(['Eta_genjet4','Eta_genjet4'],'Eta_pfjet4_eta2p5',-2.5,["#eta(jet_{4}) ",""],[50,-2.5,2.5],[6,-2.4,2.4],Sel_Eta_pfjet4_reco, Sel_Eta_pfjet4_gen,weight,'c',[8,7])
+	FullAnalysisWithUncertainty(['Eta_genjet1','Eta_genjet1'],'Eta_pfjet1_eta2p5',-2.5,["#eta(jet_{1}) ",""],[50,-2.5,2.5],[24,-2.4,2.4],Sel_Eta_pfjet1_reco, Sel_Eta_pfjet1_gen,weight,'c',[10,10])
+	FullAnalysisWithUncertainty(['Eta_genjet2','Eta_genjet2'],'Eta_pfjet2_eta2p5',-2.5,["#eta(jet_{2}) ",""],[50,-2.5,2.5],[24,-2.4,2.4],Sel_Eta_pfjet2_reco, Sel_Eta_pfjet2_gen,weight,'c',[8,8])
+	FullAnalysisWithUncertainty(['Eta_genjet3','Eta_genjet3'],'Eta_pfjet3_eta2p5',-2.5,["#eta(jet_{3}) ",""],[50,-2.5,2.5],[8,-2.4,2.4],Sel_Eta_pfjet3_reco, Sel_Eta_pfjet3_gen,weight,'c',[7,7])
+	FullAnalysisWithUncertainty(['Eta_genjet4','Eta_genjet4'],'Eta_pfjet4_eta2p5',-2.5,["#eta(jet_{4}) ",""],[50,-2.5,2.5],[6,-2.4,2.4],Sel_Eta_pfjet4_reco, Sel_Eta_pfjet4_gen,weight,'c',[5,5])
 
-	FullAnalysisWithUncertainty(['DeltaPhi_genjet1genmuon1','DeltaPhi_genjet1genmuon1'],'DeltaPhi_pfjet1muon1',-0.05,["#Delta#phi(jet_{1},#mu) [GeV]",""],[22,-.15707963,3.1415927+.15707963],[20,0,3.1415927],Sel_DeltaPhi_pfjet1muon1_reco,Sel_DeltaPhi_pfjet1muon1_gen,weight,'c',[9,7])
+	FullAnalysisWithUncertainty(['DeltaPhi_genjet1genmuon1','DeltaPhi_genjet1genmuon1'],'DeltaPhi_pfjet1muon1',-0.05,["#Delta#phi(jet_{1},#mu) [GeV]",""],[22,-.15707963,3.1415927+.15707963],[20,0,3.1415927],Sel_DeltaPhi_pfjet1muon1_reco,Sel_DeltaPhi_pfjet1muon1_gen,weight,'c',[6,6])
 	FullAnalysisWithUncertainty(['DeltaPhi_genjet2genmuon1','DeltaPhi_genjet2genmuon1'],'DeltaPhi_pfjet2muon1',-0.05,["#Delta#phi(jet_{2},#mu) [GeV]",""],[17,-0.20943950,3.1415927+0.20943950],[15,0,3.1415927],Sel_DeltaPhi_pfjet2muon1_reco,Sel_DeltaPhi_pfjet2muon1_gen,weight,'c',[4,4])
 	FullAnalysisWithUncertainty(['DeltaPhi_genjet3genmuon1','DeltaPhi_genjet3genmuon1'],'DeltaPhi_pfjet3muon1',-0.05,["#Delta#phi(jet_{3},#mu) [GeV]",""],[12,-0.31415926,3.1415927+0.31415926],[10,0,3.1415927],Sel_DeltaPhi_pfjet3muon1_reco,Sel_DeltaPhi_pfjet3muon1_gen,weight,'c',[3,3])
 	FullAnalysisWithUncertainty(['DeltaPhi_genjet4genmuon1','DeltaPhi_genjet4genmuon1'],'DeltaPhi_pfjet4muon1',-0.05,["#Delta#phi(jet_{4},#mu) [GeV]",""],[8,-0.523598766,3.1415927+0.523598766],[6,0,3.1415927],Sel_DeltaPhi_pfjet4muon1_reco,Sel_DeltaPhi_pfjet4muon1_gen,weight,'c',[3,3])
 
 	FullAnalysisWithUncertainty(['Pt_genMET','Pt_genMET'],'Pt_MET',-1,["E_{T}^{miss} [GeV]",""],[15,50,200],[50,60,70,80,90,100,115,130,150,170,200],Sel_Pt_MET_reco,Sel_Pt_MET_gen,weight,'c',[12,12])
 	FullAnalysisWithUncertainty(['MT_genmuon1genMET','MT_genmuon1genMET'],'MT_muon1METR',25,["M_{T}(#mu,E_{T}^{miss}) [GeV]",""],[40,0,200],[30,50,200],Sel_MT_genmuon1genMET_reco,Sel_MT_genmuon1genMET_gen,weight,'c',[15,17])
-
 	FullAnalysisWithUncertainty(['Pt_genmuon1','Pt_genmuon1'],'Pt_muon1',0,["p_{T}(#mu_{1}) [GeV]",""],[55,25,300],[55,25,300],Sel_Pt_muon1_reco,Sel_Pt_muon1_gen,weight,'c',[8,16])
 	FullAnalysisWithUncertainty(['Eta_genmuon1','Eta_genmuon1'],'Eta_muon1',0,["#eta (#mu_{1}) [GeV]",""],[92,-2.3,2.3],[42,-2.1,2.1],Sel_Eta_muon1_reco,Sel_Eta_muon1_gen,weight,'c',[12,12])
 
@@ -954,9 +939,11 @@ def GetSmartSVD(data_histo,Params, binning,forcetau,software):
 		OptTau = 1
 		if forcetau>0:
 			OptTau=forcetau
-
 		binset=ConvertBinning(binning)
 		n = len(binset)-1
+
+		print " ----------- STANDARD UNFOLDING --------------"
+
 		unfold= RooUnfoldSvd(response, data_histo, OptTau)
 		unfold.IncludeSystematics()		
 		unfres= unfold.Hreco(3)
@@ -965,6 +952,38 @@ def GetSmartSVD(data_histo,Params, binning,forcetau,software):
 		hdd = unfres.Clone()
 		hdd.Divide(unfres)
 		hsv = hdd.Clone()
+		for nb in range((unfres.GetNbinsX())+1):
+			print unfres.GetBinCenter(nb),unfres.GetBinContent(nb), unfres.GetBinError(nb)
+		# print " ----------- Disable IncludeSys --------------"
+
+		# unfold2= RooUnfoldSvd(response, data_histo, OptTau)
+		# # unfold2.IncludeSystematics()		
+		# unfres2= unfold2.Hreco(3)
+		# unfres2.Sumw2()
+		# for nb in range((unfres2.GetNbinsX())+1):
+		# 	print unfres2.GetBinCenter(nb),unfres2.GetBinContent(nb), unfres2.GetBinError(nb)
+
+		# print " ----------- Enable IncludeSys, Disable (3) --------------"
+
+		# unfold3= RooUnfoldSvd(response, data_histo, OptTau)
+		# unfold3.IncludeSystematics()		
+		# unfres3= unfold2.Hreco()
+		# unfres3.Sumw2()
+		# for nb in range((unfres3.GetNbinsX())+1):
+		# 	print unfres3.GetBinCenter(nb),unfres3.GetBinContent(nb), unfres3.GetBinError(nb)
+
+
+		# print " ----------- Disable Sumw2 --------------"
+
+		# unfold4= RooUnfoldSvd(response, data_histo, OptTau)
+		# unfold4.IncludeSystematics()		
+		# unfres4= unfold4.Hreco(3)
+		# # unfres3.Sumw2()
+		# for nb in range((unfres4.GetNbinsX())+1):
+		# 	print unfres4.GetBinCenter(nb),unfres4.GetBinContent(nb), unfres4.GetBinError(nb)
+
+		# print ' TEST COMPLETE'
+		# sys.exit()
 		return [unfres,hdd,hsv,OptTau,0]
 
 
@@ -1163,37 +1182,81 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 			if 'WJets_MG' in fin:
 				fin = fin.replace('WJets_MG','WJets_Sherpa')
 
-		print ('t_'+f.replace(".root","")+" = TFile.Open(\""+eosroot+NormalDirectory+"/"+fin+"\")"+".Get(\""+TreeName+"\")")
-
 		if JESTag==True:
 
 			if 'Data' not in fin :
+				print('t_'+f.replace(".root","")+" = TFile.Open(\""+eosroot+NormalDirectory+"/"+fin+"\")"+".Get(\""+TreeName+"\")")
 				exec('t_'+f.replace(".root","")+" = TFile.Open(\""+eosroot+NormalDirectory+"/"+fin+"\")"+".Get(\""+TreeName+"\")")
-
 				if 'WJets_MG' in fin:
+					print("t_MG = TFile.Open(\""+eosroot+NormalDirectory+"/"+fin+"\")"+".Get(\""+TreeName+"\")")	
 					exec("t_MG = TFile.Open(\""+eosroot+NormalDirectory+"/"+fin+"\")"+".Get(\""+TreeName+"\")")	
 
 			else:
+				print('t_'+f.replace(".root","")+" = TFile.Open(\""+eosroot+FileDirectory+"/"+fin+"\")"+".Get(\""+TreeName+"\")")
 				exec('t_'+f.replace(".root","")+" = TFile.Open(\""+eosroot+FileDirectory+"/"+fin+"\")"+".Get(\""+TreeName+"\")")
 
 		elif PHITag==True:
 
 			if True:
+				print('t_'+f.replace(".root","")+" = TFile.Open(\""+eosroot+FileDirectory+"/"+fin+"\")"+".Get(\""+TreeName+"\")")
 				exec('t_'+f.replace(".root","")+" = TFile.Open(\""+eosroot+FileDirectory+"/"+fin+"\")"+".Get(\""+TreeName+"\")")
 
 				if 'WJets_MG' in fin:
+					print("t_MG = TFile.Open(\""+eosroot+FileDirectory+"/"+fin+"\")"+".Get(\""+TreeName+"\")")	
 					exec("t_MG = TFile.Open(\""+eosroot+FileDirectory+"/"+fin+"\")"+".Get(\""+TreeName+"\")")	
 
 		else:
 			if 'Data' not in fin:
+				print('t_'+f.replace(".root","")+" = TFile.Open(\""+eosroot+FileDirectory+"/"+fin+"\")"+".Get(\""+TreeName+"\")")
 				exec('t_'+f.replace(".root","")+" = TFile.Open(\""+eosroot+FileDirectory+"/"+fin+"\")"+".Get(\""+TreeName+"\")")
 
 				if 'WJets_MG' in fin_orig:
+					print("t_MG = TFile.Open(\""+eosroot+FileDirectory+"/"+fin_orig+"\")"+".Get(\""+TreeName+"\")")	
 					exec("t_MG = TFile.Open(\""+eosroot+FileDirectory+"/"+fin_orig+"\")"+".Get(\""+TreeName+"\")")	
 
 			else:
+				print('t_'+f.replace(".root","")+" = TFile.Open(\""+eosroot+NormalDirectory+"/"+fin+"\")"+".Get(\""+TreeName+"\")")
 				exec('t_'+f.replace(".root","")+" = TFile.Open(\""+eosroot+NormalDirectory+"/"+fin+"\")"+".Get(\""+TreeName+"\")")
 
+
+
+	######################################
+	## Some hacking for memory management
+	######################################
+
+	if True:
+		# Get a list of open TTrees
+		ListOfTrees = []
+		staticlocals = locals()
+	 	for lv in staticlocals:
+	 		if 'TTree' in str(type(staticlocals[lv])):
+	 			ListOfTrees.append(staticlocals[lv])
+
+	 	# Get a list of open branches
+		branches = [bb.GetName() for bb in  ListOfTrees[0].GetListOfBranches()]
+		
+		# Read this code into one long string
+		vitaltext =  str(os.popen('cat '+sys.argv[0]).readlines())
+		
+		# Find branches not mentioned in the code, and compile them in a blacklist
+		blacklist = []
+		for b in branches:
+			if b not in vitaltext:
+				blacklist.append(b)
+
+		# Loop over trees, and turn off branches in the blacklist. 		
+		for atree in ListOfTrees:
+			print ' ---------', atree, ' ------------'
+			atree.SetBranchStatus('*',1)
+			for b in branches:
+				if b in blacklist:
+					t_WJets_MG.SetBranchStatus(b,0)
+				# print b, t_WJets_MG.GetBranchStatus(b)
+		# sys.exit()
+
+	######################################
+	######################################
+	######################################
 
 	print 'Is the new modified JES being used (Data not unf Matrix?):', JESTag
 	print 'Is the new Phi-Corrected MET Used:', PHITag
@@ -1266,9 +1329,15 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 	DataRecoStyle=[0,20,1.0,1,1]
 	DataCompStyle=[0,21,0.5,1,6]
 	BlankRecoStyle=[0,21,.00001,1,0]
-	DataUnfoldedStyle=[0,21,0.5,1,1]
-	DataUnfoldedStyle_pseudo=[0,20,0.5,1,9]
-	DataUnfoldedStyle_pseudo2=[0,20,0.5,1,2]
+	DataUnfoldedStyle_2=[0,25,1,1,3]
+
+	DataUnfoldedStyle=[0,21,1,1,1]
+	DataUnfoldedStyle_pseudo=[0,27,1,1,42]
+	DataUnfoldedStyle_pseudoSG=[0,24,1,1,7]
+
+	DataUnfoldedStyle_pseudo2=[0,26,1,1,2]
+	DataUnfoldedStyle_pseudo2SG=[0,32,1,1,6]
+
 
 	# X and Y axis labels for plot
 	Label=[xlabel,"Events/Bin"]
@@ -1935,29 +2004,30 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 
 
 
-	print ' ---- EVENT BREAKDOWN ----'
-	print ' W: ',h_rec_WJets1.Integral()
-	print ' Z: ',h_rec_ZJets.Integral()
-	print ' TT:',h_rec_TTBar.Integral()
-	print ' VV:',h_rec_DiBoson.Integral()
-	print ' t: ',h_rec_SingleTop.Integral()
-	print ' D: ',h_rec_Data.Integral()
-	print ' Q: ',h_rec_QCDMu.Integral()
-	print ' Perc Q: ', h_rec_QCDMu.Integral()/( h_rec_WJets1.Integral() + h_rec_ZJets.Integral() + h_rec_TTBar.Integral() + h_rec_DiBoson.Integral() + h_rec_SingleTop.Integral() + h_rec_QCDMu.Integral())
+	# print ' ---- EVENT BREAKDOWN ----'
+	# print ' W: ',h_rec_WJets1.Integral()
+	# print ' Z: ',h_rec_ZJets.Integral()
+	# print ' TT:',h_rec_TTBar.Integral()
+	# print ' VV:',h_rec_DiBoson.Integral()
+	# print ' t: ',h_rec_SingleTop.Integral()
+	# print ' D: ',h_rec_Data.Integral()
+	# print ' Q: ',h_rec_QCDMu.Integral()
+	# print ' Perc Q: ', h_rec_QCDMu.Integral()/( h_rec_WJets1.Integral() + h_rec_ZJets.Integral() + h_rec_TTBar.Integral() + h_rec_DiBoson.Integral() + h_rec_SingleTop.Integral() + h_rec_QCDMu.Integral())
 
 
-	print '\n ---- Unc BREAKDOWN Bin (jj) [Content, Error] ----'
+	# print '\n ---- Unc BREAKDOWN Bin (jj) [Content, Error] ----'
 
-	for jj in range(h_rec_WJets1.GetNbinsX()+2):
-		print ' (jj) Bin Center: ',h_rec_WJets1.GetBinCenter(jj)
-		print ' (jj) Err W: ',h_rec_WJets1.GetBinContent(jj),h_rec_WJets1.GetBinError(jj)
-		print ' (jj) Err Z: ',h_rec_ZJets.GetBinContent(jj),h_rec_ZJets.GetBinError(jj)
-		print ' (jj) Err TT:',h_rec_TTBar.GetBinContent(jj),h_rec_TTBar.GetBinError(jj)
-		print ' (jj) Err VV:',h_rec_DiBoson.GetBinContent(jj),h_rec_TTBar.GetBinError(jj)
-		print ' (jj) Err t: ',h_rec_SingleTop.GetBinContent(jj),h_rec_SingleTop.GetBinError(jj)
-		print ' (jj) Err D: ',h_rec_Data.GetBinContent(jj),h_rec_Data.GetBinError(jj)
-		print ' (jj) Err Q: ',h_rec_QCDMu.GetBinContent(jj),h_rec_QCDMu.GetBinError(jj)
-		print ' (jj) Err Perc Q: ', h_rec_QCDMu.GetBinContent(jj)/( 0.00001+h_rec_WJets1.GetBinContent(jj) + h_rec_ZJets.GetBinContent(jj) + h_rec_TTBar.GetBinContent(jj) + h_rec_DiBoson.GetBinContent(jj) + h_rec_SingleTop.GetBinContent(jj) + h_rec_QCDMu.GetBinContent(jj)), h_rec_QCDMu.GetBinError(jj)/( 0.00001+h_rec_WJets1.GetBinError(jj) + h_rec_ZJets.GetBinError(jj) + h_rec_TTBar.GetBinError(jj) + h_rec_DiBoson.GetBinError(jj) + h_rec_SingleTop.GetBinError(jj) + h_rec_QCDMu.GetBinError(jj))
+	# for jj in range(h_rec_WJets1.GetNbinsX()+2):
+	# 	print '\n ---- Unc BREAKDOWN Bin (',jj,') [Content, Error] ----'
+	# 	print ' (',jj,') Bin Center: ',h_rec_WJets1.GetBinCenter(jj)
+	# 	print ' (',jj,') Err W: ',h_rec_WJets1.GetBinContent(jj),h_rec_WJets1.GetBinError(jj)
+	# 	print ' (',jj,') Err Z: ',h_rec_ZJets.GetBinContent(jj),h_rec_ZJets.GetBinError(jj)
+	# 	print ' (',jj,') Err TT:',h_rec_TTBar.GetBinContent(jj),h_rec_TTBar.GetBinError(jj)
+	# 	print ' (',jj,') Err VV:',h_rec_DiBoson.GetBinContent(jj),h_rec_TTBar.GetBinError(jj)
+	# 	print ' (',jj,') Err t: ',h_rec_SingleTop.GetBinContent(jj),h_rec_SingleTop.GetBinError(jj)
+	# 	print ' (',jj,') Err D: ',h_rec_Data.GetBinContent(jj),h_rec_Data.GetBinError(jj)
+	# 	print ' (',jj,') Err Q: ',h_rec_QCDMu.GetBinContent(jj),h_rec_QCDMu.GetBinError(jj)
+	# 	print ' (',jj,') Err Perc Q: ', h_rec_QCDMu.GetBinContent(jj)/( 0.00001+h_rec_WJets1.GetBinContent(jj) + h_rec_ZJets.GetBinContent(jj) + h_rec_TTBar.GetBinContent(jj) + h_rec_DiBoson.GetBinContent(jj) + h_rec_SingleTop.GetBinContent(jj) + h_rec_QCDMu.GetBinContent(jj)), h_rec_QCDMu.GetBinError(jj)/( 0.00001+h_rec_WJets1.GetBinError(jj) + h_rec_ZJets.GetBinError(jj) + h_rec_TTBar.GetBinError(jj) + h_rec_DiBoson.GetBinError(jj) + h_rec_SingleTop.GetBinError(jj) + h_rec_QCDMu.GetBinError(jj))
 
 	print '\n ---- QCD BREAKDOWN Bin (jj) [Content, Error] ----'
 
@@ -2024,6 +2094,8 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 
 	# Pseudo-Data for Unfolding (ALWAYS FROM MADGRAPH)
 	h_rec_Data_pseudo=PseudoDataHisto(h_rec_WJetsMG,'h_rec_PseudoData',varbinning)
+	h_rec_Data_pseudoSG=PseudoDataHisto(h_rec_WJets,'h_rec_PseudoDataSG',varbinning)
+
 
 	## Draw W+Jets Gen and Reco
 	h_gen_WJets.Draw("HIST")	
@@ -2140,8 +2212,8 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 
 	print " -------- SIGNAL REGION TABLE COMPLETE -----------"
 
-
-	sys.exit()
+	# For tables only
+	# sys.exit()
 
 
 
@@ -2369,8 +2441,8 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 
 	t_WJets_MG_G = t_WJets_MG.CopyTree(gen_selection)
 	t_WJets_MG_R = t_WJets_MG.CopyTree(selection)
-	t_MG_G = t_MG.CopyTree(gen_selection)
-	t_MG_R = t_MG.CopyTree(selection)
+	# t_MG_G = t_MG.CopyTree(gen_selection)
+	# t_MG_R = t_MG.CopyTree(selection)
 
 	matchingselection = '1'
 	if 'matchsel' in tagname:
@@ -2390,7 +2462,7 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 
 	# Reco histograms (MadGraph and Other) 
 	h_rec_WJets_flat=CreateHisto('h_rec_WJets_flat','W+Jets '+gtag+' [Reco]',t_WJets_MG_R,recomodvariable,varbinning,'(weight_pu_central*4955)'+fW, MCRecoStyle,Label)	
-	h_rec_WJets_flatMG=CreateHisto('h_rec_WJets_flatMG','W+Jets '+gtag+' MG [Reco]',t_MG_R,recomodvariable,varbinning,'(weight_pu_central*4955)'+fWMG, MCRecoStyle,Label)
+	# h_rec_WJets_flatMG=CreateHisto('h_rec_WJets_flatMG','W+Jets '+gtag+' MG [Reco]',t_MG_R,recomodvariable,varbinning,'(weight_pu_central*4955)'+fWMG, MCRecoStyle,Label)
 
 
 	# Response Matrix 
@@ -2436,6 +2508,9 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 
 	h_rec_Data2 = BackgroundSubtractedHistogram(h_rec_Data2,[ h_rec_DiBoson, h_rec_ZJets,h_rec_TTBar,h_rec_SingleTop,h_rec_QCDMu])
 
+	print ' DSUB CONT : ',[h_rec_Data2.GetBinContent(nn+1) for nn in range(h_rec_Data2.GetNbinsX())]
+	print ' DSUB HASNEG : ',[h_rec_Data2.GetBinContent(nn+1)<0.0 for nn in range(h_rec_Data2.GetNbinsX())]
+
 	print ' DSUB ERRS : ',[h_rec_Data2.GetBinError(nn+1) for nn in range(h_rec_Data2.GetNbinsX())]
 	print ' ----------- DATA MINUS BACKGROUND SUBRACTION UNCERTAINTY SUMMARY '
 
@@ -2474,10 +2549,24 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 	# Quick fix for DI stuff
 	# software_implementation = 'TSVD'
 
+	if False:
+		for ibin in range(h_rec_Data2.GetNbinsX() +2):
+			if h_rec_Data2.GetBinContent(ibin) < 0.0:
+				h_rec_Data2.SetBinContent(ibin,0.0)
+
+		print 'Manual forcing of non-zero bins! -------------------------'
+		print ' DSUB CONT : ',[h_rec_Data2.GetBinContent(nn+1) for nn in range(h_rec_Data2.GetNbinsX())]
+		print ' DSUB HASNEG : ',[h_rec_Data2.GetBinContent(nn+1)<0.0 for nn in range(h_rec_Data2.GetNbinsX())]
+		print 'Manual forcing of non-zero bins! -------------------------'
+
+
 	[h_unf_Data,h_dd,h_sv,optimal_tau,optimal_i] = GetSmartSVD(h_rec_Data2,Params, varbinning,tau,software_implementation)
 
 	# Samme as above, but using pseudo-data from the WJets MC - this is the closure test! Always using MadGraph!
 	[h_unf_Data_pseudo,h_dd,h_sv_pseudo,optimal_tau_pseudo,optimal_i_pseudo] = GetSmartSVD(h_rec_Data_pseudo,Params, varbinning,tau,software_implementation)
+	# Samme as above, but using same generator used for unfolding!
+	[h_unf_Data_pseudoSG,h_dd,h_sv_pseudo,optimal_tau_pseudoSG,optimal_i_pseudoSG] = GetSmartSVD(h_rec_Data_pseudoSG,Params, varbinning,tau,software_implementation)
+
 
 	print 'Unfolded Data', h_unf_Data.Integral()
 	print 'Unfolded PseudoData', h_unf_Data_pseudo.Integral()
@@ -2485,15 +2574,18 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 	# How much would you have to scale the unfolded data to meet the reco data? Should be ~1.
 	UnfScale=(h_rec_Data2.Integral(vbinmin,vbinmax)/h_unf_Data.Integral(vbinmin,vbinmax))
 	UnfScale_pseudo=(h_rec_Data_pseudo.Integral(vbinmin,vbinmax)/h_unf_Data_pseudo.Integral(vbinmin,vbinmax))
+	UnfScale_pseudoSG=(h_rec_Data_pseudoSG.Integral(vbinmin,vbinmax)/h_unf_Data_pseudoSG.Integral(vbinmin,vbinmax))
 
 	# Creates plots, with extra label giving the optimal tau and unfolding scale above.
 	h_unf_Data = BeautifyHisto(h_unf_Data,DataUnfoldedStyle,Label,"Data, 5/fb [Unfolded, #tau = "+str(optimal_tau)+",R="+str(round(UnfScale,2))+"]")
-	h_unf_Data_pseudo = BeautifyHisto(h_unf_Data_pseudo,DataUnfoldedStyle_pseudo,Label,"WJets Closure [Unfolded, #tau = "+str(optimal_tau)+",R="+str(round(UnfScale_pseudo,2))+"]")
+	h_unf_Data_pseudo = BeautifyHisto(h_unf_Data_pseudo,DataUnfoldedStyle_pseudo,Label,"WJets MadGraph Closure [Unfolded, #tau = "+str(optimal_tau)+",R="+str(round(UnfScale_pseudo,2))+"]")
+	h_unf_Data_pseudoSG = BeautifyHisto(h_unf_Data_pseudoSG,DataUnfoldedStyle_pseudoSG,Label,"WJets "+gtag+" Closure [Unfolded, #tau = "+str(optimal_tau)+",R="+str(round(UnfScale_pseudoSG,2))+"]")
 
 	# Using the unfolded data and reeco data, get a rescaling string to convert between the two types of binning.
 	[DataRescalingString,DataErrorString] = GetRescaling(h_unf_Data,h_rec_Data2,varbinning,recovariable)
 	# Same as above, but for the closure test.
 	[DataRescalingString_pseudo,DataErrorString_pseudo] = GetRescaling(h_unf_Data_pseudo,h_rec_Data_pseudo,varbinning,recovariable)
+	[DataRescalingString_pseudoSG,DataErrorString_pseudoSG] = GetRescaling(h_unf_Data_pseudoSG,h_rec_Data_pseudoSG,varbinning,recovariable)
 
 	print "DataRescaling:", DataRescalingString
 	print "PseudoData Rscaling:" , DataRescalingString_pseudo
@@ -2572,8 +2664,12 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 
 	h_pres_rec_Data=RebinnedHisto("h_pres_rec_Data",'Data, 5/fb [Unfolded/Reco]',h_rec_Data2,presentationbinning,DataCompStyle,Label)
 
+	h_pres_unf_Data_2=RebinnedHisto("h_pres_unf_Data_2",'Unf. Data/ '+gtag+' Truth',h_unf_Data,presentationbinning,DataUnfoldedStyle_2,Label)
 
-	h_pres_unf_Data_pseudo=RebinnedHisto("h_pres_unf_Data_pseudo",'MC Closure [Unf. Reco/ Gen]',h_unf_Data_pseudo,presentationbinning,DataUnfoldedStyle_pseudo2,Label)
+
+	h_pres_unf_Data_pseudo=RebinnedHisto("h_pres_unf_Data_pseudo",'MadGraph [Unf. Reco/ Gen]',h_unf_Data_pseudo,presentationbinning,DataUnfoldedStyle_pseudo2,Label)
+	h_pres_unf_Data_pseudoSG=RebinnedHisto("h_pres_unf_Data_pseudoSG",gtag+'[Unf. Reco/ Gen]',h_unf_Data_pseudoSG,presentationbinning,DataUnfoldedStyle_pseudo2SG,Label)
+
 
 
 	DataBinInfo=[]
@@ -2622,7 +2718,9 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 		
 
 	# For closure test, divide by MC to convert to a ratio plot
+	h_pres_unf_Data_2.Divide(h_pres_gen_WJets)
 	h_pres_unf_Data_pseudo.Divide(h_pres_gen_WJetsMG)
+	h_pres_unf_Data_pseudoSG.Divide(h_pres_gen_WJets)
 
 	## Divide gen by reco for MC, and unfolded by reco for data.
 	h_pres_gen_WJets.Divide(h_pres_rec_WJets)
@@ -2635,7 +2733,7 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 	
 
 	RelMin = 0.0
-	RelMax = 3.0
+	RelMax = 4.0
 	h_pres_gen_WJets.GetYaxis().SetTitle("Ratio")
 	h_pres_gen_WJets.SetMarkerSize(0.000001)
 	h_pres_gen_WJets.SetLineStyle(1)
@@ -2647,12 +2745,18 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 
 	# Do the drawing
 	h_pres_unf_Data.GetYaxis().SetTitle("Ratio")
+	h_pres_unf_Data_2.GetYaxis().SetTitle("Ratio")
 	h_pres_unf_Data_pseudo.GetYaxis().SetTitle("Ratio")
+	h_pres_unf_Data_pseudoSG.GetYaxis().SetTitle("Ratio")
 
 	h_pres_unf_Data.Draw("EPHISTSAME")
 	h_pres_unf_Data_pseudo.Draw("EPHISTSAME")
+	if 'altunf' in tagname:
+		h_pres_unf_Data_pseudoSG.Draw("EPHISTSAME")
+	h_pres_unf_Data_2.Draw("EPHISTSAME")
+
 	# Create Legend
-	FixDrawLegend(c1.cd(4).BuildLegend(0.5,  0.6,  0.9,  0.88,''))
+	FixDrawLegend(c1.cd(4).BuildLegend(0.6,  0.6,  0.93,  0.93,''))
 	l_one.Draw("SAME")
 
 
@@ -2752,8 +2856,8 @@ def FullAnalysisWithUncertainty(genvariable,recovariable,default_value,xlabel, b
 		[null,data_altunf,mc_altunf]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',taush,'altunf')
 
 		# Plleup variations
-		[null,data_pileup_plus,mc_pileup_plus]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight.replace('central','sysplus'),optvar,NormalDirectory,'',tau,'pileup_plus')
-		[null,data_pileup_minus,mc_pileup_minus]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight.replace('central','sysminus'),optvar,NormalDirectory,'',tau,'pileup_minus')
+		[null,data_pileup_plus,mc_pileup_plus]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight.replace('weight_pu_central','weight_pu_sysplus'),optvar,NormalDirectory,'',tau,'pileup_plus')
+		[null,data_pileup_minus,mc_pileup_minus]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight.replace('weight_pu_central','weight_pu_sysminus'),optvar,NormalDirectory,'',tau,'pileup_minus')
 
 		[null,data_bgnorm_plus,mc_bgnorm_plus]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',tau,'bgnorm_plus')
 		[null,data_bgnorm_minus,mc_bgnorm_minus]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',tau,'bgnorm_minus')
@@ -2781,8 +2885,8 @@ def FullAnalysisWithUncertainty(genvariable,recovariable,default_value,xlabel, b
 
 		# BTag Efficiency Up/Down
 		if 'UnCorr' not in selection[0]:
-			[null,data_btag_plus,mc_btag_plus]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection.replace('CountCentral','CountEffUp'),gen_selection,weight,optvar,NormalDirectory,'',tau,'btag_plus')
-			[null,data_btag_minus,mc_btag_minus]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection.replace('CountCentral','CountEffDown'),gen_selection,weight,optvar,NormalDirectory,'',tau,'btag_minus')
+			[null,data_btag_plus,mc_btag_plus]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection.replace('PFJet30TCHEMCountCentral','PFJet30TCHEMCountEffUp'),gen_selection,weight,optvar,NormalDirectory,'',tau,'btag_plus')
+			[null,data_btag_minus,mc_btag_minus]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection.replace('PFJet30TCHEMCountCentral','PFJet30TCHEMCountEffDown'),gen_selection,weight,optvar,NormalDirectory,'',tau,'btag_minus')
 
 		else:
 			[null,data_btag_plus,mc_btag_plus]=[tau,data_standard,mc_standard]
@@ -2942,16 +3046,16 @@ def FullAnalysisWithUncertainty(genvariable,recovariable,default_value,xlabel, b
 
 		# [null,data_roounfsvd,mc_roounfsvd]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',tau,'roounfsvd')
 
-		[null,data_roounfbayes,mc_roounfbayes]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',tau,'roounfbayes')
-		# [null,data_roounfbayes,mc_roounfbayes]=[tau,data_standard,mc_standard]
-		[null,data_roounfbin,mc_roounfbin]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',tau,'roounfbin')
-		# [null,data_roounfbin,mc_roounfbin]=[tau,data_standard,mc_standard]
+		#[null,data_roounfbayes,mc_roounfbayes]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',tau,'roounfbayes')
+		[null,data_roounfbayes,mc_roounfbayes]=[tau,data_standard,mc_standard]
+		#[null,data_roounfbin,mc_roounfbin]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',tau,'roounfbin')
+		[null,data_roounfbin,mc_roounfbin]=[tau,data_standard,mc_standard]
 		# [null,data_autobin,mc_autobin]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',tau,'autobin')
 
-		[null,data_tsvd,mc_tsvd]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',tau,'tsvd')
-		# [null,data_tsvd,mc_tsvd]=[tau,data_standard,mc_standard]
-		[null,data_matchsel,mc_matchsel]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',tau,'matchsel')
-
+		# [null,data_tsvd,mc_tsvd]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',tau,'tsvd')
+		[null,data_tsvd,mc_tsvd]=[tau,data_standard,mc_standard]
+		#[null,data_matchsel,mc_matchsel]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',tau,'matchsel')
+		[null,data_matchsel,mc_matchsel]=[tau,data_standard,mc_standard]
 
 		# [null,data_tsvdnocov,mc_tsvdnocov]=[tau,data_standard,mc_standard]
 
@@ -3497,6 +3601,7 @@ def CreateHistoFromLists(binning, name, label, mean, up, down, style,normalizati
 def CreateWindowFromVerbse(_verbs,Name,label,style,norm,plottype,symmetrize):
 	meansets = []
 	for L in _verbs:
+		# print L
 		meansets.append(L[0])
 	_mins = []
 	_maxs = []
@@ -3504,6 +3609,8 @@ def CreateWindowFromVerbse(_verbs,Name,label,style,norm,plottype,symmetrize):
 	_ups = []
 	_downs = []
 	binrange = range(len(meansets[0]))
+
+
 	for m in binrange:
 		entries = [_means[m] for _means in meansets]
 		_mins.append(min(entries))
@@ -3517,25 +3624,66 @@ def CreateWindowFromVerbse(_verbs,Name,label,style,norm,plottype,symmetrize):
 			_iup = _ierr
 			_idown = _ierr
 
+
 		_ups.append(_iup)
 		_downs.append(_idown )
-
+		print   ' --------------------------'
+		print _centers[-1], _ups[-1], _downs[-1]
+		if 'ct10' in Name:
+			print ' ------ Mod Window by 1.645 for 1 sigma band'
+			_ups[-1] = _ups[-1]/1.645
+			_downs[-1] = _downs[-1]/1.645
+			print _centers[-1], _ups[-1], _downs[-1]
 
 
 	binning = _verbs[0][-1]
-
-	# print 'Binning:',binning
-	# print 'Name:',Name
-	# print 'Label:',label
-	# print 'Centers:',_centers
-	# print 'Ups:',_ups
-	# print 'Downs:',_downs
-	# print 'Style:',style
-	# print 'PlotType:',plottype
 	OutputHisto = CreateHistoFromLists(binning, Name,label, _centers, _ups,_downs, style,norm,plottype)
 
 	return OutputHisto
 
+def addlists(L1,L2,sign):
+	L3 = []
+	for x in range(len(L1)):
+		L3.append(L1[x]+sign*L2[x])
+	return L3
+def CreateWindowFromVerbseWindows(_verbs,Name,label,style,norm,plottype,symmetrize):
+	meansets = []
+	for L in _verbs:
+		meansets.append(L[0])
+		meansets.append( addlists(L[0],L[1],1) )
+		meansets.append( addlists(L[0],L[2],-1) )
+		print L
+	_mins = []
+	_maxs = []
+	_centers = []
+	_ups = []
+	_downs = []
+	binrange = range(len(meansets[0]))
+
+
+	for m in binrange:
+		entries = [_means[m] for _means in meansets]
+		_mins.append(min(entries))
+		_maxs.append(max(entries))
+		_centers.append(  meansets[0][m] )
+		_iup = abs(_maxs[-1] - _centers[-1])
+		_idown = abs(_mins[-1] - _centers[-1])
+
+		if symmetrize: 
+			_ierr = max([_iup,_idown])
+			_iup = _ierr
+			_idown = _ierr
+
+
+		_ups.append(_iup)
+		_downs.append(_idown )
+		print   ' --------------------------'
+		print _centers[-1], _ups[-1], _downs[-1]
+
+	binning = _verbs[0][-1]
+	OutputHisto = CreateHistoFromLists(binning, Name,label, _centers, _ups,_downs, style,norm,plottype)
+
+	return OutputHisto
 
 
 
@@ -3785,6 +3933,9 @@ def RivetHisto(rivetfile, rivetvariable, binning,selection, label, style,origina
 def BlackHatHisto(rivetvariable, binning, standard_name, label, style, quantity, ncompare, normalization,hadhisto,nonhadhisto,dohadrenorm,bhdir):
 
 	# bhdir = 'hists5/hists_CT10/'
+
+	print 'BlackhatHisto:',standard_name,'/',rivetvariable, 'from',bhdir
+
 	bhdir += '/'
 	Name = 'BlackHat'	
 	bhfile = bhdir+'W1j_all.root'
@@ -3805,7 +3956,15 @@ def BlackHatHisto(rivetvariable, binning, standard_name, label, style, quantity,
 
 	# print 'For - ',rivetvariable, ' -- using: ',bhfile
 	# print "  BH ------->  ",rivetvariable, " --> ",rivetvariable.replace('htjets','ht')
-	hblackhat = TFile.Open(bhfile).Get(rivetvariable.replace('htjets','ht'))
+	fblackhat = TFile.Open(bhfile)
+	hblackhat = fblackhat.Get(rivetvariable.replace('htjets','ht'))
+
+	if type(hblackhat) != TH1D:
+		print ' Histogram problems - ignoring this one!'
+		return [[None,None],[None]]
+	print hblackhat
+	print hblackhat.GetEntries()
+	# sys.exit()
 	# print "    --- > int ---> ",hblackhat.GetEntries(),hblackhat.Integral()
 	# print 'Blackhat histo for ',rivetvariable, 'with binning',binning
 
@@ -3832,7 +3991,15 @@ def BlackHatHisto(rivetvariable, binning, standard_name, label, style, quantity,
 				if lhs == nn:
 					bhindex = nb
 
-			bhsource = TFile.Open(newbhfile).Get(rivetvariable)
+			bhfile = TFile.Open(newbhfile)
+			bhsource = bhfile.Get(rivetvariable)
+
+			# bhsource = TFile.Open(newbhfile).Get(rivetvariable)
+
+			if type(bhsource) != TH1D:
+				print ' Histogram problems - ignoring this one!'				
+				return [[None,None],[None]]
+
 			bhsourceindex = 0
 			for nb in range(bhsource.GetNbinsX()+2):	
 				lhs = bhsource.GetBinCenter(nb) - bhsource.GetBinWidth(nb)*0.5
@@ -3855,6 +4022,8 @@ def BlackHatHisto(rivetvariable, binning, standard_name, label, style, quantity,
 			bhindex = bhindex -1 
 			hblackhat.SetBinContent(bhindex,newcont)
 			hblackhat.SetBinError(bhindex,newerr)
+
+			bhfile.Close()
 
 
 	bhscale = (4955.0/1000.0)
@@ -3962,6 +4131,8 @@ def BlackHatHisto(rivetvariable, binning, standard_name, label, style, quantity,
 	BlackHatOutputHisto[0].GetYaxis().SetTitleOffset(1.1);
 	BlackHatOutputHisto[0].GetYaxis().SetLabelSize(.1);
 	BlackHatOutputHisto[0].GetXaxis().SetLabelSize(.1);
+
+	fblackhat.Close()
 	return [BlackHatOutputHisto,blackhatscale]
 
 
@@ -4020,8 +4191,8 @@ def DivideTGraphs_naively(gv1, gv2,style):
 # Using basic asymmetric errors.
 def DivideTGraphs(gv1, gv2,style):
 
-	[mean1,up1,down1,binset1]=gv1
-	[mean2,up2,down2,binset2]=gv2
+	[mean1,up1,down1,binset1]=gv2
+	[mean2,up2,down2,binset2]=gv1
 
 	if binset1!=binset2:
 		print "ERROR: CAN'T DIVIDE GRAPHS, EXITING."
@@ -4129,6 +4300,7 @@ def HadRatioPlot(gv1, gv2,XName,binning,fname):
 	cp.Print(outname+'.pdf')
 	print 6
 
+
 # Using basic asymmetric errors.
 def DivideTGraphsFlatRel(gv1, gv2,style):
 
@@ -4136,6 +4308,8 @@ def DivideTGraphsFlatRel(gv1, gv2,style):
 	[mean1,up1,down1,binset1]=gv2
 	[mean2,up2,down2,binset2]=gv1
 
+	print gv1
+	print gv2
 
 	if binset1!=binset2:
 		print "ERROR: CAN'T DIVIDE GRAPHS, EXITING."
@@ -4149,12 +4323,13 @@ def DivideTGraphsFlatRel(gv1, gv2,style):
 	yvalues = []
 
 	for x in range(len(binset)-1):
-		m1=mean1[x]
-		m2=mean2[x]
-		u1=up1[x]
-		u2=up2[x]
-		d1=down1[x]
-		d2=down2[x]
+		m1=mean1[x] # mc
+		m2=mean2[x] # Dat
+		u1=up1[x]   # mc 
+		u2=up2[x]   # Dat
+		d1=down1[x] # mc
+		d2=down2[x] # dat
+
 
 		rat = 5.0
 		ratup = rat
@@ -4163,32 +4338,139 @@ def DivideTGraphsFlatRel(gv1, gv2,style):
 		if m2 != 0:
 			# print m2,d2
 			rat = m1/m2
-			ratup = m1/(m2 + u2)
-			if m2 != d2:
-				ratdown = m1/(m2 - d2)
-			else:
-				ratdown = 99
+			ratmax = (m1+abs(u1))/m2
+			ratmin = (m1-abs(d1))/m2
+			ratup = ratmax - rat
+			ratdown = rat-ratmin
+
 
 		if m1==0:
 			rat = 5.0
 
-		window = [0,0]
-
-
-		window = [ratup - rat, ratdown - rat]
-		window.sort()
-
-
 		ratmean.append(rat)
-		raterr_down.append(abs(window[0]))
-		raterr_up.append(abs(window[1]))
+		raterr_down.append(ratdown)
+		raterr_up.append(ratup)
 		
-		# print rat, ratup, ratdown, window
-
-		raterr_up.append(window[0])
-		raterr_down.append(window[1])
-
 	return [CreateHistoFromLists(binset, "example",["","Data / MC"], ratmean,raterr_up,raterr_down,style,1.0,"SubPlot")[0] ,[2,0]]
+
+
+# # Using basic asymmetric errors.
+# def DivideTGraphsFlatRel(gv1, gv2,style):
+
+# 	# Inverted to flip ratios!
+# 	[mean1,up1,down1,binset1]=gv2
+# 	[mean2,up2,down2,binset2]=gv1
+
+# 	print gv1
+# 	print gv2
+
+# 	if binset1!=binset2:
+# 		print "ERROR: CAN'T DIVIDE GRAPHS, EXITING."
+# 		sys.exit()
+# 	binset=binset1
+
+# 	ratmean = []
+# 	raterr_up = []
+# 	raterr_down = []
+
+# 	yvalues = []
+
+# 	for x in range(len(binset)-1):
+# 		m1=mean1[x]
+# 		m2=mean2[x]
+# 		u1=up1[x]
+# 		u2=up2[x]
+# 		d1=down1[x]
+# 		d2=down2[x]
+
+
+# 		rat = 5.0
+# 		ratup = rat
+# 		ratdown = rat
+
+# 		if m2 != 0:
+# 			# print m2,d2
+# 			rat = m1/m2
+# 			ratup = m1/(m2 + u2)
+# 			if m2 != d2:
+# 				ratdown = m1/(m2 - d2)
+# 			else:
+# 				ratdown = 99
+
+# 		if m1==0:
+# 			rat = 5.0
+
+# 		window = [0,0]
+
+
+# 		window = [ratup - rat, ratdown - rat]
+# 		window.sort()
+
+# 		print rat, window
+
+# 		ratmean.append(rat)
+# 		raterr_down.append(abs(window[0]))
+# 		raterr_up.append(abs(window[1]))
+		
+# 		# print rat, ratup, ratdown, window
+
+# 		# raterr_up.append(window[0])
+# 		# raterr_down.append(window[1])
+
+
+
+# 	return [CreateHistoFromLists(binset, "example",["","Data / MC"], ratmean,raterr_up,raterr_down,style,1.0,"SubPlot")[0] ,[2,0]]
+
+
+# Using basic asymmetric errors.
+# def DivideTGraphsFlatRel(gv1, gv2,style):
+
+# 	# Inverted to flip ratios!
+# 	[mean1,up1,down1,binset1]=gv2
+# 	[mean2,up2,down2,binset2]=gv1
+
+# 	print gv1
+# 	print gv2
+
+# 	if binset1!=binset2:
+# 		print "ERROR: CAN'T DIVIDE GRAPHS, EXITING."
+# 		sys.exit()
+# 	binset=binset1
+
+# 	ratmean = []
+# 	raterr_up = []
+# 	raterr_down = []
+
+# 	yvalues = []
+
+# 	for x in range(len(binset)-1):
+# 		m1=mean1[x]
+# 		m2=mean2[x]
+# 		u1=up1[x]
+# 		u2=up2[x]
+# 		d1=down1[x]
+# 		d2=down2[x]
+
+
+# 		rat = 5.0
+
+# 		if m2 != 0:
+# 			rat = m1/m2
+
+
+# 		ratmean.append(rat)
+# 		raterr_down.append(abs(window[0]))
+# 		raterr_up.append(abs(window[1]))
+		
+# 		# print rat, ratup, ratdown, window
+
+# 		# raterr_up.append(window[0])
+# 		# raterr_down.append(window[1])
+
+
+
+# 	return [CreateHistoFromLists(binset, "example",["","Data / MC"], ratmean,raterr_up,raterr_down,style,1.0,"SubPlot")[0] ,[2,0]]
+
 
 
 
@@ -4473,25 +4755,71 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	# HadRatioPlot(Rivet_MadGraph_Result_verbose,Rivet_MadGraphNonHad_Result_verbose,rivetlabel,binning,filename)
 	[[Rivet_Sherpa_Result,Rivet_Sherpa_Result_verbose], sherparescale]    = RivetHisto(RIVETSherpa,  rivetname,binning,rivetsel,rivetlabel,  SherpaRivetSubStyle,sherpa_NOriginal  ,normalization,ndataunf,quantity,WRenormalization)
 
-	[[Blackhat_Result,Blackhat_Result_verbose], blackhatrescale]    = BlackHatHisto( rivetname,binning,standardname, rivetlabel, BlackHatSubStyle,quantity,ndataunf,normalization,Rivet_MadGraph_Result_verbose,Rivet_MadGraphNonHad_Result_verbose,True,afsdir+'BlackHatAll/hists_CT10_r1.0_f1.0')
-	[[Blackhat_Result_nocorr,Blackhat_Result_verbose_nocorr], blackhatrescale_nocorr]    = BlackHatHisto( rivetname,binning,standardname, rivetlabel, BlackHatSubStyle,quantity,ndataunf,normalization,Rivet_MadGraph_Result_verbose,Rivet_MadGraph_Result_verbose,True,afsdir+'BlackHatAll/hists_CT10_r1.0_f1.0')
+	[[Blackhat_Result,Blackhat_Result_verbose], blackhatrescale]    =                      BlackHatHisto( rivetname,binning,standardname, rivetlabel, BlackHatSubStyle,quantity,ndataunf,normalization,Rivet_MadGraph_Result_verbose,Rivet_MadGraphNonHad_Result_verbose,True,afsdir+'MergedHistos/hists_CT10_r1.0_f1.0_m0')
+	[[Blackhat_Result_nocorr,Blackhat_Result_verbose_nocorr], blackhatrescale_nocorr]    = BlackHatHisto( rivetname,binning,standardname, rivetlabel, BlackHatSubStyle,quantity,ndataunf,normalization,Rivet_MadGraph_Result_verbose,Rivet_MadGraph_Result_verbose,True,afsdir+'MergedHistos/hists_CT10_r1.0_f1.0_m0')
 	[Blackhat_Result_hadwindow,Blackhat_Result_verbose_hadwindow] = CreateWindowFromVerbse([Blackhat_Result_verbose, Blackhat_Result_verbose_nocorr],"BlackhatHadCorr",rivetlabel,BlackHatSubStyle,normalization,"TopPlot",True)	
 
 
-	[[Blackhat_Result_sup,Blackhat_Result_verbose_sup], blackhatrescale_sup]    = BlackHatHisto( rivetname,binning,standardname, rivetlabel, BlackHatSubStyle,quantity,ndataunf,normalization,Rivet_MadGraph_Result_verbose,Rivet_MadGraphNonHad_Result_verbose,True,afsdir+'BlackHatAll/hists_CT10_r2.0_f2.0')
-	[[Blackhat_Result_sdown,Blackhat_Result_verbose_sdown], blackhatrescale_sdown]    = BlackHatHisto( rivetname,binning,standardname, rivetlabel, BlackHatSubStyle,quantity,ndataunf,normalization,Rivet_MadGraph_Result_verbose,Rivet_MadGraphNonHad_Result_verbose,True,afsdir+'BlackHatAll/hists_CT10_r0.5_f0.5')
+	[[Blackhat_Result_sup,Blackhat_Result_verbose_sup], blackhatrescale_sup]    = BlackHatHisto( rivetname,binning,standardname, rivetlabel, BlackHatSubStyle,quantity,ndataunf,normalization,Rivet_MadGraph_Result_verbose,Rivet_MadGraphNonHad_Result_verbose,True,afsdir+'MergedHistos/hists_CT10_r2.0_f2.0_m0')
+	[[Blackhat_Result_sdown,Blackhat_Result_verbose_sdown], blackhatrescale_sdown]    = BlackHatHisto( rivetname,binning,standardname, rivetlabel, BlackHatSubStyle,quantity,ndataunf,normalization,Rivet_MadGraph_Result_verbose,Rivet_MadGraphNonHad_Result_verbose,True,afsdir+'MergedHistos/hists_CT10_r0.5_f0.5_m0')
 
-	[[Blackhat_Result_mstw,Blackhat_Result_verbose_mstw], blackhatrescale_mstw]    = BlackHatHisto( rivetname,binning,standardname, rivetlabel, BlackHatSubStyle,quantity,ndataunf,normalization,Rivet_MadGraph_Result_verbose,Rivet_MadGraphNonHad_Result_verbose,True,afsdir+'BlackHatAll/hists_MSTW2008nlo68cl_r1.0_f1.0')
-	[[Blackhat_Result_nnpdf,Blackhat_Result_verbose_nnpdf], blackhatrescale_nnpdf]    = BlackHatHisto( rivetname,binning,standardname, rivetlabel, BlackHatSubStyle,quantity,ndataunf,normalization,Rivet_MadGraph_Result_verbose,Rivet_MadGraphNonHad_Result_verbose,True,afsdir+'BlackHatAll/hists_NNPDF21_100_r1.0_f1.0')
+	[[Blackhat_Result_mstw,Blackhat_Result_verbose_mstw], blackhatrescale_mstw]    = BlackHatHisto( rivetname,binning,standardname, rivetlabel, BlackHatSubStyle,quantity,ndataunf,normalization,Rivet_MadGraph_Result_verbose,Rivet_MadGraphNonHad_Result_verbose,True,afsdir+'MergedHistos/hists_MSTW2008nlo68cl_r1.0_f1.0_m0')
+	[[Blackhat_Result_nnpdf,Blackhat_Result_verbose_nnpdf], blackhatrescale_nnpdf]    = BlackHatHisto( rivetname,binning,standardname, rivetlabel, BlackHatSubStyle,quantity,ndataunf,normalization,Rivet_MadGraph_Result_verbose,Rivet_MadGraphNonHad_Result_verbose,True,afsdir+'MergedHistos/hists_NNPDF21_100_r1.0_f1.0_m0')
+
+
+	CT10Histos = []
+	MSTWHistos = []
+	NNPDHistos = []
+
+	print ' -------------- PDF WINDOWS -----------------'
+	for nn in range(200):
+		snn = str(nn)
+		if nn <=52:
+			_CT = BlackHatHisto( rivetname,binning,standardname, rivetlabel, BlackHatSubStyle,quantity,ndataunf,normalization,Rivet_MadGraph_Result_verbose,Rivet_MadGraphNonHad_Result_verbose,True,afsdir+'MergedHistos/hists_CT10_r1.0_f1.0_m'+snn)[0][1]
+			if _CT!=None:
+				CT10Histos.append( _CT )
+		if nn <=40:
+			_MS = BlackHatHisto( rivetname,binning,standardname, rivetlabel, BlackHatSubStyle,quantity,ndataunf,normalization,Rivet_MadGraph_Result_verbose,Rivet_MadGraphNonHad_Result_verbose,True,afsdir+'MergedHistos/hists_MSTW2008nlo68cl_r1.0_f1.0_m'+snn)[0][1]	
+			if _MS!=None:
+				MSTWHistos.append( _MS )
+		if nn <=99:
+			_NN = BlackHatHisto( rivetname,binning,standardname, rivetlabel, BlackHatSubStyle,quantity,ndataunf,normalization,Rivet_MadGraph_Result_verbose,Rivet_MadGraphNonHad_Result_verbose,True,afsdir+'MergedHistos/hists_NNPDF21_100_r1.0_f1.0_m'+snn)[0][1]
+			if _NN != None:
+				NNPDHistos.append( _NN  )
+
+	print ' -------------- Gather windows -----------------'
+
+	print ' ------- CT10'
+	[Blackhat_Result_ct10window,Blackhat_Result_verbose_ct10window] = CreateWindowFromVerbse(CT10Histos,"Blackhatct10window",rivetlabel,BlackHatSubStyle,normalization,"TopPlot",False)	
+	print ' ------- MSTW'
+	[Blackhat_Result_mstwwindow,Blackhat_Result_verbose_mstwwindow] = CreateWindowFromVerbse([CT10Histos[0]]+MSTWHistos,"Blackhatmstwwindow",rivetlabel,BlackHatSubStyle,normalization,"TopPlot",False)	
+	print ' ------- NNPD'
+	[Blackhat_Result_nnpdwindow,Blackhat_Result_verbose_nnpdwindow] = CreateWindowFromVerbse([CT10Histos[0]]+NNPDHistos,"Blackhatnnpdwindow",rivetlabel,BlackHatSubStyle,normalization,"TopPlot",False)	
+
+
+	print ' -------------- PDF WINDOWS DONE -----------------'
+
 
 	# [[Blackhat_Result_cteq6,Blackhat_Result_verbose_cteq6], blackhatrescale_cteq6]    = BlackHatHisto( rivetname,binning,standardname, rivetlabel, BlackHatSubStyle,quantity,ndataunf,normalization,Rivet_MadGraph_Result_verbose,Rivet_MadGraphNonHad_Result_verbose,True,'BlackHatAll/hists_cteq6m_r1.0_f1.0')
 
 	[Blackhat_Result_scalewindow,Blackhat_Result_verbose_scalewindow] = CreateWindowFromVerbse([Blackhat_Result_verbose, Blackhat_Result_verbose_sup,Blackhat_Result_verbose_sdown],"BlackhatScale",rivetlabel,BlackHatSubStyle,normalization,"TopPlot",False)	
+
+
+	print ' ====================== OLD PDF METHOD =========================='
 	[Blackhat_Result_pdf,Blackhat_Result_verbose_pdf] = CreateWindowFromVerbse([Blackhat_Result_verbose, Blackhat_Result_verbose_mstw, Blackhat_Result_verbose_nnpdf],"BlackhatPDF",rivetlabel,BlackHatSubStyle,normalization,"TopPlot",True)	
+
+	print ' ====================== NEW PDF METHOD =========================='
+
+	[Blackhat_Result_pdfV2,Blackhat_Result_verbose_pdfV2] = CreateWindowFromVerbseWindows([Blackhat_Result_verbose, Blackhat_Result_verbose_ct10window, Blackhat_Result_verbose_mstwwindow, Blackhat_Result_verbose_nnpdwindow],"BlackhatPDFV2",rivetlabel,BlackHatSubStyle,normalization,"TopPlot",False)	
+
+
+	if False:
+		print ' ====================== Defaulting to non-PDF4LHC Method =========================='		
+		[Blackhat_Result_pdfV2,Blackhat_Result_verbose_pdfV2] = [Blackhat_Result_pdf,Blackhat_Result_verbose_pdf]
 
 	# Removing window of hadronization correction
 	# [Blackhat_Result_basic,Blackhat_Result_verbose_basic] = MergeErrorsFromVerbse([Blackhat_Result_verbose, Blackhat_Result_verbose_pdf, Blackhat_Result_verbose_hadwindow],"BlackhatBasic",rivetlabel,BlackHatSubStyle,normalization,"TopPlot",False)	
-	[Blackhat_Result_basic,Blackhat_Result_verbose_basic] = MergeErrorsFromVerbse([Blackhat_Result_verbose, Blackhat_Result_verbose_pdf],"BlackhatBasic",rivetlabel,BlackHatSubStyle,normalization,"TopPlot",False)	
+	[Blackhat_Result_basic,Blackhat_Result_verbose_basic] = MergeErrorsFromVerbse([Blackhat_Result_verbose, Blackhat_Result_verbose_pdfV2],"BlackhatBasic",rivetlabel,BlackHatSubStyle,normalization,"TopPlot",False)	
 
 	[Blackhat_Result_basicplusscale,Blackhat_Result_verbose_basicplusscale] = MergeErrorsFromVerbse([Blackhat_Result_verbose_basic, Blackhat_Result_verbose_scalewindow],"BlackhatBasicplusscale",rivetlabel,BlackHatSubStyle,normalization,"TopPlot",False)	
 
@@ -4632,7 +4960,7 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	rawunits = ' '
 	if 'GeV' in units:
 		rawunits = '[GeV]'
-	_table.append(var +' & Measurement & Blackhat+Sherpa  & Sherpa  & MadGraph  \\\\ \\relax ')
+	_table.append(var +' & Measurement & Blackhat+Sherpa  & Sherpa  & MadGraph+Pythia  \\\\ \\relax ')
 	_table.append(rawunits +' & '+units+' & '+units+' & '+units+' &  '+units+' \\\\ \\hline')
 
 	for x in range(len(__D)):
@@ -4703,7 +5031,7 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	leg.SetTextSize(.05)
 	leg.SetHeader("W #rightarrow #mu#nu + jets");	
 	leg.AddEntry(Meas,"Data");
-	leg.AddEntry(Rivet_MadGraph_Result,"MadGraph")
+	leg.AddEntry(Rivet_MadGraph_Result,"MadGraph+Pythia")
 	# leg.AddEntry(AOD_MadGraph_Result,"MadGraph AOD")
 	# leg.AddEntry(Exp,"MadGraph AOD");
 	leg.AddEntry(Rivet_Sherpa_Result,"Sherpa")
@@ -4762,15 +5090,18 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	# print 'Dividing Meas/BH'
 	# print Meas_verbose
 	# print Blackhat_Result_verbose
+	print '~~~~~~~~~~~~~~ BLACKHAT SUB PLOT ~~~~~~~~~~~~'
 	[grat4,[grat4up,grat4down]] = DivideTGraphsFlatRel(Meas_verbose,Blackhat_Result_verbose_basicplusscale,BlackHatSubStyle)
+	print '~~~~~~~~~~~~~~ BLACKHAT SUB PLOT ~~~~~~~~~~~~'
+
 	# print 'Dividing Meas/BHBasic'
-	[grat4b,[grat4bup,grat4bdown]] = DivideTGraphsFlatRel(Meas_verbose,Blackhat_Result_verbose_basic,BlackHatSubStyle)
+	# [grat4b,[grat4bup,grat4bdown]] = DivideTGraphsFlatRel(Meas_verbose,Blackhat_Result_verbose_basic,BlackHatSubStyle)
 
-	[grat5,[grat5up,grat5down]] = DivideTGraphsFlatRel(Meas_verbose,Exp_verbose,MadGraphAODSubStyle)
+	# [grat5,[grat5up,grat5down]] = DivideTGraphsFlatRel(Meas_verbose,Exp_verbose,MadGraphAODSubStyle)
 
-	[grat6,[grat6up,grat6down]] = DivideTGraphsFlatRel(Meas_verbose,Blackhat_Result_verbose_mstw,BlackHatSubStyle)
+	# [grat6,[grat6up,grat6down]] = DivideTGraphsFlatRel(Meas_verbose,Blackhat_Result_verbose_mstw,BlackHatSubStyle)
 	# [grat6b,[grat6bup,grat6bdown]] = DivideTGraphsFlatRel(Meas_verbose,Blackhat_Result_verbose_cteq6,BlackHatSubStyle)
-	grat6.SetLineStyle(2)
+	# grat6.SetLineStyle(2)
 	# grat6b.SetLineStyle(2)
 
 
@@ -4824,7 +5155,7 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	lb2.SetTextFont(42)
 	lb2.SetNDC()
 	lb2.SetTextSize(0.1)
-	lb2.DrawLatex(0.18,0.5,"Madgraph")
+	lb2.DrawLatex(0.18,0.5,"Madgraph+Pythia")
 
 
 
@@ -4874,6 +5205,8 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	print 'Creating: ',filename+'pdf/png'
 	c1.Print(filename+'pdf')
 	c1.Print(filename+'png')
+	gDirectory.GetList().Delete()
+
 
 def round_sigfigs(num, sig_figs):
     if num != 0:
@@ -5055,9 +5388,12 @@ def ParseTablesToRecoHistograms():
 	DataRecoStyle=[0,20,1.0,1,1]
 	DataCompStyle=[0,21,1.0,1,6]
 	BlankRecoStyle=[0,21,.00001,1,0]
-	DataUnfoldedStyle=[0,21,0.5,1,1]
-	DataUnfoldedStyle_pseudo=[0,20,0.5,1,9]
-	DataUnfoldedStyle_pseudo2=[0,20,0.5,1,2]
+	DataUnfoldedStyle=[0,21,1,1,1]
+	DataUnfoldedStyle_pseudo=[0,25,1,1,9]
+	DataUnfoldedStyle_pseudoSG=[0,24,1,1,7]
+
+	DataUnfoldedStyle_pseudo2=[0,26,1,1,2]
+	DataUnfoldedStyle_pseudo2SG=[0,32,1,1,6]
 
 	# nstart = 8
 	# nint = -1
@@ -5890,12 +6226,12 @@ def ParseTablesToFinalResults(WRenorm,sel):
 		# 	continue
 		# if 'inc4' not in f:
 		# 	continue
-		# if 'Count' not in f and  'Pt_pfjet1' not in f:
-		# 	continue
-		print f
+		if 'Count' not in f:
+			continue
+		# print f
 		# if ('Pt_pf' not in f and 'Count' not in f) and 'pre' not in f:
 		# 	continue
-		# if 'Pt' not in f or 'jet4' not in f:
+		# if 'Pt' not in f or 'jet3' not in f:
 		# 	continue
 		if 'Vert' in f:
 			continue
@@ -6770,379 +7106,3 @@ print 'Time to completion:',(datetime.now()-startTime)
 
 
 
-
-
-
-# # This creates the final "results"-style plot!
-# def FinalHistoOLD(binning, label, quantity, filename ,expectation_means, expectation_errors, expectation_names, measurement, measurement_error_up, measurement_error_down, normalization,WRenormalization,sel):
-
-# 	c1 = TCanvas("c1","",700,800)
-
-# 	pad1 = TPad( 'pad1', 'pad1', 0.0, 0.31, 1.0, 1.0 )#divide canvas into pads
-# 	pad2 = TPad( 'pad2', 'pad2', 0.0, 0.02, 1.0, 0.31 )
-
-# 	pad1.SetBottomMargin(0.0)
-# 	pad1.SetTopMargin(0.13)
-# 	pad1.SetLeftMargin(0.12)
-# 	pad1.SetRightMargin(0.1)
-
-
-# 	pad2.SetBottomMargin(0.3)
-# 	pad2.SetTopMargin(0.0)
-# 	pad2.SetLeftMargin(0.12)
-# 	pad2.SetRightMargin(0.1)
-
-
-# 	# pad1.SetTopMargin(0)
-
-# 	# pad2.SetBottomMargin(0)
-# 	# pad2.SetTopMargin(0)
-
-
-# 	pad1.Draw()
-# 	pad2.Draw()
-
-# 	# pad1.SetGrid()
-# 	pad1.SetLogy()
-# 	pad1.cd()
-
-# 	gStyle.SetOptStat(0)
-# 	MadGraphStyle=[3254,21,.5,1,4]
-# 	MadGraphSubStyle=[3254,21,.5,1,4]
-
-# 	SherpaStyle=[3254+1001,20,.0000005,1,28]
-
-# 	SherpaRivetStyle=[3254,20,.0000005,1,28]
-# 	# SherpaRivetSubStyle=[3254,22,.9,1,2]
-# 	SherpaRivetSubStyle=[0,32,1.0,1,28]
-# 	BlackHatSubStyle=[0,26,1.0,1,2]
-
-
-# 	# MadGraphRivetSubStyle=[3245,21,.9,1,4]
-# 	MadGraphRivetSubStyle=[0,25,1.0,1,4]
-
-# 	MadGraphAODSubStyle=[0,21,1.0,1,28]
-
-# 	MadGraphRivetStyle=[3245,21,.5,1,4]
-
-# 	DataRecoStyle=[0,20,1.0,1,1]	
-
-# 	# CentralBandStyle = [3001,20,1,1,8]
-# 	# CentralBandStyle = [3001,20,1,1,33]
-# 	CentralBandStyle = [1001,20,1,1,5]
-
-	
-# 	rivetname = (filename.split('/')[-1]).split('FINAL')[0]
-# 	standardname= (filename.split('/')[-1]).split('FINAL')[0]
-# 	# print "USING  VARIABLE:  ",standardname
-
-# 	for x in RivetBranchMap:
-# 		if x[0] in rivetname:
-# 			rivetname = rivetname.replace(x[0],x[1])
-
-# 	for x in GenBranchMap:
-# 		if x[0] in standardname:
-# 			standardname=standardname.replace(x[0],x[1])
-	
-# 	madgraph_NOriginal = float(((RIVETMadGraph.split('/')[-1]).split('NEvents_')[-1]).split('.root')[0])
-# 	sherpa_NOriginal   = float(((RIVETSherpa.split('/')[-1]).split('NEvents_')[-1]).split('.root')[0])
-
-# 	rivetlabel=label	
-	
-# 	nzm = []
-# 	for __m in measurement:
-# 		if __m > 0.000001:
-# 			# print len(nzm)
-# 			if 'preexc' in filename and len(nzm) >= 6:
-# 				continue
-# 			nzm.append(__m) 
-# 			# print nzm
-
-# 	Max = max(nzm)*5.5
-# 	Min = min(nzm)*.4
-# 	# print Min
-
-# 	if normalization==0:
-# 		label = [label, 'Events/Bin']
-# 	else:
-# 		label = [label, '#sigma [pb]']
-# 		Max=Max/normalization
-# 		Min=Min/normalization
-
-# 	# print "MIN", Min	
-
-
-# 	# MadGraph AOD Quick
-# 	name = expectation_names[0]
-# 	mean_value = expectation_means[0]
-# 	plus_errors = expectation_errors[0]
-# 	minus_errors = expectation_errors[0]
-# 	style=MadGraphAODSubStyle
-# 	[Exp,Exp_verbose] = CreateHistoFromLists(binning, name,label, mean_value, plus_errors, minus_errors, style,normalization,"TopPlot")
-
-
-
-# 	for nn in range(6):
-# 		nn+=2
-# 		if 'pfjet'+str(nn) in standardname:
-# 			exec ('sel+=j'+str(nn-1))
-	
-# 	# Get Measured Histo
-# 	name="Measured"
-# 	mean_value = measurement
-# 	plus_errors=measurement_error_up
-# 	minus_errors=measurement_error_down
-# 	style=DataRecoStyle
-# 	[Meas,Meas_verbose] = CreateHistoFromLists(binning, name,label, mean_value, plus_errors, minus_errors, CentralBandStyle,normalization,"TopPlot")
-# 	ndataunf = sum(Meas_verbose[0])
-
-# 	if 'preexc' in filename:
-# 		# print "ABRIDGING LISTS"
-# 		Meas_verbose = AbridgeHistoList(Meas_verbose,6)
-# 		Exp_verbose = AbridgeHistoList(Exp_verbose,6)
-# 		# Get Measured Histo
-# 		name="Measured"
-# 		mean_value = measurement
-# 		plus_errors=measurement_error_up
-# 		minus_errors=measurement_error_down
-# 		[Meas,Meas_verbose_null] = CreateHistoFromLists([6 ,0.5,6.5], name,label, mean_value, plus_errors, minus_errors, CentralBandStyle,normalization,"TopPlot")
-# 		# Min = 0.1*min(mean_value)
-# 		# MadGraph AOD Quick
-# 		name = expectation_names[0]
-# 		mean_value = expectation_means[0]
-# 		plus_errors = expectation_errors[0]
-# 		minus_errors = expectation_errors[0]
-# 		[Exp,Exp_verbose_null] = CreateHistoFromLists([6 ,0.5,6.5], name,label, mean_value, plus_errors, minus_errors, style,normalization,"TopPlot")
-
-
-
-# 	Exp.SetMaximum(Max)
-# 	Exp.SetMinimum(Min)
-
-
-# 	rivetsel = '(evweight)*(mt_mumet>50)*(ptmuon>25)*(abs(etamuon)<2.1)*(ptjet1>30)'
-
-# 	if 'jet1' in standardname or 'inc1' in standardname:
-# 		rivetsel += '*(ptjet1>30)'
-# 	if 'jet2' in standardname or 'inc2' in standardname:
-# 		rivetsel += '*(ptjet2>30)'
-# 	if 'jet3' in standardname or 'inc3' in standardname:
-# 		rivetsel += '*(ptjet3>30)'
-# 	if 'jet4' in standardname or 'inc4' in standardname:
-# 		rivetsel += '*(ptjet4>30)'
-
-# 	if 'inc' in rivetname:
-# 		standardname = 'ht_jet'+rivetname.split('_inc')[1]
-# 		rivetname = rivetname.split('_inc')[0]
-
-# 	# print 'ME:',Meas_verbose, [len(aa) for aa in Meas_verbose]
-
-# 	# Get Rivet Histos
-# 	[[Rivet_MadGraph_Result,Rivet_MadGraph_Result_verbose], rivetrescale] = RivetHisto(RIVETMadGraph,rivetname,binning,rivetsel,rivetlabel,MadGraphRivetSubStyle,madgraph_NOriginal,normalization,ndataunf,quantity,WRenormalization)
-# 	[[Rivet_MadGraphNonHad_Result,Rivet_MadGraphNonHad_Result_verbose], rivetrescalenonhad] = RivetHisto(RIVETMadGraphNonHad,rivetname,binning,rivetsel,rivetlabel,MadGraphRivetSubStyle,madgraph_NOriginal,normalization,ndataunf,quantity,WRenormalization)
-
-# 	# HadRatioPlot(Rivet_MadGraph_Result_verbose,Rivet_MadGraphNonHad_Result_verbose,rivetlabel,binning,filename)
-# 	[[Rivet_Sherpa_Result,Rivet_Sherpa_Result_verbose], sherparescale]    = RivetHisto(RIVETSherpa,  rivetname,binning,rivetsel,rivetlabel,  SherpaRivetSubStyle,sherpa_NOriginal  ,normalization,ndataunf,quantity,WRenormalization)
-
-# 	[[Blackhat_Result,Blackhat_Result_verbose], blackhatrescale]    = BlackHatHisto( rivetname,binning,standardname, rivetlabel, BlackHatSubStyle,quantity,ndataunf,normalization,Rivet_MadGraph_Result_verbose,Rivet_MadGraphNonHad_Result_verbose,True,'BlackHatAll/hists_CT10_r1.0_f1.0')
-# 	[[Blackhat_Result_nocorr,Blackhat_Result_verbose_nocorr], blackhatrescale_nocorr]    = BlackHatHisto( rivetname,binning,standardname, rivetlabel, BlackHatSubStyle,quantity,ndataunf,normalization,Rivet_MadGraph_Result_verbose,Rivet_MadGraph_Result_verbose,True,'BlackHatAll/hists_CT10_r1.0_f1.0')
-# 	[Blackhat_Result_hadwindow,Blackhat_Result_verbose_hadwindow] = CreateWindowFromVerbse([Blackhat_Result_verbose, Blackhat_Result_verbose_nocorr],"BlackhatHadCorr",rivetlabel,BlackHatSubStyle,normalization,"TopPlot",True)	
-
-
-# 	[[Blackhat_Result_sup,Blackhat_Result_verbose_sup], blackhatrescale_sup]    = BlackHatHisto( rivetname,binning,standardname, rivetlabel, BlackHatSubStyle,quantity,ndataunf,normalization,Rivet_MadGraph_Result_verbose,Rivet_MadGraphNonHad_Result_verbose,True,'BlackHatAll/hists_CT10_r2.0_f2.0')
-# 	[[Blackhat_Result_sdown,Blackhat_Result_verbose_sdown], blackhatrescale_sdown]    = BlackHatHisto( rivetname,binning,standardname, rivetlabel, BlackHatSubStyle,quantity,ndataunf,normalization,Rivet_MadGraph_Result_verbose,Rivet_MadGraphNonHad_Result_verbose,True,'BlackHatAll/hists_CT10_r0.5_f0.5')
-
-# 	[[Blackhat_Result_mstw,Blackhat_Result_verbose_mstw], blackhatrescale_mstw]    = BlackHatHisto( rivetname,binning,standardname, rivetlabel, BlackHatSubStyle,quantity,ndataunf,normalization,Rivet_MadGraph_Result_verbose,Rivet_MadGraphNonHad_Result_verbose,True,'BlackHatAll/hists_MSTW2008nlo68cl_r1.0_f1.0')
-# 	[[Blackhat_Result_cteq6,Blackhat_Result_verbose_cteq6], blackhatrescale_cteq6]    = BlackHatHisto( rivetname,binning,standardname, rivetlabel, BlackHatSubStyle,quantity,ndataunf,normalization,Rivet_MadGraph_Result_verbose,Rivet_MadGraphNonHad_Result_verbose,True,'BlackHatAll/hists_cteq6m_r1.0_f1.0')
-
-# 	[Blackhat_Result_scalewindow,Blackhat_Result_verbose_scalewindow] = CreateWindowFromVerbse([Blackhat_Result_verbose, Blackhat_Result_verbose_sup,Blackhat_Result_verbose_sdown],"BlackhatScale",rivetlabel,BlackHatSubStyle,normalization,"TopPlot",False)	
-# 	[Blackhat_Result_pdf,Blackhat_Result_verbose_pdf] = CreateWindowFromVerbse([Blackhat_Result_verbose, Blackhat_Result_verbose_mstw,Blackhat_Result_verbose_cteq6],"BlackhatPDF",rivetlabel,BlackHatSubStyle,normalization,"TopPlot",True)	
-
-# 	[Blackhat_Result_basic,Blackhat_Result_verbose_basic] = MergeErrorsFromVerbse([Blackhat_Result_verbose, Blackhat_Result_verbose_pdf, Blackhat_Result_verbose_hadwindow],"BlackhatBasic",rivetlabel,BlackHatSubStyle,normalization,"TopPlot",False)	
-# 	[Blackhat_Result_basicplusscale,Blackhat_Result_verbose_basicplusscale] = MergeErrorsFromVerbse([Blackhat_Result_verbose_basic, Blackhat_Result_verbose_scalewindow],"BlackhatBasicplusscale",rivetlabel,BlackHatSubStyle,normalization,"TopPlot",False)	
-
-# 	# print 'BH:',Blackhat_Result_verbose_basicplusscale, [len(aa) for aa in Blackhat_Result_verbose_basicplusscale]
-
-# 	# print "MADGRAPH   INT:",Rivet_MadGraph_Result.Integral()
-# 	# print "SHERPA     INT:",Rivet_Sherpa_Result.Integral()
-# 	# print "BLACKHAT   INT:",Blackhat_Result.Integral()
-# 	# print Blackhat_Result_verbose
-
-# 	# Storing stuff...
-# 	fplot = TFile.Open(filename+'root',"RECREATE")
-
-# 	Meas.Write("Meas")
-# 	# Exp.Write("Exp")
-# 	fplot.Close()
-
-# 	flog = open(filename+'_TGraphContent.txt','w')
-# 	flog.write('\n,Meas_verbose = '+str(Meas_verbose)+'\n')
-# 	# flog.write('\n,Exp_verbose = '+str(Exp_verbose)+'\n')
-# 	flog.close()
-
-# 	# print '----  TABLE: ',rivetname
-# 	# print Rivet_MadGraph_Result_verbose
-# 	# print Meas_verbose
-# 	# print ' ------ '
-# 	# Draw Two Rivet Histos and one Measured Histo
-# 	Meas.SetMaximum(Max)
-# 	Meas.SetMinimum(Min)
-# 	Rivet_MadGraph_Result.SetMaximum(Max)
-# 	Rivet_MadGraph_Result.SetMinimum(Min)
-# 	Rivet_Sherpa_Result.SetMaximum(Max)
-# 	Rivet_Sherpa_Result.SetMinimum(Min)		
-# 	# print 'USING MIN',Min
-# 	Blackhat_Result_basicplusscale.SetMinimum(Min)		
-# 	Blackhat_Result_basicplusscale.SetMaximum(Max)		
-
-
-# 	# Meas.SetMarkerSize(0.0001)
-# 	# Meas.SetLineColor(1)
-
-# 	Meas.SetMarkerColor(1)
-# 	Meas.Draw("A2")
-# 	Meas.Draw("PX")
-
-# 	Rivet_MadGraph_Result.Draw("P")
-# 	Rivet_Sherpa_Result.Draw("P")
-# 	Blackhat_Result_basicplusscale.Draw("P")
-
-# 	# print 'MEAS:',Meas_verbose[-1]
-# 	# print 'MG:', Rivet_MadGraph_Result_verbose[-1]
-# 	# print 'Sherpa', Rivet_Sherpa_Result_verbose[-1]
-# 	# print 'BH:', Blackhat_Result_verbose_basicplusscale[-1]
-# 	# Blackhat_Result_basicplusscale.Draw("2")
-
-# 	# Blackhat_Result_basic.Draw("||")
-
-# 	# gPad.Update()
-# 	Blackhat_Result_mstw.SetLineStyle(2)
-# 	Blackhat_Result_cteq6.SetLineStyle(2)
-
-# 	# Blackhat_Result_mstw.Draw("L")
-# 	# Blackhat_Result_cteq6.Draw("L")
-# 	# Exp.Draw("P")
-
-# 	leg = TLegend(0.5,0.68,0.84,0.84,"","brNDC")
-# 	leg.SetTextFont(42)
-# 	leg.SetFillColor(0)
-# 	leg.SetBorderSize(0)
-# 	leg.SetTextSize(.04)
-# 	leg.AddEntry(Meas,"Data");
-# 	leg.AddEntry(Rivet_MadGraph_Result,"MadGraph")
-# 	# leg.AddEntry(Exp,"MadGraph AOD");
-# 	leg.AddEntry(Rivet_Sherpa_Result,"Sherpa")
-# 	leg.AddEntry(Blackhat_Result,"BlackHat+Sherpa")
-
-# 	leg.Draw()
-
-# 	# Stamp on top
-# 	sqrts = "#sqrt{s} = 7 TeV";
-# 	l1=TLatex()
-# 	l1.SetTextAlign(12)
-# 	l1.SetTextFont(42)
-# 	l1.SetNDC()
-# 	l1.SetTextSize(0.05)
-# 	l1.DrawLatex(0.15,0.92,"CMS Preliminary     "+sqrts+"      #int L = 5.0 fb^{-1}")
-# 	# l1.DrawLatex(0.19,0.87,"CMS Preliminary ")
-# 	# l1.DrawLatex(0.19,0.81,sqrts+"  #int L = 5.0 fb^{-1}")
-
-# 	# Labels
-# 	l2=TLatex()
-# 	l2.SetTextAlign(12)
-# 	l2.SetTextFont(42)
-# 	l2.SetNDC()
-# 	l2.SetTextSize(0.05)
-# 	# l2.SetTextAngle(45);	
-# 	# l2.DrawLatex(0.64,0.60,"PRELIMINARY")
-# 	if False:
-# 		# l2.DrawLatex(0.6,0.50,"R_{Rivet} = "+ str(round(rivetrescale,3)))
-# 		l2.DrawLatex(0.64,0.65,"Data/MadGraph = "+ str(round(rivetrescale,3)))
-# 		l2.DrawLatex(0.64,0.57,"Data/Sherpa   = "+ str(round(sherparescale,3)))
-
-
-# 	############################
-# 	### GO TO SUBPLOT        ###
-# 	############################
-# 	pad2.cd()
-# 	pad2.SetGridy()
-# 	pad2.Draw()
-
-# 	[cent1,[cent2up,cent2down]] = CentralRatioBand(Meas_verbose, CentralBandStyle)
-
-# 	# print Meas_verbose
-# 	# print Rivet_Sherpa_Result_verbose
-# 	# print 'Dividing Meas/Sherpa'
-# 	# print Meas_verbose
-# 	# print Rivet_Sherpa_Result_verbose
-# 	[grat2,[grat2up,grat2down]] = DivideTGraphsFlatRel(Meas_verbose,Rivet_Sherpa_Result_verbose,SherpaRivetSubStyle)
-# 	unity=TLine(grat2.GetXaxis().GetXmin(), 1.0 , grat2.GetXaxis().GetXmax(),1.0)
-
-# 	# print 'Dividing Meas/MG RIVET'
-# 	[grat3,[grat3up,grat3down]] = DivideTGraphsFlatRel(Meas_verbose,Rivet_MadGraph_Result_verbose,MadGraphRivetSubStyle)
-# 	# print 'Dividing Meas/BH'
-# 	# print Meas_verbose
-# 	# print Blackhat_Result_verbose
-# 	[grat4,[grat4up,grat4down]] = DivideTGraphsFlatRel(Meas_verbose,Blackhat_Result_verbose_basicplusscale,BlackHatSubStyle)
-# 	# print 'Dividing Meas/BHBasic'
-# 	[grat4b,[grat4bup,grat4bdown]] = DivideTGraphsFlatRel(Meas_verbose,Blackhat_Result_verbose_basic,BlackHatSubStyle)
-
-# 	[grat5,[grat5up,grat5down]] = DivideTGraphsFlatRel(Meas_verbose,Exp_verbose,MadGraphAODSubStyle)
-
-# 	[grat6,[grat6up,grat6down]] = DivideTGraphsFlatRel(Meas_verbose,Blackhat_Result_verbose_mstw,BlackHatSubStyle)
-# 	[grat6b,[grat6bup,grat6bdown]] = DivideTGraphsFlatRel(Meas_verbose,Blackhat_Result_verbose_cteq6,BlackHatSubStyle)
-# 	grat6.SetLineStyle(2)
-# 	grat6b.SetLineStyle(2)
-
-
-# 	if grat3up > grat2up: grat2up = grat3up
-# 	if grat3down < grat2down: grat2down = grat3down
-
-# 	grat2up *= 1.3
-# 	grat2down *= 0.7
-# 	if grat2down < 0 : grat2down = 0
-# 	if grat2up > 5: grat2up = 5
-
-# 	grat2down = 0.501
-# 	grat2up = 1.499
-
-# 	# print 'CENTRAL VALUES:', cent2up,cent2down
-# 	if cent2up > 1.5 or cent2down < 0.5:
-# 		grat2down = 0.001
-# 		grat2up = 1.999		
-	
-# 	cent1.SetMaximum(grat2up)
-# 	cent1.SetMinimum(grat2down)
-# 	cent1.GetXaxis().SetTitle(label[0])
-# 	cent1.GetYaxis().SetTitle("Data/MC")
-# 	cent1.GetXaxis().SetTitleOffset(.73);
-
-# 	cent1.GetYaxis().SetTitleFont(42);
-# 	cent1.GetXaxis().SetTitleSize(.12);
-# 	cent1.GetYaxis().SetTitleSize(.12);
-# 	cent1.GetXaxis().CenterTitle(0);
-# 	cent1.GetYaxis().CenterTitle(1);
-# 	cent1.GetXaxis().SetTitleOffset(0.88);
-# 	cent1.GetYaxis().SetTitleOffset(0.45);
-# 	cent1.GetYaxis().SetLabelSize(.1);
-# 	cent1.GetXaxis().SetLabelSize(.1);
-
-# 	grat2.SetMinimum(grat2down)
-# 	grat2.SetMaximum(grat2up)
-# 	grat3.SetMinimum(grat2down)
-# 	grat3.SetMaximum(grat2up)
-	
-# 	cent1.Draw("A2")
-# 	unity.Draw("SAME")
-# 	grat2.Draw("p")
-# 	grat3.Draw("p")
-# 	grat4.Draw("p")
-# 	# grat4b.Draw("||")
-# 	# grat6.Draw("L")
-# 	# grat6b.Draw("L")
-
-# 	# grat5.Draw("p")
-# 	pad2.RedrawAxis()
-
-# 	c1.Print(filename+'pdf')
-# 	c1.Print(filename+'png')
