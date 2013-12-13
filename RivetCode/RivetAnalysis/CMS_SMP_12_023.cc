@@ -211,7 +211,7 @@ namespace Rivet
 				return 0;
 			}
 
-			void Fill(AIDA::IHistogram1D*& _histJetMult, const double& weight, std::vector<FourMomentum>& finaljet_list)
+			void Fill(AIDA::IHistogram1D*& _histJetMult, const double& weight, std::vector<float>& finaljet_list)
 			{
 				_histJetMult->fill(0, weight);
 				for (size_t i=0 ; i<finaljet_list.size() ; ++i)
@@ -482,7 +482,7 @@ namespace Rivet
 
 
 				if (isWmn) {
-
+					// std::cout<<" ------------------ "<<std::endl;
 					int muind = -1;
 					int nuind=-1;
 					if (fabs(WDecayProducts[0].pdgId()) == 13) muind = 0;
@@ -497,25 +497,44 @@ namespace Rivet
 					_phineutrino = WDecayProducts[nuind].momentum().phi();		
 
 
-					// std::cout<<" ------------------------- "<<std::endl;
 					FourMomentum finalmuon(WDecayProducts[muind].momentum());
-					// std::cout<<AllParticles.size()<<std::endl;
-					// std::cout<<_ptmuon<<std::endl;
+
+					std::vector<fastjet::PseudoJet> input_particles_nonu_dresscleaned;
 
 					for (unsigned int nn = 0; nn<AllParticles.size(); nn++)
 					{
-						unsigned int _nn_pid = 1*(AllParticles[nn].pdgId());
-						if (_nn_pid != 22) continue;
+						unsigned int _nn_pid = abs(AllParticles[nn].pdgId());
 
-						float _nn_pt  = AllParticles[nn].momentum().pT();
-						float _nn_eta = AllParticles[nn].momentum().eta();
-						float _nn_phi = AllParticles[nn].momentum().phi();		
-						double dr = deltaR(AllParticles[nn].momentum(),WDecayProducts[muind].momentum());				
+						const FourMomentum p4 = AllParticles[nn].momentum();
+
+
+						float _nn_pt  = p4.pT();
+						float _nn_eta = p4.eta();
+						float _nn_phi = p4.phi();	
+
+						fastjet::PseudoJet p_seudo = fastjet::PseudoJet(p4.px(), p4.py(), p4.pz(), p4.E());
+						double dr = deltaR(AllParticles[nn].momentum(),WDecayProducts[muind].momentum());	
+
 						// std::cout<<" --- "<<_nn_pid<<"  "<<_nn_pt<<"  "<<_nn_eta<<"  "<<dr<<std::endl;
 						// std::cout<<" --- "<<_nn_pid<<"  |  "<<WDecayProducts[muind].momentum().eta()<<"  "<<_nn_eta<<"  |  "<<WDecayProducts[muind].momentum().phi()<<"  "<<_nn_phi<<"  |  "<<dr<<std::endl;
+						
 
-						if (dr<0.1) finalmuon = add(finalmuon,AllParticles[nn].momentum());
+
+						if ((_nn_pid == 22) && (dr<0.1)) finalmuon = add(finalmuon,AllParticles[nn].momentum());
+
+						bool keep_part_for_jet = true;
+						if ((_nn_pid == 22) && (dr<0.1)) keep_part_for_jet = false;
+						if ((_nn_pid == 12)||(_nn_pid == 14)||(_nn_pid == 16)) keep_part_for_jet = false;
+						if ((_nn_pid == 13) && (dr<0.01) ) keep_part_for_jet = false;
+
+						// if ((keep_part_for_jet == true) && (_nn_pid == 13)) std::cout<<_nn_pid<<"  "<<dr<<std::endl;
+						// if ((keep_part_for_jet == true) && (_nn_pid == 13)) std::cout<<_nn_pt<<"  "<<_nn_eta<<"  "<<_nn_phi<<"  "<<std::endl;
+						// if ((keep_part_for_jet == true) && (_nn_pid == 13)) std::cout<<WDecayProducts[muind].momentum().pT()<<"  "<<WDecayProducts[muind].momentum().eta()<<"  "<<WDecayProducts[muind].momentum().phi()<<"  "<<std::endl;
+
 						// if (dr<0.1) std::cout<<"  !!!!!"<<std::endl;
+
+				        if (keep_part_for_jet) input_particles_nonu_dresscleaned.push_back(p_seudo);
+
 
 					}
 
@@ -528,21 +547,27 @@ namespace Rivet
 
 
 					//Obtain the jets.
-					vector<FourMomentum> finaljet_list;
+					vector<float> finaljet_pT_list;
+					vector<float> finaljet_eta_list;
+					vector<float> finaljet_phi_list;
+
 					vector<int> finaljet_list_btags;
-					vector<FourMomentum> finalBjet_list;
+					// vector<FourMomentum> finalBjet_list;
 
 
-					// std::cout<<" ------------------- "<<std::endl;
-					//foreach (const Jet& j, applyProjection<JetAlg>(event, "ANTIKT").jetsByPt(40.0*GeV))
-					foreach (const Jet& j, applyProjection<FastJets>(event, "Jets").jetsByPt(30.0*GeV))
-					{
-						double jeta = j.momentum().eta();
-						double jphi = j.momentum().phi();
-						double jpt = j.momentum().pT();
-						
+				  	fastjet::ClusterSequence cseq(input_particles_nonu_dresscleaned, fastjet::JetDefinition(fastjet:: antikt_algorithm, 0.5));
+  					vector<fastjet::PseudoJet> jets_filtered = sorted_by_pt(cseq.inclusive_jets(0.0));	
+
+					
+				    for (unsigned int ij = 0; ij < jets_filtered.size(); ij++)
+				    {
+					    double jeta = jets_filtered[ij].eta();
+					    double jpt = jets_filtered[ij].perp();
+					    double jphi = jets_filtered[ij].phi();
+
 						if ((fabs(jeta) < 2.4) && (jpt>30))
 						{
+							// std::cout<<jpt<<"  "<<jeta<<"  "<<jphi<<std::endl;
 							
 							double leta = finalmuon.eta();
 							double lphi = finalmuon.phi();
@@ -550,51 +575,41 @@ namespace Rivet
 
 							if( ((leta-jeta)*(leta-jeta) + (delta_phi*delta_phi)) > 0.5*0.5  )
 							{
-								finaljet_list.push_back(j.momentum());
-								_htjets += fabs(1.0*(j.momentum()).pT());
-
-								if (j.containsBottom())
-								{	
-									finalBjet_list.push_back(j.momentum());
-									finaljet_list_btags.push_back(1);
-								}
-								else
-								{
-									finaljet_list_btags.push_back(0);
-								}	
-								// std::cout<<"   "<<jpt<<std::endl;
+								finaljet_pT_list.push_back(jpt);
+								finaljet_eta_list.push_back(jeta);
+								finaljet_phi_list.push_back(jphi);
+								_htjets += fabs(jpt);
 							}
-							
 						}
 					}
 
+
+
 					//Multiplicity plots.
-					if(isWen)Fill(_histJetMultWelec, weight, finaljet_list);
-					if(isWmn)Fill(_histJetMultWmu, weight, finaljet_list);
-					if(isWmnPlus)Fill(_histJetMultWmuPlus, weight, finaljet_list);
-					if(isWmnMinus)Fill(_histJetMultWmuMinus, weight, finaljet_list);
-					if(isWenPlus)Fill(_histJetMultWelPlus, weight, finaljet_list);
-					if(isWenMinus)Fill(_histJetMultWelMinus, weight, finaljet_list);
-					if(isZee)Fill(_histJetMultZelec, weight, finaljet_list);
-					if(isZmm)Fill(_histJetMultZmu, weight, finaljet_list);
+					if(isWen)Fill(_histJetMultWelec, weight, finaljet_pT_list);
+					if(isWmn)Fill(_histJetMultWmu, weight, finaljet_pT_list);
+					if(isWmnPlus)Fill(_histJetMultWmuPlus, weight, finaljet_pT_list);
+					if(isWmnMinus)Fill(_histJetMultWmuMinus, weight, finaljet_pT_list);
+					if(isWenPlus)Fill(_histJetMultWelPlus, weight, finaljet_pT_list);
+					if(isWenMinus)Fill(_histJetMultWelMinus, weight, finaljet_pT_list);
+					if(isZee)Fill(_histJetMultZelec, weight, finaljet_pT_list);
+					if(isZmm)Fill(_histJetMultZmu, weight, finaljet_pT_list);
 
 					//if((isWmn)&&(finaljet_list.size()>=1)) std::cout<<finaljet_list[0].pT()<<std::endl;
-					if((isWmn)&&(finaljet_list.size()>=1)) FillWithValue(_histJetPT1Wmu,weight,finaljet_list[0].pT());
-					if((isWmn)&&(finaljet_list.size()>=2)) FillWithValue(_histJetPT2Wmu,weight,finaljet_list[1].pT());
-					if((isWmn)&&(finaljet_list.size()>=3)) FillWithValue(_histJetPT3Wmu,weight,finaljet_list[2].pT());
-					if((isWmn)&&(finaljet_list.size()>=4)) FillWithValue(_histJetPT4Wmu,weight,finaljet_list[3].pT());
+					if((isWmn)&&(finaljet_pT_list.size()>=1)) FillWithValue(_histJetPT1Wmu,weight,finaljet_pT_list[0]);
+					if((isWmn)&&(finaljet_pT_list.size()>=2)) FillWithValue(_histJetPT2Wmu,weight,finaljet_pT_list[1]);
+					if((isWmn)&&(finaljet_pT_list.size()>=3)) FillWithValue(_histJetPT3Wmu,weight,finaljet_pT_list[2]);
+					if((isWmn)&&(finaljet_pT_list.size()>=4)) FillWithValue(_histJetPT4Wmu,weight,finaljet_pT_list[3]);
 
-					if((isWmn)&&(finaljet_list.size()>=1)) FillWithValue(_histJetETA1Wmu,weight,finaljet_list[0].eta());
-					if((isWmn)&&(finaljet_list.size()>=2)) FillWithValue(_histJetETA2Wmu,weight,finaljet_list[1].eta());
-					if((isWmn)&&(finaljet_list.size()>=3)) FillWithValue(_histJetETA3Wmu,weight,finaljet_list[2].eta());
-					if((isWmn)&&(finaljet_list.size()>=4)) FillWithValue(_histJetETA4Wmu,weight,finaljet_list[3].eta());
+					if((isWmn)&&(finaljet_pT_list.size()>=1)) FillWithValue(_histJetETA1Wmu,weight,finaljet_eta_list[0]);
+					if((isWmn)&&(finaljet_pT_list.size()>=2)) FillWithValue(_histJetETA2Wmu,weight,finaljet_eta_list[1]);
+					if((isWmn)&&(finaljet_pT_list.size()>=3)) FillWithValue(_histJetETA3Wmu,weight,finaljet_eta_list[2]);
+					if((isWmn)&&(finaljet_pT_list.size()>=4)) FillWithValue(_histJetETA4Wmu,weight,finaljet_eta_list[3]);
 
 
-					_njet_WMuNu = finaljet_list.size();
-					_nBjet_WMuNu = finalBjet_list.size();
+					_njet_WMuNu = finaljet_pT_list.size();
+					// _nBjet_WMuNu = finalBjet_list.size();
 					//std::cout<<_njet_WMuNu<<" "<<_nBjet_WMuNu<<std::endl;
-
-
 
 
     			  	const MissingMomentum& met = applyProjection<MissingMomentum>(event, "MET");
@@ -609,43 +624,43 @@ namespace Rivet
 					// std::cout<<_mt_munu<<"  "<<_mt_mumet<<std::endl;
 					// std::cout<<"   ------------    "<<std::endl;
 
-					if (finaljet_list.size()>0){
-						_ptjet1=finaljet_list[0].pT();
-						_etajet1=finaljet_list[0].eta();
-						_phijet1=finaljet_list[0].phi();
-						_isBjet1=finaljet_list_btags[0];
+					if (finaljet_pT_list.size()>0){
+						_ptjet1=finaljet_pT_list[0];
+						_etajet1=finaljet_eta_list[0];
+						_phijet1=finaljet_phi_list[0];
+						// _isBjet1=finaljet_list_btags[0];
 						_dphijet1muon = DeltaPhi(_phijet1,_phimuon);
 					}
 
-					if (finaljet_list.size()>1){
-						_ptjet2=finaljet_list[1].pT();
-						_etajet2=finaljet_list[1].eta();
-						_phijet2=finaljet_list[1].phi();
-						_isBjet2=finaljet_list_btags[1];
+					if (finaljet_pT_list.size()>1){
+						_ptjet2=finaljet_pT_list[1];
+						_etajet2=finaljet_eta_list[1];
+						_phijet2=finaljet_phi_list[1];
+						// _isBjet2=finaljet_list_btags[1];
 						_dphijet2muon = DeltaPhi(_phijet2,_phimuon);
 					}
 
-					if (finaljet_list.size()>2){
-						_ptjet3=finaljet_list[2].pT();
-						_etajet3=finaljet_list[2].eta();
-						_phijet3=finaljet_list[2].phi();
-						_isBjet3=finaljet_list_btags[2];
+					if (finaljet_pT_list.size()>2){
+						_ptjet3=finaljet_pT_list[2];
+						_etajet3=finaljet_eta_list[2];
+						_phijet3=finaljet_phi_list[2];
+						// _isBjet3=finaljet_list_btags[2];
 						_dphijet3muon = DeltaPhi(_phijet3,_phimuon);
 					}
 
-					if (finaljet_list.size()>3){
-						_ptjet4=finaljet_list[3].pT();
-						_etajet4=finaljet_list[3].eta();
-						_phijet4=finaljet_list[3].phi();
-						_isBjet4=finaljet_list_btags[3];
+					if (finaljet_pT_list.size()>3){
+						_ptjet4=finaljet_pT_list[3];
+						_etajet4=finaljet_eta_list[3];
+						_phijet4=finaljet_phi_list[3];
+						// _isBjet4=finaljet_list_btags[3];
 						_dphijet4muon = DeltaPhi(_phijet4,_phimuon);
 					}
 
-					if (finaljet_list.size()>4){
-						_ptjet5=finaljet_list[4].pT();
-						_etajet5=finaljet_list[4].eta();
-						_phijet5=finaljet_list[4].phi();
-						_isBjet5=finaljet_list_btags[4];
+					if (finaljet_pT_list.size()>4){
+						_ptjet5=finaljet_pT_list[4];
+						_etajet5=finaljet_eta_list[4];
+						_phijet5=finaljet_phi_list[4];
+						// _isBjet5=finaljet_list_btags[4];
 						_dphijet5muon = DeltaPhi(_phijet5,_phimuon);
 					}
 				//	std::cout<<_dphijet1muon<<" "<<_dphijet2muon<<" "<<_dphijet3muon<<" "<<_dphijet4muon<<" "<<_dphijet5muon<<" "<<std::endl;
