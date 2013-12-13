@@ -4,7 +4,7 @@ import sys
 os.system('rm -r outdir')
 os.system('mkdir outdir')
 pwd = (os.popen('pwd').readlines()[0]).replace('\n','')
-src = pwd.split('/src')[0] + '/src'
+cmssrc = pwd.split('RivetCode')[0] + 'RivetCode/CMSSW_5_0_0/src'
 
 flist = 'lhefiles.txt'
 
@@ -26,7 +26,7 @@ def MakeConfig(inputconfig,num,NN,files):
 	oc.close()
 	bname  = (ocname.replace('outdir/','outdir/subber_')).replace('.py','.tcsh')
 	batcher = open(bname,'w')
-	batcher.write('#!/bin/tcsh\n\ncd '+src+'\ncmsenv\ncd -\ncp '+pwd+'/'+ocname+' .\n')
+	batcher.write('#!/bin/tcsh\n\ncd '+cmssrc+'\ncmsenv\ncd -\ncp '+pwd+'/'+ocname+' .\n')
 	qfile = outputfile
 	batcher.write('cmsRun '+ocname.split('/')[-1]+'\n')
 	batcher.write('echo "running completed"\nmv rivetTree.root '+qfile+'\necho "renaming completed"\ncp '+qfile+' '+pwd+'/outdir/\necho "copy completed"\n\n')
@@ -57,6 +57,7 @@ for line in (filesets):
 	line = line.replace(',\n','')
 	n = 100000*nmax
 	bsub = MakeConfig('Rivet_WJets_FromCentralGen.py',num,n,line)
+	print bsub
 	os.system(bsub)
 	os.system('sleep 0.4')
 
