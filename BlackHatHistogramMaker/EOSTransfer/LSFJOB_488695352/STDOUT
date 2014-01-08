@@ -1,0 +1,33 @@
+@(#)CERN job starter $Date: 2010/06/23 14:22:16 $
+Working directory is </pool/lsf/darinb/488695352> on <lxbrb0902.cern.ch>
+
+[xrootd] Total 0.13 MB	|====================| 100.00 % [6.3 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [5.1 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [69.3 MB/s]
+[xrootd] Total 0.01 MB	|====================| 100.00 % [1.6 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [4.8 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [0.8 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [9.3 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [69.4 MB/s]
+[xrootd] Total 0.01 MB	|====================| 100.00 % [0.5 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [27.7 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [46.1 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [7.3 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [6.0 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [4.6 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [46.1 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [68.9 MB/s]
+[xrootd] Total 0.01 MB	|====================| 100.00 % [7.8 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [4.9 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [34.7 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [46.2 MB/s]
+
+Job finished at Tue Jan  7 23:17:05 CET 2014 on node 
+ under linux version Scientific Linux CERN SLC release 5.10 (Boron)
+
+
+CERN statistics: This job used 0:00:07 NCU hours (7 NCU seconds)
+
+CERN statistics: This job used 0:00:07 KSI2K hours (7 KSI2K seconds)
+
+KSI2K = kilo-SpecInt2000 benchmark units = 1.00 NCU

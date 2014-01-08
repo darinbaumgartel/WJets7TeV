@@ -1,0 +1,53 @@
+@(#)CERN job starter $Date: 2010/06/23 14:22:16 $
+Working directory is </pool/lsf/darinb/488911375> on <lxbsq2027.cern.ch>
+
+Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_78b2d9.root; Disk quota exceeded')
+Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_78b2d9.root
+Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_795d4e.root; Disk quota exceeded')
+Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_795d4e.root
+Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_7a3e71.root; Disk quota exceeded')
+Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_7a3e71.root
+Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_7e5c3d.root; Disk quota exceeded')
+Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_7e5c3d.root
+Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_81ba72.root; Disk quota exceeded')
+Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_81ba72.root
+Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_89ee45.root; Disk quota exceeded')
+Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_89ee45.root
+Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_c9d62f.root; Disk quota exceeded')
+Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_c9d62f.root
+Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_d2e33c.root; Disk quota exceeded')
+Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_d2e33c.root
+Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_d734d4.root; Disk quota exceeded')
+Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_d734d4.root
+Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_e2359e.root; Disk quota exceeded')
+Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_e2359e.root
+Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_e6acce.root; Disk quota exceeded')
+Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_e6acce.root
+Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_eb4ffd.root; Disk quota exceeded')
+Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_eb4ffd.root
+Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_f2c8d0.root; Disk quota exceeded')
+Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_f2c8d0.root
+Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_f449d8.root; Disk quota exceeded')
+Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_f449d8.root
+Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_f6314d.root; Disk quota exceeded')
+Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_f6314d.root
+Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_f6fac7.root; Disk quota exceeded')
+Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R005/Wp4j_7TeV_R005_Et25.GeV_f6fac7.root
+Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_481354.root; Disk quota exceeded')
+Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_481354.root
+Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_4823a8.root; Disk quota exceeded')
+Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_4823a8.root
+Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_483bef.root; Disk quota exceeded')
+Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_483bef.root
+Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_4842ba.root; Disk quota exceeded')
+Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_4842ba.root
+
+Job finished at Wed Jan  8 17:32:26 CET 2014 on node 
+ under linux version Scientific Linux CERN SLC release 5.10 (Boron)
+
+
+CERN statistics: This job used 0:00:08 NCU hours (8 NCU seconds)
+
+CERN statistics: This job used 0:00:08 KSI2K hours (8 KSI2K seconds)
+
+KSI2K = kilo-SpecInt2000 benchmark units = 1.00 NCU

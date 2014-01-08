@@ -1,0 +1,53 @@
+@(#)CERN job starter $Date: 2010/06/23 14:22:16 $
+Working directory is </pool/lsf/darinb/488752626> on <lxbra4108.cern.ch>
+
+xrdcp: Copy from c2cmssrv101.cern.ch failed on open!
+xrdcp: Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_5416f3.root; Invalid argument
+xrdcp: Copy from c2cmssrv101.cern.ch failed on open!
+xrdcp: Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_5425ea.root; Invalid argument
+xrdcp: Copy from c2cmssrv301.cern.ch failed on open!
+xrdcp: Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_543d49.root; Invalid argument
+xrdcp: Copy from c2cmssrv301.cern.ch failed on open!
+xrdcp: Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_544885.root; Invalid argument
+xrdcp: Copy from c2cmssrv301.cern.ch failed on open!
+xrdcp: Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_545794.root; Invalid argument
+xrdcp: Copy from c2cmssrv201.cern.ch failed on open!
+xrdcp: Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_54831d.root; Invalid argument
+xrdcp: Copy from c2cmssrv101.cern.ch failed on open!
+xrdcp: Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_54a3c0.root; Invalid argument
+xrdcp: Copy from c2cmssrv201.cern.ch failed on open!
+xrdcp: Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_54a8bd.root; Invalid argument
+xrdcp: Copy from c2cmssrv301.cern.ch failed on open!
+xrdcp: Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_54b869.root; Invalid argument
+xrdcp: Copy from c2cmssrv201.cern.ch failed on open!
+xrdcp: Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_54c5b0.root; Invalid argument
+xrdcp: Copy from c2cmssrv101.cern.ch failed on open!
+xrdcp: Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_54f1dc.root; Invalid argument
+xrdcp: Copy from c2cmssrv101.cern.ch failed on open!
+xrdcp: Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_54f2d0.root; Invalid argument
+xrdcp: Copy from c2cmssrv101.cern.ch failed on open!
+xrdcp: Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_550183.root; Invalid argument
+xrdcp: Copy from c2cmssrv101.cern.ch failed on open!
+xrdcp: Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_5516d8.root; Invalid argument
+xrdcp: Copy from c2cmssrv301.cern.ch failed on open!
+xrdcp: Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_55194b.root; Invalid argument
+xrdcp: Copy from c2cmssrv301.cern.ch failed on open!
+xrdcp: Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_5527de.root; Invalid argument
+xrdcp: Copy from c2cmssrv201.cern.ch failed on open!
+xrdcp: Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_5543bb.root; Invalid argument
+xrdcp: Copy from c2cmssrv101.cern.ch failed on open!
+xrdcp: Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_554fd9.root; Invalid argument
+xrdcp: Copy from c2cmssrv301.cern.ch failed on open!
+xrdcp: Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_5562ae.root; Invalid argument
+xrdcp: Copy from c2cmssrv201.cern.ch failed on open!
+xrdcp: Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_558513.root; Invalid argument
+
+Job finished at Wed Jan  8 03:57:29 CET 2014 on node 
+ under linux version Scientific Linux CERN SLC release 5.10 (Boron)
+
+
+CERN statistics: This job used 0:00:08 NCU hours (8 NCU seconds)
+
+CERN statistics: This job used 0:00:08 KSI2K hours (8 KSI2K seconds)
+
+KSI2K = kilo-SpecInt2000 benchmark units = 1.00 NCU

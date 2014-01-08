@@ -1,0 +1,84 @@
+#! /bin/sh
+
+$LSB_TRAPSIGS
+$LSB_RCP1
+$LSB_RCP2
+$LSB_RCP3
+# LSBATCH: User input
+( cat <<_USER_\SCRIPT_
+#!/bin/tcsh
+
+xrdcp "root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_aa0f7f.root" root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_aa0f7f.root
+ 
+
+xrdcp "root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_aa486d.root" root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_aa486d.root
+ 
+
+xrdcp "root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_aab578.root" root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_aab578.root
+ 
+
+xrdcp "root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_ac3562.root" root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_ac3562.root
+ 
+
+xrdcp "root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_ac35e1.root" root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_ac35e1.root
+ 
+
+xrdcp "root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_ad0415.root" root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_ad0415.root
+ 
+
+xrdcp "root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_ad4ccc.root" root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_ad4ccc.root
+ 
+
+xrdcp "root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_addb73.root" root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_addb73.root
+ 
+
+xrdcp "root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_ae6ae0.root" root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_ae6ae0.root
+ 
+
+xrdcp "root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_ae9731.root" root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_ae9731.root
+ 
+
+xrdcp "root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_aef81c.root" root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_aef81c.root
+ 
+
+xrdcp "root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_aefb8a.root" root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_aefb8a.root
+ 
+
+xrdcp "root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_af4b16.root" root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_af4b16.root
+ 
+
+xrdcp "root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_afd632.root" root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_afd632.root
+ 
+
+xrdcp "root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_b0c021.root" root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_b0c021.root
+ 
+
+xrdcp "root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_b0c5cc.root" root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_b0c5cc.root
+ 
+
+xrdcp "root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_b0d189.root" root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_b0d189.root
+ 
+
+xrdcp "root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_b29004.root" root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_b29004.root
+ 
+
+xrdcp "root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_b291ae.root" root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_b291ae.root
+ 
+
+xrdcp "root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_b2c91e.root" root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wm3j/7TeV/V001/Wm3j_7TeV_V001_Et25.GeV_b2c91e.root
+ 
+
+
+_USER_SCRIPT_
+) > $LSB_CHKFILENAME.shell
+chmod u+x $LSB_CHKFILENAME.shell
+/usr/local/lsf/etc/job_starter '$LSB_JOBFILENAME.shell'
+saveExit=$?
+/bin/rm -f $LSB_JOBFILENAME.shell
+(exit $saveExit)
+
+ExitStat=$?
+wait
+# LSBATCH: End user input
+true
+exit `expr $? "|" $ExitStat`

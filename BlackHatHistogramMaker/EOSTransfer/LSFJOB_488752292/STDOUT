@@ -1,0 +1,37 @@
+@(#)CERN job starter $Date: 2010/06/23 14:22:16 $
+Working directory is </pool/lsf/darinb/488752292> on <lxbsq0906.cern.ch>
+
+[xrootd] Total 0.13 MB	|====================| 100.00 % [9.2 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [2.0 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [1.4 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [1.6 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [6.9 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [1.8 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [1.2 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [1.5 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [3.9 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [1.1 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [1.6 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [1.4 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [1.5 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [1.1 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [1.2 MB/s]
+[xrootd] Total 0.13 MB	|====================| 100.00 % [2.1 MB/s]
+Last server error 3005 ('Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wm4j/7TeV/V001/Wm4j_7TeV_V001_Et25.GeV_e703ba.root; Invalid argument')
+Error accessing path/file for root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wm4j/7TeV/V001/Wm4j_7TeV_V001_Et25.GeV_e703ba.root
+Last server error 3005 ('Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wm4j/7TeV/V001/Wm4j_7TeV_V001_Et25.GeV_e79503.root; Invalid argument')
+Error accessing path/file for root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wm4j/7TeV/V001/Wm4j_7TeV_V001_Et25.GeV_e79503.root
+Last server error 3005 ('Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wm4j/7TeV/V001/Wm4j_7TeV_V001_Et25.GeV_e7be8c.root; Invalid argument')
+Error accessing path/file for root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wm4j/7TeV/V001/Wm4j_7TeV_V001_Et25.GeV_e7be8c.root
+Last server error 3005 ('Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wm4j/7TeV/V001/Wm4j_7TeV_V001_Et25.GeV_e826ae.root; Invalid argument')
+Error accessing path/file for root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wm4j/7TeV/V001/Wm4j_7TeV_V001_Et25.GeV_e826ae.root
+
+Job finished at Wed Jan  8 03:57:03 CET 2014 on node 
+ under linux version Scientific Linux CERN SLC release 5.10 (Boron)
+
+
+CERN statistics: This job used 0:00:07 NCU hours (7 NCU seconds)
+
+CERN statistics: This job used 0:00:07 KSI2K hours (7 KSI2K seconds)
+
+KSI2K = kilo-SpecInt2000 benchmark units = 1.00 NCU

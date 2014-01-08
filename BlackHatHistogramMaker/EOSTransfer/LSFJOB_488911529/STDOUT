@@ -1,0 +1,53 @@
+@(#)CERN job starter $Date: 2010/06/23 14:22:16 $
+Working directory is </pool/lsf/darinb/488911529> on <lxbrd22c03.cern.ch>
+
+xrdcp: Copy to eoscmssrv1.cern.ch failed on open!
+xrdcp: Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_e3b9f2.root; Disk quota exceeded
+xrdcp: Copy to eoscmssrv1.cern.ch failed on open!
+xrdcp: Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_e3d584.root; Disk quota exceeded
+xrdcp: Copy to eoscmssrv1.cern.ch failed on open!
+xrdcp: Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_e418a9.root; Disk quota exceeded
+xrdcp: Copy to eoscmssrv1.cern.ch failed on open!
+xrdcp: Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_e41906.root; Disk quota exceeded
+xrdcp: Copy to eoscmssrv1.cern.ch failed on open!
+xrdcp: Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_e43db2.root; Disk quota exceeded
+xrdcp: Copy to eoscmssrv1.cern.ch failed on open!
+xrdcp: Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_e4422b.root; Disk quota exceeded
+xrdcp: Copy to eoscmssrv1.cern.ch failed on open!
+xrdcp: Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_e47aa5.root; Disk quota exceeded
+xrdcp: Copy to eoscmssrv1.cern.ch failed on open!
+xrdcp: Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_e48153.root; Disk quota exceeded
+xrdcp: Copy to eoscmssrv1.cern.ch failed on open!
+xrdcp: Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_e48d82.root; Disk quota exceeded
+xrdcp: Copy to eoscmssrv1.cern.ch failed on open!
+xrdcp: Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_e4a096.root; Disk quota exceeded
+xrdcp: Copy to eoscmssrv1.cern.ch failed on open!
+xrdcp: Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_e4bddb.root; Disk quota exceeded
+xrdcp: Copy to eoscmssrv1.cern.ch failed on open!
+xrdcp: Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_e4bf5f.root; Disk quota exceeded
+xrdcp: Copy to eoscmssrv1.cern.ch failed on open!
+xrdcp: Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_e4e539.root; Disk quota exceeded
+xrdcp: Copy to eoscmssrv1.cern.ch failed on open!
+xrdcp: Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_e4fe9d.root; Disk quota exceeded
+xrdcp: Copy to eoscmssrv1.cern.ch failed on open!
+xrdcp: Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_e521c5.root; Disk quota exceeded
+xrdcp: Copy to eoscmssrv1.cern.ch failed on open!
+xrdcp: Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_e541ce.root; Disk quota exceeded
+xrdcp: Copy to eoscmssrv1.cern.ch failed on open!
+xrdcp: Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_e55185.root; Disk quota exceeded
+xrdcp: Copy to eoscmssrv1.cern.ch failed on open!
+xrdcp: Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_e558f6.root; Disk quota exceeded
+xrdcp: Copy to eoscmssrv1.cern.ch failed on open!
+xrdcp: Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_e56aa2.root; Disk quota exceeded
+xrdcp: Copy to eoscmssrv1.cern.ch failed on open!
+xrdcp: Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/V001/Wp4j_7TeV_V001_Et25.GeV_e59cbb.root; Disk quota exceeded
+
+Job finished at Wed Jan  8 17:34:50 CET 2014 on node 
+ under linux version Scientific Linux CERN SLC release 5.10 (Boron)
+
+
+CERN statistics: This job used 0:00:07 NCU hours (7 NCU seconds)
+
+CERN statistics: This job used 0:00:07 KSI2K hours (7 KSI2K seconds)
+
+KSI2K = kilo-SpecInt2000 benchmark units = 1.00 NCU
