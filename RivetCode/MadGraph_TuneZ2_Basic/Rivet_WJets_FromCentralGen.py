@@ -21,8 +21,8 @@ process.load('Configuration.StandardSequences.EndOfProcess_cff')
 process.load('Configuration.StandardSequences.FrontierConditions_GlobalTag_cff')
 process.load('Configuration.EventContent.EventContent_cff')
 
-process.MessageLogger.cerr.FwkReport.reportEvery = 100
-process.MessageLogger.cerr.default.limit = 10
+process.MessageLogger.cerr.FwkReport.reportEvery = 1000
+process.MessageLogger.cerr.default.limit = 100
 
 process.maxEvents = cms.untracked.PSet(
     input = cms.untracked.int32(-1)

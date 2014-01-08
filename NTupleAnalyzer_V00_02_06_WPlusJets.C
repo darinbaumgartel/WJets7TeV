@@ -1725,14 +1725,39 @@ void placeholder::Loop()
 			}
 
 
+			// TESTING ONLY 
+
+			bool HasMuFromTau = false;
+			bool HasMuFromW = false;
+			bool HasMu = false;
+			bool HasS1Mu =false;
+
+
+			for(unsigned int ip = 0; ip != GenParticlePdgId->size(); ++ip)
+			{
+				int pdgId = GenParticlePdgId->at(ip);
+				int status = GenParticleStatus->at(ip);
+				int mot = GenParticleMotherIndex->at(ip);
+				if ((abs(pdgId)==13)) HasMu = true;
+				if ((abs(pdgId)==13) && (abs(mot)==15)) HasMuFromTau = true;
+				if ((abs(pdgId)==13)&&(abs(mot)==24)) HasMuFromW = true;
+				if ((abs(pdgId)==13)&&(abs(status)==1)) HasS1Mu = true;
+
+
+			}
+			// if (HasMu)			std::cout<<HasMuFromW<<"  "<<HasS1Mu<<"  "<<HasMuFromTau<<"  "<<std::endl;
+
+
+
 
 			for(unsigned int ip = 0; ip != GenParticlePdgId->size(); ++ip)
 			{
 				int pdgId = GenParticlePdgId->at(ip);
 				int status = GenParticleStatus->at(ip);
 
-				// Store dressed muons for MadGraph
-				if ( (!IsSherpa) &&  TMath::Abs(pdgId) == 713 ) // PDGID 713 is made up - for dressed muon
+
+				// Store dressed muons for W MadGraph MC
+				if ( (!IsSherpa) &&  TMath::Abs(pdgId) == 713 &&  HasMuFromW) // PDGID 713 is made up - for dressed muon
 				{
 					TLorentzVector thisgenmuon;
 					thisgenmuon.SetPtEtaPhiM(GenParticlePt->at(ip),GenParticleEta->at(ip),GenParticlePhi->at(ip),0.0);
@@ -1748,10 +1773,11 @@ void placeholder::Loop()
 					if (KeepMuon==true) GenMuons.push_back(thisgenmuon);
 				}
 
-				// Store status 3 regular munos for Sherpa
-				if ( (IsSherpa) &&  TMath::Abs(pdgId) == 13 && abs(status) == 3)
-				{
 
+
+				// Store status 3 regular munos for Sherpa
+				if ( (IsSherpa) &&  TMath::Abs(pdgId) == 713 && (!HasMuFromTau))
+				{
 					TLorentzVector thisgenmuon;
 					thisgenmuon.SetPtEtaPhiM(GenParticlePt->at(ip),GenParticleEta->at(ip),GenParticlePhi->at(ip),0.0);
 
@@ -1760,11 +1786,47 @@ void placeholder::Loop()
 					{
 						if ( (GenMuons[igenmuon].Pt() == thisgenmuon.Pt())&&(GenMuons[igenmuon].Eta() == thisgenmuon.Eta())&&(GenMuons[igenmuon].Phi() == thisgenmuon.Phi()) )
 						{
-							KeepMuon=false;// Check for duplicate muons
+							KeepMuon=false; // Check for duplicate muons
 						}
 					}
 					if (KeepMuon==true) GenMuons.push_back(thisgenmuon);
 				}
+
+
+				// // Store dressed muons for MadGraph
+				// if ( (!IsSherpa) &&  TMath::Abs(pdgId) == 713 ) // PDGID 713 is made up - for dressed muon
+				// {
+				// 	TLorentzVector thisgenmuon;
+				// 	thisgenmuon.SetPtEtaPhiM(GenParticlePt->at(ip),GenParticleEta->at(ip),GenParticlePhi->at(ip),0.0);
+
+				// 	bool KeepMuon=true;
+				// 	for(unsigned int igenmuon = 0; igenmuon != GenMuons.size(); ++igenmuon)
+				// 	{
+				// 		if ( (GenMuons[igenmuon].Pt() == thisgenmuon.Pt())&&(GenMuons[igenmuon].Eta() == thisgenmuon.Eta())&&(GenMuons[igenmuon].Phi() == thisgenmuon.Phi()) )
+				// 		{
+				// 			KeepMuon=false; // Check for duplicate muons
+				// 		}
+				// 	}
+				// 	if (KeepMuon==true) GenMuons.push_back(thisgenmuon);
+				// }
+
+				// // Store status 3 regular munos for Sherpa
+				// if ( (IsSherpa) &&  TMath::Abs(pdgId) == 13 && abs(status) == 3)
+				// {
+
+				// 	TLorentzVector thisgenmuon;
+				// 	thisgenmuon.SetPtEtaPhiM(GenParticlePt->at(ip),GenParticleEta->at(ip),GenParticlePhi->at(ip),0.0);
+
+				// 	bool KeepMuon=true;
+				// 	for(unsigned int igenmuon = 0; igenmuon != GenMuons.size(); ++igenmuon)
+				// 	{
+				// 		if ( (GenMuons[igenmuon].Pt() == thisgenmuon.Pt())&&(GenMuons[igenmuon].Eta() == thisgenmuon.Eta())&&(GenMuons[igenmuon].Phi() == thisgenmuon.Phi()) )
+				// 		{
+				// 			KeepMuon=false;// Check for duplicate muons
+				// 		}
+				// 	}
+				// 	if (KeepMuon==true) GenMuons.push_back(thisgenmuon);
+				// }
 
 				// Store Gen Neutrino
 				if ( TMath::Abs(pdgId) == 14 )

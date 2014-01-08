@@ -4,7 +4,7 @@ import sys
 os.system('rm -r outdir')
 os.system('mkdir outdir')
 pwd = (os.popen('pwd').readlines()[0]).replace('\n','')
-src = pwd.split('/src')[0] + '/src'
+src = pwd.split('RivetCode')[0] + 'RivetCode/CMSSW_6_0_1/src'
 
 
 fdir1 = '/store/group/phys_exotica/darinb/SherpaTest/'
@@ -34,7 +34,7 @@ def MakeConfig(inputconfig,inputfile,outputfile):
 	batcher.write('cmsRun '+ocname.split('/')[-1]+'\n')
 	batcher.write('mv rivetTree.root '+qfile+'\ncp '+qfile+' '+pwd+'/outdir/\n\n')
 	batcher.close()
-	bsub = 'bsub -q 1nh -o /dev/null -e /dev/null -J '+  (qfile.split('.')[-2]).split('GEN_')[-1]+' <  '+bname
+	bsub = 'bsub -q 1nh -e /dev/null -J '+  (qfile.split('.')[-2]).split('GEN_')[-1]+' <  '+bname
 	return bsub
 bsubs = []
 for line in dircont:
