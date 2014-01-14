@@ -1,52 +1,0 @@
-@(#)CERN job starter $Date: 2010/06/23 14:22:16 $
-Working directory is </pool/lsf/darinb/488752444> on <lxbsp1221.cern.ch>
-
-[xrootd] Total 290.28 MB	|>...................| 2.76 % [1.2 MB/s][xrootd] Total 290.28 MB	|=>..................| 5.51 % [2.5 MB/s][xrootd] Total 290.28 MB	|=>..................| 8.27 % [3.6 MB/s][xrootd] Total 290.28 MB	|==>.................| 11.02 % [4.8 MB/s][xrootd] Total 290.28 MB	|==>.................| 13.78 % [6.0 MB/s][xrootd] Total 290.28 MB	|===>................| 16.54 % [7.1 MB/s][xrootd] Total 290.28 MB	|===>................| 19.29 % [8.2 MB/s][xrootd] Total 290.28 MB	|====>...............| 22.05 % [9.2 MB/s][xrootd] Total 290.28 MB	|====>...............| 24.80 % [10.2 MB/s][xrootd] Total 290.28 MB	|=====>..............| 27.56 % [11.2 MB/s][xrootd] Total 290.28 MB	|======>.............| 30.32 % [12.1 MB/s][xrootd] Total 290.28 MB	|======>.............| 33.07 % [13.1 MB/s][xrootd] Total 290.28 MB	|=======>............| 35.83 % [14.1 MB/s][xrootd] Total 290.28 MB	|=======>............| 38.58 % [15.0 MB/s][xrootd] Total 290.28 MB	|========>...........| 41.34 % [15.9 MB/s][xrootd] Total 290.28 MB	|========>...........| 44.10 % [16.7 MB/s][xrootd] Total 290.28 MB	|=========>..........| 46.85 % [17.5 MB/s][xrootd] Total 290.28 MB	|=========>..........| 49.61 % [18.3 MB/s][xrootd] Total 290.28 MB	|==========>.........| 52.36 % [19.2 MB/s][xrootd] Total 290.28 MB	|===========>........| 55.12 % [19.8 MB/s][xrootd] Total 290.28 MB	|===========>........| 57.88 % [20.6 MB/s][xrootd] Total 290.28 MB	|============>.......| 60.63 % [21.4 MB/s][xrootd] Total 290.28 MB	|============>.......| 63.39 % [22.2 MB/s][xrootd] Total 290.28 MB	|=============>......| 66.14 % [23.0 MB/s][xrootd] Total 290.28 MB	|=============>......| 68.90 % [23.7 MB/s][xrootd] Total 290.28 MB	|==============>.....| 71.66 % [24.4 MB/s][xrootd] Total 290.28 MB	|==============>.....| 74.41 % [24.5 MB/s][xrootd] Total 290.28 MB	|===============>....| 77.17 % [25.1 MB/s][xrootd] Total 290.28 MB	|===============>....| 79.92 % [25.8 MB/s][xrootd] Total 290.28 MB	|================>...| 82.68 % [26.5 MB/s][xrootd] Total 290.28 MB	|=================>..| 85.43 % [26.9 MB/s][xrootd] Total 290.28 MB	|=================>..| 88.19 % [27.4 MB/s][xrootd] Total 290.28 MB	|==================>.| 90.95 % [27.8 MB/s][xrootd] Total 290.28 MB	|==================>.| 93.70 % [28.3 MB/s][xrootd] Total 290.28 MB	|===================>| 96.46 % [28.7 MB/s][xrootd] Total 290.28 MB	|===================>| 99.21 % [29.0 MB/s][xrootd] Total 290.28 MB	|====================| 100.00 % [28.9 MB/s]
-Last server error 3005 ('Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_dd7580.root; Invalid argument')
-Error accessing path/file for root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_dd7580.root
-Last server error 3005 ('Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_ddfc1c.root; Invalid argument')
-Error accessing path/file for root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_ddfc1c.root
-Last server error 3005 ('Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_de389c.root; Invalid argument')
-Error accessing path/file for root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_de389c.root
-Last server error 3005 ('Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_ded3c0.root; Invalid argument')
-Error accessing path/file for root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_ded3c0.root
-Last server error 3005 ('Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_df5dd4.root; Invalid argument')
-Error accessing path/file for root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_df5dd4.root
-Last server error 3005 ('Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_df6b28.root; Invalid argument')
-Error accessing path/file for root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_df6b28.root
-Last server error 3005 ('Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_dfc269.root; Invalid argument')
-Error accessing path/file for root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_dfc269.root
-Last server error 3005 ('Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_e132ef.root; Invalid argument')
-Error accessing path/file for root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_e132ef.root
-Last server error 3005 ('Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_e17cd0.root; Invalid argument')
-Error accessing path/file for root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_e17cd0.root
-Last server error 3005 ('Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_e18fde.root; Invalid argument')
-Error accessing path/file for root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_e18fde.root
-Last server error 3005 ('Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_e1ddf1.root; Invalid argument')
-Error accessing path/file for root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_e1ddf1.root
-Last server error 3005 ('Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_e2359e.root; Invalid argument')
-Error accessing path/file for root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_e2359e.root
-Last server error 3005 ('Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_e2badd.root; Invalid argument')
-Error accessing path/file for root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_e2badd.root
-Last server error 3005 ('Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_e3d48a.root; Invalid argument')
-Error accessing path/file for root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_e3d48a.root
-Last server error 3005 ('Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_e5abc8.root; Invalid argument')
-Error accessing path/file for root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_e5abc8.root
-Last server error 3005 ('Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_e5b525.root; Invalid argument')
-Error accessing path/file for root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_e5b525.root
-Last server error 3005 ('Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_e6acce.root; Invalid argument')
-Error accessing path/file for root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_e6acce.root
-Last server error 3005 ('Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_e956b8.root; Invalid argument')
-Error accessing path/file for root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_e956b8.root
-Last server error 3005 ('Unable to access file in ANY stager (all prepare2get failed) fn =  /castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_e9a41d.root; Invalid argument')
-Error accessing path/file for root://castorcms//castor/cern.ch/user/d/dmaitre/BHSNtuples/Wp4j/7TeV/R002/Wp4j_7TeV_R002_Et25.GeV_e9a41d.root
-
-Job finished at Wed Jan  8 03:57:16 CET 2014 on node 
- under linux version Scientific Linux CERN SLC release 5.10 (Boron)
-
-
-CERN statistics: This job used 0:00:10 NCU hours (10 NCU seconds)
-
-CERN statistics: This job used 0:00:10 KSI2K hours (10 KSI2K seconds)
-
-KSI2K = kilo-SpecInt2000 benchmark units = 1.00 NCU

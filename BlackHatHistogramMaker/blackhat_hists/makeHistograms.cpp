@@ -655,12 +655,11 @@ namespace makeHistograms
 		bins[++nbins] = 300;
 		bins[++nbins] = 360;
 		bins[++nbins] = 420;
-		bins[++nbins] = 510;
-		bins[++nbins] = 600;
-		bins[++nbins] = 720;
-		bins[++nbins] = 870;
-		bins[++nbins] = 1110;
-		bins[++nbins] = 1590;
+		bins[++nbins] = 540;
+		bins[++nbins] = 660;
+		bins[++nbins] = 840;
+		// bins[++nbins] = 1140;
+		bins[++nbins] = 1680;
 		bhh["ht"] = new BH_hist( "ht", "HT", nbins, bins );
 
 		nbins=-1;
@@ -673,8 +672,8 @@ namespace makeHistograms
 		bins[++nbins] = 190;
 		bins[++nbins] = 250;
 		bins[++nbins] = 310;
-		bins[++nbins] = 400;
-		bins[++nbins] = 750;
+		bins[++nbins] = 430;
+		bins[++nbins] = 850;
 		bhh["ptjet1"] = new BH_hist( "ptjet1", "pT(jet1)", nbins, bins );
 
 		nbins=-1;

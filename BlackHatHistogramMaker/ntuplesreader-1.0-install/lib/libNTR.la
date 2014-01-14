@@ -38,4 +38,4 @@ dlopen=''
 dlpreopen=''
 
 # Directory that this library needs to be installed in:
-libdir='CURRENTDIR/ntuplesreader-1.0-install/lib'
+libdir='/afs/cern.ch/work/d/darinb/BlackHat/CMSSW_5_3_8_Blackhat/src/WJetsAnalysis/BlackHatHistogramMaker/ntuplesreader-1.0-install/lib'

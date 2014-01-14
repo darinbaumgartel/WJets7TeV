@@ -1,11 +1,12 @@
 import os
 import sys
 
-files = ['hists/'+x.replace('\n','') for x in os.popen('ls -1 hists').readlines()]
+files = ['hists/'+x.replace('\n','') for x in os.popen('find hists | grep root | grep -v all').readlines()]
 
 filetypes = []
 
 for f in files:
+	f = f.split('/')[-1]
 	f = f.replace('real','*')
 	f = f.replace('loop','*')
 	f = f.replace('born','*')
@@ -16,17 +17,22 @@ for f in files:
 			numtag =  f[x+4:x+7]
 			# print numtag
 			f = f.replace(numtag,'*')
-	if f not in filetypes:
-		filetypes.append(f)
+	if 'hists/subdir_*/'+f not in filetypes:
+		filetypes.append('hists/subdir_*/'+f)
 	# print f
+# print len(filetypes)
+# sys.exit()
 for f in filetypes:
 	outfile = f.replace('*.list*','_')
 	outfile = outfile.replace('.root','_all.root')
+	outfile = outfile.replace('/subdir_*/','/')
+	# outfile = outfile.replace('','/')
+
 	for x in range(10):
 		outfile = outfile.replace('__','_')
 	print './combineHistograms.exe -outfile '+outfile+' '+f
 	os.system('./combineHistograms.exe -outfile '+outfile+' '+f)
-
+# sys.exit()
 os.system('rm -r MergedHistos')
 os.system('mkdir MergedHistos')
 os.system('mv hists/*all.root MergedHistos/')

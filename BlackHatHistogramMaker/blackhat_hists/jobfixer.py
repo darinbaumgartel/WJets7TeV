@@ -8,7 +8,7 @@ randchars = [x for x in '0123456789qwertyuiopsdfghjklzxcvbnm']
 
 print 'Found: ',len(allrootfiles),' root files done.'
 
-nS = 325
+nS = 500
 for x in range(len(sys.argv)):
 	if sys.argv[x]=='-n':
 		nS = int(sys.argv[x+1])
@@ -20,10 +20,15 @@ def IsNotCorruptionTest(afile):
 	f = TFile.Open(afile)
 	isGood = '0x(nil)' not in str(f)
 	if isGood==True:
-		print  f.Get('h_counts')
-		isGood = f.Get('h_counts').GetEntries()>0
+		strh=str(f.Get('h_counts'))
+		if 'ROOT.TObject' in strh:
+			isGood=False
+		else:
+			nent = f.Get('h_counts').GetEntries()
+			print nent
+			isGood = nent>0
 		f.Close()
-
+	print isGood
 	return isGood
 
 if '--clean' in sys.argv:
@@ -41,7 +46,7 @@ if '--clean' in sys.argv:
 		if _isgood==False:
 			badfiles.append(a)
 
-
+	print len(badfiles)
 	for b in badfiles:
 		print 'BAD:',b
 		os.system('rm '+b)
@@ -113,7 +118,7 @@ def HundredRandomDirs():
 			aranddir+=cc
 			lranddir+=cc
 		os.system('mkdir '+aranddir)
-		# os.system('mkdir '+lranddir)
+		os.system('mkdir '+lranddir)
 		rdirs.append(aranddir)
 	return rdirs
 
@@ -123,7 +128,7 @@ randdirs = HundredRandomDirs()
 pwd = os.popen('pwd').readlines()[0].replace('\n','')
 
 
-com = './makeHistograms.exe -outfile OUTFILE -pdf UPDF -ren RENSCALE -fac FACSCALE -member MEMBER FLIST '
+com = './makeHistograms.exe -outfile OUTFILE -pdf UPDF -ren RENSCALE -fac FACSCALE -member MEMBER '
 
 job = '#!/bin/sh\n\n. /etc/bashrc\n\ncd '+pwd+'\nsource rc.bash\n. ./setup.sh\n'
 
@@ -134,6 +139,10 @@ def chunks(l, n):
 	for i in xrange(0, len(l), n):
 		outchunks.append(l[i:i+n])
 	return outchunks
+
+# if len(missingfiles)>50:
+# 	print "Abridging to 50 files."
+# 	missingfiles = missingfiles[:50]
 
 chunksize = float(len(missingfiles))/float(nS)
 chunksize = round(chunksize)-1
@@ -149,17 +158,40 @@ print 'Submitting with: ',len(cmissingfiles),' total jobs.'
 os.system('rm -r tmpjobs')
 os.system('mkdir tmpjobs')
 jind = 0
+
+import time
+
+atime = time.clock()
+
 for achunk in cmissingfiles:
+	print time.clock()-atime
+	atime = time.clock()
 	jind += 1
 	ajob = str(job)
+
+	tjobname = 'tmpjobs/job_'+str(jind)+'.sh'
+	tjob = open(tjobname,'w')
+	tjob.write(ajob+'\n\n')
+
+
 	for m in achunk:
+		xyz = 5
 
 		choicedir = random.choice(randdirs)
 		c = com.replace('OUTFILE',choicedir+'/'+m)
-		_pdf = 'CT10'*('CT10' in m)
-		_pdf = 'MSTW2008nlo68cl'*('MSTW2008nlo68cl' in m)
-		_pdf = 'NNPDF21_100'*('NNPDF21_100' in m)
-		_pdf+='.LHgrid'
+
+		_pdf = ''
+		if ('CT10' in m):
+			_pdf += 'CT10'
+
+		if ('MSTW2008nlo68cl' in m):
+			_pdf += 'MSTW2008nlo68cl'
+
+		if 	('NNPDF21_100' in m):
+			_pdf += 'NNPDF21_100'
+
+		_pdf +='.LHgrid'
+
 		fend = m.split('LHgrid_')[-1].replace('.root','')
 		fend = fend.replace('r','')
 		fend = fend.replace('f','')
@@ -176,22 +208,29 @@ for achunk in cmissingfiles:
 			if _list.split('/')[-1] in m:
 				flist = _list
 
-		sflist = ''
-		vfiles = os.popen('cat '+flist).readlines()
 
-		for y in vfiles:
-			sflist += 'root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/'+y.replace('\n','')+' '
+		# _flist = open(flist,'r')
+		tjob.write(c)
+		for line in open(flist,'r'):
+			tjob.write('root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/'+line.replace('\n','')+' ')
+		tjob.write('\n\n')
+			# c += line.replace('\n','')+' '
+		# _flist.close()
 
-		c = c.replace('FLIST',sflist)
-		ajob += c+'\n\n'
+		# sflist = ''
+		# vfiles = [yy.replace('\n','')+' ' for yy in   os.popen('cat '+flist).readlines()]
 
-	tjobname = 'tmpjobs/job_'+str(jind)+'.sh'
-	tjob = open(tjobname,'w')
-	tjob.write(ajob)
+		# for y in vfiles:
+		# 	sflist += 'root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/'+y.replace('\n','')+' '
+
+	# 	c = c.replace('FLIST',sflist)
+	# 	ajob += c+'\n\n'
+
 	tjob.close()
+
 	os.system('chmod 755 '+tjobname)
-	bsub = 'bsub -R "pool>15000" -q 2nd -o /dev/null -e /dev/null -J '+tjobname+' < '+tjobname +' & '
-	os.system('sleep 0.5')
+	bsub = 'bsub -R "pool>15000" -q 2nd -o /dev/null -e /dev/null -J '+tjobname+' < '+tjobname +' '
 	print bsub
-	os.system(bsub)
+	os.system(bsub) 
+	os.system('sleep 0.5')
 

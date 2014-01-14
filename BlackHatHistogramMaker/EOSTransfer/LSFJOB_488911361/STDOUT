@@ -1,52 +1,0 @@
-@(#)CERN job starter $Date: 2010/06/23 14:22:16 $
-Working directory is </pool/lsf/darinb/488911361> on <lxbsq2031.cern.ch>
-
-[xrootd] Total 338.00 MB	|>...................| 2.37 % [0.9 MB/s][xrootd] Total 338.00 MB	|>...................| 4.73 % [1.8 MB/s][xrootd] Total 338.00 MB	|=>..................| 7.10 % [2.7 MB/s][xrootd] Total 338.00 MB	|=>..................| 9.47 % [3.5 MB/s][xrootd] Total 338.00 MB	|==>.................| 11.83 % [4.4 MB/s][xrootd] Total 338.00 MB	|==>.................| 14.20 % [5.2 MB/s][xrootd] Total 338.00 MB	|===>................| 16.57 % [6.1 MB/s][xrootd] Total 338.00 MB	|===>................| 18.93 % [6.9 MB/s][xrootd] Total 338.00 MB	|====>...............| 21.30 % [7.7 MB/s][xrootd] Total 338.00 MB	|====>...............| 23.67 % [8.5 MB/s][xrootd] Total 338.00 MB	|=====>..............| 26.04 % [9.2 MB/s][xrootd] Total 338.00 MB	|=====>..............| 28.40 % [10.0 MB/s][xrootd] Total 338.00 MB	|======>.............| 30.77 % [10.8 MB/s][xrootd] Total 338.00 MB	|======>.............| 33.14 % [11.5 MB/s][xrootd] Total 338.00 MB	|=======>............| 35.50 % [12.2 MB/s][xrootd] Total 338.00 MB	|=======>............| 37.87 % [13.0 MB/s][xrootd] Total 338.00 MB	|========>...........| 40.24 % [13.7 MB/s][xrootd] Total 338.00 MB	|========>...........| 42.60 % [14.4 MB/s][xrootd] Total 338.00 MB	|========>...........| 44.97 % [15.1 MB/s][xrootd] Total 338.00 MB	|=========>..........| 47.34 % [15.7 MB/s][xrootd] Total 338.00 MB	|=========>..........| 49.70 % [16.4 MB/s][xrootd] Total 338.00 MB	|==========>.........| 52.07 % [17.1 MB/s][xrootd] Total 338.00 MB	|==========>.........| 54.44 % [17.7 MB/s][xrootd] Total 338.00 MB	|===========>........| 56.80 % [18.3 MB/s][xrootd] Total 338.00 MB	|===========>........| 59.17 % [18.9 MB/s][xrootd] Total 338.00 MB	|============>.......| 61.54 % [19.6 MB/s][xrootd] Total 338.00 MB	|============>.......| 63.91 % [20.2 MB/s][xrootd] Total 338.00 MB	|=============>......| 66.27 % [20.8 MB/s][xrootd] Total 338.00 MB	|=============>......| 68.64 % [21.3 MB/s][xrootd] Total 338.00 MB	|==============>.....| 71.01 % [21.9 MB/s][xrootd] Total 338.00 MB	|==============>.....| 73.37 % [22.5 MB/s][xrootd] Total 338.00 MB	|===============>....| 75.74 % [22.8 MB/s][xrootd] Total 338.00 MB	|===============>....| 78.11 % [23.2 MB/s][xrootd] Total 338.00 MB	|================>...| 80.47 % [23.4 MB/s][xrootd] Total 338.00 MB	|================>...| 82.84 % [23.6 MB/s][xrootd] Total 338.00 MB	|=================>..| 85.21 % [23.6 MB/s][xrootd] Total 338.00 MB	|=================>..| 87.57 % [23.5 MB/s][xrootd] Total 338.00 MB	|=================>..| 89.94 % [23.6 MB/s][xrootd] Total 338.00 MB	|==================>.| 92.31 % [21.6 MB/s][xrootd] Total 338.00 MB	|==================>.| 94.67 % [19.1 MB/s][xrootd] Total 338.00 MB	|===================>| 97.04 % [18.5 MB/s][xrootd] Total 338.00 MB	|===================>| 99.41 % [18.5 MB/s][xrootd] Total 338.00 MB	|====================| 100.00 % [18.5 MB/s]
-Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_510973.root; Disk quota exceeded')
-Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_510973.root
-Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_521933.root; Disk quota exceeded')
-Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_521933.root
-Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_5219f8.root; Disk quota exceeded')
-Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_5219f8.root
-Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_525d76.root; Disk quota exceeded')
-Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_525d76.root
-Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_539434.root; Disk quota exceeded')
-Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_539434.root
-Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_53ded9.root; Disk quota exceeded')
-Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_53ded9.root
-Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_57043d.root; Disk quota exceeded')
-Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_57043d.root
-Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_5896cb.root; Disk quota exceeded')
-Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_5896cb.root
-Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_59a256.root; Disk quota exceeded')
-Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_59a256.root
-Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_59be47.root; Disk quota exceeded')
-Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_59be47.root
-Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_59ed0c.root; Disk quota exceeded')
-Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_59ed0c.root
-Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_5a336f.root; Disk quota exceeded')
-Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_5a336f.root
-Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_5a6c0e.root; Disk quota exceeded')
-Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_5a6c0e.root
-Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_5ab8f3.root; Disk quota exceeded')
-Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_5ab8f3.root
-Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_5ac8cf.root; Disk quota exceeded')
-Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_5ac8cf.root
-Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_5af031.root; Disk quota exceeded')
-Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_5af031.root
-Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_5c10c1.root; Disk quota exceeded')
-Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_5c10c1.root
-Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_5c2e35.root; Disk quota exceeded')
-Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_5c2e35.root
-Last server error 3005 ('Unable to get quota space - quota not defined or exhausted /eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2/Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_5caf65.root; Disk quota exceeded')
-Error accessing path/file for root://eoscms//eos/cms/store/group/phys_smp/WPlusJets/BHSNtuplesV2//Wp4j/7TeV/R004/Wp4j_7TeV_R004_Et25.GeV_5caf65.root
-
-Job finished at Wed Jan  8 17:31:38 CET 2014 on node 
- under linux version Scientific Linux CERN SLC release 5.10 (Boron)
-
-
-CERN statistics: This job used 0:00:13 NCU hours (13 NCU seconds)
-
-CERN statistics: This job used 0:00:13 KSI2K hours (13 KSI2K seconds)
-
-KSI2K = kilo-SpecInt2000 benchmark units = 1.00 NCU
