@@ -387,16 +387,16 @@ weight += triggerweight + idisoweight
 def main():
 
 	WRenorm = "(1.0)"
-	CleanUpAndMakeTables()
+	# CleanUpAndMakeTables()
 	# sys.exit()
 	# ParseTablesToFinalResults(WRenorm,basic_selection)	
 	# ParseTablesToRecoHistograms()	
-	ParseTablesToRecoHistograms()	
+	# ParseTablesToRecoHistograms()	
 	# ParseTablesToFinalResults(WRenorm,basic_selection)	
-	CleanUpAndMakeTables()
+	# CleanUpAndMakeTables()
 	# CleanUpAndMakeTables()
 
-	sys.exit()
+	# sys.exit()
 
 	htunfbinningB1 = [55,30,1680]
 	htunfbinningB2 = [54,60,1680]
@@ -438,6 +438,11 @@ def main():
 
 
 
+	# F#ullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","nouflow"],[44,30,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco+j1, Sel_Pt_pfjet1_gen,weight,'c',[14,14])
+	# F#ullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","nouflow"],[59,30,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco+j2, Sel_Pt_pfjet2_gen,weight,'c',[15,15])
+	# F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV]","nouflow"],[49,30,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco+j3, Sel_Pt_pfjet3_gen,weight,'c',[6,6])
+	# F#ullAnalysisWithUncertainty(['Pt_genjet4','Pt_genjet4'],'Pt_pfjet4_pt20',0,["p_{T}(jet_{4}) [GeV]","nouflow"],[39,30,420],[30,50,70,90,350],Sel_Pt_pfjet4_reco+j4, Sel_Pt_pfjet4_gen,weight,'c',[5,5])
+
 
 
 
@@ -447,13 +452,10 @@ def main():
 
 	FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]",""],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[14,14])
 	FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]",""],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[15,15])
-	FullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV]",""],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[6,6])
-	FullAnalysisWithUncertainty(['Pt_genjet4','Pt_genjet4'],'Pt_pfjet4_pt20',0,["p_{T}(jet_{4}) [GeV]",""],[40,20,420],[30,50,70,90,350],Sel_Pt_pfjet4_reco, Sel_Pt_pfjet4_gen,weight,'c',[5,5])
+	FullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV]",""],[17,0,510],[30,60,90,120,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[6,6])
+	FullAnalysisWithUncertainty(['Pt_genjet4','Pt_genjet4'],'Pt_pfjet4_pt20',0,["p_{T}(jet_{4}) [GeV]",""],[10,0,300],[30,60,90,210],Sel_Pt_pfjet4_reco, Sel_Pt_pfjet4_gen,weight,'c',[4,4])
 
-	FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","nouflow"],[44,30,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco+j1, Sel_Pt_pfjet1_gen,weight,'c',[14,14])
-	FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","nouflow"],[59,30,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco+j2, Sel_Pt_pfjet2_gen,weight,'c',[15,15])
-	FullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV]","nouflow"],[49,30,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco+j3, Sel_Pt_pfjet3_gen,weight,'c',[6,6])
-	FullAnalysisWithUncertainty(['Pt_genjet4','Pt_genjet4'],'Pt_pfjet4_pt20',0,["p_{T}(jet_{4}) [GeV]","nouflow"],[39,30,420],[30,50,70,90,350],Sel_Pt_pfjet4_reco+j4, Sel_Pt_pfjet4_gen,weight,'c',[5,5])
+
 
 	FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[11,11])
 	FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[8,8])
@@ -471,11 +473,180 @@ def main():
 	FullAnalysisWithUncertainty(['DeltaPhi_genjet4genmuon1','DeltaPhi_genjet4genmuon1'],'DeltaPhi_pfjet4muon1',-0.05,["#Delta#phi(jet_{4},#mu) [GeV]",""],[8,-0.523598766,3.1415927+0.523598766],[6,0,3.1415927],Sel_DeltaPhi_pfjet4muon1_reco,Sel_DeltaPhi_pfjet4muon1_gen,weight,'c',[3,3])
 
 	FullAnalysisWithUncertainty(['Pt_genMET','Pt_genMET'],'Pt_MET',-1,["E_{T}^{miss} [GeV]",""],[15,50,200],[50,60,70,80,90,100,115,130,150,170,200],Sel_Pt_MET_reco,Sel_Pt_MET_gen,weight,'c',[12,12])
-	FullAnalysisWithUncertainty(['MT_genmuon1genMET','MT_genmuon1genMET'],'MT_muon1METR',25,["M_{T}(#mu,E_{T}^{miss}) [GeV]",""],[40,0,200],[30,50,200],Sel_MT_genmuon1genMET_reco,Sel_MT_genmuon1genMET_gen,weight,'c',[15,17])
+	FullAnalysisWithUncertainty(['MT_genmuon1genMET','MT_genmuon1genMET'],'MT_muon1METR',25,["M_{T}(#mu,E_{T}^{miss}) [GeV]",""],[20,50,150],[20,50,150],Sel_MT_genmuon1genMET_reco,Sel_MT_genmuon1genMET_gen,weight,'c',[15,17])
 	FullAnalysisWithUncertainty(['Pt_genmuon1','Pt_genmuon1'],'Pt_muon1',0,["p_{T}(#mu_{1}) [GeV]",""],[55,25,300],[55,25,300],Sel_Pt_muon1_reco,Sel_Pt_muon1_gen,weight,'c',[8,16])
 	FullAnalysisWithUncertainty(['Eta_genmuon1','Eta_genmuon1'],'Eta_muon1',0,["#eta (#mu_{1}) [GeV]",""],[92,-2.3,2.3],[42,-2.1,2.1],Sel_Eta_muon1_reco,Sel_Eta_muon1_gen,weight,'c',[12,12])
 
 	FullAnalysisWithUncertainty(['N_GoodVertices','N_GoodVertices'],'N_GoodVertices',0,["N_GoodVertices",""],[51,-1,50],[40,0,40],Sel_Eta_muon1_reco,Sel_Eta_muon1_gen,weight,'c',[6,10])
+
+
+
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(2),"force_30GeV_pt450_reg"+str(2)],[17,0,510],[30,60,90,120,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[2,2])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(3),"force_30GeV_pt450_reg"+str(3)],[17,0,510],[30,60,90,120,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[3,3])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(4),"force_30GeV_pt450_reg"+str(4)],[17,0,510],[30,60,90,120,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[4,4])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(5),"force_30GeV_pt450_reg"+str(5)],[17,0,510],[30,60,90,120,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[5,5])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(6),"force_30GeV_pt450_reg"+str(6)],[17,0,510],[30,60,90,120,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[6,6])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(7),"force_30GeV_pt450_reg"+str(7)],[17,0,510],[30,60,90,120,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[7,7])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(8),"force_30GeV_pt450_reg"+str(8)],[17,0,510],[30,60,90,120,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[8,8])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(9),"force_30GeV_pt450_reg"+str(9)],[17,0,510],[30,60,90,120,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[9,9])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(10),"force_30GeV_pt450_reg"+str(10)],[17,0,510],[30,60,90,120,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[10,10])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(11),"force_30GeV_pt450_reg"+str(11)],[17,0,510],[30,60,90,120,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[11,11])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(12),"force_30GeV_pt450_reg"+str(12)],[17,0,510],[30,60,90,120,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[12,12])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(13),"force_30GeV_pt450_reg"+str(13)],[17,0,510],[30,60,90,120,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[13,13])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(14),"force_30GeV_pt450_reg"+str(14)],[17,0,510],[30,60,90,120,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[14,14])
+
+
+	#F#ullAnalysisWithUncertainty(['Pt_genjet4','Pt_genjet4'],'Pt_pfjet4_pt20',0,["p_{T}(jet_{4}) [GeV] reg:"+str(2),"force_30GeV_pt450_reg"+str(2)],[10,0,300],[30,60,90,210],Sel_Pt_pfjet4_reco, Sel_Pt_pfjet4_gen,weight,'c',[2,2])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet4','Pt_genjet4'],'Pt_pfjet4_pt20',0,["p_{T}(jet_{4}) [GeV] reg:"+str(3),"force_30GeV_pt450_reg"+str(3)],[10,0,300],[30,60,90,210],Sel_Pt_pfjet4_reco, Sel_Pt_pfjet4_gen,weight,'c',[3,3])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet4','Pt_genjet4'],'Pt_pfjet4_pt20',0,["p_{T}(jet_{4}) [GeV] reg:"+str(4),"force_30GeV_pt450_reg"+str(4)],[10,0,300],[30,60,90,210],Sel_Pt_pfjet4_reco, Sel_Pt_pfjet4_gen,weight,'c',[4,4])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet4','Pt_genjet4'],'Pt_pfjet4_pt20',0,["p_{T}(jet_{4}) [GeV] reg:"+str(5),"force_30GeV_pt450_reg"+str(5)],[10,0,300],[30,60,90,210],Sel_Pt_pfjet4_reco, Sel_Pt_pfjet4_gen,weight,'c',[5,5])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet4','Pt_genjet4'],'Pt_pfjet4_pt20',0,["p_{T}(jet_{4}) [GeV] reg:"+str(6),"force_30GeV_pt450_reg"+str(6)],[10,0,300],[30,60,90,210],Sel_Pt_pfjet4_reco, Sel_Pt_pfjet4_gen,weight,'c',[6,6])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet4','Pt_genjet4'],'Pt_pfjet4_pt20',0,["p_{T}(jet_{4}) [GeV] reg:"+str(7),"force_30GeV_pt450_reg"+str(7)],[10,0,300],[30,60,90,210],Sel_Pt_pfjet4_reco, Sel_Pt_pfjet4_gen,weight,'c',[7,7])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet4','Pt_genjet4'],'Pt_pfjet4_pt20',0,["p_{T}(jet_{4}) [GeV] reg:"+str(8),"force_30GeV_pt450_reg"+str(8)],[10,0,300],[30,60,90,210],Sel_Pt_pfjet4_reco, Sel_Pt_pfjet4_gen,weight,'c',[8,8])
+
+
+
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(2),"force_10GeV_pt250_orig_"+str(2)],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[2,2])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(3),"force_10GeV_pt250_orig_"+str(3)],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[3,3])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(4),"force_10GeV_pt250_orig_"+str(4)],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[4,4])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(5),"force_10GeV_pt250_orig_"+str(5)],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[5,5])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(6),"force_10GeV_pt250_orig_"+str(6)],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[6,6])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(7),"force_10GeV_pt250_orig_"+str(7)],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[7,7])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(8),"force_10GeV_pt250_orig_"+str(8)],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[8,8])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(9),"force_10GeV_pt250_orig_"+str(9)],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[9,9])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(10),"force_10GeV_pt250_orig_"+str(10)],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[10,10])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(11),"force_10GeV_pt250_orig_"+str(11)],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[11,11])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(12),"force_10GeV_pt250_orig_"+str(12)],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[12,12])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(13),"force_10GeV_pt250_orig_"+str(13)],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[13,13])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(14),"force_10GeV_pt250_orig_"+str(14)],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[14,14])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(15),"force_10GeV_pt250_orig_"+str(15)],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[15,15])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(16),"force_10GeV_pt250_orig_"+str(16)],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[16,16])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(17),"force_10GeV_pt250_orig_"+str(17)],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[17,17])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(18),"force_10GeV_pt250_orig_"+str(18)],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[18,18])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(19),"force_10GeV_pt250_orig_"+str(19)],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[19,19])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(20),"force_10GeV_pt250_orig_"+str(20)],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[20,20])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(21),"force_10GeV_pt250_orig_"+str(21)],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[21,21])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(22),"force_10GeV_pt250_orig_"+str(22)],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[22,22])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(23),"force_10GeV_pt250_orig_"+str(23)],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[23,23])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(24),"force_10GeV_pt250_orig_"+str(24)],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[24,24])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(25),"force_10GeV_pt250_orig_"+str(25)],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[25,25])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(26),"force_10GeV_pt250_orig_"+str(26)],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[26,26])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(27),"force_10GeV_pt250_orig_"+str(27)],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[27,27])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(28),"force_10GeV_pt250_orig_"+str(28)],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[28,28])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(29),"force_10GeV_pt250_orig_"+str(29)],[50,20,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[29,29])
+
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(2),"force_10GeV_pt250_origmorebin_"+str(2)],[70,20,720],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[2,2])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(3),"force_10GeV_pt250_origmorebin_"+str(3)],[70,20,720],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[3,3])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(4),"force_10GeV_pt250_origmorebin_"+str(4)],[70,20,720],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[4,4])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(5),"force_10GeV_pt250_origmorebin_"+str(5)],[70,20,720],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[5,5])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(6),"force_10GeV_pt250_origmorebin_"+str(6)],[70,20,720],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[6,6])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(7),"force_10GeV_pt250_origmorebin_"+str(7)],[70,20,720],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[7,7])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(8),"force_10GeV_pt250_origmorebin_"+str(8)],[70,20,720],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[8,8])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(9),"force_10GeV_pt250_origmorebin_"+str(9)],[70,20,720],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[9,9])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(10),"force_10GeV_pt250_origmorebin_"+str(10)],[70,20,720],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[10,10])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(11),"force_10GeV_pt250_origmorebin_"+str(11)],[70,20,720],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[11,11])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(12),"force_10GeV_pt250_origmorebin_"+str(12)],[70,20,720],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[12,12])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(13),"force_10GeV_pt250_origmorebin_"+str(13)],[70,20,720],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[13,13])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(14),"force_10GeV_pt250_origmorebin_"+str(14)],[70,20,720],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[14,14])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(15),"force_10GeV_pt250_origmorebin_"+str(15)],[70,20,720],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[15,15])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(16),"force_10GeV_pt250_origmorebin_"+str(16)],[70,20,720],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[16,16])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(17),"force_10GeV_pt250_origmorebin_"+str(17)],[70,20,720],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[17,17])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(18),"force_10GeV_pt250_origmorebin_"+str(18)],[70,20,720],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[18,18])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(19),"force_10GeV_pt250_origmorebin_"+str(19)],[70,20,720],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[19,19])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(20),"force_10GeV_pt250_origmorebin_"+str(20)],[70,20,720],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[20,20])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(21),"force_10GeV_pt250_origmorebin_"+str(21)],[70,20,720],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[21,21])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(22),"force_10GeV_pt250_origmorebin_"+str(22)],[70,20,720],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[22,22])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(23),"force_10GeV_pt250_origmorebin_"+str(23)],[70,20,720],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[23,23])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(24),"force_10GeV_pt250_origmorebin_"+str(24)],[70,20,720],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[24,24])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(25),"force_10GeV_pt250_origmorebin_"+str(25)],[70,20,720],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[25,25])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(26),"force_10GeV_pt250_origmorebin_"+str(26)],[70,20,720],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[26,26])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(27),"force_10GeV_pt250_origmorebin_"+str(27)],[70,20,720],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[27,27])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(28),"force_10GeV_pt250_origmorebin_"+str(28)],[70,20,720],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[28,28])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(29),"force_10GeV_pt250_origmorebin_"+str(29)],[70,20,720],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[29,29])
+
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(2),"force_10GeV_pt250_origlessbin_"+str(2)],[45,20,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[2,2])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(3),"force_10GeV_pt250_origlessbin_"+str(3)],[45,20,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[3,3])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(4),"force_10GeV_pt250_origlessbin_"+str(4)],[45,20,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[4,4])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(5),"force_10GeV_pt250_origlessbin_"+str(5)],[45,20,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[5,5])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(6),"force_10GeV_pt250_origlessbin_"+str(6)],[45,20,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[6,6])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(7),"force_10GeV_pt250_origlessbin_"+str(7)],[45,20,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[7,7])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(8),"force_10GeV_pt250_origlessbin_"+str(8)],[45,20,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[8,8])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(9),"force_10GeV_pt250_origlessbin_"+str(9)],[45,20,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[9,9])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(10),"force_10GeV_pt250_origlessbin_"+str(10)],[45,20,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[10,10])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(11),"force_10GeV_pt250_origlessbin_"+str(11)],[45,20,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[11,11])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(12),"force_10GeV_pt250_origlessbin_"+str(12)],[45,20,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[12,12])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(13),"force_10GeV_pt250_origlessbin_"+str(13)],[45,20,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[13,13])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(14),"force_10GeV_pt250_origlessbin_"+str(14)],[45,20,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[14,14])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(15),"force_10GeV_pt250_origlessbin_"+str(15)],[45,20,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[15,15])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(16),"force_10GeV_pt250_origlessbin_"+str(16)],[45,20,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[16,16])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(17),"force_10GeV_pt250_origlessbin_"+str(17)],[45,20,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[17,17])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(18),"force_10GeV_pt250_origlessbin_"+str(18)],[45,20,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[18,18])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(19),"force_10GeV_pt250_origlessbin_"+str(19)],[45,20,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[19,19])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(20),"force_10GeV_pt250_origlessbin_"+str(20)],[45,20,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[20,20])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(21),"force_10GeV_pt250_origlessbin_"+str(21)],[45,20,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[21,21])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(22),"force_10GeV_pt250_origlessbin_"+str(22)],[45,20,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[22,22])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(23),"force_10GeV_pt250_origlessbin_"+str(23)],[45,20,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[23,23])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(24),"force_10GeV_pt250_origlessbin_"+str(24)],[45,20,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[24,24])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(25),"force_10GeV_pt250_origlessbin_"+str(25)],[45,20,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[25,25])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(26),"force_10GeV_pt250_origlessbin_"+str(26)],[45,20,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[26,26])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(27),"force_10GeV_pt250_origlessbin_"+str(27)],[45,20,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[27,27])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(28),"force_10GeV_pt250_origlessbin_"+str(28)],[45,20,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[28,28])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(29),"force_10GeV_pt250_origlessbin_"+str(29)],[45,20,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[29,29])
+
+
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(2),"force_20GeV_pt470_reg"+str(2)],[23,10,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[2,2])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(3),"force_20GeV_pt470_reg"+str(3)],[23,10,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[3,3])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(4),"force_20GeV_pt470_reg"+str(4)],[23,10,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[4,4])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(5),"force_20GeV_pt470_reg"+str(5)],[23,10,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[5,5])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(6),"force_20GeV_pt470_reg"+str(6)],[23,10,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[6,6])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(7),"force_20GeV_pt470_reg"+str(7)],[23,10,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[7,7])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(8),"force_20GeV_pt470_reg"+str(8)],[23,10,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[8,8])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(9),"force_20GeV_pt470_reg"+str(9)],[23,10,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[9,9])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(10),"force_20GeV_pt470_reg"+str(10)],[23,10,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[10,10])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(11),"force_20GeV_pt470_reg"+str(11)],[23,10,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[11,11])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(12),"force_20GeV_pt470_reg"+str(12)],[23,10,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[12,12])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(13),"force_20GeV_pt470_reg"+str(13)],[23,10,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[13,13])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(14),"force_20GeV_pt470_reg"+str(14)],[23,10,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[14,14])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(15),"force_20GeV_pt470_reg"+str(15)],[23,10,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[15,15])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(16),"force_20GeV_pt470_reg"+str(16)],[23,10,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[16,16])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(17),"force_20GeV_pt470_reg"+str(17)],[23,10,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[17,17])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(18),"force_20GeV_pt470_reg"+str(18)],[23,10,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[18,18])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(19),"force_20GeV_pt470_reg"+str(19)],[23,10,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[19,19])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(20),"force_20GeV_pt470_reg"+str(20)],[23,10,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[20,20])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(21),"force_20GeV_pt470_reg"+str(21)],[23,10,470],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[21,21])
+
+
+
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(2),"force_20GeV_pt610_reg"+str(2)],[30,10,610],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[2,2])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(3),"force_20GeV_pt610_reg"+str(3)],[30,10,610],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[3,3])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(4),"force_20GeV_pt610_reg"+str(4)],[30,10,610],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[4,4])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(5),"force_20GeV_pt610_reg"+str(5)],[30,10,610],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[5,5])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(6),"force_20GeV_pt610_reg"+str(6)],[30,10,610],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[6,6])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(7),"force_20GeV_pt610_reg"+str(7)],[30,10,610],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[7,7])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(8),"force_20GeV_pt610_reg"+str(8)],[30,10,610],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[8,8])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(9),"force_20GeV_pt610_reg"+str(9)],[30,10,610],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[9,9])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(10),"force_20GeV_pt610_reg"+str(10)],[30,10,610],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[10,10])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(11),"force_20GeV_pt610_reg"+str(11)],[30,10,610],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[11,11])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(12),"force_20GeV_pt610_reg"+str(12)],[30,10,610],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[12,12])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(13),"force_20GeV_pt610_reg"+str(13)],[30,10,610],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[13,13])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(14),"force_20GeV_pt610_reg"+str(14)],[30,10,610],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[14,14])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(15),"force_20GeV_pt610_reg"+str(15)],[30,10,610],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[15,15])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(16),"force_20GeV_pt610_reg"+str(16)],[30,10,610],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[16,16])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(17),"force_20GeV_pt610_reg"+str(17)],[30,10,610],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[17,17])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(18),"force_20GeV_pt610_reg"+str(18)],[30,10,610],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[18,18])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(19),"force_20GeV_pt610_reg"+str(19)],[30,10,610],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[19,19])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(20),"force_20GeV_pt610_reg"+str(20)],[30,10,610],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[20,20])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(21),"force_20GeV_pt610_reg"+str(21)],[30,10,610],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[21,21])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(22),"force_20GeV_pt610_reg"+str(22)],[30,10,610],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[22,22])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(23),"force_20GeV_pt610_reg"+str(23)],[30,10,610],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[23,23])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(24),"force_20GeV_pt610_reg"+str(24)],[30,10,610],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[24,24])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(25),"force_20GeV_pt610_reg"+str(25)],[30,10,610],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[25,25])
+
+
+	# F#ullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","nouflow"],[44,30,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco+j1, Sel_Pt_pfjet1_gen,weight,'c',[14,14])
+	# F#ullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","nouflow"],[59,30,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco+j2, Sel_Pt_pfjet2_gen,weight,'c',[15,15])
+	# F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV]","nouflow"],[49,30,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco+j3, Sel_Pt_pfjet3_gen,weight,'c',[6,6])
+	# F#ullAnalysisWithUncertainty(['Pt_genjet4','Pt_genjet4'],'Pt_pfjet4_pt20',0,["p_{T}(jet_{4}) [GeV]","nouflow"],[39,30,420],[30,50,70,90,350],Sel_Pt_pfjet4_reco+j4, Sel_Pt_pfjet4_gen,weight,'c',[5,5])
 
 
 	ParseTablesToRecoHistograms()	
@@ -822,7 +993,13 @@ def PseudoDataHisto(histo,newname,binning):
 
 
 # This is the "Smart" SVD - optimizes tau on the fly. This version is not used. Pseudoexperiments are used.
-def GetSmartSVD(data_histo,Params, binning,forcetau,software):
+def GetSmartSVD(data_histo,Params, binning,forcetau,software,forcemethod,isitmcunf):
+
+	doNoProp = False
+	systype = int(forcemethod)
+	if forcemethod ==4:
+		doNoProp = True
+		systype = 3
 
 	if software == 'TSVD' or software== 'AutoBin' or software=='TSVDNoCov':
 		# Clone data histogram and get binning
@@ -944,7 +1121,7 @@ def GetSmartSVD(data_histo,Params, binning,forcetau,software):
 			uu = RooUnfoldSvd(response,data_histo,ntest)
 			uu.IncludeSystematics()
 
-			hh = uu.Hreco(3)
+			hh = uu.Hreco(systype)
 			hh.Divide(hb)
 			for nb in range((hh.GetNbinsX())):
 				herr = 0
@@ -974,45 +1151,25 @@ def GetSmartSVD(data_histo,Params, binning,forcetau,software):
 		print " ----------- STANDARD UNFOLDING --------------"
 
 		unfold= RooUnfoldSvd(response, data_histo, OptTau)
-		unfold.IncludeSystematics()		
-		unfres= unfold.Hreco(3)
-		unfres.Sumw2()
+		if isitmcunf == False:
+			unfold.IncludeSystematics(0)		
+			unfres= unfold.Hreco(systype)
+			unfres.Sumw2()
+		else: 
+			unfold.IncludeSystematics(2)
+			unfres= unfold.Hreco(3)
+			unfres.Sumw2()
+			for ibin in range(unfres.GetNbinsX()+1):
+				unfres.SetBinContent(ibin,unfres.GetBinContent(ibin)+unfres.GetBinError(ibin))
+
+
 
 		hdd = unfres.Clone()
 		hdd.Divide(unfres)
 		hsv = hdd.Clone()
 		for nb in range((unfres.GetNbinsX())+1):
 			print unfres.GetBinCenter(nb),unfres.GetBinContent(nb), unfres.GetBinError(nb)
-		# print " ----------- Disable IncludeSys --------------"
 
-		# unfold2= RooUnfoldSvd(response, data_histo, OptTau)
-		# # unfold2.IncludeSystematics()		
-		# unfres2= unfold2.Hreco(3)
-		# unfres2.Sumw2()
-		# for nb in range((unfres2.GetNbinsX())+1):
-		# 	print unfres2.GetBinCenter(nb),unfres2.GetBinContent(nb), unfres2.GetBinError(nb)
-
-		# print " ----------- Enable IncludeSys, Disable (3) --------------"
-
-		# unfold3= RooUnfoldSvd(response, data_histo, OptTau)
-		# unfold3.IncludeSystematics()		
-		# unfres3= unfold2.Hreco()
-		# unfres3.Sumw2()
-		# for nb in range((unfres3.GetNbinsX())+1):
-		# 	print unfres3.GetBinCenter(nb),unfres3.GetBinContent(nb), unfres3.GetBinError(nb)
-
-
-		# print " ----------- Disable Sumw2 --------------"
-
-		# unfold4= RooUnfoldSvd(response, data_histo, OptTau)
-		# unfold4.IncludeSystematics()		
-		# unfres4= unfold4.Hreco(3)
-		# # unfres3.Sumw2()
-		# for nb in range((unfres4.GetNbinsX())+1):
-		# 	print unfres4.GetBinCenter(nb),unfres4.GetBinContent(nb), unfres4.GetBinError(nb)
-
-		# print ' TEST COMPLETE'
-		# sys.exit()
 		return [unfres,hdd,hsv,OptTau,0]
 
 
@@ -1020,9 +1177,16 @@ def GetSmartSVD(data_histo,Params, binning,forcetau,software):
 
 		response = RooUnfoldResponse (Params[0], Params[1], Params[2])
 		unfold= RooUnfoldBayes(response, data_histo, 4)
-		unfold.IncludeSystematics()		
-		unfres= unfold.Hreco(3)
-		unfres.Sumw2()
+		if isitmcunf == False:
+			unfold.IncludeSystematics(0)		
+			unfres= unfold.Hreco(systype)
+			unfres.Sumw2()
+		else: 
+			unfold.IncludeSystematics(2)
+			unfres= unfold.Hreco(3)
+			unfres.Sumw2()
+			for ibin in range(unfres.GetNbinsX()+1):
+				unfres.SetBinContent(ibin,unfres.GetBinContent(ibin)+unfres.GetBinError(ibin))
 
 		hdd = unfres.Clone()
 		hdd.Divide(unfres)
@@ -1033,9 +1197,16 @@ def GetSmartSVD(data_histo,Params, binning,forcetau,software):
 
 		response = RooUnfoldResponse (Params[0], Params[1], Params[2])
 		unfold= RooUnfoldBinByBin (response, data_histo)
-		unfold.IncludeSystematics()
-		unfres= unfold.Hreco(3)
-		unfres.Sumw2()
+		if isitmcunf == False:
+			unfold.IncludeSystematics(0)		
+			unfres= unfold.Hreco(systype)
+			unfres.Sumw2()
+		else: 
+			unfold.IncludeSystematics(2)
+			unfres= unfold.Hreco(3)
+			unfres.Sumw2()
+			for ibin in range(unfres.GetNbinsX()+1):
+				unfres.SetBinContent(ibin,unfres.GetBinContent(ibin)+unfres.GetBinError(ibin))
 
 		hdd = unfres.Clone()
 		hdd.Divide(unfres)
@@ -1366,6 +1537,8 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 	DataUnfoldedStyle_2=[0,25,1,1,3]
 
 	DataUnfoldedStyle=[0,21,1,1,1]
+	DataUnfoldedStyle_b=[0,24,1,1,4]
+
 	DataUnfoldedStyle_pseudo=[0,27,1,1,42]
 	DataUnfoldedStyle_pseudoSG=[0,24,1,1,7]
 
@@ -1385,7 +1558,8 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 
 	# Convert to variable binning.
 	presentationbinning=ConvertBinning(presentationbinning)
-
+	if 'bayes' in tagname:
+		varbinning = presentationbinning
 
 
 	##############################################################################
@@ -1521,13 +1695,20 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 			_sfbinning = ConvertBinning(_sfbinning)
 
 
-		ttbar_selection = selection.replace('(PFJet30TCHEMCountCentral<0.5)','(PFJet30TCHEMCountCentral>1.5)')
+		ttbar_selection = selection.replace('(PFJet30TCHEMCountCentral<0.5)','(1.0424)*(PFJet30TCHEMCountCentral>1.5)')
+
+		ttbar_selection1 = ttbar_selection.replace('PFJet30TCHEMCountCentral','PFJet30TCHEMCountEffDown')
+		ttbar_selection2 = ttbar_selection.replace('PFJet30TCHEMCountCentral','PFJet30TCHEMCountEffUp')
+		ttbar_selection3 = ttbar_selection.replace('PFJet30TCHEMCountCentral','PFJet30TCHEMCountMisDown')
+		ttbar_selection4 = ttbar_selection.replace('PFJet30TCHEMCountCentral','PFJet30TCHEMCountMisUp')
+
+
 		w_selection = selection
 		z_selection = selection.replace('(Pt_muon2<0.000001)','(Pt_muon2>25)')
 
 		LabelDD=[xlabel,"Data-Driven SF"]
 
-
+		# Z
 		__Z_h_rec_Data=CreateHisto('__Z_h_rec_Data','Data, 5/fb [Reco]',t_SingleMuData,recomodvariable,_sfbinning,z_selection+IsoMuCond,DataRecoStyle,LabelDD)
 		__Z_h_rec_WJetsMG=CreateHisto('__Z_h_rec_WJetsMG','W+Jets MadGraph [Reco]',t_WJets_MG,recomodvariable,_sfbinning,z_selection+weight,MCRecoStyle,LabelDD)
 		__Z_h_rec_DiBoson=CreateHisto('__Z_h_rec_DiBoson','DiBoson [MadGraph]',t_DiBoson,recomodvariable,_sfbinning,z_selection+weight,DiBosonStackStyle,LabelDD)
@@ -1535,6 +1716,7 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 		__Z_h_rec_TTBar=CreateHisto('__Z_h_rec_TTBar','t#bar{t} [MadGraph]',t_TTBar,recomodvariable,_sfbinning,z_selection+weight,TTStackStyle,LabelDD)
 		__Z_h_rec_SingleTop=CreateHisto('__Z_h_rec_SingleTop','SingleTop [MadGraph]',t_SingleTop,recomodvariable,_sfbinning,z_selection+weight,StopStackStyle,LabelDD)
 
+		#W
 		__W_h_rec_Data=CreateHisto('__W_h_rec_Data','Data, 5/fb [Reco]',t_SingleMuData,recomodvariable,_sfbinning,w_selection+IsoMuCond,DataRecoStyle,LabelDD)
 		__W_h_rec_WJetsMG=CreateHisto('__W_h_rec_WJetsMG','W+Jets MadGraph [Reco]',t_WJets_MG,recomodvariable,_sfbinning,w_selection+weight,MCRecoStyle,LabelDD)
 		__W_h_rec_DiBoson=CreateHisto('__W_h_rec_DiBoson','DiBoson [MadGraph]',t_DiBoson,recomodvariable,_sfbinning,w_selection+weight,DiBosonStackStyle,LabelDD)
@@ -1542,6 +1724,7 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 		__W_h_rec_TTBar=CreateHisto('__W_h_rec_TTBar','t#bar{t} [MadGraph]',t_TTBar,recomodvariable,_sfbinning,w_selection+weight,TTStackStyle,LabelDD)
 		__W_h_rec_SingleTop=CreateHisto('__W_h_rec_SingleTop','SingleTop [MadGraph]',t_SingleTop,recomodvariable,_sfbinning,w_selection+weight,StopStackStyle,LabelDD)
 
+		#TTBar
 		__T_h_rec_Data=CreateHisto('__T_h_rec_Data','Data, 5/fb [Reco]',t_SingleMuData,recomodvariable,_sfbinning,ttbar_selection+IsoMuCond,DataRecoStyle,LabelDD)
 		__T_h_rec_WJetsMG=CreateHisto('__T_h_rec_WJetsMG','W+Jets MadGraph [Reco]',t_WJets_MG,recomodvariable,_sfbinning,ttbar_selection+weight,MCRecoStyle,LabelDD)
 		__T_h_rec_DiBoson=CreateHisto('__T_h_rec_DiBoson','DiBoson [MadGraph]',t_DiBoson,recomodvariable,_sfbinning,ttbar_selection+weight,DiBosonStackStyle,LabelDD)
@@ -1549,9 +1732,47 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 		__T_h_rec_TTBar=CreateHisto('__T_h_rec_TTBar','t#bar{t} [MadGraph]',t_TTBar,recomodvariable,_sfbinning,ttbar_selection+weight,TTStackStyle,LabelDD)
 		__T_h_rec_SingleTop=CreateHisto('__T_h_rec_SingleTop','SingleTop [MadGraph]',t_SingleTop,recomodvariable,_sfbinning,ttbar_selection+weight,StopStackStyle,LabelDD)
 
+		#TTBar Variations
+		__T_h_rec_Data1=CreateHisto('__T_h_rec_Data','Data, 5/fb [Reco]',t_SingleMuData,recomodvariable,_sfbinning,ttbar_selection1+IsoMuCond,DataRecoStyle,LabelDD)
+		__T_h_rec_WJetsMG1=CreateHisto('__T_h_rec_WJetsMG','W+Jets MadGraph [Reco]',t_WJets_MG,recomodvariable,_sfbinning,ttbar_selection1+weight,MCRecoStyle,LabelDD)
+		__T_h_rec_DiBoson1=CreateHisto('__T_h_rec_DiBoson','DiBoson [MadGraph]',t_DiBoson,recomodvariable,_sfbinning,ttbar_selection1+weight,DiBosonStackStyle,LabelDD)
+		__T_h_rec_ZJets1=CreateHisto('__T_h_rec_ZJets','Z+Jets [MadGraph]',t_ZJets_MG,recomodvariable,_sfbinning,ttbar_selection1+weight,ZStackStyle,LabelDD)
+		__T_h_rec_TTBar1=CreateHisto('__T_h_rec_TTBar','t#bar{t} [MadGraph]',t_TTBar,recomodvariable,_sfbinning,ttbar_selection1+weight,TTStackStyle,LabelDD)
+		__T_h_rec_SingleTop1=CreateHisto('__T_h_rec_SingleTop','SingleTop [MadGraph]',t_SingleTop,recomodvariable,_sfbinning,ttbar_selection1+weight,StopStackStyle,LabelDD)
+
+		__T_h_rec_Data2=CreateHisto('__T_h_rec_Data','Data, 5/fb [Reco]',t_SingleMuData,recomodvariable,_sfbinning,ttbar_selection2+IsoMuCond,DataRecoStyle,LabelDD)
+		__T_h_rec_WJetsMG2=CreateHisto('__T_h_rec_WJetsMG','W+Jets MadGraph [Reco]',t_WJets_MG,recomodvariable,_sfbinning,ttbar_selection2+weight,MCRecoStyle,LabelDD)
+		__T_h_rec_DiBoson2=CreateHisto('__T_h_rec_DiBoson','DiBoson [MadGraph]',t_DiBoson,recomodvariable,_sfbinning,ttbar_selection2+weight,DiBosonStackStyle,LabelDD)
+		__T_h_rec_ZJets2=CreateHisto('__T_h_rec_ZJets','Z+Jets [MadGraph]',t_ZJets_MG,recomodvariable,_sfbinning,ttbar_selection2+weight,ZStackStyle,LabelDD)
+		__T_h_rec_TTBar2=CreateHisto('__T_h_rec_TTBar','t#bar{t} [MadGraph]',t_TTBar,recomodvariable,_sfbinning,ttbar_selection2+weight,TTStackStyle,LabelDD)
+		__T_h_rec_SingleTop2=CreateHisto('__T_h_rec_SingleTop','SingleTop [MadGraph]',t_SingleTop,recomodvariable,_sfbinning,ttbar_selection2+weight,StopStackStyle,LabelDD)
+
+		__T_h_rec_Data3=CreateHisto('__T_h_rec_Data','Data, 5/fb [Reco]',t_SingleMuData,recomodvariable,_sfbinning,ttbar_selection3+IsoMuCond,DataRecoStyle,LabelDD)
+		__T_h_rec_WJetsMG3=CreateHisto('__T_h_rec_WJetsMG','W+Jets MadGraph [Reco]',t_WJets_MG,recomodvariable,_sfbinning,ttbar_selection3+weight,MCRecoStyle,LabelDD)
+		__T_h_rec_DiBoson3=CreateHisto('__T_h_rec_DiBoson','DiBoson [MadGraph]',t_DiBoson,recomodvariable,_sfbinning,ttbar_selection3+weight,DiBosonStackStyle,LabelDD)
+		__T_h_rec_ZJets3=CreateHisto('__T_h_rec_ZJets','Z+Jets [MadGraph]',t_ZJets_MG,recomodvariable,_sfbinning,ttbar_selection3+weight,ZStackStyle,LabelDD)
+		__T_h_rec_TTBar3=CreateHisto('__T_h_rec_TTBar','t#bar{t} [MadGraph]',t_TTBar,recomodvariable,_sfbinning,ttbar_selection3+weight,TTStackStyle,LabelDD)
+		__T_h_rec_SingleTop3=CreateHisto('__T_h_rec_SingleTop','SingleTop [MadGraph]',t_SingleTop,recomodvariable,_sfbinning,ttbar_selection3+weight,StopStackStyle,LabelDD)
+
+
+		__T_h_rec_Data4=CreateHisto('__T_h_rec_Data','Data, 5/fb [Reco]',t_SingleMuData,recomodvariable,_sfbinning,ttbar_selection4+IsoMuCond,DataRecoStyle,LabelDD)
+		__T_h_rec_WJetsMG4=CreateHisto('__T_h_rec_WJetsMG','W+Jets MadGraph [Reco]',t_WJets_MG,recomodvariable,_sfbinning,ttbar_selection4+weight,MCRecoStyle,LabelDD)
+		__T_h_rec_DiBoson4=CreateHisto('__T_h_rec_DiBoson','DiBoson [MadGraph]',t_DiBoson,recomodvariable,_sfbinning,ttbar_selection4+weight,DiBosonStackStyle,LabelDD)
+		__T_h_rec_ZJets4=CreateHisto('__T_h_rec_ZJets','Z+Jets [MadGraph]',t_ZJets_MG,recomodvariable,_sfbinning,ttbar_selection4+weight,ZStackStyle,LabelDD)
+		__T_h_rec_TTBar4=CreateHisto('__T_h_rec_TTBar','t#bar{t} [MadGraph]',t_TTBar,recomodvariable,_sfbinning,ttbar_selection4+weight,TTStackStyle,LabelDD)
+		__T_h_rec_SingleTop4=CreateHisto('__T_h_rec_SingleTop','SingleTop [MadGraph]',t_SingleTop,recomodvariable,_sfbinning,ttbar_selection4+weight,StopStackStyle,LabelDD)
+
+
+
 		__Z_histos = [__Z_h_rec_Data,	__Z_h_rec_WJetsMG,	__Z_h_rec_DiBoson,	__Z_h_rec_ZJets,	__Z_h_rec_TTBar,	__Z_h_rec_SingleTop]
 		__W_histos = [__W_h_rec_Data,	__W_h_rec_WJetsMG,	__W_h_rec_DiBoson,	__W_h_rec_ZJets,	__W_h_rec_TTBar,	__W_h_rec_SingleTop]
 		__T_histos = [__T_h_rec_Data,	__T_h_rec_WJetsMG,	__T_h_rec_DiBoson,	__T_h_rec_ZJets,	__T_h_rec_TTBar,	__T_h_rec_SingleTop]
+
+
+		__T_histos1 = [__T_h_rec_Data1,	__T_h_rec_WJetsMG1,	__T_h_rec_DiBoson1,	__T_h_rec_ZJets1,	__T_h_rec_TTBar1,	__T_h_rec_SingleTop1]
+		__T_histos2 = [__T_h_rec_Data2,	__T_h_rec_WJetsMG2,	__T_h_rec_DiBoson2,	__T_h_rec_ZJets2,	__T_h_rec_TTBar2,	__T_h_rec_SingleTop2]
+		__T_histos3 = [__T_h_rec_Data3,	__T_h_rec_WJetsMG3,	__T_h_rec_DiBoson3,	__T_h_rec_ZJets3,	__T_h_rec_TTBar3,	__T_h_rec_SingleTop3]
+		__T_histos4 = [__T_h_rec_Data4,	__T_h_rec_WJetsMG4,	__T_h_rec_DiBoson4,	__T_h_rec_ZJets4,	__T_h_rec_TTBar4,	__T_h_rec_SingleTop4]
 
 		# [_zz,zz] = GetSF(__Z_histos,0,3,[1,2,4,5])
 		# [_ww,ww] = GetSF(__W_histos,0,1,[2,3,4,5])
@@ -1631,10 +1852,35 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 		__T_h_rec_Data.Add(__T_h_rec_ZJets,-1)
 		__T_h_rec_Data.Add(__T_h_rec_SingleTop,-1)
 
+		__T_h_rec_Data1.Add(__T_h_rec_WJetsMG1,-1)
+		__T_h_rec_Data1.Add(__T_h_rec_DiBoson1,-1)
+		__T_h_rec_Data1.Add(__T_h_rec_ZJets1,-1)
+		__T_h_rec_Data1.Add(__T_h_rec_SingleTop1,-1)
+
+		__T_h_rec_Data2.Add(__T_h_rec_WJetsMG2,-1)
+		__T_h_rec_Data2.Add(__T_h_rec_DiBoson2,-1)
+		__T_h_rec_Data2.Add(__T_h_rec_ZJets2,-1)
+		__T_h_rec_Data2.Add(__T_h_rec_SingleTop2,-1)
+
+		__T_h_rec_Data3.Add(__T_h_rec_WJetsMG3,-1)
+		__T_h_rec_Data3.Add(__T_h_rec_DiBoson3,-1)
+		__T_h_rec_Data3.Add(__T_h_rec_ZJets3,-1)
+		__T_h_rec_Data3.Add(__T_h_rec_SingleTop3,-1)		
+
+		__T_h_rec_Data4.Add(__T_h_rec_WJetsMG4,-1)
+		__T_h_rec_Data4.Add(__T_h_rec_DiBoson4,-1)
+		__T_h_rec_Data4.Add(__T_h_rec_ZJets4,-1)
+		__T_h_rec_Data4.Add(__T_h_rec_SingleTop4,-1)
+
 		# Data / MC
 		__Z_h_rec_Data.Divide(__Z_h_rec_ZJets)
 		__W_h_rec_Data.Divide(__W_h_rec_WJetsMG)
 		__T_h_rec_Data.Divide(__T_h_rec_TTBar)
+
+		__T_h_rec_Data1.Divide(__T_h_rec_TTBar1)
+		__T_h_rec_Data2.Divide(__T_h_rec_TTBar2)
+		__T_h_rec_Data3.Divide(__T_h_rec_TTBar3)
+		__T_h_rec_Data4.Divide(__T_h_rec_TTBar4)
 
 
 		# Sum MC For Purity
@@ -1650,6 +1896,27 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 		__T_h_rec_WJetsMG.Add(__T_h_rec_SingleTop)
 		__T_h_rec_WJetsMG.Add(__T_h_rec_ZJets)
 			
+		__T_h_rec_WJetsMG1.Add(__T_h_rec_DiBoson1)
+		__T_h_rec_WJetsMG1.Add(__T_h_rec_TTBar1)
+		__T_h_rec_WJetsMG1.Add(__T_h_rec_SingleTop1)
+		__T_h_rec_WJetsMG1.Add(__T_h_rec_ZJets1)
+
+		__T_h_rec_WJetsMG2.Add(__T_h_rec_DiBoson2)
+		__T_h_rec_WJetsMG2.Add(__T_h_rec_TTBar2)
+		__T_h_rec_WJetsMG2.Add(__T_h_rec_SingleTop2)
+		__T_h_rec_WJetsMG2.Add(__T_h_rec_ZJets2)
+
+		__T_h_rec_WJetsMG3.Add(__T_h_rec_DiBoson3)
+		__T_h_rec_WJetsMG3.Add(__T_h_rec_TTBar3)
+		__T_h_rec_WJetsMG3.Add(__T_h_rec_SingleTop3)
+		__T_h_rec_WJetsMG3.Add(__T_h_rec_ZJets3)
+
+		__T_h_rec_WJetsMG4.Add(__T_h_rec_DiBoson4)
+		__T_h_rec_WJetsMG4.Add(__T_h_rec_TTBar4)
+		__T_h_rec_WJetsMG4.Add(__T_h_rec_SingleTop4)
+		__T_h_rec_WJetsMG4.Add(__T_h_rec_ZJets4)						
+			
+
 		# Sum MC For Purity
 		__W_h_rec_TTBar.Add(__W_h_rec_DiBoson)
 		__W_h_rec_TTBar.Add(__W_h_rec_ZJets)
@@ -1662,6 +1929,13 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 		__Z_h_rec_ZJets.Divide(__Z_h_rec_WJetsMG)
 		__T_h_rec_TTBar.Divide(__T_h_rec_WJetsMG)
 		__W_h_rec_WJetsMG.Divide(__W_h_rec_TTBar)
+
+
+		__T_h_rec_TTBar1.Divide(__T_h_rec_WJetsMG1)
+		__T_h_rec_TTBar2.Divide(__T_h_rec_WJetsMG2)
+		__T_h_rec_TTBar3.Divide(__T_h_rec_WJetsMG3)
+		__T_h_rec_TTBar4.Divide(__T_h_rec_WJetsMG4)
+
 
 		# Fill Style Fix
 		__Z_h_rec_Data.SetFillStyle(0)
@@ -1717,6 +1991,35 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 
 		# __W_h_rec_Data.Draw("EPSAME")
 		# __W_h_rec_WJetsMG.Draw("EHISTSAME")
+
+		# Fix TTBar Error Bands
+		print '------------ TTBAR SF BREAKDOWN -----------'
+		for ibin in range((__T_h_rec_Data.GetNbinsX())+1):
+			_t = __T_h_rec_Data.GetBinContent(ibin)
+			_t1 = __T_h_rec_Data1.GetBinContent(ibin)
+			_t2 = __T_h_rec_Data2.GetBinContent(ibin)
+			_t3 = __T_h_rec_Data3.GetBinContent(ibin)
+			_t4 = __T_h_rec_Data4.GetBinContent(ibin)
+
+			_te = __T_h_rec_Data.GetBinError(ibin)
+			_e1 = (_t1 - _t)
+			_e2 = (_t2 - _t)
+			_e3 = (_t3 - _t)
+			_e4 = (_t4 - _t)
+			_err1 = max([abs(_e1),abs(_e2)])
+			_err2 = max([abs(_e3),abs(_e4)])
+
+			_errsigma = .0465*_t
+			_errstat = __T_h_rec_Data.GetBinError(ibin)
+
+			print ibin, _t, _t1, _t2, _t3, _t4, [[_e1, _e2], [_e3, _e4]]
+			_toterr = math.sqrt(_errsigma**2 + _errstat**2 + _err1**2 + _err2**2)
+
+			print '    Error Transform:',_errstat,' --> ',_toterr
+
+			__T_h_rec_Data.SetBinError(ibin,_toterr)
+
+
 
 		__T_h_rec_Data.Draw("EPSAME")
 		__T_h_rec_TTBar.Draw("EHISTSAME")
@@ -1820,7 +2123,7 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 
 	fW = '*(1.0)'
 	fZ = '*(1.0)'
-	fT = '*(1.0)'
+	fT = '*(1.0424)'
 	fsT = '*(1.0)'
 	fV = '*(1.0)'
 
@@ -1839,7 +2142,7 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 	if 'bgnorm_plus' in tagname:
 		print 'REASSIGNING BACKGROUD NORMALIZATION - POSITIVE MODIFICATIONS'
 		fZ += '*(1.04331)'
-		fT += '*(1.06061)' 
+		fT += '*(1.0465)' 
 		fsT += '*(1.06)'
 		fV += '*(1.04)'
 
@@ -1848,7 +2151,7 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 	if 'bgnorm_minus' in tagname:
 		print 'REASSIGNING BACKGROUD NORMALIZATION - NEGATIVE MODIFICATIONS'
 		fZ += '*(0.95669)'
-		fT += '*(0.93939)' 
+		fT += '*(0.9535)' 
 		fsT += '*(0.94)'
 		fV += '*(0.96)'
 
@@ -2762,6 +3065,7 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 	# Perform the unfolding. Returns unfolded data histo, some unfolding parameters not currently used
 	software_implementation = 'RooUnfoldSvd'
 
+
 	if 'roounfsvd' in tagname:
 		software_implementation = 'RooUnfoldSvd'
 	if 'roounfbayes' in tagname or 'BAYES' in 'pyplots':
@@ -2770,7 +3074,7 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 		software_implementation = 'RooUnfoldBin'
 	if 'autobin' in tagname:
 		software_implementation = 'AutoBin'
-	if 'tsvd' in tagname:
+	if 'tsvd' in tagname or 'Tsvd' in 'pyplots':
 		software_implementation = 'TSVD'
 	if 'SvdUnc' in 'pyplots':
 		software_implementation = 'RooUnfoldSvdUncTest'
@@ -2789,12 +3093,23 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 		print 'Manual forcing of non-zero bins! -------------------------'
 
 
-	[h_unf_Data,h_dd,h_sv,optimal_tau,optimal_i] = GetSmartSVD(h_rec_Data2,Params, varbinning,tau,software_implementation)
+	sys_imp = 0
+	if 'standard' in tagname:
+		sys_imp = 3
+	ismcunf = False
+	if 'mcunf' in tagname:
+		ismcunf = True
+
+
+
+	[h_unf_Data,h_dd,h_sv,optimal_tau,optimal_i] = GetSmartSVD(h_rec_Data2,Params, varbinning,tau,software_implementation,sys_imp,ismcunf)
+
+	[h_unf_Data_b,h_dd_b,h_sv_b,optimal_tau_b,optimal_i_b] = GetSmartSVD(h_rec_Data2,Params, varbinning,tau,'RooUnfoldBayes',sys_imp,ismcunf)
 
 	# Samme as above, but using pseudo-data from the WJets MC - this is the closure test! Always using MadGraph!
-	[h_unf_Data_pseudo,h_dd,h_sv_pseudo,optimal_tau_pseudo,optimal_i_pseudo] = GetSmartSVD(h_rec_Data_pseudo,Params, varbinning,tau,software_implementation)
+	[h_unf_Data_pseudo,h_dd,h_sv_pseudo,optimal_tau_pseudo,optimal_i_pseudo] = GetSmartSVD(h_rec_Data_pseudo,Params, varbinning,tau,software_implementation,sys_imp,ismcunf)
 	# Samme as above, but using same generator used for unfolding!
-	[h_unf_Data_pseudoSG,h_dd,h_sv_pseudo,optimal_tau_pseudoSG,optimal_i_pseudoSG] = GetSmartSVD(h_rec_Data_pseudoSG,Params, varbinning,tau,software_implementation)
+	[h_unf_Data_pseudoSG,h_dd,h_sv_pseudo,optimal_tau_pseudoSG,optimal_i_pseudoSG] = GetSmartSVD(h_rec_Data_pseudoSG,Params, varbinning,tau,software_implementation,sys_imp,ismcunf)
 
 
 	print 'Unfolded Data', h_unf_Data.Integral()
@@ -2807,6 +3122,7 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 
 	# Creates plots, with extra label giving the optimal tau and unfolding scale above.
 	h_unf_Data = BeautifyHisto(h_unf_Data,DataUnfoldedStyle,Label,"Data, 5/fb [Unfolded, #tau = "+str(optimal_tau)+",R="+str(round(UnfScale,2))+"]")
+	h_unf_Data_b = BeautifyHisto(h_unf_Data_b,DataUnfoldedStyle,Label,"Data, 5/fb [Unfolded, #tau = "+str(optimal_tau)+",R="+str(round(UnfScale,2))+"]")
 	h_unf_Data_pseudo = BeautifyHisto(h_unf_Data_pseudo,DataUnfoldedStyle_pseudo,Label,"WJets MadGraph Closure [Unfolded, #tau = "+str(optimal_tau)+",R="+str(round(UnfScale_pseudo,2))+"]")
 	h_unf_Data_pseudoSG = BeautifyHisto(h_unf_Data_pseudoSG,DataUnfoldedStyle_pseudoSG,Label,"WJets "+gtag+" Closure [Unfolded, #tau = "+str(optimal_tau)+",R="+str(round(UnfScale_pseudoSG,2))+"]")
 
@@ -2891,6 +3207,9 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 
 	h_pres_unf_Data=RebinnedHisto("h_pres_unf_Data",'Data, 5/fb [Unfolded/Reco]',h_unf_Data,presentationbinning,DataUnfoldedStyle,Label)
 
+	h_pres_unf_Data_b=RebinnedHisto("h_pres_unf_Data_b",'Data, 5/fb Unf[SVD/Bayes]',h_unf_Data_b,presentationbinning,DataUnfoldedStyle_b,Label)
+
+
 	h_pres_rec_Data=RebinnedHisto("h_pres_rec_Data",'Data, 5/fb [Unfolded/Reco]',h_rec_Data2,presentationbinning,DataCompStyle,Label)
 
 	h_pres_unf_Data_2=RebinnedHisto("h_pres_unf_Data_2",'Unf. Data/ '+gtag+' Truth',h_unf_Data,presentationbinning,DataUnfoldedStyle_2,Label)
@@ -2950,7 +3269,7 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 	h_pres_unf_Data_2.Divide(h_pres_gen_WJets)
 	h_pres_unf_Data_pseudo.Divide(h_pres_gen_WJetsMG)
 	h_pres_unf_Data_pseudoSG.Divide(h_pres_gen_WJets)
-
+	h_pres_unf_Data_b.Divide(h_pres_unf_Data)
 	## Divide gen by reco for MC, and unfolded by reco for data.
 	h_pres_gen_WJets.Divide(h_pres_rec_WJets)
 	h_pres_unf_Data.Divide(h_pres_rec_Data)
@@ -2962,7 +3281,7 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 	
 
 	RelMin = 0.0
-	RelMax = 4.0
+	RelMax = 5.0
 	h_pres_gen_WJets.GetYaxis().SetTitle("Ratio")
 	h_pres_gen_WJets.SetMarkerSize(0.000001)
 	h_pres_gen_WJets.SetLineStyle(1)
@@ -2978,6 +3297,9 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 	h_pres_unf_Data_pseudo.GetYaxis().SetTitle("Ratio")
 	h_pres_unf_Data_pseudoSG.GetYaxis().SetTitle("Ratio")
 
+	h_pres_unf_Data_b.GetYaxis().SetTitle("Ratio")
+
+
 	h_pres_unf_Data.Draw("EPHISTSAME")
 	h_pres_unf_Data_pseudo.Draw("EPHISTSAME")
 	if 'altunf' in tagname:
@@ -2986,6 +3308,8 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 		h_pres_unf_Data_pseudoSG.Draw("EPHISTSAME")
 
 	h_pres_unf_Data_2.Draw("EPHISTSAME")
+
+	h_pres_unf_Data_b.Draw("EPHISTSAME")
 
 	# Create Legend
 	FixDrawLegend(c1.cd(4).BuildLegend(0.6,  0.6,  0.93,  0.93,''))
@@ -3068,6 +3392,7 @@ def FullAnalysisWithUncertainty(genvariable,recovariable,default_value,xlabel, b
 	if prefab_tau > -1:
 		_tau = prefab_tau
 	[tau,data_standard,mc_standard]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',_tau,'standard')
+	# [tau,data_forcenoprop,mc_forcenoprop]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',_tau,'forcenoprop')
 
 	taush = tau
 	if prefab_tau > -1:
@@ -3086,6 +3411,7 @@ def FullAnalysisWithUncertainty(genvariable,recovariable,default_value,xlabel, b
 	if ('NoSys' not in 'pyplots'):
 
 		[null,data_altunf,mc_altunf]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',taush,'altunf')
+		[null,data_mcunf,mc_mcunf]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',taush,'mcunf')
 
 		# Plleup variations
 		[null,data_pileup_plus,mc_pileup_plus]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight.replace('weight_pu_central','weight_pu_sysplus'),optvar,NormalDirectory,'',tau,'pileup_plus')
@@ -3141,113 +3467,6 @@ def FullAnalysisWithUncertainty(genvariable,recovariable,default_value,xlabel, b
 		[null,data_tsvd,mc_tsvd]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',tau,'tsvd')
 
 
-
-	if (False):  # JUST JES
-
-		[null,data_pileup_plus,mc_pileup_plus]= [tau,data_standard,mc_standard]
-		[null,data_pileup_minus,mc_pileup_minus]= [tau,data_standard,mc_standard]
-
-		[null,data_bgnorm_plus,mc_bgnorm_plus]= [tau,data_standard,mc_standard]
-		[null,data_bgnorm_minus,mc_bgnorm_minus]= [tau,data_standard,mc_standard]
-
-
-		# Integrated luminosity up/down
-		[null,data_lumi_plus,mc_lumi_plus]=[tau,data_standard,mc_standard]
-		[null,data_lumi_minus,mc_lumi_minus]=[tau,data_standard,mc_standard]
-
-		# Jet energy scale up/down, and smeared
-		[null,data_jetscale_plus,mc_jetscale_plus]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,JetScaleUpDirectory,'',tau,'jetscale_plus')
-		[null,data_jetscale_minus,mc_jetscale_minus]=[tau,data_standard,mc_standard]
-		[null,data_jetsmear,mc_jetsmear]=[tau,data_standard,mc_standard]
-
-		# Muon energy scale up/down and smeared.
-		[null,data_muscale_plus,mc_muscale_plus]=[tau,data_standard,mc_standard]
-		[null,data_muscale_minus,mc_muscale_minus]=[tau,data_standard,mc_standard]
-		[null,data_musmear,mc_musmear]=[tau,data_standard,mc_standard]
-		[null,data_phicorr,mc_phicorr]=[tau,data_standard,mc_standard]
-
-
-		# BTag Efficiency Up/Down
-		[null,data_btag_plus,mc_btag_plus]=[tau,data_standard,mc_standard]
-		[null,data_btag_minus,mc_btag_minus]=[tau,data_standard,mc_standard]
-
-		[null,data_altunf,mc_altunf]=[tau,data_standard,mc_standard]
-		# [null,data_altunf,mc_altunf]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',tau,'altunf')
-
-		[null,data_hltidiso,mc_hltidiso]=[tau,data_standard,mc_standard]
-
-
-
-	if (False):  # JUST PhiCorr
-
-		[null,data_pileup_plus,mc_pileup_plus]= [tau,data_standard,mc_standard]
-		[null,data_pileup_minus,mc_pileup_minus]= [tau,data_standard,mc_standard]
-
-		[null,data_bgnorm_plus,mc_bgnorm_plus]= [tau,data_standard,mc_standard]
-		[null,data_bgnorm_minus,mc_bgnorm_minus]= [tau,data_standard,mc_standard]
-
-
-		# Integrated luminosity up/down
-		[null,data_lumi_plus,mc_lumi_plus]=[tau,data_standard,mc_standard]
-		[null,data_lumi_minus,mc_lumi_minus]=[tau,data_standard,mc_standard]
-
-		# Jet energy scale up/down, and smeared
-		[null,data_jetscale_plus,mc_jetscale_plus]=[tau,data_standard,mc_standard]
-		[null,data_jetscale_minus,mc_jetscale_minus]=[tau,data_standard,mc_standard]
-		[null,data_jetsmear,mc_jetsmear]=[tau,data_standard,mc_standard]
-
-		# Muon energy scale up/down and smeared.
-		[null,data_muscale_plus,mc_muscale_plus]=[tau,data_standard,mc_standard]
-		[null,data_muscale_minus,mc_muscale_minus]=[tau,data_standard,mc_standard]
-		[null,data_musmear,mc_musmear]=[tau,data_standard,mc_standard]
-		[null,data_phicorr,mc_phicorr]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,PhiCorrDirectory,'',tau,'phicorr')	
-
-
-		# BTag Efficiency Up/Down
-		[null,data_btag_plus,mc_btag_plus]=[tau,data_standard,mc_standard]
-		[null,data_btag_minus,mc_btag_minus]=[tau,data_standard,mc_standard]
-
-		[null,data_altunf,mc_altunf]=[tau,data_standard,mc_standard]
-		# [null,data_altunf,mc_altunf]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',tau,'altunf')
-
-		[null,data_hltidiso,mc_hltidiso]=[tau,data_standard,mc_standard]
-
-	# QUICK FIX FOR JUST ALTUNF
-	if (False):
-		[null,data_pileup_plus,mc_pileup_plus]= [tau,data_standard,mc_standard]
-		[null,data_pileup_minus,mc_pileup_minus]= [tau,data_standard,mc_standard]
-
-
-		[null,data_bgnorm_plus,mc_bgnorm_plus]= [tau,data_standard,mc_standard]
-		[null,data_bgnorm_minus,mc_bgnorm_minus]= [tau,data_standard,mc_standard]
-
-
-		# Integrated luminosity up/down
-		[null,data_lumi_plus,mc_lumi_plus]=[tau,data_standard,mc_standard]
-		[null,data_lumi_minus,mc_lumi_minus]=[tau,data_standard,mc_standard]
-
-		# Jet energy scale up/down, and smeared
-		# [null,data_jetscale_plus,mc_jetscale_plus]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,JetScaleUpDirectory,'',tau,'jetscale_plus')		
-		[null,data_jetscale_plus,mc_jetscale_plus]=[tau,data_standard,mc_standard]
-		[null,data_jetscale_minus,mc_jetscale_minus]=[tau,data_standard,mc_standard]
-		[null,data_jetsmear,mc_jetsmear]=[tau,data_standard,mc_standard]
-
-		# Muon energy scale up/down and smeared.
-		[null,data_muscale_plus,mc_muscale_plus]=[tau,data_standard,mc_standard]
-		[null,data_muscale_minus,mc_muscale_minus]=[tau,data_standard,mc_standard]
-		[null,data_musmear,mc_musmear]=[tau,data_standard,mc_standard]
-		[null,data_phicorr,mc_phicorr]=[tau,data_standard,mc_standard]
-
-		# BTag Efficiency Up/Down
-		[null,data_btag_plus,mc_btag_plus]=[tau,data_standard,mc_standard]
-		[null,data_btag_minus,mc_btag_minus]=[tau,data_standard,mc_standard]
-
-		# [null,data_altunf,mc_altunf]=[tau,data_standard,mc_standard]
-		[null,data_altunf,mc_altunf]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',taush,'altunf')
-
-		[null,data_hltidiso,mc_hltidiso]=[tau,data_standard,mc_standard]
-
-
 	# QUICK FIX FOR NO SYSTEMATICS
 	if ('NoSys' in 'pyplots'):
 		[null,data_pileup_plus,mc_pileup_plus]= [tau,data_standard,mc_standard]
@@ -3277,8 +3496,11 @@ def FullAnalysisWithUncertainty(genvariable,recovariable,default_value,xlabel, b
 		[null,data_btag_minus,mc_btag_minus]=[tau,data_standard,mc_standard]
 		[null,data_btag_misplus,mc_btag_misplus]=[tau,data_standard,mc_standard]
 		[null,data_btag_misminus,mc_btag_misminus]=[tau,data_standard,mc_standard]
-		# [null,data_altunf,mc_altunf]=[tau,data_standard,mc_standard]
-		[null,data_altunf,mc_altunf]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',taush,'altunf')
+		[null,data_altunf,mc_altunf]=[tau,data_standard,mc_standard]
+		# [null,data_altunf,mc_altunf]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',taush,'altunf')
+		[null,data_mcunf,mc_mcunf]=[tau,data_standard,mc_standard]
+
+		# [null,data_mcunf,mc_mcunf]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',taush,'mcunf')
 
 		# [null,data_powunf,mc_powunf]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',tau,'powunf')
 
@@ -3286,7 +3508,7 @@ def FullAnalysisWithUncertainty(genvariable,recovariable,default_value,xlabel, b
 
 		# [null,data_roounfsvd,mc_roounfsvd]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',tau,'roounfsvd')
 
-		#[null,data_roounfbayes,mc_roounfbayes]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',tau,'roounfbayes')
+		# [null,data_roounfbayes,mc_roounfbayes]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',tau,'roounfbayes')
 		[null,data_roounfbayes,mc_roounfbayes]=[tau,data_standard,mc_standard]
 		#[null,data_roounfbin,mc_roounfbin]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',tau,'roounfbin')
 		[null,data_roounfbin,mc_roounfbin]=[tau,data_standard,mc_standard]
@@ -3302,7 +3524,7 @@ def FullAnalysisWithUncertainty(genvariable,recovariable,default_value,xlabel, b
 
 
 	# Here we make a vary verbose table.	
-	data_table=[['|','Bin','|','Prediction','|','DataMean','|','PU(+)','PU(-)','|','BG(+)','BG(-)','|','Lumi(+)','Lumi(-)','|','BEff(+)','BEff(-)','|','BMis(+)','BMis(-)','|','JScale(+)','JScale(-)','JetSmear','|','MuScale(+)','MuScale(-)','MuSmear','|','Generator(+)','Generator(-)','|','HLTIDISO(+)','HLTIDISO(-)','|','METPHI','|','ROOBAY','ROOBIN','JMATCH','|']]#,'|','Scale(+)','Scale(-)','Match(+)','Match(-)','|']]
+	data_table=[['|','Bin','|','Prediction','|','DataMean','|','PU(+)','PU(-)','|','BG(+)','BG(-)','|','Lumi(+)','Lumi(-)','|','BEff(+)','BEff(-)','|','BMis(+)','BMis(-)','|','JScale(+)','JScale(-)','JetSmear','|','MuScale(+)','MuScale(-)','MuSmear','|','Generator(+)','Generator(-)','|','MCToy(+)','MCToy(-)','|','HLTIDISO(+)','HLTIDISO(-)','|','METPHI','|','ROOBAY','ROOBIN','JMATCH','|']]#,'|','Scale(+)','Scale(-)','Match(+)','Match(-)','|']]
 	for x in range(len(data_standard)): # Loop over bins of the original output table
 		thisbin=(data_standard[x])[0]    # this is the bin X1--X2
 		center = (data_standard[x])[1]   # The is the central value of the unfolded data
@@ -3348,9 +3570,17 @@ def FullAnalysisWithUncertainty(genvariable,recovariable,default_value,xlabel, b
 		unf_mat = (data_matchsel[x])[1]
 
 
+		# GENERATOR AND MC TOY ERRORS
+
 		generator= data_altunf[x][1]
+		mctoy= data_mcunf[x][1]
+
 		centval = float(center.split("+-")[0])
 		alt = float(generator.split("+-")[0])
+		mcu = float(mctoy.split("+-")[0])
+
+
+		# MAKE GENERATOR SYMMETRIC
 		if alt>0 and centval:
 			if alt>centval:
 				gen_factor = alt/centval
@@ -3367,6 +3597,25 @@ def FullAnalysisWithUncertainty(genvariable,recovariable,default_value,xlabel, b
 		gen_up = str(round(gens[1],2)) + '+-'+generator.split('+-')[-1]
 
 
+		# MAKE MC TOY SYMMETRIC
+		if mcu>0 and centval:
+			if mcu>centval:
+				toy_factor = mcu/centval
+			else:
+				toy_factor = centval/mcu
+		else:
+			toy_factor = 1.0
+		toy_1 = centval*toy_factor
+		toy_2 = centval/toy_factor
+
+		toys = [toy_1,toy_2]
+		toys.sort()
+		toy_down = str(round(toys[0],2)) + '+-'+mctoy.split('+-')[-1]
+		toy_up = str(round(toys[1],2)) + '+-'+mctoy.split('+-')[-1]
+
+
+
+		# MUON ID and ISO
 		muoneff= data_hltidiso[x][1]
 		id_1 = float(muoneff.split("+-")[0])
 		centval = float(center.split("+-")[0])
@@ -3380,11 +3629,11 @@ def FullAnalysisWithUncertainty(genvariable,recovariable,default_value,xlabel, b
 
 
 		# Strip out the +- statistical uncertainty for the various systematics. We will only consider statistical uncertainties on the central values. 
-		for v in ['pu_up','pu_down','bg_up','bg_down','jet_up','jet_down','jet_smear','mu_up','mu_down','mu_smear','lumi_up','lumi_down','btag_up','btag_down','btag_misup','btag_misdown','gen_down','gen_up','id_up','id_down','met_phicorr','unf_bay','unf_bin','unf_mat']:
+		for v in ['pu_up','pu_down','bg_up','bg_down','jet_up','jet_down','jet_smear','mu_up','mu_down','mu_smear','lumi_up','lumi_down','btag_up','btag_down','btag_misup','btag_misdown','gen_down','gen_up','toy_down','toy_up','id_up','id_down','met_phicorr','unf_bay','unf_bin','unf_mat']:
 			exec(v+'='+v+'.split("+-")[0]')
 		
 		# Add a line to the data table.
-		data_table.append(['|',thisbin,'|',prediction,'|',center,'|',pu_up,pu_down,'|',bg_up,bg_down,'|',lumi_up,lumi_down,'|',btag_up,btag_down,'|',btag_misup,btag_misdown,'|',jet_up,jet_down,jet_smear,'|',mu_up,mu_down,mu_smear,'|',gen_up,gen_down,'|',id_up,id_down,'|',met_phicorr,'|',unf_bay,unf_bin,unf_mat,'|'])#,'|',scale_up,scale_down,match_up,match_down,'|'])
+		data_table.append(['|',thisbin,'|',prediction,'|',center,'|',pu_up,pu_down,'|',bg_up,bg_down,'|',lumi_up,lumi_down,'|',btag_up,btag_down,'|',btag_misup,btag_misdown,'|',jet_up,jet_down,jet_smear,'|',mu_up,mu_down,mu_smear,'|',gen_up,gen_down,'|',toy_up,toy_down,'|',id_up,id_down,'|',met_phicorr,'|',unf_bay,unf_bin,unf_mat,'|'])#,'|',scale_up,scale_down,match_up,match_down,'|'])
 	
 	# Here we print a cleaned-up table.
 	f = open('table_tmp.txt','w')
@@ -3571,26 +3820,28 @@ def getmeasurement(listedtable):
 		MESerrors=filter_pair([errors[13],errors[14]])
 		MERerrors=[errors[15]]
 		GENerrors = [errors[16],errors[17]]
-		IDerrors = [errors[18],errors[19]]
-		METerrors = [errors[20]]
+		TOYerrors = [errors[18],errors[19]]
 
-		BAYerrors = [errors[21]]
+		IDerrors = [errors[20],errors[21]]
+		METerrors = [errors[22]]
+
+		BAYerrors = [errors[23]]
 		# SVDNOCOVerrors = [errors[20]]
 		# SVDerrors = [errors[21]]
 		# BINBYBINerrors = [errors[22]]
-		ROOBINBYBINerrors = [errors[22]]
-		MATerrors = [errors[23]]
+		ROOBINBYBINerrors = [errors[24]]
+		MATerrors = [errors[25]]
 		# print MATerrors
 		# print ' *** ',len(errors)
 		# SCALEerrors=filter_pair([errors[12],errors[13]])
 		# MATCHerrors=filter_pair([errors[14],errors[15]])
 		STATerrors=[rel_err, -rel_err]
 		
-		allerrors=PUerrors+BGerrors+LUMIerrors+BTAGerrors+BTAGMerrors+JESerrors+JERerrors+MESerrors+MERerrors+STATerrors+GENerrors+IDerrors+METerrors+BAYerrors+ROOBINBYBINerrors+MATerrors #SCALEerrors+MATCHerrors+STATerrors
+		allerrors=PUerrors+BGerrors+LUMIerrors+BTAGerrors+BTAGMerrors+JESerrors+JERerrors+MESerrors+MERerrors+STATerrors+GENerrors+TOYerrors+IDerrors+METerrors+BAYerrors+ROOBINBYBINerrors+MATerrors #SCALEerrors+MATCHerrors+STATerrors
 		# Quick hack to ignore shape systematics
 		# allerrors=PUerrors+LUMIerrors+JESerrors+JERerrors+MESerrors+MERerrors+STATerrors
 
-		standard_errorset = [PUerrors,BGerrors,LUMIerrors,BTAGerrors,BTAGMerrors,JESerrors,JERerrors,MESerrors,MERerrors,STATerrors,GENerrors,IDerrors,METerrors,BAYerrors,ROOBINBYBINerrors,MATerrors]#SCALEerrors,MATCHerrors,STATerrors]
+		standard_errorset = [PUerrors,BGerrors,LUMIerrors,BTAGerrors,BTAGMerrors,JESerrors,JERerrors,MESerrors,MERerrors,STATerrors,GENerrors,TOYerrors,IDerrors,METerrors,BAYerrors,ROOBINBYBINerrors,MATerrors]#SCALEerrors,MATCHerrors,STATerrors]
 
 		def verbose_errorset(errset):
 			outerrs = []
@@ -4135,7 +4386,10 @@ def RivetHisto(rivetfile, rivetvariable, binning,selection, label, style,origina
 	# print 'RIvet histo: ',rivetfile, rivetvariable, binning
 	means=[]
 	errs=[]
-	rivetscale = ncompare/(hrivet.Integral())
+	if hrivet.Integral() > 0 :
+		rivetscale = ncompare/(hrivet.Integral())
+	else: 
+		rivetscale = 1.0
 	# hrivet.Scale(rivetscale)
 	scalefactor=1.0
 
@@ -4754,7 +5008,7 @@ def AbridgeHistoList(h,nbins):
 	return [_a,_b,_c,_d]
 
 # This creates the final "results"-style plot!
-def FinalHisto(binning, label, quantity, filename ,expectation_means, expectation_errors, expectation_names, measurement, measurement_error_up, measurement_error_down, normalization,WRenormalization,sel):
+def FinalHisto(binning, label, quantity, filename ,expectation_means, expectation_errors, expectation_names, measurement, measurement_error_up, measurement_error_down, normalization,WRenormalization,sel,dobhonly):
 
 	c1 = TCanvas("c1","",700,800)
 
@@ -4811,6 +5065,10 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	# SherpaRivetSubStyle=[3254,22,.9,1,2]
 	SherpaRivetSubStyle=[0,26,1.0,1,kGreen+4]
 	BlackHatSubStyle=[0,24,1.0,1,kBlue]
+
+	BlackHatSubStyle_cteq=[0,24,1.0,1,kBlue]
+	BlackHatSubStyle_nnpd=[0,27,1.0,1,kBlue]
+	BlackHatSubStyle_mstw=[0,32,1.0,1,kBlue]
 
 
 	# MadGraphRivetSubStyle=[3245,21,.9,1,4]
@@ -5072,6 +5330,15 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	print 'WU:',Blackhat_Result_verbose_nnpdwindow[1]
 	print 'WD:',Blackhat_Result_verbose_nnpdwindow[2]		
 
+
+
+	print ' ------- MSTW --- CentralMod'
+	[Blackhat_Result_mstwcentwindow,Blackhat_Result_verbose_mstwcentwindow] = CreateWindowFromVerbse(MSTWHistos,"Blackhatmstwcentwindow",rivetlabel,BlackHatSubStyle,normalization,"TopPlot",False)	
+
+	print ' ------- NNPD --- CentralMod'
+	[Blackhat_Result_nnpdcentwindow,Blackhat_Result_verbose_nnpdcentwindow] = CreateWindowFromVerbse(NNPDHistos,"Blackhatnnpdcentwindow",rivetlabel,BlackHatSubStyle,normalization,"TopPlot",False)	
+
+
 	print ' -------------- PDF WINDOWS DONE -----------------'
 	# [[Blackhat_Result_cteq6,Blackhat_Result_verbose_cteq6], blackhatrescale_cteq6]    = BlackHatHisto( rivetname,binning,standardname, rivetlabel, BlackHatSubStyle,quantity,ndataunf,normalization,Rivet_MadGraph_Result_verbose,Rivet_MadGraphNonHad_Result_verbose,True,'BlackHatAll/hists_cteq6m_r1.0_f1.0')
 
@@ -5084,6 +5351,13 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	print ' ====================== NEW PDF METHOD =========================='
 
 	[Blackhat_Result_pdfV2,Blackhat_Result_verbose_pdfV2] = CreateWindowFromVerbseWindows([Blackhat_Result_verbose, Blackhat_Result_verbose_ct10window, Blackhat_Result_verbose_mstwwindow, Blackhat_Result_verbose_nnpdwindow],"BlackhatPDFV2",rivetlabel,BlackHatSubStyle,normalization,"TopPlot",False)	
+
+	print ' ====================== BHOnly MultiPDF =========================='
+
+	[Blackhat_Result_pdfV2_cteq,Blackhat_Result_verbose_pdfV2_cteq] = CreateWindowFromVerbseWindows([Blackhat_Result_verbose, Blackhat_Result_verbose_ct10window],"BlackhatPDFV2_cteq",rivetlabel,BlackHatSubStyle_cteq,normalization,"TopPlot",False)	
+	[Blackhat_Result_pdfV2_mstw,Blackhat_Result_verbose_pdfV2_mstw] = CreateWindowFromVerbseWindows([Blackhat_Result_verbose_mstw, Blackhat_Result_verbose_mstwwindow],"BlackhatPDFV2_mstw",rivetlabel,BlackHatSubStyle_mstw,normalization,"TopPlot",False)	
+	[Blackhat_Result_pdfV2_nnpd,Blackhat_Result_verbose_pdfV2_nnpd] = CreateWindowFromVerbseWindows([Blackhat_Result_verbose_nnpdf, Blackhat_Result_verbose_nnpdwindow],"BlackhatPDFV2_nnpd",rivetlabel,BlackHatSubStyle_nnpd,normalization,"TopPlot",False)	
+
 
 	for v in [Blackhat_Result_verbose, Blackhat_Result_verbose_ct10window, Blackhat_Result_verbose_mstwwindow, Blackhat_Result_verbose_nnpdwindow]:
 		print 'VC:',v[0]
@@ -5193,6 +5467,9 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 				sys.exit()
 
 	check_compatibility([Meas_verbose,Blackhat_Result_verbose_basicplusscale,Rivet_Sherpa_Result_verbose,Rivet_MadGraph_Result_verbose])
+	check_compatibility([Meas_verbose,Blackhat_Result_verbose_pdfV2_cteq,Rivet_Sherpa_Result_verbose,Rivet_MadGraph_Result_verbose])
+	check_compatibility([Meas_verbose,Blackhat_Result_verbose_pdfV2_mstw,Rivet_Sherpa_Result_verbose,Rivet_MadGraph_Result_verbose])
+	check_compatibility([Meas_verbose,Blackhat_Result_verbose_pdfV2_nnpd,Rivet_Sherpa_Result_verbose,Rivet_MadGraph_Result_verbose])
 
 	__D = verbose_to_string(Meas_verbose)
 	__B = verbose_to_string(Blackhat_Result_verbose_basicplusscale)
@@ -5288,12 +5565,15 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	Meas.GetYaxis().SetTitleSize(.05);
 
 
-	Rivet_MadGraph_Result.Draw("P2")
-
-
-	# AOD_MadGraph_Result.Draw("P")
-	Rivet_Sherpa_Result.Draw("P")
-	Blackhat_Result_basicplusscale.Draw("P")
+	if dobhonly == False:
+		Rivet_MadGraph_Result.Draw("P")
+		# AOD_MadGraph_Result.Draw("P")
+		Rivet_Sherpa_Result.Draw("P")
+		Blackhat_Result_basicplusscale.Draw("P")
+	else:
+		Blackhat_Result_pdfV2_cteq.Draw("P")
+		Blackhat_Result_pdfV2_mstw.Draw("P")
+		Blackhat_Result_pdfV2_nnpd.Draw("P")
 
 	# print 'MEAS:',Meas_verbose[-1]
 	# print 'MG:', Rivet_MadGraph_Result_verbose[-1]
@@ -5315,15 +5595,33 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	Rivet_Sherpa_Result_L=Rivet_Sherpa_Result.Clone()
 	Blackhat_Result_L=Blackhat_Result.Clone()
 
+	Blackhat_Result_cteq_L=Blackhat_Result_pdfV2_cteq.Clone()
+	Blackhat_Result_mstw_L=Blackhat_Result_pdfV2_mstw.Clone()
+	Blackhat_Result_nnpd_L=Blackhat_Result_pdfV2_nnpd.Clone()
+
+
 	Rivet_MadGraph_Result_L.SetFillColor(kOrange-3)
 	Rivet_Sherpa_Result_L.SetFillColor(kGreen-8)
 	Blackhat_Result_L.SetFillColor(kBlue-10)
+
+	Blackhat_Result_cteq_L.SetFillColor(kBlue-10)
+	Blackhat_Result_mstw_L.SetFillColor(kBlue-10)
+	Blackhat_Result_nnpd_L.SetFillColor(kBlue-10)
+
 
 	Rivet_MadGraph_Result_L.SetFillStyle(1001)
 	Rivet_Sherpa_Result_L.SetFillStyle(1001)
 	Blackhat_Result_L.SetFillStyle(1001)	
 
-	leg = TLegend(0.65,0.67,0.88,0.84,"","brNDC")
+	Blackhat_Result_cteq_L.SetFillStyle(1001)	
+	Blackhat_Result_mstw_L.SetFillStyle(1001)	
+	Blackhat_Result_nnpd_L.SetFillStyle(1001)	
+
+	if dobhonly == False:
+		leg = TLegend(0.65,0.67,0.88,0.84,"","brNDC")
+	else:
+		leg = TLegend(0.55,0.67,0.88,0.84,"","brNDC")
+
 	leg.SetTextFont(42)
 	leg.SetFillColor(0)
 	leg.SetBorderSize(0)
@@ -5333,9 +5631,14 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	leg.AddEntry(Meas,"Data");
 	# leg.AddEntry(AOD_MadGraph_Result,"MadGraph AOD")
 	# leg.AddEntry(Exp,"MadGraph AOD");
-	leg.AddEntry(Blackhat_Result_L,"BlackHat+Sherpa")
-	leg.AddEntry(Rivet_Sherpa_Result_L,"Sherpa")
-	leg.AddEntry(Rivet_MadGraph_Result_L,"MadGraph+Pythia")
+	if dobhonly == False:
+		leg.AddEntry(Blackhat_Result_L,"BlackHat+Sherpa")
+		leg.AddEntry(Rivet_Sherpa_Result_L,"Sherpa")
+		leg.AddEntry(Rivet_MadGraph_Result_L,"MadGraph+Pythia")
+	else:
+		leg.AddEntry(Blackhat_Result_cteq_L,"BlackHat+Sherpa (CT10)")
+		leg.AddEntry(Blackhat_Result_mstw_L,"BlackHat+Sherpa (MSTW)")
+		leg.AddEntry(Blackhat_Result_nnpd_L,"BlackHat+Sherpa (NNPDF)")
 
 	leg.Draw()
 
@@ -5388,14 +5691,7 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	cent1.GetXaxis().SetNdivisions(110)
 	cent1.GetYaxis().SetNdivisions(407)
 
-	# cent1.GetXaxis().SetNdivisions(-50)
 
-	# print Meas_verbose
-
-	# print Rivet_Sherpa_Result_verbose
-	# print 'Dividing Meas/Sherpa'
-	# print Meas_verbose
-	# print Rivet_Sherpa_Result_verbose
 	[grat2,[grat2up,grat2down]] = DivideTGraphsFlatRel(Meas_verbose,Rivet_Sherpa_Result_verbose,SherpaRivetSubStyle)
 	unity=TLine(grat2.GetXaxis().GetXmin(), 1.0 , grat2.GetXaxis().GetXmax(),1.0)
 	unity.SetLineStyle(7)
@@ -5404,26 +5700,38 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	[grat3,[grat3up,grat3down]] = DivideTGraphsFlatRel(Meas_verbose,Rivet_MadGraph_Result_verbose,MadGraphRivetSubStyle)
 	# [grat3aod,[grat3upaod,grat3downaod]] = DivideTGraphsFlatRel(Meas_verbose,AOD_MadGraph_Result_verbose,MadGraphAODSubStyle)
 
-	# print 'Dividing Meas/BH'
-	# print Meas_verbose
-	# print Blackhat_Result_verbose
 	print '~~~~~~~~~~~~~~ BLACKHAT SUB PLOT ~~~~~~~~~~~~'
 	[grat4,[grat4up,grat4down]] = DivideTGraphsFlatRel(Meas_verbose,Blackhat_Result_verbose_basicplusscale,BlackHatSubStyle)
+
+	[grat4_cteq,[grat4up_cteq,grat4down_cteq]] = DivideTGraphsFlatRel(Meas_verbose,Blackhat_Result_verbose_pdfV2_cteq,BlackHatSubStyle_cteq)
+	[grat4_mstw,[grat4up_mstw,grat4down_mstw]] = DivideTGraphsFlatRel(Meas_verbose,Blackhat_Result_verbose_pdfV2_mstw,BlackHatSubStyle_mstw)
+	[grat4_nnpd,[grat4up_nnpd,grat4down_nnpd]] = DivideTGraphsFlatRel(Meas_verbose,Blackhat_Result_verbose_pdfV2_nnpd,BlackHatSubStyle_nnpd)
+
+	## Get the blackhat ratio plots
+
+	grat4window = grat4.Clone()
+	grat4window.SetFillColor(kBlue-10)
+	grat4window.SetFillStyle(1001)
+
+	grat4window_cteq = grat4_cteq.Clone()
+	grat4window_cteq.SetFillColor(kBlue-10)
+	grat4window_cteq.SetFillStyle(1001)
+
+	grat4window_mstw = grat4_mstw.Clone()
+	grat4window_mstw.SetFillColor(kBlue-10)
+	grat4window_mstw.SetFillStyle(1001)
+
+	grat4window_nnpd = grat4_nnpd.Clone()
+	grat4window_nnpd.SetFillColor(kBlue-10)
+	grat4window_nnpd.SetFillStyle(1001)	
+
 	print '~~~~~~~~~~~~~~ BLACKHAT SUB PLOT ~~~~~~~~~~~~'
 
-	# print 'Dividing Meas/BHBasic'
-	# [grat4b,[grat4bup,grat4bdown]] = DivideTGraphsFlatRel(Meas_verbose,Blackhat_Result_verbose_basic,BlackHatSubStyle)
 
-	# [grat5,[grat5up,grat5down]] = DivideTGraphsFlatRel(Meas_verbose,Exp_verbose,MadGraphAODSubStyle)
-
-	# [grat6,[grat6up,grat6down]] = DivideTGraphsFlatRel(Meas_verbose,Blackhat_Result_verbose_mstw,BlackHatSubStyle)
-	# [grat6b,[grat6bup,grat6bdown]] = DivideTGraphsFlatRel(Meas_verbose,Blackhat_Result_verbose_cteq6,BlackHatSubStyle)
-	# grat6.SetLineStyle(2)
-	# grat6b.SetLineStyle(2)
+	## Get the blackhat ratio plots
 
 
-
-	# print 'CENTRAL VALUES:', cent2up,cent2down
+	# Get axis range
 	if cent2up > 1.5 or cent2down < 0.5:
 		grat2down = -.24
 		grat2up = 2.24	
@@ -5440,124 +5748,163 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 		grat2down = -.24
 		grat2up = 2.24			
 	
+
+
 	cent1.SetMaximum(grat2up)
 	cent1.SetMinimum(grat2down)
 	cent1.GetXaxis().SetTitle(label[0])
-	cent1.GetYaxis().SetTitle("Theory/Data")
+	cent1.GetYaxis().SetTitle("MC/Data")
 	cent1.GetXaxis().SetTitleOffset(1.1);
 	cent1.GetYaxis().SetTitleOffset(.54);
 
 	cent1.GetYaxis().SetTitleFont(42);
+	cent1bh = cent1.Clone()
+	cent1bh.GetYaxis().SetTitle("NLO/Data")
+	cent1bh.GetXaxis().SetTitleOffset(1.1);
+	cent1bh.GetYaxis().SetTitleOffset(.54);
 
-	# cent1.GetXaxis().CenterTitle(1);
-	# cent1.GetYaxis().CenterTitle(1);
-	# cent1.GetXaxis().SetTitleOffset(0.7);
-	# cent1.GetYaxis().SetTitleOffset(0.3);
-	# cent1.GetYaxis().SetLabelSize(.1);
-	# cent1.GetXaxis().SetLabelSize(.1);
+	cent1bh.GetYaxis().SetTitleFont(42);
 
+	################################################################################################
+	## FOR THIRD SUBPLOT
 	grat2.SetMinimum(grat2down)
 	grat2.SetMaximum(grat2up)
 	grat3.SetMinimum(grat2down)
 	grat3.SetMaximum(grat2up)
-	# grat3aod.SetMinimum(grat2down)
-	# grat3aod.SetMaximum(grat2up)
-	
-	# cent1.Draw("A2")
-	# cent1.Draw
 
 	grat3window = grat3.Clone()
 
 	grat3window.SetFillColor(kOrange-2)
 	grat3window.SetFillStyle(1001)
-	cent1.Draw("A2")
-	grat3window.Draw("2")
-	grat3.Draw("p")
-	cent1.Draw("2")
-	unity.Draw("SAME")
-
-	# grat3aod.Draw("p")
-
-	lb2=TLatex()
-	lb2.SetTextAlign(12)
-	lb2.SetTextFont(42)
-	lb2.SetNDC()
-	lb2.SetTextSize(0.09)
-	lb2.DrawLatex(0.15,0.5,"Madgraph (LO+PS)")
 
 
+	if dobhonly == False:
+		cent1.Draw("A2")
 
+		grat3window.Draw("2")
+		grat3.Draw("p")
+		cent1.Draw("2")
+		unity.Draw("SAME")
 
+		lb2=TLatex()
+		lb2.SetTextAlign(12)
+		lb2.SetTextFont(42)
+		lb2.SetNDC()
+		lb2.SetTextSize(0.09)
+		lb2.DrawLatex(0.15,0.5,"Madgraph (LO+PS)")
+	else:
+		cent1bh.Draw("A2")
 
+		grat4window_nnpd.GetYaxis().SetTitle("NLO/Data")
+		grat4_nnpd.GetYaxis().SetTitle("NLO/Data")
+		grat4window_nnpd.Draw("2")
+		grat4_nnpd.Draw("p")
+		cent1bh.Draw("2")
+		unity.Draw("SAME")
 
-
-	# pad3.SetGridy()
-	# pad4.SetGridy()
+		lb2=TLatex()
+		lb2.SetTextAlign(12)
+		lb2.SetTextFont(42)
+		lb2.SetNDC()
+		lb2.SetTextSize(0.09)
+		lb2.DrawLatex(0.15,0.5,"Blackhat+Sherpa (#leq 4 jets NLO, NNPDF with PDF Unc.)")
 
 	pad4.RedrawAxis()
+
+	################################################################################################
+	## FOR SECOND SUBPLOT
+
 	pad3.cd()
 
 	grat2window = grat2.Clone()
 
-	cent1.Draw("A2")
 	grat2window.SetFillColor(kGreen-8)
 	grat2window.SetFillStyle(1001)
-	grat2window.Draw("2")
-	grat2.Draw("p")
-	cent1.Draw("2")
-	unity.Draw("SAME")
+
+	if dobhonly == False:
+		cent1.Draw("A2")
+
+		grat2window.Draw("2")
+		grat2.Draw("p")
+		cent1.Draw("2")
+		unity.Draw("SAME")
 
 
-	# cent1.Draw("A2")
-	# unity.Draw("SAME")
-	# grat2.Draw("p")
+		lb3=TLatex()
+		lb3.SetTextAlign(12)
+		lb3.SetTextFont(42)
+		lb3.SetNDC()
+		lb3.SetTextSize(0.09)
+		lb3.DrawLatex(0.15,0.5,"Sherpa (LO+PS)")
+
+	else:
+		cent1bh.Draw("A2")
+
+		grat4window_mstw.GetYaxis().SetTitle("NLO/Data")
+		grat4_mstw.GetYaxis().SetTitle("NLO/Data")
+
+		grat4window_mstw.Draw("2")
+		grat4_mstw.Draw("p")
+		cent1bh.Draw("2")
+		unity.Draw("SAME")
+
+		lb3=TLatex()
+		lb3.SetTextAlign(12)
+		lb3.SetTextFont(42)
+		lb3.SetNDC()
+		lb3.SetTextSize(0.09)
+		lb3.DrawLatex(0.15,0.5,"Blackhat+Sherpa (#leq 4 jets NLO, MSTW with PDF Unc.)")
+
 	pad3.RedrawAxis()
 
-	lb3=TLatex()
-	lb3.SetTextAlign(12)
-	lb3.SetTextFont(42)
-	lb3.SetNDC()
-	lb3.SetTextSize(0.09)
-	lb3.DrawLatex(0.15,0.5,"Sherpa (LO+PS)")
 
-
+	################################################################################################
+	## FOR FIRST SUBPLOT
 	pad2.cd()
-	# cent1.Draw("A2")
-	# unity.Draw("SAME")	
-	# grat4.Draw("p")
 
 
-	grat4window = grat4.Clone()
+	if dobhonly == False:
+		cent1.Draw("A2")
 
-	grat4window.SetFillColor(kBlue-10)
-	grat4window.SetFillStyle(1001)
-	cent1.Draw("A2")
+		grat4window.Draw("2")
+		grat4.Draw("p")
+		cent1.Draw("2")
+		unity.Draw("SAME")
 
-	grat4window.Draw("2")
-	grat4.Draw("p")
-	cent1.Draw("2")
-	unity.Draw("SAME")
+		lb4=TLatex()
+		lb4.SetTextAlign(12)
+		lb4.SetTextFont(42)
+		lb4.SetNDC()
+		lb4.SetTextSize(0.09)
+		lb4.DrawLatex(0.15,0.5,"Blackhat+Sherpa (#leq 4 jets NLO, with PDF and Ren./Fac. Scale Unc.)")
+	else:
+		cent1bh.Draw("A2")
 
+		grat4window_cteq.GetYaxis().SetTitle("NLO/Data")
+		grat4_cteq.GetYaxis().SetTitle("NLO/Data")		
+		grat4window_cteq.Draw("2")
+		grat4_cteq.Draw("p")
+		cent1bh.Draw("2")
+		unity.Draw("SAME")
 
+		lb4=TLatex()
+		lb4.SetTextAlign(12)
+		lb4.SetTextFont(42)
+		lb4.SetNDC()
+		lb4.SetTextSize(0.09)
+		lb4.DrawLatex(0.15,0.5,"Blackhat+Sherpa (#leq 4 jets NLO, CT10 with PDF Unc.)")
 
-
-	# grat4b.Draw("||")
-	# grat6.Draw("L")
-	# grat6b.Draw("L")
-
-	# grat5.Draw("p")
-	lb4=TLatex()
-	lb4.SetTextAlign(12)
-	lb4.SetTextFont(42)
-	lb4.SetNDC()
-	lb4.SetTextSize(0.09)
-	lb4.DrawLatex(0.15,0.5,"Blackhat+Sherpa (#leq 3 jets NLO, 4 jets LO)")
 
 	cent1.GetXaxis().SetTitleSize(.12);
 	cent1.GetYaxis().SetTitleSize(.10);
-
+	cent1bh.GetXaxis().SetTitleSize(.12);
+	cent1bh.GetYaxis().SetTitleSize(.10);	
 	pad2.RedrawAxis()
+	################################################################################################
 
+	# Do Drawing
+	if dobhonly == True:
+		filename = filename[:-1]+'_BHMultPdf.'
 	print 'Creating: ',filename+'pdf/png'
 	c1.Print(filename+'pdf')
 	c1.Print(filename+'png')
@@ -5862,13 +6209,13 @@ def ParseTablesToRecoHistograms():
 		for x in filesets:
 			for y in x:
 				usedfiles.append(y)
-	print filesets
+	# print filesets
 	# sys.exit()
 
 	# print filesets
 
 	for f in filesets:
-		print f
+		# print f
 		# sys.exit()
 		# if 'MT' not in str(f):
 		# 	continue
@@ -5932,7 +6279,20 @@ def ParseTablesToRecoHistograms():
 		_binning.append(rhs)
 		# print _binning
 		presentationbinning= _binning
+
+		if 'MT' in str(f):
+			presentationbinning = []
+			for b in _binning:
+				if b <=150:
+					presentationbinning.append(b)
+			print presentationbinning
+			# sys.exit()
+			plotmax *= 10
+			plotmin *= 5
+
 		Label = f[-1]
+
+
 		hs_rec_WJets=NullHisto('hs_rec_WJets','W+Jets',presentationbinning,WStackStyle,Label)
 		hs_rec_Data=NullHisto('hs_rec_Data','Data, 5/fb',presentationbinning,DataRecoStyle,Label)
 		hs_rec_DiBoson=NullHisto('hs_rec_DiBoson','DiBoson',presentationbinning,DiBosonStackStyle,Label)
@@ -6656,9 +7016,13 @@ def ParseTablesToFinalResults(WRenorm,sel):
 		# 	continue
 		if 'Vert' in f:
 			continue
+		# if 'Eta' not in f or 'jet4' not in f:
+		# 	continue
 		# if 'pre' not in f:
 		# 	continue
 		# if "HT" not in f:
+		# 	continue
+		# if 'Pt_pf' not in f and 'Count' not in f:
 		# 	continue
 		print '\n\nAnalyzing table: ',f
 		# continue
@@ -6814,7 +7178,8 @@ def ParseTablesToFinalResults(WRenorm,sel):
 		# print "USING W RENORMALIZATION: ",WRenorm
 		# print " -"*40
 		# FinalHisto(rootbinning,label,quantity, output+'PlotCount.', prediction_means, prediction_errors, prediction_names, meas_mean, meas_err_plus, meas_err_minus,0,WRenorm,sel)
-		FinalHisto(rootbinning,label,quantity, output+'PlotXSec.', prediction_means, prediction_errors, prediction_names, meas_mean, meas_err_plus, meas_err_minus,4955.0,WRenorm,sel)
+		FinalHisto(rootbinning,label,quantity, output+'PlotXSec.', prediction_means, prediction_errors, prediction_names, meas_mean, meas_err_plus, meas_err_minus,4955.0,WRenorm,sel,False)
+		FinalHisto(rootbinning,label,quantity, output+'PlotXSec.', prediction_means, prediction_errors, prediction_names, meas_mean, meas_err_plus, meas_err_minus,4955.0,WRenorm,sel,True)
 		# sys.exit()
 
 		#os.system('cat pyplots/Pt_pfjet1FINAL.TexCount.txt')
@@ -7142,11 +7507,11 @@ def CleanUpAndMakeTables():
 				var = v[1]
 
 		outfile = open(sysfile.replace('TexVerboseError.txt','AllSys.tex'),'w')
-		outfile.write('\\begin{table}[htb]\n\caption{Bin-by-bin percent systematic uncertainties on the measured result for the final '+var+' distribution.}\n')
-		outfile.write("\\begin{center}\n\\begin{tabular}{|l|cccccccccccccccc|}\\hline\n "+var+"     &PU    & BG & Lumi   & bEff & BMis   & JES    & JER     & MES    & MER   & Stat  & Gen & Evt & MET & Bay & BBB &Mat  \\\\ \\hline \\hline\n")
+		outfile.write('\\begin{scriptsize}\n\\begin{table}[htb]\n\caption{Bin-by-bin percent systematic uncertainties on the measured result for the final '+var+' distribution.}\n')
+		outfile.write("\\begin{center}\n\\begin{tabular}{|l|ccccccccccccccccc|}\\hline\n "+var+"     &PU    & BG & Lumi   & bEff & BMis   & JES    & JER     & MES    & MER   & Stat  & Gen & MC & Evt & MET & Bay & BBB &Mat  \\\\ \\hline \\hline\n")
 		for line in open(sysfile,'r'):
 			outfile.write(line.replace('--','-'))
-		outfile.write('\\hline\n\\end{tabular}\n\\end{center}\n\\end{table}\n')
+		outfile.write('\\hline\n\\end{tabular}\n\\end{center}\n\\end{table}\n\\end{scriptsize}\\\n')
 		outfile.close()
 
 
@@ -7429,17 +7794,17 @@ def CleanUpAndMakeTables():
 		JJ = TH1D('JJ','JES, JER',n,array('d',binset))
 		MM = TH1D('MM','MES, MER, Muon Sel',n,array('d',binset))
 		BG = TH1D('BG','Background',n,array('d',binset))
-		UN = TH1D('UN','Stat. + Unfolding',n,array('d',binset))
+		UN = TH1D('UN','Statistical',n,array('d',binset))
 		Gen = TH1D('Gen','Generator',n,array('d',binset))
 		BT = TH1D('BT','BTagging',n,array('d',binset))
 		OT = TH1D('OT','All Other',n,array('d',binset))
 		BB = TH1D('BB','Bayes/Bin',n,array('d',binset))
-
+		MCT = TH1D('MCT','MC',n,array('d',binset))
 		allvals = []
 		for x in range(len(binset)-1):
-			[pu,bg,lu,bt,btm,js,jr,ms,mr,st,gn,hl,mt,by,bb,ma] = vcont[x]
+			[pu,bg,lu,bt,btm,js,jr,ms,mr,st,gn,mct,hl,mt,by,bb,ma] = vcont[x]
 			nbin = x+1
-			_T = math.sqrt(sum([aa*aa for aa in [pu,bg,lu,bt,btm,js,jr,ms,mr,st,gn,hl,mt]]))
+			_T = math.sqrt(sum([aa*aa for aa in [pu,bg,lu,bt,btm,js,jr,ms,mr,st,gn,mct,hl,mt]]))
 			T.SetBinContent(nbin,_T)
 			
 			_JJ = math.sqrt(js*js+jr*jr)
@@ -7448,6 +7813,7 @@ def CleanUpAndMakeTables():
 			_BG = bg
 			_UN = st
 			_Gen = gn
+			_MCT = mct
 			_BT = math.sqrt(bt*bt+btm*btm)
 			# _OT = math.sqrt(lu*lu+pu*pu+hl*hl+mt*mt)
 
@@ -7462,15 +7828,15 @@ def CleanUpAndMakeTables():
 			BT.SetBinContent(nbin,_BT)
 			OT.SetBinContent(nbin,_OT)
 			BB.SetBinContent(nbin,_BB)
-
+			MCT.SetBinContent(nbin,_MCT)
 			# allvals+= [_JJ,_MM,_BG,_UN,_Gen,_BT,_OT]
 
-			allvals += [_JJ,_Gen,_UN,_OT,_T]
+			allvals += [_JJ,_Gen,_UN,_MCT,_OT,_T]
 		colors = [1,2,4,6,28,7,8,9]
 		styles = [1,2,4,5,3,6,7,8]
 
 		# histos = [T,JJ,MM,BG,UN,Gen,BT,OT]
-		histos = [T,JJ,Gen,UN,OT]
+		histos = [T,JJ,Gen,UN,MCT,OT]
 
 		# gROOT.SetStyle('Plain')  # Plain white default for plots
 		gStyle.SetOptTitle(0) # No titles
