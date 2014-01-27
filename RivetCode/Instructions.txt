@@ -11,9 +11,8 @@ cmsrel CMSSW_5_0_0
 cd CMSSW_5_0_0/src/
 cmsenv 
 
-cvs co -r V01-01-41 Configuration/GenProduction/python/WToMuNu_TuneZ2_7TeV_pythia6_cff.py
-cvs co Configuration/GenProduction/python/rivet_customize.py 
-cvs co GeneratorInterface/RivetInterface 
+git cms-addpkg GeneratorInterface/RivetInterface
+curl -s https://raw.github.com/cms-sw/genproductions/master/python/rivet_customize.py --retry 2 --create-dirs -o Configuration/GenProduction/python/rivet_customize.py
 rm GeneratorInterface/RivetInterface/src/CMS*cc
 scramv1 b -j 16
 
