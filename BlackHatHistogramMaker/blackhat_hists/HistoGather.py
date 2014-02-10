@@ -21,52 +21,97 @@ for f in files:
 		filetypes.append('hists/subdir_*/'+f)
 	# print f
 # print len(filetypes)
+# for f in filetypes:
+# 	print f
 # sys.exit()
+outfiles = []
+combinecommands = []
 for f in filetypes:
-	outfile = f.replace('*.list*','_')
+	outfile = f.replace('.list*','_')
 	outfile = outfile.replace('.root','_all.root')
 	outfile = outfile.replace('/subdir_*/','/')
 	# outfile = outfile.replace('','/')
 
 	for x in range(10):
 		outfile = outfile.replace('__','_')
-	print './combineHistograms.exe -outfile '+outfile+' '+f
-	os.system('./combineHistograms.exe -outfile '+outfile+' '+f)
+	outfiles.append(outfile)
+	# print './combineHistograms.exe -outfile '+outfile+' '+f
+	combinecommands.append('./combineHistograms.exe -outfile '+outfile+' '+f)
+	# os.system('./combineHistograms.exe -outfile '+outfile+' '+f)
 # sys.exit()
+
+
+gatheredexp = []
+for outfile in outfiles:
+	gfile = outfile
+	for x in ['V0','R0','I0','B0']:
+		gfile = gfile.replace(x,'@@')
+	for x in range(9):
+		nmarker = '@@0'+str(x)+''
+		gfile = gfile.replace(nmarker,'*')
+	if gfile not in gatheredexp:
+		gatheredexp.append(gfile)
+
+signhadds = []
+for g in gatheredexp:
+	outg = g.replace('*_','')
+	signhadd = 'hadd '+outg+' '+g
+	signhadds.append(signhadd)
+
+
+coldirs = []
+parsedirs = []
+
+for g in gatheredexp:
+	outg = g.replace('*_','')
+	adir = 'hists/hists_'+outg.split('j_')[-1]
+	adir = adir.split('_all')[0]
+	if adir not in parsedirs:
+		parsedirs.append(adir)
+		coldirs.append(adir.replace('.LHgrid',''))
+
+mkdirs = []
+for d in coldirs:
+	mkdirs.append('mkdir '+d)
+
+finalhadds = []
+
+
+for _d in range(len(coldirs)):
+	d = coldirs[_d]
+	dp = parsedirs[_d]
+	ahadd = 'hadd '+d+'/'
+	for x in ['1j', '2j', '3j','4j']:
+		resfile = 'W'+x+'_all.root '
+		rexp = ' '+dp.replace('hists/hists_','hists/W*'+x+'*')+'*all.root'
+		rexp = rexp.replace('.LHgrid','*')
+		finalhadds.append(ahadd+resfile+rexp)
+
+
+do = '--do' in sys.argv
+
+for c in combinecommands:
+	print c
+	if do:
+		os.system(c)
+print ' '
+for s in signhadds:
+	print s
+	if do:
+		os.system(s)
+print ' '
+for m in mkdirs:
+	print m
+	if do:
+		os.system(m)
+print ' '
+for f in finalhadds:
+	print f 
+	if do:
+		os.system(f)
+
 os.system('rm -r MergedHistos')
 os.system('mkdir MergedHistos')
+os.system('mv hists/hists* MergedHistos/')
 os.system('mv hists/*all.root MergedHistos/')
 
-
-mfiles = files = ['MergedHistos/'+x.replace('\n','') for x in os.popen('ls -1 MergedHistos').readlines()]
-
-folders = {}
-for x in mfiles:
-	if '.root' not in x:
-		continue
-	f = x.split('j_')[-1]
-	f = f.replace('_all.root','')
-	f = f.replace('.LHgrid','')
-	f = 'MergedHistos/hists_'+f
-	if f not in folders:
-		folders[f]=[x]
-	else:
-		folders[f].append(x)
-
-for f in folders:
-	os.system('mkdir '+f)
-	print f, folders[f]
-	for x in ['1j', '2j', '3j','4j']:
-		haddfiles = ''
-		for subfile in folders[f]:
-				if x in subfile:
-					haddfiles += subfile + ' '
-		outfile = f+'/W'+x+'_all.root'
-		hadd = 'hadd '+outfile+' '+haddfiles
-		print hadd
-		os.system(hadd)
-	print ' '
-
-print ' --------- Results Combined ----------'
-for x in os.popen('ls  MergedHistos/hists*').readlines():
-	print x.replace('\n','')

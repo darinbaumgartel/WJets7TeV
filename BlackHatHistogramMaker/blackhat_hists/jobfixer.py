@@ -25,7 +25,7 @@ def IsNotCorruptionTest(afile):
 			isGood=False
 		else:
 			nent = f.Get('h_counts').GetEntries()
-			print nent
+			# print nent
 			isGood = nent>0
 		f.Close()
 	print isGood
@@ -75,11 +75,18 @@ def namesfromlist(_pdf,doerr,r,f):
 			outnames.append(outname)
 	return outnames
 
-L = namesfromlist('CT10',True,'1.0','1.0')		
-L+= namesfromlist('NNPDF21_100',True,'1.0','1.0')		
-L+= namesfromlist('MSTW2008nlo68cl',True,'1.0','1.0')		
-L+= namesfromlist('CT10',False,'2.0','2.0')		
-L+= namesfromlist('CT10',False,'0.5','0.5')		
+L = namesfromlist('CT10',False,'1.0','1.0')		
+
+
+if '--testrun' not in sys.argv:
+	L = namesfromlist('CT10',True,'1.0','1.0')		
+	L+= namesfromlist('NNPDF21_100',True,'1.0','1.0')		
+	L+= namesfromlist('MSTW2008nlo68cl',True,'1.0','1.0')		
+	L+= namesfromlist('CT10',False,'2.0','2.0')		
+	L+= namesfromlist('CT10',False,'0.5','0.5')		
+
+
+
 
 missingfiles = []
 presentrootfiles = [x.split('/')[-1] for x in allrootfiles]
