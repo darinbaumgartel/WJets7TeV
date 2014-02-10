@@ -11,21 +11,40 @@ cmsrel CMSSW_5_0_0
 cd CMSSW_5_0_0/src/
 cmsenv 
 
-cvs co -r V01-01-41 Configuration/GenProduction/python/WToMuNu_TuneZ2_7TeV_pythia6_cff.py
-cvs co Configuration/GenProduction/python/rivet_customize.py 
-cvs co GeneratorInterface/RivetInterface 
+git cms-addpkg GeneratorInterface/RivetInterface
+curl -s https://raw.github.com/cms-sw/genproductions/master/python/rivet_customize.py --retry 2 --create-dirs -o Configuration/GenProduction/python/rivet_customize.py
 rm GeneratorInterface/RivetInterface/src/CMS*cc
 scramv1 b -j 16
 
-cp ../../RivetAnalysis/CMS_SMP_12_023.cc GeneratorInterface/RivetInterface/src/CMS_SMP_12_23.cc
-cp ../../RivetAnalysis/CMS_SMP_12_023.plot GeneratorInterface/RivetInterface/data/CMS_SMP_12_23.plot
-cp ../../RivetAnalysis/CMS_SMP_12_023.info GeneratorInterface/RivetInterface/data/CMS_SMP_12_23.info
-cp ../../RivetAnalysis/CMS_SMP_12_023.aida GeneratorInterface/RivetInterface/data/CMS_SMP_12_23.aida
+cp ../../RivetAnalysis/CMS_SMP_12_023.cc GeneratorInterface/RivetInterface/src/CMS_SMP_12_23.cc && cp ../../RivetAnalysis/CMS_SMP_12_023.plot GeneratorInterface/RivetInterface/data/CMS_SMP_12_23.plot && cp ../../RivetAnalysis/CMS_SMP_12_023.info GeneratorInterface/RivetInterface/data/CMS_SMP_12_23.info && cp ../../RivetAnalysis/CMS_SMP_12_023.aida GeneratorInterface/RivetInterface/data/CMS_SMP_12_23.aida && scramv1 b -j 16
 
+
+
+
+
+
+
+
+
+cmsrel CMSSW_6_0_1
+cd CMSSW_6_0_1/src/
+cmsenv 
+
+git cms-addpkg GeneratorInterface/RivetInterface
+curl -s https://raw.github.com/cms-sw/genproductions/master/python/rivet_customize.py --retry 2 --create-dirs -o Configuration/GenProduction/python/rivet_customize.py
+rm GeneratorInterface/RivetInterface/src/CMS*cc
 scramv1 b -j 16
 
+cp ../../RivetAnalysis/CMS_SMP_12_023.cc GeneratorInterface/RivetInterface/src/CMS_SMP_12_23.cc && cp ../../RivetAnalysis/CMS_SMP_12_023.plot GeneratorInterface/RivetInterface/data/CMS_SMP_12_23.plot && cp ../../RivetAnalysis/CMS_SMP_12_023.info GeneratorInterface/RivetInterface/data/CMS_SMP_12_23.info && cp ../../RivetAnalysis/CMS_SMP_12_023.aida GeneratorInterface/RivetInterface/data/CMS_SMP_12_23.aida && scramv1 b -j 16
 
 
+
+
+
+
+
+
+----------- OLD INSTRUCTIONS
 
 cmsrel CMSSW_6_0_1
 cd CMSSW_6_0_1/src/
