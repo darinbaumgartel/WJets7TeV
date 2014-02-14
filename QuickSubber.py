@@ -20,11 +20,34 @@ if thisdir[-1] !='/':
 # TAGGERS = ['TCHEM','TCHEMSVDUNC']
 
 TAGGERS = ['TCHEM','TCHEMBTAGOFF','TCHEMNOJESTAG','TCHEMNOJESTAGBTAGOFF','TCHEMVARQCD','TCHEMBINBYBIN','TCHEMBGSF','TCHPT','SSVHPT','TCHEL','JPT']
-TAGGERS = ['TCHEM','TCHEMBTAGOFF','TCHEMNOJESTAG','TCHEMNOJESTAGBTAGOFF', 'TCHEMVARQCD','TCHPT','SSVHPT','TCHEL','JPT','TCHEMBTAGOFF','TCHEMBINBYBIN','TCHEMBGSF']
-TAGGERS = ['TCHEM', 'TCHEMBTAGOFF']
-if True:
+TAGGERS = ['TCHEM','TCHEMBTAGOFF','TCHEMNOJESTAG','TCHEMNOJESTAGBTAGOFF','TCHPT','SSVHPT','TCHEL','JPT','TCHEMBGSF']
+# TAGGERS = ['TCHEM', 'TCHEMBTAGOFF']wj
+# TAGGERS = ['TCHEM', 'TCHEMBTAGOFF','TCHEMNORECOIL']
+# TAGGERS = ['TCHEM','TCHEMBTAGOFFNORECOIL','TCHEMBTAGOFF','TCHEMNORECOIL','TCHEL','TCHEMBGSF','TCHEMBAYES']
+TAGGERS=['TCHEMNOJESTAG']
+TAGGERS=['TCHEM','TCHEMNOJESTAG','TCHEMNOSYSSVDUNC','TCHEMNOSYSBGSF','TCHEMBGSF','TCHPT','TCHEL','TCHEMBAYES']
+TAGGERS = ['TCHEMNOSYSBGSF','TCHEMBGSF']
+TAGGERS = ['TCHEMNOSYS','TCHEMTSVDNOSYS']
+
+TAGGERS = ['TCHEM','TCHEMBTAGOFF','TCHEMNOJESTAG','TCHEMNOJESTAGBTAGOFF','TCHEMBGSF','TCHPT','SSVHPT','TCHEL','JPT']
+# TAGGERS = ['TCHEMNOJESTAGBGSF']
+# TAGGERS = ['TCHEMNOSYS','TCHEMTSVDNOSYS']
+TAGGERS = ['TCHEMBTAGOFFNOSYSBAYES','TCHEMNOSYSBAYES']
+TAGGERS = ['TCHEM','TCHEMBTAGOFF','TCHEMNOJESTAG','TCHEMNOJESTAGBTAGOFF','TCHEMBGSF','TCHELNOSYS','JPMNOSYS']
+# TAGGERS = ['TCHEMNOSYSBGSF','TCHEM','TCHEMNOJESTAG']
+# TAGGERS = ['TCHEMNOSYS','TCHEMTSVDNOSYS']
+# TAGGERS = ['TCHELNOSYS','JPMNOSYS']
+# TAGGERS = ['TCHEMNOSYS']
+
+if False:
 	for n in range(len(TAGGERS)):
 		TAGGERS[n]+= 'NOSYS'
+
+if False:
+	for n in range(len(TAGGERS)):
+		# TAGGERS[n]+= 'BAYES'
+		TAGGERS.append(TAGGERS[n]+'BAYES')
+print TAGGERS
 
 from time import strftime
 now=str(strftime("%Y-%m-%d-%H:%M:%S"))
@@ -55,6 +78,9 @@ for TAGGER in TAGGERS:
 	donojestag = False
 	donosys = False
 	dosvdunc = False
+	dobayes = False
+	dotsvd = False
+	donoprop = False
 	if 'BGSF' in TAGGER:
 		TAGGER = TAGGER.replace('BGSF','')
 		dosf = True
@@ -89,8 +115,16 @@ for TAGGER in TAGGERS:
 		TAGGER=TAGGER.replace('SVDUNC','')
 		dosvdunc = True
 
+	if 'BAYES' in TAGGER:
+		TAGGER=TAGGER.replace('BAYES','')
+		dobayes = True
+
+	if 'TSVD' in TAGGER:
+		TAGGER=TAGGER.replace('TSVD','')
+		dotsvd = True
+
 	_TAGGER = str(TAGGER)
-	sfadd = ""+dosf*("BGSFOn")+norecoil*("NoRecoil")+wsfoff*("NoWScale")+dobinbybin*('BinByBin')+dov2*("V2")+dov3*("V3")+dobtagoff*("BTagOff")+dovarqcd*("VariableQCD")+donojestag*("NoJESTag")+donosys*("NoSys")+dosvdunc*("SvdUnc")
+	sfadd = ""+dosf*("BGSFOn")+norecoil*("NoRecoil")+wsfoff*("NoWScale")+dobinbybin*('BinByBin')+dov2*("V2")+dov3*("V3")+dobtagoff*("BTagOff")+dovarqcd*("VariableQCD")+donojestag*("NoJESTag")+donosys*("NoSys")+dosvdunc*("SvdUnc")+dobayes*("BAYES")+dotsvd*("Tsvd")+donoprop*("NoProp")
 	TAGGER+=sfadd
 	os.system('rm WJetsTreeAnalyzer'+TAGGER+'.py')
 
@@ -107,7 +141,10 @@ for TAGGER in TAGGERS:
 			record=True
 		if '###########' in line:
 			record=False
-		if record==True and 'FullAnalysisWithUncertainty' in line and '#Full' not in line and "(" in line:
+		skipline = False
+		if (donosys==True) and 'nouflow' in line:
+			skipline = True
+		if record==True and 'FullAnalysisWithUncertainty' in line and '#Full' not in line and "(" in line and skipline==False:
 			lines.append(line)
 
 	os.system('rm SubTemp'+TAGGER+'_*py SubTemp'+TAGGER+'_*csh')
@@ -130,7 +167,7 @@ for TAGGER in TAGGERS:
 	
 
 	for x in range(n):
-		fsub.write('bsub -q '+q+'  -R "pool>60000" -e /dev/null -J SubTemp'+TAGGER+'_'+str(x)+'< ../SubTemp'+TAGGER+'_'+str(x)+'.tcsh\n\n')
+		fsub.write('bsub -q '+q+'  -R "pool>100000" -e /dev/null -J SubTemp'+TAGGER+'_'+str(x)+'< ../SubTemp'+TAGGER+'_'+str(x)+'.tcsh\n\n')
 		os.system('cat RunWJetsBatch.tcsh | sed \'s#WJetsTreeAnalyzer.py#SubTemp'+TAGGER+'_'+str(x)+'.py#g\' | sed \'s#ResDir#'+ResDir+'#g\' | sed \'s#OutDir#'+ResDir+'pyplots'+TAGGER+'#g\' | sed \'s#AFSDir#'+thisdir+ResDir+'pyplots'+TAGGER+'#g\'  > SubTemp'+TAGGER+'_'+str(x)+'.tcsh ')
 		# print('cat RunWJetsBatch.tcsh | sed \'s#WJetsTreeAnalyzer.py#SubTemp'+TAGGER+'_'+str(x)+'.py#g\' | sed \'s#ResDir#'+ResDir+'#g\' | sed \'s#OutDir#'+ResDir+'pyplots'+TAGGER+'#g\' | sed \'s#AFSDir#'+thisdir+ResDir+'pyplots'+TAGGER+'#g\'  > SubTemp'+TAGGER+'_'+str(x)+'.tcsh ')
 

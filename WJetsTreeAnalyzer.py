@@ -8,6 +8,7 @@ startTime = datetime.now()
 #Current AFS Working Directory and eos directory for ntuples
 afsdir = '/afs/cern.ch/work/d/darinb/WAnalysis/CMSSW_4_2_8/src/WJetsAnalysis/'
 eosdir = '/store/group/phys_smp/WPlusJets/AnalyzerOutput/Nov30/'
+eosdir = '/store/group/phys_smp/WPlusJets/AnalyzerOutput/Jan31BTagFix/'
 
 # Set of all ntuples
 
@@ -20,15 +21,25 @@ eosdir = '/store/group/phys_smp/WPlusJets/AnalyzerOutput/Nov30/'
 # MuScaleUpDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Oct9_MuScaleUp_2013_10_09_22_53_04/SummaryFiles"
 # MuSmearDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Oct9_MuSmear_2013_10_10_00_35_04/SummaryFiles"
 
-NormalDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Nov30_2013_11_29_20_25_02/SummaryFiles"
-JetScaleDownDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Nov30_JetScaleDown_2013_11_30_00_18_41/SummaryFiles"
-JetScaleUpDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Nov30_JetScaleUp_2013_11_29_23_33_26/SummaryFiles"
-JetSmearDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Nov30_JetSmear_2013_11_30_12_56_44/SummaryFiles"
-PhiCorrDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Nov30_MetPhiMod_2013_11_30_02_32_32/SummaryFiles"
-MuScaleDownDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Nov30_MuScaleDown_2013_11_30_07_11_13/SummaryFiles"
-MuScaleUpDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Nov30_MuScaleUp_2013_11_30_01_18_47/SummaryFiles"
-MuSmearDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Nov30_MuSmear_2013_11_30_13_13_00/SummaryFiles"
+# NormalDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Nov30_2013_11_29_20_25_02/SummaryFiles"
+# JetScaleDownDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Nov30_JetScaleDown_2013_11_30_00_18_41/SummaryFiles"
+# JetScaleUpDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Nov30_JetScaleUp_2013_11_29_23_33_26/SummaryFiles"
+# JetSmearDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Nov30_JetSmear_2013_11_30_12_56_44/SummaryFiles"
+# PhiCorrDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Nov30_MetPhiMod_2013_11_30_02_32_32/SummaryFiles"
+# MuScaleDownDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Nov30_MuScaleDown_2013_11_30_07_11_13/SummaryFiles"
+# MuScaleUpDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Nov30_MuScaleUp_2013_11_30_01_18_47/SummaryFiles"
+# MuSmearDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Nov30_MuSmear_2013_11_30_13_13_00/SummaryFiles"
 
+
+NormalDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Jan31BTagFix_2014_01_31_21_06_37/SummaryFiles"
+JetScaleDownDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Jan31BTagFix_JetScaleDown_2014_02_01_15_49_42/SummaryFiles"
+JetScaleUpDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Jan31BTagFix_JetScaleUp_2014_02_01_13_57_06/SummaryFiles"
+JetSmearDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Jan31BTagFix_JetSmear_2014_02_02_04_56_44/SummaryFiles"
+PhiCorrDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Jan31BTagFix_MetPhiMod_2014_02_02_06_31_00/SummaryFiles"
+MuScaleDownDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Jan31BTagFix_MuScaleDown_2014_02_02_04_20_41/SummaryFiles"
+MuScaleUpDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Jan31BTagFix_MuScaleUp_2014_02_02_02_45_47/SummaryFiles"
+MuSmearDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Jan31BTagFix_MuSmear_2014_02_02_05_32_40/SummaryFiles"
+NormalDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_Jan31BTagFix_2014_02_03_18_34_19/SummaryFiles"
 
 
 # for x in [NormalDirectory,JetScaleDownDirectory,JetScaleUpDirectory,JetSmearDirectory,PhiCorrDirectory,MuScaleDownDirectory,MuScaleUpDirectory,MuSmearDirectory]:
@@ -38,8 +49,10 @@ MuSmearDirectory = eosdir+"NTupleAnalyzer_V00_02_06_WPlusJets_WJetsAnalysis_5fb_
 # sys.exit()
 
 # This is the Rivet NTuple for MadGraph
-RIVETMadGraph='/afs/cern.ch/work/d/darinb/LQAnalyzerOutput/RIVET/Madgraph_treeV3Dressed_NEvents_93671821.root'
-RIVETMadGraphNonHad = '/afs/cern.ch/work/d/darinb/LQAnalyzerOutput/RIVETNonHadronized/Madgraph_ModB_treeV3Dressed_NEvents_92216218.root'
+# RIVETMadGraph='/afs/cern.ch/work/d/darinb/LQAnalyzerOutput/RIVET/Madgraph_treeV3Dressed_NEvents_93671821.root'
+RIVETMadGraph='/afs/cern.ch/work/d/darinb/LQAnalyzerOutput/RIVET/Madgraph_treeV3Dressed_NEvents_93536026.root'
+# RIVETMadGraphNonHad = '/afs/cern.ch/work/d/darinb/LQAnalyzerOutput/RIVETNonHadronized/Madgraph_ModB_treeV3Dressed_NEvents_92216218.root'
+RIVETMadGraphNonHad = '/afs/cern.ch/work/d/darinb/LQAnalyzerOutput/RIVETNonHadronized/Madgraph_ModB_treeV3Dressed_NEvents_92213415.root'
 RIVETSherpa='/afs/cern.ch/work/d/darinb/LQAnalyzerOutput/RIVET/Sherpa_treeV3Dressed_NEvents_685972.root'
 
 
@@ -402,6 +415,11 @@ def main():
 	htunfbinningB2 = [54,60,1680]
 	htunfbinningB3 = [53,90,1680]
 	htunfbinningB4 = [26,120,1680]
+	# htunfbinningB1 = [53,30,1620]
+	# htunfbinningB2 = [52,60,1620]see
+	# htunfbinningB3 = [51,90,1620]
+	# htunfbinningB4 = [25,120,1620]
+	
 	htbinningB = [30,60,90,120,180,240,300,360,420,510,600,720,870,1110,1590]
 	htbinningB = [30,60,90,120,180,240,300,360,420,540,660,840,1680]
 
@@ -450,34 +468,140 @@ def main():
 	FullAnalysisWithUncertainty(['GenJet30Count','GenJet30Count'],'PFJet30Count',-1,["N_{Jet}","_preexc"],[11,-.5,10.5],[8 ,0.5,8.5],Sel_PFJet30Count_reco,Sel_PFJet30Count_gen,weight,'c',[5,5])	
 
 
-	FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]",""],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[14,14])
-	FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]",""],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[15,15])
-	FullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV]",""],[17,0,510],[30,60,90,120,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[6,6])
-	FullAnalysisWithUncertainty(['Pt_genjet4','Pt_genjet4'],'Pt_pfjet4_pt20',0,["p_{T}(jet_{4}) [GeV]",""],[10,0,300],[30,60,90,210],Sel_Pt_pfjet4_reco, Sel_Pt_pfjet4_gen,weight,'c',[4,4])
+	FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]",""],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[14,19])
+	FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]",""],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[15,16])
+	FullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV]",""],[17,0,510],[30,60,90,120,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[6,7])
+	FullAnalysisWithUncertainty(['Pt_genjet4','Pt_genjet4'],'Pt_pfjet4_pt20',0,["p_{T}(jet_{4}) [GeV]",""],[10,0,300],[30,60,90,210],Sel_Pt_pfjet4_reco, Sel_Pt_pfjet4_gen,weight,'c',[4,5])
 
 
 
-	FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[11,11])
-	FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[8,8])
-	FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[7,7])
-	FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[7,7])
+	FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[13,18])
+	FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[15,17])
+	FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[8,7])
+	FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[7,10])
 
-	FullAnalysisWithUncertainty(['Eta_genjet1','Eta_genjet1'],'Eta_pfjet1_eta2p5',-2.5,["#eta(jet_{1}) ",""],[50,-2.5,2.5],[24,-2.4,2.4],Sel_Eta_pfjet1_reco, Sel_Eta_pfjet1_gen,weight,'c',[10,10])
-	FullAnalysisWithUncertainty(['Eta_genjet2','Eta_genjet2'],'Eta_pfjet2_eta2p5',-2.5,["#eta(jet_{2}) ",""],[50,-2.5,2.5],[24,-2.4,2.4],Sel_Eta_pfjet2_reco, Sel_Eta_pfjet2_gen,weight,'c',[8,8])
-	FullAnalysisWithUncertainty(['Eta_genjet3','Eta_genjet3'],'Eta_pfjet3_eta2p5',-2.5,["#eta(jet_{3}) ",""],[50,-2.5,2.5],[8,-2.4,2.4],Sel_Eta_pfjet3_reco, Sel_Eta_pfjet3_gen,weight,'c',[7,7])
-	FullAnalysisWithUncertainty(['Eta_genjet4','Eta_genjet4'],'Eta_pfjet4_eta2p5',-2.5,["#eta(jet_{4}) ",""],[50,-2.5,2.5],[6,-2.4,2.4],Sel_Eta_pfjet4_reco, Sel_Eta_pfjet4_gen,weight,'c',[5,5])
+
+	#F#ullAnalysisWithUncertainty(['Eta_genjet1','Eta_genjet1'],'Eta_pfjet1_eta2p5',-2.5,["#eta(jet_{1}) ",""],[50,-2.5,2.5],[24,-2.4,2.4],Sel_Eta_pfjet1_reco, Sel_Eta_pfjet1_gen,weight,'c',[10,10])
+	#F#ullAnalysisWithUncertainty(['Eta_genjet2','Eta_genjet2'],'Eta_pfjet2_eta2p5',-2.5,["#eta(jet_{2}) ",""],[50,-2.5,2.5],[24,-2.4,2.4],Sel_Eta_pfjet2_reco, Sel_Eta_pfjet2_gen,weight,'c',[8,8])
+	#F#ullAnalysisWithUncertainty(['Eta_genjet3','Eta_genjet3'],'Eta_pfjet3_eta2p5',-2.5,["#eta(jet_{3}) ",""],[50,-2.5,2.5],[8,-2.4,2.4],Sel_Eta_pfjet3_reco, Sel_Eta_pfjet3_gen,weight,'c',[7,7])
+	#F#ullAnalysisWithUncertainty(['Eta_genjet4','Eta_genjet4'],'Eta_pfjet4_eta2p5',-2.5,["#eta(jet_{4}) ",""],[50,-2.5,2.5],[6,-2.4,2.4],Sel_Eta_pfjet4_reco, Sel_Eta_pfjet4_gen,weight,'c',[5,5])
+
+	FullAnalysisWithUncertainty(['abs(Eta_genjet1)','abs(Eta_genjet1)'],'Eta_pfjet1_eta2p5',-2.5,["|#eta(jet_{1})|",""],[25,0.0,2.5],[24,0.0,2.4],Sel_Eta_pfjet1_reco, Sel_Eta_pfjet1_gen,weight,'c',[8,8])
+	FullAnalysisWithUncertainty(['abs(Eta_genjet2)','abs(Eta_genjet2)'],'Eta_pfjet2_eta2p5',-2.5,["|#eta(jet_{2})|",""],[25,0.0,2.5],[24,0.0,2.4],Sel_Eta_pfjet2_reco, Sel_Eta_pfjet2_gen,weight,'c',[7,7])
+	FullAnalysisWithUncertainty(['abs(Eta_genjet3)','abs(Eta_genjet3)'],'Eta_pfjet3_eta2p5',-2.5,["|#eta(jet_{3})|",""],[25,0.0,2.5],[8,0.0,2.4],Sel_Eta_pfjet3_reco, Sel_Eta_pfjet3_gen,weight,'c',[5,5])
+	FullAnalysisWithUncertainty(['abs(Eta_genjet4)','abs(Eta_genjet4)'],'Eta_pfjet4_eta2p5',-2.5,["|#eta(jet_{4})|",""],[25,0.0,2.5],[6,0.0,2.4],Sel_Eta_pfjet4_reco, Sel_Eta_pfjet4_gen,weight,'c',[3,3])
 
 	FullAnalysisWithUncertainty(['DeltaPhi_genjet1genmuon1','DeltaPhi_genjet1genmuon1'],'DeltaPhi_pfjet1muon1',-0.05,["#Delta#phi(jet_{1},#mu) [GeV]",""],[22,-.15707963,3.1415927+.15707963],[20,0,3.1415927],Sel_DeltaPhi_pfjet1muon1_reco,Sel_DeltaPhi_pfjet1muon1_gen,weight,'c',[6,6])
 	FullAnalysisWithUncertainty(['DeltaPhi_genjet2genmuon1','DeltaPhi_genjet2genmuon1'],'DeltaPhi_pfjet2muon1',-0.05,["#Delta#phi(jet_{2},#mu) [GeV]",""],[17,-0.20943950,3.1415927+0.20943950],[15,0,3.1415927],Sel_DeltaPhi_pfjet2muon1_reco,Sel_DeltaPhi_pfjet2muon1_gen,weight,'c',[4,4])
 	FullAnalysisWithUncertainty(['DeltaPhi_genjet3genmuon1','DeltaPhi_genjet3genmuon1'],'DeltaPhi_pfjet3muon1',-0.05,["#Delta#phi(jet_{3},#mu) [GeV]",""],[12,-0.31415926,3.1415927+0.31415926],[10,0,3.1415927],Sel_DeltaPhi_pfjet3muon1_reco,Sel_DeltaPhi_pfjet3muon1_gen,weight,'c',[3,3])
 	FullAnalysisWithUncertainty(['DeltaPhi_genjet4genmuon1','DeltaPhi_genjet4genmuon1'],'DeltaPhi_pfjet4muon1',-0.05,["#Delta#phi(jet_{4},#mu) [GeV]",""],[8,-0.523598766,3.1415927+0.523598766],[6,0,3.1415927],Sel_DeltaPhi_pfjet4muon1_reco,Sel_DeltaPhi_pfjet4muon1_gen,weight,'c',[3,3])
 
-	FullAnalysisWithUncertainty(['Pt_genMET','Pt_genMET'],'Pt_MET',-1,["E_{T}^{miss} [GeV]",""],[15,50,200],[50,60,70,80,90,100,115,130,150,170,200],Sel_Pt_MET_reco,Sel_Pt_MET_gen,weight,'c',[12,12])
-	FullAnalysisWithUncertainty(['MT_genmuon1genMET','MT_genmuon1genMET'],'MT_muon1METR',25,["M_{T}(#mu,E_{T}^{miss}) [GeV]",""],[20,50,150],[20,50,150],Sel_MT_genmuon1genMET_reco,Sel_MT_genmuon1genMET_gen,weight,'c',[15,17])
+	#F#ullAnalysisWithUncertainty(['Pt_genMET','Pt_genMET'],'Pt_MET',-1,["E_{T}^{miss} [GeV]",""],[15,50,200],[50,60,70,80,90,100,115,130,150,170,200],Sel_Pt_MET_reco,Sel_Pt_MET_gen,weight,'c',[12,12])
+	FullAnalysisWithUncertainty(['MT_genmuon1genMET','MT_genmuon1genMET'],'MT_muon1METR',25,["M_{T}(#mu,E_{T}^{miss}) [GeV]",""],[30,0,150],[20,50,150],Sel_MT_genmuon1genMET_reco,Sel_MT_genmuon1genMET_gen,weight,'c',[15,17])
 	FullAnalysisWithUncertainty(['Pt_genmuon1','Pt_genmuon1'],'Pt_muon1',0,["p_{T}(#mu_{1}) [GeV]",""],[55,25,300],[55,25,300],Sel_Pt_muon1_reco,Sel_Pt_muon1_gen,weight,'c',[8,16])
-	FullAnalysisWithUncertainty(['Eta_genmuon1','Eta_genmuon1'],'Eta_muon1',0,["#eta (#mu_{1}) [GeV]",""],[92,-2.3,2.3],[42,-2.1,2.1],Sel_Eta_muon1_reco,Sel_Eta_muon1_gen,weight,'c',[12,12])
+	#F#ullAnalysisWithUncertainty(['abs(Eta_genmuon1)','abs(Eta_genmuon1)'],'Eta_muon1',0,["|#eta (#mu_{1})| [GeV]",""],[92,-2.3,2.3],[42,-2.1,2.1],Sel_Eta_muon1_reco,Sel_Eta_muon1_gen,weight,'c',[12,12])
 
-	FullAnalysisWithUncertainty(['N_GoodVertices','N_GoodVertices'],'N_GoodVertices',0,["N_GoodVertices",""],[51,-1,50],[40,0,40],Sel_Eta_muon1_reco,Sel_Eta_muon1_gen,weight,'c',[6,10])
+	#FullAnalysisWithUncertainty(['N_GoodVertices','N_GoodVertices'],'N_GoodVertices',0,["N_GoodVertices",""],[51,-1,50],[40,0,40],Sel_Eta_muon1_reco,Sel_Eta_muon1_gen,weight,'c',[6,10])
+
+
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r3"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[3,3])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r4"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[4,4])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r5"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[5,5])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r6"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[6,6])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r7"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[7,7])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r8"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[8,8])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r9"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[9,9])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r10"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[10,10])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r11"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[11,11])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r12"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[12,12])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r13"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[13,13])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r14"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[14,14])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r15"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[15,15])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r16"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[16,16])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r17"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[17,17])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r18"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[18,18])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r19"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[19,19])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r20"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[20,20])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r21"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[21,21])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r22"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[22,22])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r23"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[23,23])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r24"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[24,24])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r25"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[25,25])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r26"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[26,26])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r27"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[27,27])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r28"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[28,28])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r29"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[29,29])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r30"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[30,30])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r31"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[31,31])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r32"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[32,32])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r33"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[33,33])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r34"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[34,34])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r35"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[35,35])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r36"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[36,36])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r37"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[37,37])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r38"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[38,38])
+	#FullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","_r39"],[45,10,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco, Sel_Pt_pfjet1_gen,weight,'c',[39,39])
+
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r3"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[3,3])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r4"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[4,4])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r5"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[5,5])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r6"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[6,6])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r7"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[7,7])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r8"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[8,8])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r9"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[9,9])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r10"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[10,10])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r11"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[11,11])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r12"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[12,12])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r13"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[13,13])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r14"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[14,14])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r15"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[15,15])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r16"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[16,16])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r17"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[17,17])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r18"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[18,18])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r19"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[19,19])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r20"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[20,20])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r21"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[21,21])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r22"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[22,22])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r23"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[23,23])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r24"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[24,24])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r25"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[25,25])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r26"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[26,26])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r27"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[27,27])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r28"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[28,28])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r29"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[29,29])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r30"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[30,30])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r31"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[31,31])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r32"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[32,32])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r33"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[33,33])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r34"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[34,34])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r35"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[35,35])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r36"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[36,36])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r37"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[37,37])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r38"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[38,38])
+	#FullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","_r39"],[60,20,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco, Sel_Pt_pfjet2_gen,weight,'c',[39,39])
+
+	#FullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV]","_r3"],[17,0,510],[30,60,90,120,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[3,3])
+	#FullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV]","_r4"],[17,0,510],[30,60,90,120,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[4,4])
+	#FullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV]","_r5"],[17,0,510],[30,60,90,120,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[5,5])
+	#FullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV]","_r6"],[17,0,510],[30,60,90,120,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[6,6])
+	#FullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV]","_r7"],[17,0,510],[30,60,90,120,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[7,7])
+	#FullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV]","_r8"],[17,0,510],[30,60,90,120,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[8,8])
+	#FullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV]","_r9"],[17,0,510],[30,60,90,120,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[9,9])
+	#FullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV]","_r10"],[17,0,510],[30,60,90,120,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[10,10])
+	#FullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV]","_r11"],[17,0,510],[30,60,90,120,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[11,11])
+	#FullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV]","_r12"],[17,0,510],[30,60,90,120,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[12,12])
+	#FullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV]","_r13"],[17,0,510],[30,60,90,120,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[13,13])
+	#FullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV]","_r14"],[17,0,510],[30,60,90,120,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[14,14])
+	#FullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV]","_r15"],[17,0,510],[30,60,90,120,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[15,15])
+	#FullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV]","_r16"],[17,0,510],[30,60,90,120,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[16,16])
+
+	#FullAnalysisWithUncertainty(['Pt_genjet4','Pt_genjet4'],'Pt_pfjet4_pt20',0,["p_{T}(jet_{4}) [GeV]","_r3"],[10,0,300],[30,60,90,210],Sel_Pt_pfjet4_reco, Sel_Pt_pfjet4_gen,weight,'c',[3,3])
+	#FullAnalysisWithUncertainty(['Pt_genjet4','Pt_genjet4'],'Pt_pfjet4_pt20',0,["p_{T}(jet_{4}) [GeV]","_r4"],[10,0,300],[30,60,90,210],Sel_Pt_pfjet4_reco, Sel_Pt_pfjet4_gen,weight,'c',[4,4])
+	#FullAnalysisWithUncertainty(['Pt_genjet4','Pt_genjet4'],'Pt_pfjet4_pt20',0,["p_{T}(jet_{4}) [GeV]","_r5"],[10,0,300],[30,60,90,210],Sel_Pt_pfjet4_reco, Sel_Pt_pfjet4_gen,weight,'c',[5,5])
+	#FullAnalysisWithUncertainty(['Pt_genjet4','Pt_genjet4'],'Pt_pfjet4_pt20',0,["p_{T}(jet_{4}) [GeV]","_r6"],[10,0,300],[30,60,90,210],Sel_Pt_pfjet4_reco, Sel_Pt_pfjet4_gen,weight,'c',[6,6])
+	#FullAnalysisWithUncertainty(['Pt_genjet4','Pt_genjet4'],'Pt_pfjet4_pt20',0,["p_{T}(jet_{4}) [GeV]","_r7"],[10,0,300],[30,60,90,210],Sel_Pt_pfjet4_reco, Sel_Pt_pfjet4_gen,weight,'c',[7,7])
+	#FullAnalysisWithUncertainty(['Pt_genjet4','Pt_genjet4'],'Pt_pfjet4_pt20',0,["p_{T}(jet_{4}) [GeV]","_r8"],[10,0,300],[30,60,90,210],Sel_Pt_pfjet4_reco, Sel_Pt_pfjet4_gen,weight,'c',[8,8])
+	#FullAnalysisWithUncertainty(['Pt_genjet4','Pt_genjet4'],'Pt_pfjet4_pt20',0,["p_{T}(jet_{4}) [GeV]","_r9"],[10,0,300],[30,60,90,210],Sel_Pt_pfjet4_reco, Sel_Pt_pfjet4_gen,weight,'c',[9,9])
 
 
 
@@ -643,15 +767,153 @@ def main():
 	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV] reg:"+str(25),"force_20GeV_pt610_reg"+str(25)],[30,10,610],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco, Sel_Pt_pfjet3_gen,weight,'c',[25,25])
 
 
-	# F#ullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","nouflow"],[44,30,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco+j1, Sel_Pt_pfjet1_gen,weight,'c',[14,14])
-	# F#ullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","nouflow"],[59,30,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco+j2, Sel_Pt_pfjet2_gen,weight,'c',[15,15])
-	# F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV]","nouflow"],[49,30,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco+j3, Sel_Pt_pfjet3_gen,weight,'c',[6,6])
-	# F#ullAnalysisWithUncertainty(['Pt_genjet4','Pt_genjet4'],'Pt_pfjet4_pt20',0,["p_{T}(jet_{4}) [GeV]","nouflow"],[39,30,420],[30,50,70,90,350],Sel_Pt_pfjet4_reco+j4, Sel_Pt_pfjet4_gen,weight,'c',[5,5])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet1','Pt_genjet1'],'Pt_pfjet1_pt20',0,["p_{T}(jet_{1}) [GeV]","nouflow"],[44,30,910],[30,50,70,90,110,150,190,250,310,430,850],Sel_Pt_pfjet1_reco+j1, Sel_Pt_pfjet1_gen,weight,'c',[14,14])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet2','Pt_genjet2'],'Pt_pfjet2_pt20',0,["p_{T}(jet_{2}) [GeV]","nouflow"],[59,30,620],[30,50,70,90,110,150,190,250,550],Sel_Pt_pfjet2_reco+j2, Sel_Pt_pfjet2_gen,weight,'c',[15,15])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet3','Pt_genjet3'],'Pt_pfjet3_pt20',0,["p_{T}(jet_{3}) [GeV]","nouflow"],[49,30,520],[30,50,70,90,110,150,210,450],Sel_Pt_pfjet3_reco+j3, Sel_Pt_pfjet3_gen,weight,'c',[6,6])
+	#F#ullAnalysisWithUncertainty(['Pt_genjet4','Pt_genjet4'],'Pt_pfjet4_pt20',0,["p_{T}(jet_{4}) [GeV]","nouflow"],[39,30,420],[30,50,70,90,350],Sel_Pt_pfjet4_reco+j4, Sel_Pt_pfjet4_gen,weight,'c',[5,5])
 
 
-	ParseTablesToRecoHistograms()	
-	ParseTablesToFinalResults(WRenorm,basic_selection)	
-	CleanUpAndMakeTables()
+
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r03"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[3,3])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r04"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[4,4])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r05"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[5,5])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r06"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[6,6])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r07"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[7,7])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r08"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[8,8])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r09"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[9,9])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r10"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[10,10])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r11"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[11,11])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r12"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[12,12])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r13"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[13,13])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r14"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[14,14])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r15"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[15,15])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r16"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[16,16])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r17"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[17,17])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r18"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[18,18])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r19"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[19,19])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r20"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[20,20])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r21"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[21,21])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r22"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[22,22])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r23"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[23,23])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r24"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[24,24])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r25"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[25,25])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r26"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[26,26])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r27"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[27,27])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r28"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[29,29])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r29"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[29,29])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r30"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[30,30])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r31"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[31,31])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r32"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[32,32])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r33"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[33,33])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r34"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[34,34])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',25.,["H_{T}(jets) [GeV]","_inc1_r35"],htunfbinningB1,htbinningB[0:],Sel_HT_pfjets_1_reco, Sel_HT_pfjets_1_gen,weight,'c',[35,35])
+
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r03"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[3,3])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r04"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[4,4])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r05"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[5,5])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r06"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[6,6])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r07"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[7,7])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r08"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[8,8])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r09"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[9,9])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r10"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[10,10])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r11"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[11,11])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r12"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[12,12])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r13"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[13,13])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r14"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[14,14])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r15"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[15,15])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r16"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[16,16])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r17"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[17,17])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r18"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[18,18])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r19"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[19,19])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r20"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[20,20])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r21"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[21,21])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r22"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[22,22])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r23"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[23,23])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r24"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[24,24])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r25"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[25,25])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r26"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[26,26])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r27"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[27,27])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r28"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[29,29])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r29"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[29,29])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r30"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[30,30])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r31"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[31,31])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r32"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[32,32])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r33"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[33,33])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r34"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[34,34])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',55.,["H_{T}(jets) [GeV]","_inc2_r35"],htunfbinningB2,htbinningB[1:],Sel_HT_pfjets_2_reco, Sel_HT_pfjets_2_gen,weight,'c',[35,35])
+
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r03"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[3,3])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r04"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[4,4])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r05"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[5,5])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r06"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[6,6])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r07"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[7,7])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r08"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[8,8])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r09"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[9,9])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r10"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[10,10])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r11"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[11,11])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r12"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[12,12])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r13"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[13,13])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r14"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[14,14])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r15"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[15,15])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r16"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[16,16])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r17"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[17,17])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r18"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[18,18])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r19"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[19,19])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r20"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[20,20])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r21"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[21,21])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r22"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[22,22])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r23"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[23,23])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r24"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[24,24])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r25"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[25,25])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r26"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[26,26])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r27"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[27,27])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r28"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[29,29])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r29"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[29,29])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r30"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[30,30])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r31"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[31,31])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r32"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[32,32])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r33"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[33,33])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r34"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[34,34])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',85.,["H_{T}(jets) [GeV]","_inc3_r35"],htunfbinningB3,htbinningB[2:],Sel_HT_pfjets_3_reco, Sel_HT_pfjets_3_gen,weight,'c',[35,35])
+
+
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r03"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[3,3])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r04"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[4,4])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r05"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[5,5])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r06"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[6,6])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r07"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[7,7])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r08"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[8,8])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r09"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[9,9])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r10"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[10,10])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r11"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[11,11])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r12"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[12,12])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r13"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[13,13])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r14"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[14,14])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r15"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[15,15])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r16"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[16,16])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r17"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[17,17])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r18"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[18,18])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r19"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[19,19])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r20"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[20,20])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r21"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[21,21])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r22"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[22,22])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r23"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[23,23])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r24"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[24,24])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r25"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[25,25])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r26"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[26,26])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r27"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[27,27])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r28"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[29,29])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r29"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[29,29])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r30"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[30,30])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r31"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[31,31])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r32"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[32,32])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r33"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[33,33])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r34"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[34,34])
+	#FullAnalysisWithUncertainty(['HT_genjets','HT_genjets'],'HT_pfjets',115.,["H_{T}(jets) [GeV]","_inc4_r35"],htunfbinningB4,htbinningB[3:],Sel_HT_pfjets_4_reco, Sel_HT_pfjets_4_gen,weight,'c',[35,35])
+
+	# ParseTablesToRecoHistograms()	
+	# ParseTablesToFinalResults(WRenorm,basic_selection)	
+	# CleanUpAndMakeTables()
 
 ####################################################################################################################################################
 ####################################################################################################################################################
@@ -1149,16 +1411,41 @@ def GetSmartSVD(data_histo,Params, binning,forcetau,software,forcemethod,isitmcu
 		n = len(binset)-1
 
 		print " ----------- STANDARD UNFOLDING --------------"
+		# unfold= RooUnfoldSvd(response, data_histo, OptTau)
 
-		unfold= RooUnfoldSvd(response, data_histo, OptTau)
-		if isitmcunf == False:
-			unfold.IncludeSystematics(0)		
-			unfres= unfold.Hreco(systype)
+		# if isitmcunf == False:
+		# 	# unfold= RooUnfoldSvd(response, data_histo, OptTau)
+
+		# 	unfold.IncludeSystematics(0)		# Data Only
+		# 	unfres= unfold.Hreco(3)   # Toy method
+		# 	unfres.Sumw2()
+		# else: 
+
+
+		for nm in range(500):
+			print ' --------------------------------- >> Trial ',nm
+			unfold= RooUnfoldSvd(response, data_histo, OptTau)
+
+			if isitmcunf == True:
+				unfold.IncludeSystematics(2) # MC Response only
+			if isitmcunf == False:
+				unfold.IncludeSystematics(0) # MC Response only
+			isgood = True
+			unfres= unfold.Hreco(3) # Toy Method 
 			unfres.Sumw2()
-		else: 
-			unfold.IncludeSystematics(2)
-			unfres= unfold.Hreco(3)
-			unfres.Sumw2()
+			isgood = True
+			for nb in range((unfres.GetNbinsX())+1):
+				print unfres.GetBinCenter(nb),unfres.GetBinContent(nb), unfres.GetBinError(nb)
+				binline = str(unfres.GetBinCenter(nb)) +'  '+ str(unfres.GetBinContent(nb)) +'  '+ str( unfres.GetBinError(nb))
+				print '    Interpreted line:',binline
+				if 'nan' in binline:
+					print 'BAD BIN DETECTED'
+					isgood = False
+			if isgood ==True:
+				print '   ... Good Unfolding detected (no nans). Moving on.'
+				break
+
+		if isitmcunf == True:
 			for ibin in range(unfres.GetNbinsX()+1):
 				unfres.SetBinContent(ibin,unfres.GetBinContent(ibin)+unfres.GetBinError(ibin))
 
@@ -1492,7 +1779,8 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 
 	recomodvariable = recovariable	
 	genmodvariable = genvariable
-
+	if 'Eta' in recovariable:
+		recomodvariable = 'abs('+recovariable+')'
 
 	rivetselection = str(gen_selection).replace('_bare','')
 	rivetmodvariable = str(genmodvariable.replace('_bare',''))
@@ -2119,6 +2407,7 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 		c0.Print('pyplots/'+recovariable+'_'+tagname+namelabel+'_sfhisto.png')
 		c0.Print('pyplots/'+recovariable+'_'+tagname+namelabel+'_sfhisto.pdf')
 
+		# return [0,0,0]
 		# sys.exit()
 
 	fW = '*(1.0)'
@@ -2946,6 +3235,7 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 		h_response_WJets=Create2DHisto('h_response_WJets','ResponseMatrix',t_WJets_MG_RG,baregenvariable,recomodvariable,varbinning,'(weight_pu_central*4955)'+fW,[xlabel+" Reco",xlabel+" Truth"])
 
 
+
 	# Here we are unfolding with a Sherpa response, adjusting the sherpa for the btag veto efficiency in W+Jets MC
 	else:
 
@@ -2984,19 +3274,58 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 
 
 		# 1 Dimensional Scale Factors
-		h_rec_WJets_flatMG_wbtag=CreateHisto('h_rec_WJets_flatMG_wbtag','W+Jets '+gtag+' MG [Reco]',t_MG_R,recomodvariable,varbinning,'(weight_pu_central*4955)'+fWMG, MCRecoStyle,Label)
-		h_rec_WJets_flatMG_nobtag=CreateHisto('h_rec_WJets_flatMG_nobtag','W+Jets '+gtag+' MG [Reco]',t_MG_R_nobtag,recomodvariable,varbinning,'(weight_pu_central*4955)'+fWMG, MCRecoStyle,Label)
-		h_bscale = h_rec_WJets_flatMG_wbtag.Clone()
-		h_bscale.Divide(h_rec_WJets_flatMG_nobtag)
+
+		presentationbinning_exp = presentationbinning
+		if varbinning[0] not in presentationbinning_exp:
+			presentationbinning_exp = [varbinning[0]]+presentationbinning_exp
+		if varbinning[-1] not in presentationbinning_exp:
+			presentationbinning_exp = presentationbinning_exp + [varbinning[-1]]
+
+		print 'Using rescaling binning', presentationbinning_exp
+
+		h_rec_WJets_flatMG_wbtag=CreateHisto('h_rec_WJets_flatMG_wbtag','W+Jets '+gtag+' MG [Reco]',t_MG_R,recomodvariable,presentationbinning_exp,'(weight_pu_central*4955)'+fWMG, MCRecoStyle,Label)
+		h_rec_WJets_flatMG_nobtag=CreateHisto('h_rec_WJets_flatMG_nobtag','W+Jets '+gtag+' MG [Reco]',t_MG_R_nobtag,recomodvariable,presentationbinning_exp,'(weight_pu_central*4955)'+fWMG, MCRecoStyle,Label)
+
+		[BtagRescalingString,BtagErrorString] = GetRescaling(h_rec_WJets_flatMG_wbtag,h_rec_WJets_flatMG_nobtag,presentationbinning_exp,recomodvariable)
+
+		# h_bscale = h_rec_WJets_flatMG_wbtag.Clone()
+		# h_bscale.Divide(h_rec_WJets_flatMG_nobtag)
 
 		# 2 Dimensional Scale Factors
-		h_response_WJetsMG_wbtag=Create2DHisto('h_response_WJetsMG_nobtag','ResponseMatrix',t_MG_RG,baregenvariable,recomodvariable,varbinning,'(weight_pu_central*4955)'+fW,[xlabel+" Reco",xlabel+" Truth"])
-		h_response_WJetsMG_nobtag=Create2DHisto('h_response_WJetsMG_nobtag','ResponseMatrix',t_MG_RG_nobtag,baregenvariable,recomodvariable,varbinning,'(weight_pu_central*4955)'+fW,[xlabel+" Reco",xlabel+" Truth"])
-		h2_bscale = h_response_WJetsMG_wbtag.Clone()
-		h2_bscale.Divide(h_response_WJetsMG_nobtag)
+		# h_response_WJetsMG_wbtag=Create2DHisto('h_response_WJetsMG_nobtag','ResponseMatrix',t_MG_RG,baregenvariable,recomodvariable,varbinning,'(weight_pu_central*4955)'+fW,[xlabel+" Reco",xlabel+" Truth"])
+		# h_response_WJetsMG_nobtag=Create2DHisto('h_response_WJetsMG_nobtag','ResponseMatrix',t_MG_RG_nobtag,baregenvariable,recomodvariable,varbinning,'(weight_pu_central*4955)'+fW,[xlabel+" Reco",xlabel+" Truth"])
 
-		h_rec_WJets_flat.Multiply(h_bscale)
-		h_response_WJets.Multiply(h2_bscale)
+		# h2_bscale = h_response_WJetsMG_wbtag.Clone()
+		# h2_bscale.Divide(h_response_WJetsMG_nobtag)
+
+		# print '------------------ Original Sherpa -------------------'
+		# h_rec_WJets_flat.Print("range")
+
+
+		# h_rec_WJets_flat.Multiply(h_bscale)
+		# h_response_WJets.Multiply(h2_bscale)
+
+
+		print 'Creating rescaled sherpa btag veto hists with:  ',BtagRescalingString
+		# Reco histograms (MadGraph and Other) 
+		h_rec_WJets_flat=CreateHisto('h_rec_WJets_flat','W+Jets '+gtag+' [Reco]',t_WJets_MG_R,recomodvariable,varbinning,'(weight_pu_central*4955)'+fW+'*'+BtagRescalingString, MCRecoStyle,Label)	
+
+		# Response Matrix 
+		h_response_WJets=Create2DHisto('h_response_WJets','ResponseMatrix',t_WJets_MG_RG,baregenvariable,recomodvariable,varbinning,'(weight_pu_central*4955)'+fW+'*'+BtagRescalingString,[xlabel+" Reco",xlabel+" Truth"])
+
+
+		print '------------------ RESCALED Sherpa -------------------'
+		h_rec_WJets_flat.Print("range")
+
+
+		print '------------------ MG BTAG ON -------------------'
+		h_rec_WJets_flatMG_wbtag.Print("range")
+
+		print '------------------ MG BTAG OFF -------------------'
+		h_rec_WJets_flatMG_nobtag.Print("range")
+
+		print '------------------ GEN SHERPA -------------------'
+		h_gen_WJets_flat.Print("range")
 
 
 	h_response_WJets.Draw("COLZ") # Draw it with color scheme
@@ -3045,9 +3374,7 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 	print ' DSUB ERRS : ',[h_rec_Data2.GetBinError(nn+1) for nn in range(h_rec_Data2.GetNbinsX())]
 	print ' ----------- DATA MINUS BACKGROUND SUBRACTION UNCERTAINTY SUMMARY '
 
-	print ' --- test sleep'
 	os.system('sleep 5')
-	print ' --- test sleep over '
 	h_rec_Data2 = BeautifyHisto(h_rec_Data2,DataCompStyle,Label,"Data, 5/fb [Reco]")
 
 	print 'Data Int:', h_rec_Data2.Integral()
@@ -3131,6 +3458,9 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 	# Same as above, but for the closure test.
 	[DataRescalingString_pseudo,DataErrorString_pseudo] = GetRescaling(h_unf_Data_pseudo,h_rec_Data_pseudo,varbinning,recovariable)
 	[DataRescalingString_pseudoSG,DataErrorString_pseudoSG] = GetRescaling(h_unf_Data_pseudoSG,h_rec_Data_pseudoSG,varbinning,recovariable)
+
+	print ' -------------------- BAYESIAN ----------------------', tagname
+	h_unf_Data_b.Print("range")
 
 	print "DataRescaling:", DataRescalingString
 	print "PseudoData Rscaling:" , DataRescalingString_pseudo
@@ -3220,6 +3550,9 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 
 
 
+	print ' -------------------- BAYESIAN Rebinned ----------------------', tagname
+	h_unf_Data_b.Print("range")
+
 	DataBinInfo=[]
 	MCBinInfo=[]
 
@@ -3269,7 +3602,19 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 	h_pres_unf_Data_2.Divide(h_pres_gen_WJets)
 	h_pres_unf_Data_pseudo.Divide(h_pres_gen_WJetsMG)
 	h_pres_unf_Data_pseudoSG.Divide(h_pres_gen_WJets)
+
+
+	print ' -------------------- BAYESIAN Denominator data ----------------------', tagname
+	h_pres_unf_Data_b.Print("range")
+
+
 	h_pres_unf_Data_b.Divide(h_pres_unf_Data)
+
+
+	print ' -------------------- BAYESIAN Ratio ----------------------', tagname
+	h_pres_unf_Data_b.Print("range")
+
+
 	## Divide gen by reco for MC, and unfolded by reco for data.
 	h_pres_gen_WJets.Divide(h_pres_rec_WJets)
 	h_pres_unf_Data.Divide(h_pres_rec_Data)
@@ -3307,13 +3652,14 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 	if 'powunf' in tagname:
 		h_pres_unf_Data_pseudoSG.Draw("EPHISTSAME")
 
+	h_pres_unf_Data_b.Draw("EPSAME")
 	h_pres_unf_Data_2.Draw("EPHISTSAME")
 
-	h_pres_unf_Data_b.Draw("EPHISTSAME")
 
 	# Create Legend
 	FixDrawLegend(c1.cd(4).BuildLegend(0.6,  0.6,  0.93,  0.93,''))
 	l_one.Draw("SAME")
+
 
 
 	# Finally, print the plots as pdf and png
@@ -3496,9 +3842,12 @@ def FullAnalysisWithUncertainty(genvariable,recovariable,default_value,xlabel, b
 		[null,data_btag_minus,mc_btag_minus]=[tau,data_standard,mc_standard]
 		[null,data_btag_misplus,mc_btag_misplus]=[tau,data_standard,mc_standard]
 		[null,data_btag_misminus,mc_btag_misminus]=[tau,data_standard,mc_standard]
-		[null,data_altunf,mc_altunf]=[tau,data_standard,mc_standard]
-		# [null,data_altunf,mc_altunf]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',taush,'altunf')
+		# [null,data_altunf,mc_altunf]=[tau,data_standard,mc_standard]
+		# [null,data_roounfbayes,mc_roounfbayes]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',tau,'roounfbayes')
+
+		[null,data_altunf,mc_altunf]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',taush,'altunf')
 		[null,data_mcunf,mc_mcunf]=[tau,data_standard,mc_standard]
+		# [null,data_mcunf,mc_mcunf]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',taush,'mcunf')
 
 		# [null,data_mcunf,mc_mcunf]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',taush,'mcunf')
 
@@ -3510,7 +3859,7 @@ def FullAnalysisWithUncertainty(genvariable,recovariable,default_value,xlabel, b
 
 		# [null,data_roounfbayes,mc_roounfbayes]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',tau,'roounfbayes')
 		[null,data_roounfbayes,mc_roounfbayes]=[tau,data_standard,mc_standard]
-		#[null,data_roounfbin,mc_roounfbin]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',tau,'roounfbin')
+		# [null,data_roounfbin,mc_roounfbin]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',tau,'roounfbin')
 		[null,data_roounfbin,mc_roounfbin]=[tau,data_standard,mc_standard]
 		# [null,data_autobin,mc_autobin]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',tau,'autobin')
 
@@ -3654,7 +4003,12 @@ def FullAnalysisWithUncertainty(genvariable,recovariable,default_value,xlabel, b
 	f.close()
 	
 	# Save the table to a txt file.
-	os.system('cat table_tmp.txt | column -t -s"," > pyplots/'+recovariable+xlabel[-1]+'.txt')
+	fvarname = recovariable+xlabel[-1]
+	fvarname = fvarname.replace(')','')
+	fvarname = fvarname.replace('(','')
+	# os.system('cat table_tmp.txt | column -t -s"," > pyplots/'+recovariable+xlabel[-1]+'.txt')
+	os.system('cat table_tmp.txt | column -t -s"," > pyplots/'+fvarname+'.txt')
+
 	os.system('rm table_tmp.txt')
 
 
@@ -4072,8 +4426,8 @@ def CreateHistoFromLists(binning, name, label, mean, up, down, style,normalizati
 		hout.GetYaxis().SetTitleFont(42)
 		hout.GetXaxis().SetTitleSize(.05)
 		hout.GetYaxis().SetTitleSize(.05)
-		hout.GetXaxis().CenterTitle()
-		hout.GetYaxis().CenterTitle()
+		# hout.GetXaxis().CenterTitle()
+		# hout.GetYaxis().CenterTitle()
 		hout.GetXaxis().SetTitleOffset(0.9)
 		hout.GetYaxis().SetTitleOffset(1.15)
 		hout.GetYaxis().SetLabelSize(.05)
@@ -4086,8 +4440,8 @@ def CreateHistoFromLists(binning, name, label, mean, up, down, style,normalizati
 		hout.GetYaxis().SetTitleFont(42)
 		hout.GetXaxis().SetTitleSize(.13)
 		hout.GetYaxis().SetTitleSize(.13)
-		hout.GetXaxis().CenterTitle()
-		hout.GetYaxis().CenterTitle()
+		# hout.GetXaxis().CenterTitle()
+		# hout.GetYaxis().CenterTitle()
 		hout.GetXaxis().SetTitleOffset(.33)
 		hout.GetYaxis().SetTitleOffset(.33)
 		hout.GetYaxis().SetLabelSize(.09)
@@ -4444,8 +4798,6 @@ def BlackHatHisto(rivetvariable, binning, standard_name, label, style, quantity,
 	bhfiles = [bhdir+'W'+str(nn)+'j_all.root' for nn in [0,1,2,3,4]]
 
 
-
-
 	if 'njet_WMuNu' in rivetvariable and len(binning) > 6:
 		binning = ConvertBinning([4 ,0.5,4.5])
 
@@ -4458,6 +4810,8 @@ def BlackHatHisto(rivetvariable, binning, standard_name, label, style, quantity,
 	if 'jet4' in standard_name:
 		bhfile = bhfiles[4]			
 
+
+
 	# print 'For - ',rivetvariable, ' -- using: ',bhfile
 	# print "  BH ------->  ",rivetvariable, " --> ",rivetvariable.replace('htjets','ht')
 	fblackhat = TFile.Open(bhfile)
@@ -4468,6 +4822,11 @@ def BlackHatHisto(rivetvariable, binning, standard_name, label, style, quantity,
 
 	if type(hblackhat) != TH1D:
 		print ' Histogram problems - ignoring this one!'
+
+
+	print 'BH Histo:', hblackhat, bhfile, rivetvariable.replace('htjets','ht')
+	hblackhat.Print('range')
+
 	# print hblackhat
 	# print hblackhat.GetEntries()
 	# sys.exit()
@@ -4483,7 +4842,6 @@ def BlackHatHisto(rivetvariable, binning, standard_name, label, style, quantity,
 	# for x in range(len(binning)-1):
 	# 	means.append(scalefactor*(hblackhat.GetBinContent(x+1)))
 	# 	errs.append(scalefactor*(hblackhat.GetBinError(x+1)))
-
 
 	if 'Count' in standard_name:
 		# hblackhat = TH1D('hblackhat','hblackhat',6,array('d',[0.5,1.5,2.5,3.5,4.5,5.5,6.5]))
@@ -4532,6 +4890,7 @@ def BlackHatHisto(rivetvariable, binning, standard_name, label, style, quantity,
 			bhfile.Close()
 
 
+
 	bhscale = (4955.0/1000.0)
 	hblackhat.Scale(bhscale)
 
@@ -4541,7 +4900,8 @@ def BlackHatHisto(rivetvariable, binning, standard_name, label, style, quantity,
 	hadsfs = []
 	# print hadhisto
 	# print nonhadhisto
-	# hblackhat.Print('range')
+	# print len(hadhisto)
+	# print hadhisto
 	for x in range(len(binning)-1):
 
 		_x = x
@@ -4571,6 +4931,13 @@ def BlackHatHisto(rivetvariable, binning, standard_name, label, style, quantity,
 		errs.append(hadsf*scalefactor*(hblackhat.GetBinError(_x+1)) )		
 
 		# print means[-1], errs[-1], hblackhat.GetBinCenter(_x+1), errs[-1]/means[-1]
+	# print ' --------------- blackhat sfs and logs ----------------'
+	# print hadsfs
+	# print means
+	# print ' --------------- blackhat sfs and logs ----------------'
+
+	# sys.exit()
+	# print '  d'
 	bhbinning.append(rhs)
 	if 'Count' in standard_name:
 		for iii in range(2):
@@ -4584,11 +4951,12 @@ def BlackHatHisto(rivetvariable, binning, standard_name, label, style, quantity,
 	else:
 		label = [label, '#sigma [pb]']
 
+	# print 'd2'
 	blackhatscale = ncompare/(hblackhat.Integral())
-
+	# print 'd3'
 	# print 'BH:',means
 	BlackHatOutputHisto = CreateHistoFromLists(binning, Name,label, means, errs, errs, style,normalization,"SubPlot")
-
+	# print 'd4'
 	BlackHatOutputHisto[0].GetXaxis().SetTitle(label[0])
 	BlackHatOutputHisto[0].GetYaxis().SetTitle(label[1])
 	BlackHatOutputHisto[0].GetXaxis().SetTitleFont(42)
@@ -4605,7 +4973,7 @@ def BlackHatHisto(rivetvariable, binning, standard_name, label, style, quantity,
 	BlackHatOutputHisto[0].GetYaxis().SetTitleOffset(1.3);
 	BlackHatOutputHisto[0].GetYaxis().SetLabelSize(.1);
 	BlackHatOutputHisto[0].GetXaxis().SetLabelSize(.1);
-
+	# print '  e'
 	fblackhat.Close()
 
 
@@ -5010,32 +5378,32 @@ def AbridgeHistoList(h,nbins):
 # This creates the final "results"-style plot!
 def FinalHisto(binning, label, quantity, filename ,expectation_means, expectation_errors, expectation_names, measurement, measurement_error_up, measurement_error_down, normalization,WRenormalization,sel,dobhonly):
 
-	c1 = TCanvas("c1","",700,800)
+	# c1 = TCanvas("c1","",700,800)
+	c1 = TCanvas("c1","",200, 100, 600, 800)
+	pad1 = TPad( 'pad1', 'pad1', 0.01, 0.55, 0.99, 0.99 )#divide canvas into pads
+	pad2 = TPad( 'pad2', 'pad2', 0.01, 0.39, 0.99, 0.55 )
+	pad3 = TPad( 'pad3', 'pad3', 0.01, 0.23, 0.99, 0.39 )
+	pad4 = TPad( 'pad4', 'pad4', 0.01, 0.01, 0.99, 0.23 )
 
-	pad1 = TPad( 'pad1', 'pad1', 0.0, 0.45, 1.0, 1.0 )#divide canvas into pads
-	pad2 = TPad( 'pad2', 'pad2', 0.0, 0.3, 1.0, 0.55 )
-	pad3 = TPad( 'pad3', 'pad3', 0.0, 0.15, 1.0, 0.40 )
-	pad4 = TPad( 'pad4', 'pad4', 0.0, 0.0, 1.0, 0.25 )
-
-	pad1.SetBottomMargin(0.19)
-	pad1.SetTopMargin(0.13)
-	pad1.SetLeftMargin(0.12)
+	pad1.SetBottomMargin(0.0)
+	pad1.SetTopMargin(0.1)
+	# pad1.SetLeftMargin(0.12)
 	pad1.SetRightMargin(0.1)
 
-	pad2.SetBottomMargin(0.4)
+	pad2.SetBottomMargin(0.0)
 	pad2.SetTopMargin(0.0)
-	pad2.SetLeftMargin(0.12)
+	# pad2.SetLeftMargin(0.12)
 	pad2.SetRightMargin(0.1)
 
-	pad3.SetBottomMargin(0.4)
+	pad3.SetBottomMargin(0.0)
 	pad3.SetTopMargin(0.0)
-	pad3.SetLeftMargin(0.12)
+	# pad3.SetLeftMargin(0.12)
 	pad3.SetRightMargin(0.1)
 
 
-	pad4.SetBottomMargin(0.4)
+	pad4.SetBottomMargin(0.3)
 	pad4.SetTopMargin(0.0)
-	pad4.SetLeftMargin(0.12)
+	# pad4.SetLeftMargin(0.12)
 	pad4.SetRightMargin(0.1)
 
 
@@ -5070,6 +5438,8 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	BlackHatSubStyle_nnpd=[0,27,1.0,1,kBlue]
 	BlackHatSubStyle_mstw=[0,32,1.0,1,kBlue]
 
+	BlackHatSubStyle_nnpd_comp=[0,25,1.0,1,kRed]
+	BlackHatSubStyle_mstw_comp=[0,32,1.0,1,kBlue]
 
 	# MadGraphRivetSubStyle=[3245,21,.9,1,4]
 	MadGraphRivetSubStyle=[0,25,1.0,1,2]
@@ -5112,11 +5482,11 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 			nzm.append(__m) 
 			# print nzm
 
-	Max = max(nzm)*2.5
+	Max = max(nzm)*3.5
 	Min = min(nzm)*.7
 	# print Min
 
-	tlatalign = 0.15
+	tlatalign = 0.20
 
 	units = ''
 	if normalization==0:
@@ -5129,11 +5499,11 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 			units = '[pb/GeV]'
 			Min = 0.05*Min
 		if 'Eta' in filename:
-			undervar = '#eta'
+			undervar = '|#eta|'
 			units = '[pb]'
 			Max *= 1.11
 			Min = Min/1.5
-			tlatalign = 0.42
+			tlatalign = 0.45
 		if 'HT' in filename:
 			undervar = "H_{T}"	
 			units = '[pb/GeV]'
@@ -5144,7 +5514,7 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 			units = '[pb]'
 			Max *= 2.0
 			Min = Min/1.6
-			tlatalign = 0.68
+			tlatalign = 0.70
 		label0 = label
 		label = [label, 'd#sigma/d'+undervar+' '+units]
 
@@ -5159,7 +5529,7 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 
 	# print "MIN", Min	
 
-
+	print 'HERE 1'
 	# MadGraph AOD Quick
 	name = expectation_names[0]
 	mean_value = expectation_means[0]
@@ -5260,11 +5630,14 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 
 	# sys.exit()
 	# Get Rivet Histos
+	print 'HERE 2'
+
 	[[Rivet_MadGraph_Result,Rivet_MadGraph_Result_verbose], rivetrescale] = RivetHisto(RIVETMadGraph,rivetname,binning,rivetsel,rivetlabel,MadGraphRivetSubStyle,madgraph_NOriginal,normalization,ndataunf,quantity,WRenormalization)
 	[[Rivet_MadGraphNonHad_Result,Rivet_MadGraphNonHad_Result_verbose], rivetrescalenonhad] = RivetHisto(RIVETMadGraphNonHad,rivetname,binning,rivetsel,rivetlabel,MadGraphRivetSubStyle,madgraph_NOriginal,normalization,ndataunf,quantity,WRenormalization)
 
 	# HadRatioPlot(Rivet_MadGraph_Result_verbose,Rivet_MadGraphNonHad_Result_verbose,rivetlabel,binning,filename)
 	[[Rivet_Sherpa_Result,Rivet_Sherpa_Result_verbose], sherparescale]    = RivetHisto(RIVETSherpa,  rivetname,binning,rivetsel,rivetlabel,  SherpaRivetSubStyle,sherpa_NOriginal  ,normalization,ndataunf,quantity,WRenormalization)
+	print 'HERE 3'
 
 	[[Blackhat_Result,Blackhat_Result_verbose], blackhatrescale]    =                      BlackHatHisto( rivetname,binning,standardname, rivetlabel, BlackHatSubStyle,quantity,ndataunf,normalization,Rivet_MadGraph_Result_verbose,Rivet_MadGraphNonHad_Result_verbose,True,afsdir+'MergedHistos/hists_CT10_r1.0_f1.0_m0')
 	[[Blackhat_Result_nocorr,Blackhat_Result_verbose_nocorr], blackhatrescale_nocorr]    = BlackHatHisto( rivetname,binning,standardname, rivetlabel, BlackHatSubStyle,quantity,ndataunf,normalization,Rivet_MadGraph_Result_verbose,Rivet_MadGraph_Result_verbose,True,afsdir+'MergedHistos/hists_CT10_r1.0_f1.0_m0')
@@ -5282,19 +5655,25 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	CT10Histos = []
 	MSTWHistos = []
 	NNPDHistos = []
+	print 'HERE 4'
+
 
 	print ' -------------- PDF WINDOWS -----------------'
 	for nn in range(200):
+		# print ' --> ',nn
 		snn = str(nn)
 		if nn <=52:
+			print '  CT'
 			_CT = BlackHatHisto( rivetname,binning,standardname, rivetlabel, BlackHatSubStyle,quantity,ndataunf,normalization,Rivet_MadGraph_Result_verbose,Rivet_MadGraphNonHad_Result_verbose,True,afsdir+'MergedHistos/hists_CT10_r1.0_f1.0_m'+snn)[0][1]
 			if _CT!=None:
 				CT10Histos.append( _CT )
 		if nn <=40:
+			print '  MS'
 			_MS = BlackHatHisto( rivetname,binning,standardname, rivetlabel, BlackHatSubStyle,quantity,ndataunf,normalization,Rivet_MadGraph_Result_verbose,Rivet_MadGraphNonHad_Result_verbose,True,afsdir+'MergedHistos/hists_MSTW2008nlo68cl_r1.0_f1.0_m'+snn)[0][1]	
 			if _MS!=None:
 				MSTWHistos.append( _MS )
 		if nn <=99:
+			print '  NN', nn
 			_NN = BlackHatHisto( rivetname,binning,standardname, rivetlabel, BlackHatSubStyle,quantity,ndataunf,normalization,Rivet_MadGraph_Result_verbose,Rivet_MadGraphNonHad_Result_verbose,True,afsdir+'MergedHistos/hists_NNPDF21_100_r1.0_f1.0_m'+snn)[0][1]
 			if _NN != None:
 				NNPDHistos.append( _NN  )
@@ -5305,8 +5684,10 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	print ' ------- CT10'
 	[Blackhat_Result_ct10window,Blackhat_Result_verbose_ct10window] = CreateWindowFromVerbse(CT10Histos,"Blackhatct10window",rivetlabel,BlackHatSubStyle,normalization,"TopPlot",False)	
 
+	iii = 0
 	for c in CT10Histos:
-		print c[0]
+		print c[0],iii
+		iii+=1
 	print 'WC:',Blackhat_Result_verbose_ct10window[0]
 	print 'WU:',Blackhat_Result_verbose_ct10window[1]
 	print 'WD:',Blackhat_Result_verbose_ct10window[2]
@@ -5314,8 +5695,10 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	print ' ------- MSTW'
 	[Blackhat_Result_mstwwindow,Blackhat_Result_verbose_mstwwindow] = CreateWindowFromVerbse([CT10Histos[0]]+MSTWHistos,"Blackhatmstwwindow",rivetlabel,BlackHatSubStyle,normalization,"TopPlot",False)	
 
+	iiii=0
 	for c in MSTWHistos:
-		print c[0]
+		print c[0],iiii
+		iiii+=1
 	print 'WC:',Blackhat_Result_verbose_mstwwindow[0]
 	print 'WU:',Blackhat_Result_verbose_mstwwindow[1]
 	print 'WD:',Blackhat_Result_verbose_mstwwindow[2]
@@ -5323,12 +5706,20 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	print ' ------- NNPD'
 	[Blackhat_Result_nnpdwindow,Blackhat_Result_verbose_nnpdwindow] = CreateWindowFromVerbse([CT10Histos[0]]+NNPDHistos,"Blackhatnnpdwindow",rivetlabel,BlackHatSubStyle,normalization,"TopPlot",False)	
 
+	ii = 0
 	for c in NNPDHistos:
-		print c[0]
+		print c[0], ii
+		ii += 1
 
 	print 'WC:',Blackhat_Result_verbose_nnpdwindow[0]
 	print 'WU:',Blackhat_Result_verbose_nnpdwindow[1]
 	print 'WD:',Blackhat_Result_verbose_nnpdwindow[2]		
+
+	print ' ------- SCALE'
+
+
+	print Blackhat_Result_verbose_sup
+	print Blackhat_Result_verbose_sdown
 
 
 
@@ -5388,8 +5779,8 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	fplot = TFile.Open(filename+'root',"RECREATE")
 
 	# Meas.GetYaxis().SetTitleFont(42);
-	Meas.GetXaxis().SetTitleSize(.18);
-	Meas.GetXaxis().SetTitleOffset(.1);
+	Meas.GetXaxis().SetTitleSize(.25);
+	Meas.GetXaxis().SetTitleOffset(1.);
 
 	# Meas.GetYaxis().SetTitleSize(.14);
 	# Meas.GetXaxis().CenterTitle(0);
@@ -5483,10 +5874,10 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	vmap.append(["DeltaPhi_pfjet2muon1","$\\Delta \\phi (jet_2, \mu)$"])
 	vmap.append(["DeltaPhi_pfjet3muon1","$\\Delta \\phi (jet_3, \mu)$"])
 	vmap.append(["DeltaPhi_pfjet4muon1","$\\Delta \\phi (jet_4, \mu)$"])
-	vmap.append(["Eta_pfjet1","$\\eta(jet_1)$"])
-	vmap.append(["Eta_pfjet2","$\\eta(jet_2)$"])
-	vmap.append(["Eta_pfjet3","$\\eta(jet_3)$"])
-	vmap.append(["Eta_pfjet4","$\\eta(jet_4)$"])
+	vmap.append(["Eta_pfjet1","$|\\eta(jet_1)|$"])
+	vmap.append(["Eta_pfjet2","$|\\eta(jet_2)|$"])
+	vmap.append(["Eta_pfjet3","$|\\eta(jet_3)|$"])
+	vmap.append(["Eta_pfjet4","$|\\eta(jet_4)|$"])
 	vmap.append(["MT_muon1MET","$M_T(\\mu,E_T^{miss})$"])
 	vmap.append(["PFJet30Count","Exc Jet Mult"])
 	vmap.append(["PFJet30Count_preexc","Inc Jet Mult"])
@@ -5510,7 +5901,7 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 
 
 	_table = ['\\begin{table}[htb]']
-	_table.append('\\caption{Bin-by-bin data and uncertainties for the final '+var+' distribution.}')
+	_table.append('\\caption{Bin-by-bin data and uncertainties for the final '+var+' distribution. Uncertainties on the Blackhat+Sherpa predictions contain PDF and factorization/renormalization scale uncertainty.}')
 	_table.append('\\begin{center}')
 	_table.append('\\begin{tabular}{|l|l|lll|}\\hline')
 
@@ -5551,6 +5942,8 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	# print ' --------------------------------------- '
 	# sys.exit()
 
+	XRANGE = [Meas_verbose[-1][0],Meas_verbose[-1][-1]]
+	Meas.GetXaxis().SetLimits(XRANGE[0],XRANGE[-1])                    	
 
 	# Meas.SetMarkerSize(0.0001)
 	# Meas.SetLineColor(1)
@@ -5560,10 +5953,20 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	Meas.Draw("PX")
 
 	# Meas.GetYaxis().SetTitle(" func test ")
-	Meas.GetYaxis().SetTitleOffset(1.05);
-	Meas.GetXaxis().SetTitleSize(.05);
-	Meas.GetYaxis().SetTitleSize(.05);
+	Meas.GetYaxis().SetTitleOffset(1.0);
+	Meas.GetYaxis().SetTitleSize(.07);
+	Meas.GetYaxis().SetLabelSize(.06);
 
+	Meas.GetXaxis().SetTitleOffset(1.1);
+	Meas.GetXaxis().SetTitleSize(.05);
+	Meas.GetXaxis().SetLabelSize(.00);
+
+	Rivet_MadGraph_Result.GetXaxis().SetLimits(XRANGE[0],XRANGE[-1])                    	
+	Rivet_Sherpa_Result.GetXaxis().SetLimits(XRANGE[0],XRANGE[-1])                    	
+	Blackhat_Result_basicplusscale.GetXaxis().SetLimits(XRANGE[0],XRANGE[-1])                    	
+	Blackhat_Result_pdfV2_cteq.GetXaxis().SetLimits(XRANGE[0],XRANGE[-1])
+	Blackhat_Result_pdfV2_mstw.GetXaxis().SetLimits(XRANGE[0],XRANGE[-1])
+	Blackhat_Result_pdfV2_nnpd.GetXaxis().SetLimits(XRANGE[0],XRANGE[-1])
 
 	if dobhonly == False:
 		Rivet_MadGraph_Result.Draw("P")
@@ -5618,23 +6021,26 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	Blackhat_Result_nnpd_L.SetFillStyle(1001)	
 
 	if dobhonly == False:
-		leg = TLegend(0.65,0.67,0.88,0.84,"","brNDC")
+		# leg = TLegend(0.42,0.75,1.0,1.00,"","brNDC")
+		leg = TLegend(0.47,0.75,1.0,1.00,"","brNDC")
+
 	else:
-		leg = TLegend(0.55,0.67,0.88,0.84,"","brNDC")
+		leg = TLegend(0.5,0.64,0.99,0.89,"","brNDC")
 
 	leg.SetTextFont(42)
 	leg.SetFillColor(0)
+	leg.SetFillColor(1001)
 	leg.SetBorderSize(0)
-	leg.SetTextSize(.035)
+	leg.SetTextSize(.055)
 	leg.SetBorderSize(1)
 	# leg.SetHeader("W #rightarrow #mu#nu + jets");	
 	leg.AddEntry(Meas,"Data");
 	# leg.AddEntry(AOD_MadGraph_Result,"MadGraph AOD")
 	# leg.AddEntry(Exp,"MadGraph AOD");
 	if dobhonly == False:
-		leg.AddEntry(Blackhat_Result_L,"BlackHat+Sherpa")
-		leg.AddEntry(Rivet_Sherpa_Result_L,"Sherpa")
-		leg.AddEntry(Rivet_MadGraph_Result_L,"MadGraph+Pythia")
+		leg.AddEntry(Blackhat_Result_L,"BlackHat+Sherpa (NLO)")
+		leg.AddEntry(Rivet_Sherpa_Result_L,"Sherpa (LO+PS)")
+		leg.AddEntry(Rivet_MadGraph_Result_L,"MadGraph+Pythia (LO+PS)")
 	else:
 		leg.AddEntry(Blackhat_Result_cteq_L,"BlackHat+Sherpa (CT10)")
 		leg.AddEntry(Blackhat_Result_mstw_L,"BlackHat+Sherpa (MSTW)")
@@ -5651,10 +6057,10 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	l1.SetTextAlign(12)
 	l1.SetTextFont(42)
 	l1.SetNDC()
-	l1.SetTextSize(0.04)
-	l1.DrawLatex(0.15,0.90,"CMS Preliminary                         "+sqrts+"                        L_{int} = 5.0 fb^{-1}")
-	# l1.DrawLatex(0.19,0.87,"CMS Preliminary ")
-	# l1.DrawLatex(0.19,0.81,sqrts+"  #int L = 5.0 fb^{-1}")
+	l1.SetTextSize(0.05)
+	# l1.DrawLatex(0.15,0.90,"CMS Preliminary                         "+sqrts+"                        L_{int} = 5.0 fb^{-1}")
+	l1.DrawLatex(0.6,0.7,"CMS Preliminary Test2")
+	l1.DrawLatex(0.16,0.94,sqrts+", L_{int} = 5.0 fb^{-1}")
 
 	# Labels
 	l2=TLatex()
@@ -5674,10 +6080,10 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	l3.SetTextAlign(12)
 	l3.SetTextFont(42)
 	l3.SetNDC()
-	l3.SetTextSize(0.035)
-	l3.DrawLatex(tlatalign,0.33,"anti-k_{T} (R = 0.5) Jets")
-	l3.DrawLatex(tlatalign,0.28,"p_{T}^{jet}>30 GeV, |#eta^{jet}|<2.4")
-	l3.DrawLatex(tlatalign,0.23,"W#rightarrow#mu#nu channel")
+	l3.SetTextSize(0.06)
+	l3.DrawLatex(tlatalign,0.23,"anti-k_{T} (R = 0.5) Jets")
+	l3.DrawLatex(tlatalign,0.15,"p_{T}^{jet}>30 GeV, |#eta^{jet}|<2.4")
+	l3.DrawLatex(tlatalign,0.07,"W#rightarrow#mu#nu channel")
 
 
 	############################
@@ -5689,11 +6095,13 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 
 	[cent1,[cent2up,cent2down]] = CentralRatioBand(Meas_verbose, CentralBandStyle)
 	cent1.GetXaxis().SetNdivisions(110)
-	cent1.GetYaxis().SetNdivisions(407)
+	cent1.GetYaxis().SetNdivisions(505)
+
+
 
 
 	[grat2,[grat2up,grat2down]] = DivideTGraphsFlatRel(Meas_verbose,Rivet_Sherpa_Result_verbose,SherpaRivetSubStyle)
-	unity=TLine(grat2.GetXaxis().GetXmin(), 1.0 , grat2.GetXaxis().GetXmax(),1.0)
+	unity=TLine(XRANGE[0], 1.0 , XRANGE[-1],1.0)
 	unity.SetLineStyle(7)
 
 	# print 'Dividing Meas/MG RIVET'
@@ -5727,43 +6135,72 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 
 	print '~~~~~~~~~~~~~~ BLACKHAT SUB PLOT ~~~~~~~~~~~~'
 
+	# print Meas_verbose
+	# print XRANGE
+	# sys.exit()
 
 	## Get the blackhat ratio plots
 
 
 	# Get axis range
-	if cent2up > 1.5 or cent2down < 0.5:
-		grat2down = -.24
-		grat2up = 2.24	
+	# if cent2up > 1.5 or cent2down < 0.5:
+	# 	grat2down = 0.2
+	# 	grat2up = 0.8	
 
-	if grat2up > 1.5 or grat2down < 0.5:
-		grat2down = -.24
-		grat2up = 2.24	
+	# if grat2up > 1.5 or grat2down < 0.5:
+	# 	grat2down = -.24
+	# 	grat2up = 2.24	
 
-	if grat3up > 1.5 or grat3down < 0.5:
-		grat2down = -.24
-		grat2up = 2.24	
+	# if grat3up > 1.5 or grat3down < 0.5:
+	# 	grat2down = -.24
+	# 	grat2up = 2.24	
 
-	if grat4up > 1.5 or grat4down < 0.5:
-		grat2down = -.24
-		grat2up = 2.24			
+	# if grat4up > 1.5 or grat4down < 0.5:
+	# 	grat2down = -.24
+	# 	grat2up = 2.24			
 	
+	grat2down = 0.20
+	grat2up = 1.80
+
 
 
 	cent1.SetMaximum(grat2up)
 	cent1.SetMinimum(grat2down)
+	cent1.GetXaxis().SetLimits(XRANGE[0],XRANGE[-1])                    	
+	cent1.GetYaxis().CenterTitle()
 	cent1.GetXaxis().SetTitle(label[0])
 	cent1.GetYaxis().SetTitle("MC/Data")
-	cent1.GetXaxis().SetTitleOffset(1.1);
-	cent1.GetYaxis().SetTitleOffset(.54);
+	cent1.GetYaxis().SetTitleSize(0.16)
+	cent1.GetXaxis().SetTitleOffset(1.2);
+	cent1.GetYaxis().SetTitleOffset(.4);
+	cent1.GetYaxis().SetLabelSize(0.14)
+
+
 
 	cent1.GetYaxis().SetTitleFont(42);
 	cent1bh = cent1.Clone()
 	cent1bh.GetYaxis().SetTitle("NLO/Data")
 	cent1bh.GetXaxis().SetTitleOffset(1.1);
-	cent1bh.GetYaxis().SetTitleOffset(.54);
+	cent1bh.GetYaxis().SetTitleOffset(.4);
 
 	cent1bh.GetYaxis().SetTitleFont(42);
+
+	cent1lower = cent1.Clone()
+	cent1lower.GetXaxis().SetTitleOffset(1.1);
+	cent1lower.GetYaxis().SetTitleSize(0.115)
+
+	cent1lower.GetYaxis().SetTitleOffset(0.56);
+
+	cent1lower.GetYaxis().SetTitleFont(42);
+	cent1lower.GetYaxis().SetLabelSize(0.10)
+
+	# lowersize = 0.16*(float(pad4.GetWh()*pad4.GetAbsHNDC()))/float((pad3.GetWh()*pad3.GetAbsHNDC()))
+	# lowersize = 0.16*(float(pad4.GetAbsHNDC()))/(float(pad3.GetAbsHNDC()))
+
+	# cent1lower.GetYaxis().SetTitleSize(0.115)
+	# cent1lower.GetYaxis().SetTitleSize(lowersize)
+	# print "LOWERSIZE",lowersize
+	# sys.exit()
 
 	################################################################################################
 	## FOR THIRD SUBPLOT
@@ -5772,6 +6209,9 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	grat3.SetMinimum(grat2down)
 	grat3.SetMaximum(grat2up)
 
+	grat2.GetXaxis().SetLimits(XRANGE[0],XRANGE[-1])          
+	grat3.GetXaxis().SetLimits(XRANGE[0],XRANGE[-1])          
+
 	grat3window = grat3.Clone()
 
 	grat3window.SetFillColor(kOrange-2)
@@ -5779,19 +6219,19 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 
 
 	if dobhonly == False:
-		cent1.Draw("A2")
+		cent1lower.Draw("A2")
 
 		grat3window.Draw("2")
 		grat3.Draw("p")
-		cent1.Draw("2")
+		cent1lower.Draw("2")
 		unity.Draw("SAME")
 
 		lb2=TLatex()
 		lb2.SetTextAlign(12)
 		lb2.SetTextFont(42)
 		lb2.SetNDC()
-		lb2.SetTextSize(0.09)
-		lb2.DrawLatex(0.15,0.5,"Madgraph (LO+PS)")
+		lb2.SetTextSize(0.08)
+		lb2.DrawLatex(0.20,0.38,"Madgraph (LO+PS), Normalized to #sigma_{NNLO}")
 	else:
 		cent1bh.Draw("A2")
 
@@ -5806,8 +6246,8 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 		lb2.SetTextAlign(12)
 		lb2.SetTextFont(42)
 		lb2.SetNDC()
-		lb2.SetTextSize(0.09)
-		lb2.DrawLatex(0.15,0.5,"Blackhat+Sherpa (#leq 4 jets NLO, NNPDF with PDF Unc.)")
+		lb2.SetTextSize(0.08)
+		lb2.DrawLatex(0.20,0.38,"Blackhat+Sherpa (#leq 4 jets NLO, NNPDF with PDF Unc.)")	# Stamp on top
 
 	pad4.RedrawAxis()
 
@@ -5834,8 +6274,8 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 		lb3.SetTextAlign(12)
 		lb3.SetTextFont(42)
 		lb3.SetNDC()
-		lb3.SetTextSize(0.09)
-		lb3.DrawLatex(0.15,0.5,"Sherpa (LO+PS)")
+		lb3.SetTextSize(0.11)
+		lb3.DrawLatex(0.20,0.13,"Sherpa (LO+PS), Normalized to #sigma_{NNLO}")
 
 	else:
 		cent1bh.Draw("A2")
@@ -5852,8 +6292,8 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 		lb3.SetTextAlign(12)
 		lb3.SetTextFont(42)
 		lb3.SetNDC()
-		lb3.SetTextSize(0.09)
-		lb3.DrawLatex(0.15,0.5,"Blackhat+Sherpa (#leq 4 jets NLO, MSTW with PDF Unc.)")
+		lb3.SetTextSize(0.11)
+		lb3.DrawLatex(0.20,0.13,"Blackhat+Sherpa (#leq 4 jets NLO, MSTW with PDF Unc.)")
 
 	pad3.RedrawAxis()
 
@@ -5864,19 +6304,20 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 
 
 	if dobhonly == False:
-		cent1.Draw("A2")
-
+		cent1bh.Draw("A2")
+		grat4window_mstw.GetYaxis().SetTitle("NLO/Data")
+		grat4_mstw.GetYaxis().SetTitle("NLO/Data")
 		grat4window.Draw("2")
 		grat4.Draw("p")
-		cent1.Draw("2")
+		cent1bh.Draw("2")
 		unity.Draw("SAME")
 
 		lb4=TLatex()
 		lb4.SetTextAlign(12)
 		lb4.SetTextFont(42)
 		lb4.SetNDC()
-		lb4.SetTextSize(0.09)
-		lb4.DrawLatex(0.15,0.5,"Blackhat+Sherpa (#leq 4 jets NLO, with PDF and Ren./Fac. Scale Unc.)")
+		lb4.SetTextSize(0.11)
+		lb4.DrawLatex(0.20,0.13,"Blackhat+Sherpa (#leq 4 jets NLO, with PDF and Ren./Fac. Scale Unc.)")
 	else:
 		cent1bh.Draw("A2")
 
@@ -5891,14 +6332,15 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 		lb4.SetTextAlign(12)
 		lb4.SetTextFont(42)
 		lb4.SetNDC()
-		lb4.SetTextSize(0.09)
-		lb4.DrawLatex(0.15,0.5,"Blackhat+Sherpa (#leq 4 jets NLO, CT10 with PDF Unc.)")
+		lb4.SetTextSize(0.11)
+		lb4.DrawLatex(0.20,0.13,"Blackhat+Sherpa (#leq 4 jets NLO, CT10 with PDF Unc.)")
 
 
-	cent1.GetXaxis().SetTitleSize(.12);
-	cent1.GetYaxis().SetTitleSize(.10);
-	cent1bh.GetXaxis().SetTitleSize(.12);
-	cent1bh.GetYaxis().SetTitleSize(.10);	
+	# cent1.GetXaxis().SetTitleSize(.14);
+	# cent1.GetYaxis().SetTitleSize(.14);
+
+	# cent1bh.GetXaxis().SetTitleSize(.12);
+	# cent1bh.GetYaxis().SetTitleSize(.10);	
 	pad2.RedrawAxis()
 	################################################################################################
 
@@ -5908,8 +6350,106 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	print 'Creating: ',filename+'pdf/png'
 	c1.Print(filename+'pdf')
 	c1.Print(filename+'png')
-	gDirectory.GetList().Delete()
 
+
+	if dobhonly == False:
+
+		c2 = TCanvas("c2","",200, 100, 600, 450)
+
+		c2pad1 = TPad( 'c2pad1', 'c2pad1', 0.01, 0.01, 0.99, 0.99 )#divide canvas into pads
+		c2pad1.SetBottomMargin(0.2)
+		c2pad1.SetTopMargin(0.1)
+		# c2pad1.SetRightMargin(0.1)
+		c2pad1.Draw()
+		c2pad1.cd()
+
+		
+
+
+		[cteqband,null] = CentralRatioBand(Blackhat_Result_verbose_pdfV2_cteq,CentralBandStyle)
+
+		if '30Count' in filename:
+			XRANGE[-1] = 4.5
+			cteqband.GetXaxis().SetNdivisions(106)
+		else:
+			cteqband.GetXaxis().SetNdivisions(110)
+		unityc=TLine(XRANGE[0], 1.0 , XRANGE[-1],1.0)
+		unityc.SetLineStyle(7)
+
+		cteqband.GetXaxis().SetLimits(XRANGE[0],XRANGE[-1])
+		cteqband.GetXaxis().SetTitle(cent1.GetXaxis().GetTitle())
+		cteqband.GetYaxis().SetTitle("Ratio to CT10")
+		cteqband.GetYaxis().SetTitleSize(0.07)
+		cteqband.GetXaxis().SetTitleSize(0.07)
+		cteqband.GetYaxis().SetTitleOffset(0.9)
+		cteqband.GetXaxis().SetTitleOffset(0.9)
+		cteqband.GetYaxis().SetLabelSize(0.05)
+		cteqband.GetXaxis().SetLabelSize(0.05)
+		cteqband.SetMaximum(1.25)
+		cteqband.SetMinimum(0.75)
+		# CentralRatioBand.GetYaxis().SetTitle("")
+
+
+	# 	# [gcomp_cteq,[gcompup_cteq,gcompdown_cteq]] = DivideTGraphsFlatRel(Blackhat_Result_verbose_pdfV2_cteq,CT10Histos[0][0][1], BlackHatSubStyle_cteq)
+		[gcomp_mstw,[gcompup_mstw,gcompdown_mstw]] = DivideTGraphsFlatRel(CT10Histos[0],Blackhat_Result_verbose_pdfV2_mstw, BlackHatSubStyle_mstw_comp)
+		[gcomp_nnpd,[gcompup_nnpd,gcompdown_nnpd]] = DivideTGraphsFlatRel(CT10Histos[0],Blackhat_Result_verbose_pdfV2_nnpd, BlackHatSubStyle_nnpd_comp)
+		# [gcomp_nnpd,[gcompup_nnpd,gcompdown_nnpd]] = DivideTGraphsFlatRel(Blackhat_Result_verbose_pdfV2_cteq,CT10Histos[0], BlackHatSubStyle_nnpd)
+		[gcomp_data,[gcompup_data,gcompdown_data]] = DivideTGraphsFlatRel(CT10Histos[0],Meas_verbose, CentralBandStyle)
+		gcomp_data.SetFillColor(0)
+		gcomp_data.SetFillStyle(0)
+
+
+	# 	gcompwindow_mstw = gcomp_mstw.Clone()
+	# 	gcompwindow_mstw.SetFillColor(kBlue-10)
+	# 	gcompwindow_mstw.SetFillStyle(1001)
+
+	# 	gcompwindow_nnpd = gcomp_nnpd.Clone()
+	# 	gcompwindow_nnpd.SetFillColor(kBlue-10)
+	# 	gcompwindow_nnpd.SetFillStyle(1001)	
+
+
+		cteqband.Draw("A2")
+		gcomp_mstw.Draw("ep")
+		gcomp_nnpd.Draw("ep")
+		gcomp_data.Draw("ep")
+
+		unityc.Draw("SAME")
+
+		leg = TLegend(0.53,0.7,0.95,0.86,"","brNDC")
+		# leg.AddEntry(cteqband,"Sherpa (CT10)")
+		leg.AddEntry(gcomp_data,"Data")
+		leg.AddEntry(gcomp_mstw,"BlackHat+Sherpa (MSTW)")
+		leg.AddEntry(gcomp_nnpd,"BlackHat+Sherpa (NNPDF)")
+
+		leg.SetTextFont(42)
+		leg.SetFillColor(0)
+		leg.SetFillColor(1001)
+		leg.SetBorderSize(0)
+		leg.SetTextSize(.04)
+		leg.SetBorderSize(1)
+		leg.Draw()
+		compfilename = filename[:-1]+'_pdfcomparison.'
+	
+		l1c=TLatex()
+		l1c.SetTextAlign(12)
+		l1c.SetTextFont(42)
+		l1c.SetNDC()
+		l1c.SetTextSize(0.05)
+		# l1.DrawLatex(0.15,0.90,"CMS Preliminary                         "+sqrts+"                        L_{int} = 5.0 fb^{-1}")
+		l1c.DrawLatex(0.22,0.83,"CMS Preliminary")
+		l1c.DrawLatex(0.16,0.94,sqrts+", L_{int} = 5.0 fb^{-1}")
+		print compfilename
+
+		c2.Print(compfilename+'pdf')
+		c2.Print(compfilename+'png')
+
+
+
+		print "X LABEL", Meas.GetXaxis().GetTitle()
+		print "X LABEL", cent1.GetXaxis().GetTitle()
+
+	gDirectory.GetList().Delete()
+	# sys.exit()
 
 def round_sigfigs(num, sig_figs):
     if num != 0:
@@ -6134,11 +6674,11 @@ def ParseTablesToRecoHistograms():
 
 
 
-	relabels.append(['Eta_pfjet1','Leading Jet #eta','#eta'])
-	relabels.append(['Eta_pfjet2','Second Leading Jet #eta','#eta'])
-	relabels.append(['Eta_pfjet3','Third Leading Jet #eta','#eta'])
-	relabels.append(['Eta_pfjet4','Fourth Leading Jet #eta','#eta'])
-	relabels.append(['Eta_pfjet5','Fifth Leading Jet #eta','#eta'])
+	relabels.append(['Eta_pfjet1','Leading Jet |#eta|','|#eta|'])
+	relabels.append(['Eta_pfjet2','Second Leading Jet |#eta|','|#eta|'])
+	relabels.append(['Eta_pfjet3','Third Leading Jet |#eta|','|#eta|'])
+	relabels.append(['Eta_pfjet4','Fourth Leading Jet |#eta|','|#eta|'])
+	relabels.append(['Eta_pfjet5','Fifth Leading Jet |#eta|','|#eta|'])
 	relabels.append(['preexc','Inclusive Jet Multiplicity','N_{Jet}'])
 	relabels.append(['PFJet30Count','Exclusive Jet Multiplicity','N_{Jet}'])
 	if 'BTagOff' in 'pyplots':
@@ -6622,11 +7162,11 @@ def ParseTablesToRecoHistogramsB():
 	relabels.append(['Pt_pfjet3','Third Leading Jet p_{T} [GeV]','p_{T}'])
 	relabels.append(['Pt_pfjet4','Fourth Leading Jet p_{T} [GeV]','p_{T}'])
 	relabels.append(['Pt_pfjet5','Fifth Leading Jet p_{T} [GeV]','p_{T}'])
-	relabels.append(['Eta_pfjet1','Leading Jet #eta','#eta'])
-	relabels.append(['Eta_pfjet2','Second Leading Jet #eta','#eta'])
-	relabels.append(['Eta_pfjet3','Third Leading Jet #eta','#eta'])
-	relabels.append(['Eta_pfjet4','Fourth Leading Jet #eta','#eta'])
-	relabels.append(['Eta_pfjet5','Fifth Leading Jet #eta','#eta'])
+	relabels.append(['|#eta|_pfjet1','Leading Jet #|#eta|','#|#eta|'])
+	relabels.append(['|#eta|_pfjet2','Second Leading Jet #|#eta|','#|#eta|'])
+	relabels.append(['|#eta|_pfjet3','Third Leading Jet #|#eta|','#|#eta|'])
+	relabels.append(['|#eta|_pfjet4','Fourth Leading Jet #|#eta|','#|#eta|'])
+	relabels.append(['|#eta|_pfjet5','Fifth Leading Jet #|#eta|','#|#eta|'])
 	relabels.append(['preexc','Inclusive Jet Multiplicity','N_{Jet}'])
 	relabels.append(['PFJet30Count','Exclusive Jet Multiplicity','N_{Jet}'])
 	if 'BTagOff' in 'pyplots':
@@ -6994,7 +7534,7 @@ def ParseTablesToRecoHistogramsB():
 def ParseTablesToFinalResults(WRenorm,sel):
 	allfiles = glob('pyplots/*txt')
 	for f in allfiles:
-
+		print ' Present:',f
 		if 'FINAL' in f:
 			continue
 		# if 'MET' in f and ('phi' in f or 'Phi' in f):
@@ -7007,15 +7547,21 @@ def ParseTablesToFinalResults(WRenorm,sel):
 		# 	continue
 		# if 'inc4' not in f:
 		# 	continue
-		# if 'Count' not in f:
+		# if 'Pt_pfjet4' not in f:
+		# 	continue
+		# if 'Count' not in f or 'pre' in f:
+		# 	continue
+		# if 'Pt_pfjet1' not in f:
 		# 	continue
 		# print f
+		# if 'PFJet30Count' not in f or 'pre' in f:
+		# 	continue
 		# if ('Pt_pf' not in f and 'Count' not in f) and 'pre' not in f:
 		# 	continue
 		# if 'Del' not in f or 'jet3' not in f:
 		# 	continue
-		if 'Vert' in f:
-			continue
+		# if 'Vert' in f:
+		# 	continue
 		# if 'Eta' not in f or 'jet4' not in f:
 		# 	continue
 		# if 'pre' not in f:
@@ -7118,25 +7664,25 @@ def ParseTablesToFinalResults(WRenorm,sel):
 			label = 'Fifth Leading Jet p_{T} [GeV]'
 			quantity = 'p_{T}'			
 			
-		if label=='Eta_pfjet1':
-			label = 'Leading Jet #eta'
-			quantity = '#eta'
+		if label=='|#eta|_pfjet1':
+			label = 'Leading Jet #|#eta|'
+			quantity = '#|#eta|'
 			
-		if label=='Eta_pfjet2':
-			label = 'Second Leading Jet #eta'
-			quantity = '#eta'						
+		if label=='|#eta|_pfjet2':
+			label = 'Second Leading Jet #|#eta|'
+			quantity = '#|#eta|'						
 
-		if label=='Eta_pfjet3':
-			label = 'Third Leading Jet #eta'
-			quantity = '#eta'	
+		if label=='|#eta|_pfjet3':
+			label = 'Third Leading Jet #|#eta|'
+			quantity = '#|#eta|'	
 
-		if label=='Eta_pfjet4':
-			label = 'Fourth Leading Jet #eta'
-			quantity = '#eta'	
+		if label=='|#eta|_pfjet4':
+			label = 'Fourth Leading Jet #|#eta|'
+			quantity = '#|#eta|'	
 
-		if label=='Eta_pfjet5':
-			label = 'Fifth Leading Jet #eta'
-			quantity = '#eta'				
+		if label=='|#eta|_pfjet5':
+			label = 'Fifth Leading Jet #|#eta|'
+			quantity = '#|#eta|'				
 
 		if label=='PFJet30Count':
 			label = 'Exclusive Jet Multiplicity'
@@ -7179,7 +7725,7 @@ def ParseTablesToFinalResults(WRenorm,sel):
 		# print " -"*40
 		# FinalHisto(rootbinning,label,quantity, output+'PlotCount.', prediction_means, prediction_errors, prediction_names, meas_mean, meas_err_plus, meas_err_minus,0,WRenorm,sel)
 		FinalHisto(rootbinning,label,quantity, output+'PlotXSec.', prediction_means, prediction_errors, prediction_names, meas_mean, meas_err_plus, meas_err_minus,4955.0,WRenorm,sel,False)
-		FinalHisto(rootbinning,label,quantity, output+'PlotXSec.', prediction_means, prediction_errors, prediction_names, meas_mean, meas_err_plus, meas_err_minus,4955.0,WRenorm,sel,True)
+		# FinalHisto(rootbinning,label,quantity, output+'PlotXSec.', prediction_means, prediction_errors, prediction_names, meas_mean, meas_err_plus, meas_err_minus,4955.0,WRenorm,sel,True)
 		# sys.exit()
 
 		#os.system('cat pyplots/Pt_pfjet1FINAL.TexCount.txt')
@@ -7441,10 +7987,10 @@ def CleanUpAndMakeTables():
 		vmap.append(["DeltaPhi_pfjet2muon1","$\\Delta \\phi (jet_2, \mu)$"])
 		vmap.append(["DeltaPhi_pfjet3muon1","$\\Delta \\phi (jet_3, \mu)$"])
 		vmap.append(["DeltaPhi_pfjet4muon1","$\\Delta \\phi (jet_4, \mu)$"])
-		vmap.append(["Eta_pfjet1","$\\eta(jet_1)$"])
-		vmap.append(["Eta_pfjet2","$\\eta(jet_2)$"])
-		vmap.append(["Eta_pfjet3","$\\eta(jet_3)$"])
-		vmap.append(["Eta_pfjet4","$\\eta(jet_4)$"])
+		vmap.append(["Eta_pfjet1","$|\\eta(jet_1)|$"])
+		vmap.append(["Eta_pfjet2","$|\\eta(jet_2)|$"])
+		vmap.append(["Eta_pfjet3","$|\\eta(jet_3)|$"])
+		vmap.append(["Eta_pfjet4","$|\\eta(jet_4)|$"])
 		vmap.append(["MT_muon1MET","$M_T(\\mu,E_T^{miss})$"])
 		vmap.append(["PFJet30Count_preexc","Inc Jet Mult"])
 		vmap.append(["PFJet30Count","Exc Jet Mult"])
@@ -7481,10 +8027,10 @@ def CleanUpAndMakeTables():
 		vmap.append(["DeltaPhi_pfjet2muon1","$\\Delta \\phi (jet_2, \mu)$"])
 		vmap.append(["DeltaPhi_pfjet3muon1","$\\Delta \\phi (jet_3, \mu)$"])
 		vmap.append(["DeltaPhi_pfjet4muon1","$\\Delta \\phi (jet_4, \mu)$"])
-		vmap.append(["Eta_pfjet1","$\\eta(jet_1)$"])
-		vmap.append(["Eta_pfjet2","$\\eta(jet_2)$"])
-		vmap.append(["Eta_pfjet3","$\\eta(jet_3)$"])
-		vmap.append(["Eta_pfjet4","$\\eta(jet_4)$"])
+		vmap.append(["Eta_pfjet1","$|\\eta(jet_1)|$"])
+		vmap.append(["Eta_pfjet2","$|\\eta(jet_2)|$"])
+		vmap.append(["Eta_pfjet3","$|\\eta(jet_3)|$"])
+		vmap.append(["Eta_pfjet4","$|\\eta(jet_4)|$"])
 		vmap.append(["MT_muon1MET","$M_T(\\mu,E_T^{miss})$"])
 		vmap.append(["PFJet30Count_preexc","Inc Jet Mult"])
 		vmap.append(["PFJet30Count","Exc Jet Mult"])
@@ -7733,11 +8279,11 @@ def CleanUpAndMakeTables():
 		relabels.append(['Pt_pfjet3','Third Leading Jet p_{T} [GeV]','p_{T}'])
 		relabels.append(['Pt_pfjet4','Fourth Leading Jet p_{T} [GeV]','p_{T}'])
 		relabels.append(['Pt_pfjet5','Fifth Leading Jet p_{T} [GeV]','p_{T}'])
-		relabels.append(['Eta_pfjet1','Leading Jet #eta','#eta'])
-		relabels.append(['Eta_pfjet2','Second Leading Jet #eta','#eta'])
-		relabels.append(['Eta_pfjet3','Third Leading Jet #eta','#eta'])
-		relabels.append(['Eta_pfjet4','Fourth Leading Jet #eta','#eta'])
-		relabels.append(['Eta_pfjet5','Fifth Leading Jet #eta','#eta'])
+		relabels.append(['|#eta|_pfjet1','Leading Jet #|#eta|','#|#eta|'])
+		relabels.append(['|#eta|_pfjet2','Second Leading Jet #|#eta|','#|#eta|'])
+		relabels.append(['|#eta|_pfjet3','Third Leading Jet #|#eta|','#|#eta|'])
+		relabels.append(['|#eta|_pfjet4','Fourth Leading Jet #|#eta|','#|#eta|'])
+		relabels.append(['|#eta|_pfjet5','Fifth Leading Jet #|#eta|','#|#eta|'])
 		relabels.append(['preexc','Jet Multiplicity (Inclusive)','N_{Jet}'])
 		relabels.append(['PFJet30Count','Jet Multiplicity (Exclusive)','N_{Jet}'])
 		relabels.append(['MT_muon1METR','M_{T}(#mu,E_{T}^{miss}) [GeV]','M_{T}'])

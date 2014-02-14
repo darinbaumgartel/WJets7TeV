@@ -546,7 +546,7 @@ vector<bool> BTagTCHPTUnCorr(float pt, bool isdata,float discrim, float eta, int
 
 
 // BTagging with data/MC rescaling for TCHEM
-vector<bool> BTagTCHEM(float pt, bool isdata,float discrim, float eta, int evt)
+vector<bool> BTagTCHEM(float pt, bool isdata,float discrim, float eta, int evt, int flavour)
 {
 
 	double dseedmod = fabs(eta*eta*1000000+42);
@@ -554,80 +554,13 @@ vector<bool> BTagTCHEM(float pt, bool isdata,float discrim, float eta, int evt)
 	int evtseed = abs( int(floor((1.0*evt)+10000)) -42 );
 
 	rr->SetSeed(evtseed + dseed );
+	float arand = rr->Rndm();
 
 	vector<bool> tags;
 	float discrim_cut = 3.3;
+	bool tag_central = discrim > discrim_cut;
 
-	float eff_central  = 0.932251*((1.+(0.00335634*pt))/(1.+(0.00305994*pt)));
-
-	float mistag_central = 0.0;
-	float mistag_down    = 0.0;
-	float mistag_up      = 0.0;
-	float mistag_nominal = 0.0;
-
-	if ((fabs(eta)>=0.0) &&  (fabs(eta)<=0.8))
-	{
-		mistag_central = (1.2875*((1+(-0.000356371*pt))+(1.08081e-07*(pt*pt))))+(-6.89998e-11*(pt*(pt*(pt/(1+(-0.0012139*pt))))));
-		mistag_down = (1.11418*((1+(-0.000442274*pt))+(1.53463e-06*(pt*pt))))+(-4.93683e-09*(pt*(pt*(pt/(1+(0.00152436*pt))))));
-		mistag_up = (1.47515*((1+(-0.000484868*pt))+(2.36817e-07*(pt*pt))))+(-2.05073e-11*(pt*(pt*(pt/(1+(-0.00142819*pt))))));
-		mistag_nominal = (0.000919586+(0.00026266*pt))+(-1.75723e-07*(pt*pt));
-	}
-
-	if ((fabs(eta)>=0.8) &&  (fabs(eta)<=1.6))
-	{
-		mistag_central = (1.24986*((1+(-0.00039734*pt))+(5.37486e-07*(pt*pt))))+(-1.74023e-10*(pt*(pt*(pt/(1+(-0.00112954*pt))))));
-		mistag_down = (1.08828*((1+(-0.000208737*pt))+(1.50487e-07*(pt*pt))))+(-2.54249e-11*(pt*(pt*(pt/(1+(-0.00141477*pt))))));
-		mistag_up = (1.41211*((1+(-0.000559603*pt))+(9.50754e-07*(pt*pt))))+(-5.81148e-10*(pt*(pt*(pt/(1+(-0.000787359*pt))))));
-		mistag_nominal = (-0.00364137+(0.000350371*pt))+(-1.89967e-07*(pt*pt));
-	}
-
-	if ((fabs(eta)>=1.6) &&  (fabs(eta)<=2.4))
-	{
-		mistag_central = (1.10763*((1+(-0.000105805*pt))+(7.11718e-07*(pt*pt))))+(-5.3001e-10*(pt*(pt*(pt/(1+(-0.000821215*pt))))));
-		mistag_down = (0.958079*((1+(0.000327804*pt))+(-4.09511e-07*(pt*pt))))+(-1.95933e-11*(pt*(pt*(pt/(1+(-0.00143323*pt))))));
-		mistag_up = (1.26236*((1+(-0.000524055*pt))+(2.08863e-06*(pt*pt))))+(-2.29473e-09*(pt*(pt*(pt/(1+(-0.000276268*pt))))));
-		mistag_nominal = (-0.00483904+(0.000367751*pt))+(-1.36152e-07*(pt*pt));
-	}
-
-	float efferr = 0.0;
-	if (pt >=  30. && pt <  40.) efferr =   0.0311456;
-	if (pt >=  40. && pt <  50.) efferr =   0.0303825;
-	if (pt >=  50. && pt <  60.) efferr =   0.0209488;
-	if (pt >=  60. && pt <  70.) efferr =   0.0216987;
-	if (pt >=  70. && pt <  80.) efferr =   0.0227149;
-	if (pt >=  80. && pt < 100.) efferr =   0.0260294;
-	if (pt >= 100. && pt < 120.) efferr =   0.0205766;
-	if (pt >= 120. && pt < 160.) efferr =   0.0227065;
-	if (pt >= 160. && pt < 210.) efferr =   0.0260481;
-	if (pt >= 210. && pt < 260.) efferr =   0.0278001;
-	if (pt >= 260. && pt < 320.) efferr =   0.0295361;
-	if (pt >= 320. && pt < 400.) efferr =   0.0306555;
-	if (pt >= 400. && pt < 500.) efferr =   0.0367805;
-	if (pt >= 500. && pt < 670.) efferr =   0.0527368;
-	if (pt >= 670.) efferr  =   0.0527368*2.0;
-
-	float eff_up = eff_central + efferr;
-	float eff_down = eff_central - efferr;
-
-	float rand_efftag = rr->Rndm();
-	float rand_mistag = rr->Rndm();
-
-	bool untag_central  = rand_efftag > eff_central;
-	bool untag_up       = rand_efftag > eff_up;
-	bool untag_down     = rand_efftag > eff_down;
-
-	bool forcemistag_central = (rand_mistag > mistag_nominal) && (rand_mistag < mistag_nominal*mistag_central);
-	bool forcemistag_up      = (rand_mistag > mistag_nominal) && (rand_mistag < mistag_nominal*mistag_up);
-	bool forcemistag_down    = (rand_mistag > mistag_nominal) && (rand_mistag < mistag_nominal*mistag_down);
-
-	bool basic_tag = discrim > discrim_cut;
-
-	bool tag_central  = basic_tag;
-	bool tag_eff_up   = basic_tag;
-	bool tag_eff_down = basic_tag;
-	bool tag_mis_up   = basic_tag;
-	bool tag_mis_down = basic_tag;
-
+	// ---------------- DATA RESULTS --------------- //
 	if (isdata)
 	{
 		tags.push_back(tag_central);
@@ -638,32 +571,254 @@ vector<bool> BTagTCHEM(float pt, bool isdata,float discrim, float eta, int evt)
 		return tags;
 	}
 
-	if ( (tag_central == true ) && (untag_central == true) )         tag_central = false;
-	if ( (tag_central == false) && (forcemistag_central == true) )   tag_central = true;
+	// ---------------- MC REAL B-jet RESULTS --------------- //
 
-	if ( (tag_eff_up == true ) && (untag_up == true) )               tag_eff_up = false;
-	if ( (tag_eff_up == false) && (forcemistag_central == true) )    tag_eff_up = true;
+	if (abs(flavour)==5)
+	{
+		// Payload b and c efficiencies
+		float x = discrim_cut;
+		float effb = 3.90732786802e-06*x*x*x*x +  -0.000239934437355*x*x*x +  0.00664986827287*x*x +  -0.112578996016*x +  1.00775721404;
+		// Payload SFb
+		if (pt > 670.0) pt = 670.0;
+		float SFb = 0.932251*((1.+(0.00335634*pt))/(1.+(0.00305994*pt)));
 
-	if ( (tag_eff_down == true ) && (untag_down == true) )           tag_eff_down = false;
-	if ( (tag_eff_down == false) && (forcemistag_central == true) )  tag_eff_down = true;
+		// Payload SFb error
+		float SFb_err = 0.0;
+		if (pt >=  30. && pt <  40.) SFb_err =   0.0311456;
+		if (pt >=  40. && pt <  50.) SFb_err =   0.0303825;
+		if (pt >=  50. && pt <  60.) SFb_err =   0.0209488;
+		if (pt >=  60. && pt <  70.) SFb_err =   0.0216987;
+		if (pt >=  70. && pt <  80.) SFb_err =   0.0227149;
+		if (pt >=  80. && pt < 100.) SFb_err =   0.0260294;
+		if (pt >= 100. && pt < 120.) SFb_err =   0.0205766;
+		if (pt >= 120. && pt < 160.) SFb_err =   0.0227065;
+		if (pt >= 160. && pt < 210.) SFb_err =   0.0260481;
+		if (pt >= 210. && pt < 260.) SFb_err =   0.0278001;
+		if (pt >= 260. && pt < 320.) SFb_err =   0.0295361;
+		if (pt >= 320. && pt < 400.) SFb_err =   0.0306555;
+		if (pt >= 400. && pt < 500.) SFb_err =   0.0367805;
+		if (pt >= 500. && pt < 670.) SFb_err =   0.0527368;
+		if (pt >= 670.) SFb_err  =   0.0527368*2.0;
 
-	if ( (tag_mis_up == true ) && (untag_central == true) )          tag_mis_up = false;
-	if ( (tag_mis_up == false) && (forcemistag_up == true) )     tag_mis_up = true;
+		// Modified SFb values
+		float SFb_dn = SFb - SFb_err;
+		float SFb_up = SFb + SFb_err;
 
-	if ( (tag_mis_down == true ) && (untag_central == true) )        tag_mis_down = false;
-	if ( (tag_mis_down == false) && (forcemistag_down == true) ) tag_mis_down = true;
+		// F values for rand comparison
+		float f = 0.0;
+		float f_up = 0.0;
+		float f_dn = 0.0;
+
+		if (SFb <1.0) f = (1.0 - SFb);
+		if (SFb_up <1.0) f_up = (1.0 - SFb_up);
+		if (SFb_dn <1.0) f_dn = (1.0 - SFb_dn);
+
+		if (SFb > 1.0) f = (1.0 - SFb)/(1.0 - 1.0/effb);
+		if (SFb_up > 1.0) f_up = (1.0 - SFb_up)/(1.0 - 1.0/effb);
+		if (SFb_dn > 1.0) f_dn = (1.0 - SFb_dn)/(1.0 - 1.0/effb);
+
+		// Initialize tagger outputs
+		bool tag_eff_up = tag_central;
+		bool tag_eff_down = tag_central;
+		bool tag_mis_up= tag_central;
+		bool tag_mis_down = tag_central;
+
+		// Modify tagger outputs
+		// Untag a tagged jet
+		if ( (SFb<1.0)    && (arand < f)    && (tag_central == true) )  tag_central = false;
+		if ( (SFb_up<1.0) && (arand < f_up) && (tag_eff_up == true) )   tag_eff_up = false;
+		if ( (SFb_dn<1.0) && (arand < f_dn) && (tag_eff_down == true) ) tag_eff_down = false;
+		// Tag an untagged jet
+		if ( (SFb>1.0)    && (arand < f)    && (tag_central == false) )  tag_central = true;
+		if ( (SFb_up>1.0) && (arand < f_up) && (tag_eff_up == false) )   tag_eff_up = true;
+		if ( (SFb_dn>1.0) && (arand < f_dn) && (tag_eff_down == false) ) tag_eff_down = true;
+
+		tag_mis_up = tag_central;
+		tag_mis_down = tag_central;
+
+		// Return tags
+		tags.push_back(tag_central);
+		tags.push_back(tag_eff_up);
+		tags.push_back(tag_eff_down);
+		tags.push_back(tag_mis_up);
+		tags.push_back(tag_mis_down);
+		return tags;
+
+	}
+
+
+
+	// ---------------- MC REAL C-jet RESULTS --------------- //
+
+	if (abs(flavour)==4)
+	{
+		// Payload b and c efficiencies
+		float x = discrim_cut;
+		float effc = 0.343760640168*exp(-0.00315525164823*x*x*x + 0.0805427315196*x*x + -0.867625139194*x + 1.44815935164 );
+		// Payload SFl
+		if (pt > 670.0) pt = 670.0;
+		float SFc = 0.932251*((1.+(0.00335634*pt))/(1.+(0.00305994*pt)));
+
+		// Payload SFc error
+		float SFc_err = 0.0;
+		if (pt >=  30. && pt <  40.) SFc_err =   0.0311456;
+		if (pt >=  40. && pt <  50.) SFc_err =   0.0303825;
+		if (pt >=  50. && pt <  60.) SFc_err =   0.0209488;
+		if (pt >=  60. && pt <  70.) SFc_err =   0.0216987;
+		if (pt >=  70. && pt <  80.) SFc_err =   0.0227149;
+		if (pt >=  80. && pt < 100.) SFc_err =   0.0260294;
+		if (pt >= 100. && pt < 120.) SFc_err =   0.0205766;
+		if (pt >= 120. && pt < 160.) SFc_err =   0.0227065;
+		if (pt >= 160. && pt < 210.) SFc_err =   0.0260481;
+		if (pt >= 210. && pt < 260.) SFc_err =   0.0278001;
+		if (pt >= 260. && pt < 320.) SFc_err =   0.0295361;
+		if (pt >= 320. && pt < 400.) SFc_err =   0.0306555;
+		if (pt >= 400. && pt < 500.) SFc_err =   0.0367805;
+		if (pt >= 500. && pt < 670.) SFc_err =   0.0527368;
+		if (pt >= 670.) SFc_err  =   0.0527368*2.0;
+
+		// Modified SFc values
+		float SFc_dn = SFc - 2*SFc_err;
+		float SFc_up = SFc + 2*SFc_err;
+
+		// F values for rand comparison
+		float f = 0.0;
+		float f_up = 0.0;
+		float f_dn = 0.0;
+
+		if (SFc <1.0) f = (1.0 - SFc);
+		if (SFc_up <1.0) f_up = (1.0 - SFc_up);
+		if (SFc_dn <1.0) f_dn = (1.0 - SFc_dn);
+
+		if (SFc > 1.0) f = (1.0 - SFc)/(1.0 - 1.0/effc);
+		if (SFc_up > 1.0) f_up = (1.0 - SFc_up)/(1.0 - 1.0/effc);
+		if (SFc_dn > 1.0) f_dn = (1.0 - SFc_dn)/(1.0 - 1.0/effc);
+
+		// Initialize tagger outputs
+		bool tag_eff_up = tag_central;
+		bool tag_eff_down = tag_central;
+		bool tag_mis_up= tag_central;
+		bool tag_mis_down = tag_central;
+
+		// Modify tagger outputs
+		// Untag a tagged jet
+		if ( (SFc<1.0)    && (arand < f)    && (tag_central == true) )  tag_central = false;
+		if ( (SFc_up<1.0) && (arand < f_up) && (tag_mis_up == true) )   tag_mis_up = false;
+		if ( (SFc_dn<1.0) && (arand < f_dn) && (tag_mis_down == true) ) tag_mis_down = false;
+		// Tag an untagged jet
+		if ( (SFc>1.0)    && (arand < f)    && (tag_central == false) )  tag_central = true;
+		if ( (SFc_up>1.0) && (arand < f_up) && (tag_mis_up == false) )   tag_mis_up = true;
+		if ( (SFc_dn>1.0) && (arand < f_dn) && (tag_mis_down == false) ) tag_mis_down = true;
+
+		tag_eff_up = tag_central;
+		tag_eff_down = tag_central;
+
+
+		// Return tags
+		tags.push_back(tag_central);
+		tags.push_back(tag_eff_up);
+		tags.push_back(tag_eff_down);
+		tags.push_back(tag_mis_up);
+		tags.push_back(tag_mis_down);
+		return tags;
+
+	}
+
+
+
+	// ---------------- MC REAL Light-jet RESULTS --------------- //
+
+	if (abs(flavour)<4)
+	{
+		// Payload SFl
+		if (pt > 670.0) pt = 670.0;
+
+		// Payload SFl error
+		float SFl = 1.0;
+		float SFl_dn    = 1.0;
+		float SFl_up      = 1.0;
+		float effl = 0.0;
+
+		if ((fabs(eta)>=0.0) &&  (fabs(eta)<=0.8))
+		{
+			SFl = (1.2875*((1+(-0.000356371*pt))+(1.08081e-07*(pt*pt))))+(-6.89998e-11*(pt*(pt*(pt/(1+(-0.0012139*pt))))));
+			SFl_dn = (1.11418*((1+(-0.000442274*pt))+(1.53463e-06*(pt*pt))))+(-4.93683e-09*(pt*(pt*(pt/(1+(0.00152436*pt))))));
+			SFl_up = (1.47515*((1+(-0.000484868*pt))+(2.36817e-07*(pt*pt))))+(-2.05073e-11*(pt*(pt*(pt/(1+(-0.00142819*pt))))));
+			effl = (0.000919586+(0.00026266*pt))+(-1.75723e-07*(pt*pt));
+		}
+
+		if ((fabs(eta)>=0.8) &&  (fabs(eta)<=1.6))
+		{
+			SFl = (1.24986*((1+(-0.00039734*pt))+(5.37486e-07*(pt*pt))))+(-1.74023e-10*(pt*(pt*(pt/(1+(-0.00112954*pt))))));
+			SFl_dn = (1.08828*((1+(-0.000208737*pt))+(1.50487e-07*(pt*pt))))+(-2.54249e-11*(pt*(pt*(pt/(1+(-0.00141477*pt))))));
+			SFl_up = (1.41211*((1+(-0.000559603*pt))+(9.50754e-07*(pt*pt))))+(-5.81148e-10*(pt*(pt*(pt/(1+(-0.000787359*pt))))));
+			effl = (-0.00364137+(0.000350371*pt))+(-1.89967e-07*(pt*pt));
+		}
+
+		if ((fabs(eta)>=1.6) &&  (fabs(eta)<=2.4))
+		{
+			SFl = (1.10763*((1+(-0.000105805*pt))+(7.11718e-07*(pt*pt))))+(-5.3001e-10*(pt*(pt*(pt/(1+(-0.000821215*pt))))));
+			SFl_dn = (0.958079*((1+(0.000327804*pt))+(-4.09511e-07*(pt*pt))))+(-1.95933e-11*(pt*(pt*(pt/(1+(-0.00143323*pt))))));
+			SFl_up = (1.26236*((1+(-0.000524055*pt))+(2.08863e-06*(pt*pt))))+(-2.29473e-09*(pt*(pt*(pt/(1+(-0.000276268*pt))))));
+			effl = (-0.00483904+(0.000367751*pt))+(-1.36152e-07*(pt*pt));
+		}
+
+		// F values for rand comparison
+		float f = 0.0;
+		float f_up = 0.0;
+		float f_dn = 0.0;
+
+		if (SFl <1.0) f = (1.0 - SFl);
+		if (SFl_up <1.0) f_up = (1.0 - SFl_up);
+		if (SFl_dn <1.0) f_dn = (1.0 - SFl_dn);
+
+		if (SFl > 1.0) f = (1.0 - SFl)/(1.0 - 1.0/effl);
+		if (SFl_up > 1.0) f_up = (1.0 - SFl_up)/(1.0 - 1.0/effl);
+		if (SFl_dn > 1.0) f_dn = (1.0 - SFl_dn)/(1.0 - 1.0/effl);
+
+		// Initialize tagger outputs
+		bool tag_eff_up = tag_central;
+		bool tag_eff_down = tag_central;
+		bool tag_mis_up= tag_central;
+		bool tag_mis_down = tag_central;
+
+		// Modify tagger outputs
+		// Untag a tagged jet
+		if ( (SFl<1.0)    && (arand < f)    && (tag_central == true) )  tag_central = false;
+		if ( (SFl_up<1.0) && (arand < f_up) && (tag_mis_up == true) )   tag_mis_up = false;
+		if ( (SFl_dn<1.0) && (arand < f_dn) && (tag_mis_down == true) ) tag_mis_down = false;
+		// Tag an untagged jet
+		if ( (SFl>1.0)    && (arand < f)    && (tag_central == false) )  tag_central = true;
+		if ( (SFl_up>1.0) && (arand < f_up) && (tag_mis_up == false) )   tag_mis_up = true;
+		if ( (SFl_dn>1.0) && (arand < f_dn) && (tag_mis_down == false) ) tag_mis_down = true;
+
+		tag_eff_up = tag_central;
+		tag_eff_down = tag_central;
+
+		// Return tags
+		tags.push_back(tag_central);
+		tags.push_back(tag_eff_up);
+		tags.push_back(tag_eff_down);
+		tags.push_back(tag_mis_up);
+		tags.push_back(tag_mis_down);
+		return tags;
+
+	}
+
 
 	tags.push_back(tag_central);
-	tags.push_back(tag_eff_up);
-	tags.push_back(tag_eff_down);
-	tags.push_back(tag_mis_up);
-	tags.push_back(tag_mis_down);
+	tags.push_back(tag_central);
+	tags.push_back(tag_central);
+	tags.push_back(tag_central);
+	tags.push_back(tag_central);
 	return tags;
 }
 
 
-// BTagging with data/MC rescaling for TCHEL
-vector<bool> BTagTCHEL(float pt, bool isdata,float discrim, float eta, int evt)
+
+
+// BTagging with data/MC rescaling for TCHEM
+vector<bool> BTagTCHEL(float pt, bool isdata,float discrim, float eta, int evt, int flavour)
 {
 
 	double dseedmod = fabs(eta*eta*1000000+42);
@@ -671,89 +826,13 @@ vector<bool> BTagTCHEL(float pt, bool isdata,float discrim, float eta, int evt)
 	int evtseed = abs( int(floor((1.0*evt)+10000)) -42 );
 
 	rr->SetSeed(evtseed + dseed );
+	float arand = rr->Rndm();
 
 	vector<bool> tags;
 	float discrim_cut = 1.7;
+	bool tag_central = discrim > discrim_cut;
 
-	float eff_central  = 0.603913*((1.+(0.286361*pt))/(1.+(0.170474*pt)));
-
-	float mistag_central = 0.0;
-	float mistag_down    = 0.0;
-	float mistag_up      = 0.0;
-	float mistag_nominal = 0.0;
-
-	if ((fabs(eta)>=0.0) &&  (fabs(eta)<=0.5))
-	{
-		mistag_central =(1.13615*((1+(-0.00119852*pt))+(1.17888e-05*(pt*pt))))+(-9.8581e-08*(pt*(pt*(pt/(1+(0.00689317*pt))))));
-		mistag_down = (1.0369*((1+(-0.000945578*pt))+(7.73273e-06*(pt*pt))))+(-4.47791e-08*(pt*(pt*(pt/(1+(0.00499343*pt))))));
-		mistag_up = (1.22179*((1+(-0.000946228*pt))+(7.37821e-06*(pt*pt))))+(-4.8451e-08*(pt*(pt*(pt/(1+(0.0047976*pt))))));
-		mistag_nominal = (((-0.0235318+(0.00268868*pt))+(-6.47688e-06*(pt*pt)))+(7.92087e-09*(pt*(pt*pt))))+(-4.06519e-12*(pt*(pt*(pt*pt))));
-	}
-
-	if ((fabs(eta)>=0.5) &&  (fabs(eta)<=1.0))
-	{
-		mistag_central =(1.13277*((1+(-0.00084146*pt))+(3.80313e-06*(pt*pt))))+(-8.75061e-09*(pt*(pt*(pt/(1+(0.00118695*pt))))));
-		mistag_down = (0.983748*((1+(7.13613e-05*pt))+(-1.08648e-05*(pt*pt))))+(2.96162e-06*(pt*(pt*(pt/(1+(0.282104*pt))))));
-		mistag_up = (1.22714*((1+(-0.00085562*pt))+(3.74425e-06*(pt*pt))))+(-8.91028e-09*(pt*(pt*(pt/(1+(0.00109346*pt))))));
-		mistag_nominal = (((-0.0257274+(0.00289337*pt))+(-7.48879e-06*(pt*pt)))+(9.84928e-09*(pt*(pt*pt))))+(-5.40844e-12*(pt*(pt*(pt*pt))));
-	}
-
-	if ((fabs(eta)>=1.0) &&  (fabs(eta)<=1.5))
-	{
-		mistag_central =(1.17163*((1+(-0.000828475*pt))+(3.0769e-06*(pt*pt))))+(-4.692e-09*(pt*(pt*(pt/(1+(0.000337759*pt))))));
-		mistag_down = (1.0698*((1+(-0.000731877*pt))+(2.56922e-06*(pt*pt))))+(-3.0318e-09*(pt*(pt*(pt/(1+(5.04118e-05*pt))))));
-		mistag_up = (1.27351*((1+(-0.000911891*pt))+(3.5465e-06*(pt*pt))))+(-6.69625e-09*(pt*(pt*(pt/(1+(0.000590847*pt))))));
-		mistag_nominal = (((-0.0310046+(0.00307803*pt))+(-7.94145e-06*(pt*pt)))+(1.06889e-08*(pt*(pt*pt))))+(-6.08971e-12*(pt*(pt*(pt*pt))));
-	}
-
-	if ((fabs(eta)>=1.5) &&  (fabs(eta)<=2.4))
-	{
-		mistag_central =(1.14554*((1+(-0.000128043*pt))+(4.10899e-07*(pt*pt))))+(-2.07565e-10*(pt*(pt*(pt/(1+(-0.00118618*pt))))));
-		mistag_down = (1.04766*((1+(-6.87499e-05*pt))+(2.2454e-07*(pt*pt))))+(-1.18395e-10*(pt*(pt*(pt/(1+(-0.00128734*pt))))));
-		mistag_up = (1.24367*((1+(-0.000182494*pt))+(5.92637e-07*(pt*pt))))+(-3.3745e-10*(pt*(pt*(pt/(1+(-0.00107694*pt))))));
-		mistag_nominal = (((-0.0274561+(0.00301096*pt))+(-8.89588e-06*(pt*pt)))+(1.40142e-08*(pt*(pt*pt))))+(-8.95723e-12*(pt*(pt*(pt*pt))));
-	}
-
-	float efferr = 0.0;
-
-	if (pt >=  30. && pt <  40.) efferr =   0.0244956;
-	if (pt >=  40. && pt <  50.) efferr =   0.0237293;
-	if (pt >=  50. && pt <  60.) efferr =   0.0180131;
-	if (pt >=  60. && pt <  70.) efferr =   0.0182411;
-	if (pt >=  70. && pt <  80.) efferr =   0.0184592;
-	if (pt >=  80. && pt < 100.) efferr =   0.0106444;
-	if (pt >= 100. && pt < 120.) efferr =   0.011073;
-	if (pt >= 120. && pt < 160.) efferr =   0.0106296;
-	if (pt >= 160. && pt < 210.) efferr =   0.0175259;
-	if (pt >= 210. && pt < 260.) efferr =   0.0161566;
-	if (pt >= 260. && pt < 320.) efferr =   0.0158973;
-	if (pt >= 320. && pt < 400.) efferr =   0.0186782;
-	if (pt >= 400. && pt < 500.) efferr =   0.0371113;
-	if (pt >= 500. && pt < 670.) efferr =   0.0289788;
-	if (pt >= 670.) efferr  =   0.0289788*2.0;
-
-	float eff_up = eff_central + efferr;
-	float eff_down = eff_central - efferr;
-
-	float rand_efftag = rr->Rndm();
-	float rand_mistag = rr->Rndm();
-
-	bool untag_central  = rand_efftag > eff_central;
-	bool untag_up       = rand_efftag > eff_up;
-	bool untag_down     = rand_efftag > eff_down;
-
-	bool forcemistag_central = (rand_mistag > mistag_nominal) && (rand_mistag < mistag_nominal*mistag_central);
-	bool forcemistag_up      = (rand_mistag > mistag_nominal) && (rand_mistag < mistag_nominal*mistag_up);
-	bool forcemistag_down    = (rand_mistag > mistag_nominal) && (rand_mistag < mistag_nominal*mistag_down);
-
-	bool basic_tag = discrim > discrim_cut;
-
-	bool tag_central  = basic_tag;
-	bool tag_eff_up   = basic_tag;
-	bool tag_eff_down = basic_tag;
-	bool tag_mis_up   = basic_tag;
-	bool tag_mis_down = basic_tag;
-
+	// ---------------- DATA RESULTS --------------- //
 	if (isdata)
 	{
 		tags.push_back(tag_central);
@@ -764,28 +843,663 @@ vector<bool> BTagTCHEL(float pt, bool isdata,float discrim, float eta, int evt)
 		return tags;
 	}
 
-	if ( (tag_central == true ) && (untag_central == true) )         tag_central = false;
-	if ( (tag_central == false) && (forcemistag_central == true) )   tag_central = true;
+	// ---------------- MC REAL B-jet RESULTS --------------- //
 
-	if ( (tag_eff_up == true ) && (untag_up == true) )               tag_eff_up = false;
-	if ( (tag_eff_up == false) && (forcemistag_central == true) )    tag_eff_up = true;
+	if (abs(flavour)==5)
+	{
+		// Payload b and c efficiencies
+		float x = discrim_cut;
+		float effb = 3.90732786802e-06*x*x*x*x +  -0.000239934437355*x*x*x +  0.00664986827287*x*x +  -0.112578996016*x +  1.00775721404;
+		// Payload SFb
+		if (pt > 670.0) pt = 670.0;
+		float SFb = 0.603913*((1.+(0.286361*pt))/(1.+(0.170474*pt)));
 
-	if ( (tag_eff_down == true ) && (untag_down == true) )           tag_eff_down = false;
-	if ( (tag_eff_down == false) && (forcemistag_central == true) )  tag_eff_down = true;
+		// Payload SFb error
+		float SFb_err = 0.0;
+		if	(pt	>=	30.0	&&	pt	<	40.0)	SFb_err	=	0.0244956;	
+		if	(pt	>=	40.0	&&	pt	<	50.0)	SFb_err	=	0.0237293;	
+		if	(pt	>=	50.0	&&	pt	<	60.0)	SFb_err	=	0.0180131;	
+		if	(pt	>=	60.0	&&	pt	<	70.0)	SFb_err	=	0.0182411;	
+		if	(pt	>=	70.0	&&	pt	<	80.0)	SFb_err	=	0.0184592;	
+		if	(pt	>=	80.0	&&	pt	<	100.0)	SFb_err	=	0.0106444;	
+		if	(pt	>=	100.0	&&	pt	<	120.0)	SFb_err	=	0.0110730;	
+		if	(pt	>=	120.0	&&	pt	<	160.0)	SFb_err	=	0.0106296;	
+		if	(pt	>=	160.0	&&	pt	<	210.0)	SFb_err	=	0.0175259;	
+		if	(pt	>=	210.0	&&	pt	<	260.0)	SFb_err	=	0.0161566;	
+		if	(pt	>=	260.0	&&	pt	<	320.0)	SFb_err	=	0.0158973;	
+		if	(pt	>=	320.0	&&	pt	<	400.0)	SFb_err	=	0.0186782;	
+		if	(pt	>=	400.0	&&	pt	<	500.0)	SFb_err	=	0.0371113;	
+		if	(pt	>=	500.0	&&	pt	<	670.0)	SFb_err	=	0.0289788;
+		if	(pt	>=	670.0)	                    SFb_err	=	0.0289788*2.0;					
 
-	if ( (tag_mis_up == true ) && (untag_central == true) )          tag_mis_up = false;
-	if ( (tag_mis_up == false) && (forcemistag_up == true) )     tag_mis_up = true;
 
-	if ( (tag_mis_down == true ) && (untag_central == true) )        tag_mis_down = false;
-	if ( (tag_mis_down == false) && (forcemistag_down == true) ) tag_mis_down = true;
+		// Modified SFb values
+		float SFb_dn = SFb - SFb_err;
+		float SFb_up = SFb + SFb_err;
+
+		// F values for rand comparison
+		float f = 0.0;
+		float f_up = 0.0;
+		float f_dn = 0.0;
+
+		if (SFb <1.0) f = (1.0 - SFb);
+		if (SFb_up <1.0) f_up = (1.0 - SFb_up);
+		if (SFb_dn <1.0) f_dn = (1.0 - SFb_dn);
+
+		if (SFb > 1.0) f = (1.0 - SFb)/(1.0 - 1.0/effb);
+		if (SFb_up > 1.0) f_up = (1.0 - SFb_up)/(1.0 - 1.0/effb);
+		if (SFb_dn > 1.0) f_dn = (1.0 - SFb_dn)/(1.0 - 1.0/effb);
+
+		// Initialize tagger outputs
+		bool tag_eff_up = tag_central;
+		bool tag_eff_down = tag_central;
+		bool tag_mis_up= tag_central;
+		bool tag_mis_down = tag_central;
+
+		// Modify tagger outputs
+		// Untag a tagged jet
+		if ( (SFb<1.0)    && (arand < f)    && (tag_central == true) )  tag_central = false;
+		if ( (SFb_up<1.0) && (arand < f_up) && (tag_eff_up == true) )   tag_eff_up = false;
+		if ( (SFb_dn<1.0) && (arand < f_dn) && (tag_eff_down == true) ) tag_eff_down = false;
+		// Tag an untagged jet
+		if ( (SFb>1.0)    && (arand < f)    && (tag_central == false) )  tag_central = true;
+		if ( (SFb_up>1.0) && (arand < f_up) && (tag_eff_up == false) )   tag_eff_up = true;
+		if ( (SFb_dn>1.0) && (arand < f_dn) && (tag_eff_down == false) ) tag_eff_down = true;
+
+		tag_mis_up = tag_central;
+		tag_mis_down = tag_central;
+
+		// Return tags
+		tags.push_back(tag_central);
+		tags.push_back(tag_eff_up);
+		tags.push_back(tag_eff_down);
+		tags.push_back(tag_mis_up);
+		tags.push_back(tag_mis_down);
+		return tags;
+
+	}
+
+
+
+	// ---------------- MC REAL C-jet RESULTS --------------- //
+
+	if (abs(flavour)==4)
+	{
+		// Payload b and c efficiencies
+		float x = discrim_cut;
+		float effc = 0.343760640168*exp(-0.00315525164823*x*x*x + 0.0805427315196*x*x + -0.867625139194*x + 1.44815935164 );
+		// Payload SFl
+		if (pt > 670.0) pt = 670.0;
+		float SFc = 0.603913*((1.+(0.286361*pt))/(1.+(0.170474*pt)));
+
+		// Payload SFc error
+		float SFc_err = 0.0;
+		if	(pt	>=	30.0	&&	pt	<	40.0)	SFc_err	=	0.0244956;	
+		if	(pt	>=	40.0	&&	pt	<	50.0)	SFc_err	=	0.0237293;	
+		if	(pt	>=	50.0	&&	pt	<	60.0)	SFc_err	=	0.0180131;	
+		if	(pt	>=	60.0	&&	pt	<	70.0)	SFc_err	=	0.0182411;	
+		if	(pt	>=	70.0	&&	pt	<	80.0)	SFc_err	=	0.0184592;	
+		if	(pt	>=	80.0	&&	pt	<	100.0)	SFc_err	=	0.0106444;	
+		if	(pt	>=	100.0	&&	pt	<	120.0)	SFc_err	=	0.0110730;	
+		if	(pt	>=	120.0	&&	pt	<	160.0)	SFc_err	=	0.0106296;	
+		if	(pt	>=	160.0	&&	pt	<	210.0)	SFc_err	=	0.0175259;	
+		if	(pt	>=	210.0	&&	pt	<	260.0)	SFc_err	=	0.0161566;	
+		if	(pt	>=	260.0	&&	pt	<	320.0)	SFc_err	=	0.0158973;	
+		if	(pt	>=	320.0	&&	pt	<	400.0)	SFc_err	=	0.0186782;	
+		if	(pt	>=	400.0	&&	pt	<	500.0)	SFc_err	=	0.0371113;	
+		if	(pt	>=	500.0	&&	pt	<	670.0)	SFc_err	=	0.0289788;
+		if	(pt	>=	670.0)	                    SFc_err	=	0.0289788*2.0;					
+
+		// Modified SFc values
+		float SFc_dn = SFc - 2*SFc_err;
+		float SFc_up = SFc + 2*SFc_err;
+
+		// F values for rand comparison
+		float f = 0.0;
+		float f_up = 0.0;
+		float f_dn = 0.0;
+
+		if (SFc <1.0) f = (1.0 - SFc);
+		if (SFc_up <1.0) f_up = (1.0 - SFc_up);
+		if (SFc_dn <1.0) f_dn = (1.0 - SFc_dn);
+
+		if (SFc > 1.0) f = (1.0 - SFc)/(1.0 - 1.0/effc);
+		if (SFc_up > 1.0) f_up = (1.0 - SFc_up)/(1.0 - 1.0/effc);
+		if (SFc_dn > 1.0) f_dn = (1.0 - SFc_dn)/(1.0 - 1.0/effc);
+
+		// Initialize tagger outputs
+		bool tag_eff_up = tag_central;
+		bool tag_eff_down = tag_central;
+		bool tag_mis_up= tag_central;
+		bool tag_mis_down = tag_central;
+
+		// Modify tagger outputs
+		// Untag a tagged jet
+		if ( (SFc<1.0)    && (arand < f)    && (tag_central == true) )  tag_central = false;
+		if ( (SFc_up<1.0) && (arand < f_up) && (tag_mis_up == true) )   tag_mis_up = false;
+		if ( (SFc_dn<1.0) && (arand < f_dn) && (tag_mis_down == true) ) tag_mis_down = false;
+		// Tag an untagged jet
+		if ( (SFc>1.0)    && (arand < f)    && (tag_central == false) )  tag_central = true;
+		if ( (SFc_up>1.0) && (arand < f_up) && (tag_mis_up == false) )   tag_mis_up = true;
+		if ( (SFc_dn>1.0) && (arand < f_dn) && (tag_mis_down == false) ) tag_mis_down = true;
+
+		tag_eff_up = tag_central;
+		tag_eff_down = tag_central;
+
+
+		// Return tags
+		tags.push_back(tag_central);
+		tags.push_back(tag_eff_up);
+		tags.push_back(tag_eff_down);
+		tags.push_back(tag_mis_up);
+		tags.push_back(tag_mis_down);
+		return tags;
+
+	}
+
+
+
+	// ---------------- MC REAL Light-jet RESULTS --------------- //
+
+	if (abs(flavour)<4)
+	{
+		// Payload SFl
+		if (pt > 670.0) pt = 670.0;
+
+		// Payload SFl error
+		float SFl = 1.0;
+		float SFl_dn    = 1.0;
+		float SFl_up      = 1.0;
+		float effl = 0.0;
+
+		if ((fabs(eta)>=0.0) &&  (fabs(eta)<=0.5))
+		{
+			SFl =(1.13615*((1+(-0.00119852*pt))+(1.17888e-05*(pt*pt))))+(-9.8581e-08*(pt*(pt*(pt/(1+(0.00689317*pt))))));
+			SFl_dn = (1.0369*((1+(-0.000945578*pt))+(7.73273e-06*(pt*pt))))+(-4.47791e-08*(pt*(pt*(pt/(1+(0.00499343*pt))))));
+			SFl_up = (1.22179*((1+(-0.000946228*pt))+(7.37821e-06*(pt*pt))))+(-4.8451e-08*(pt*(pt*(pt/(1+(0.0047976*pt))))));
+			effl = (((-0.0235318+(0.00268868*pt))+(-6.47688e-06*(pt*pt)))+(7.92087e-09*(pt*(pt*pt))))+(-4.06519e-12*(pt*(pt*(pt*pt))));
+		}
+
+		if ((fabs(eta)>=0.5) &&  (fabs(eta)<=1.0))
+		{
+			SFl =(1.13277*((1+(-0.00084146*pt))+(3.80313e-06*(pt*pt))))+(-8.75061e-09*(pt*(pt*(pt/(1+(0.00118695*pt))))));
+			SFl_dn = (0.983748*((1+(7.13613e-05*pt))+(-1.08648e-05*(pt*pt))))+(2.96162e-06*(pt*(pt*(pt/(1+(0.282104*pt))))));
+			SFl_up = (1.22714*((1+(-0.00085562*pt))+(3.74425e-06*(pt*pt))))+(-8.91028e-09*(pt*(pt*(pt/(1+(0.00109346*pt))))));
+			effl = (((-0.0257274+(0.00289337*pt))+(-7.48879e-06*(pt*pt)))+(9.84928e-09*(pt*(pt*pt))))+(-5.40844e-12*(pt*(pt*(pt*pt))));
+		}
+
+		if ((fabs(eta)>=1.0) &&  (fabs(eta)<=1.5))
+		{
+			SFl =(1.17163*((1+(-0.000828475*pt))+(3.0769e-06*(pt*pt))))+(-4.692e-09*(pt*(pt*(pt/(1+(0.000337759*pt))))));
+			SFl_dn = (1.0698*((1+(-0.000731877*pt))+(2.56922e-06*(pt*pt))))+(-3.0318e-09*(pt*(pt*(pt/(1+(5.04118e-05*pt))))));
+			SFl_up = (1.27351*((1+(-0.000911891*pt))+(3.5465e-06*(pt*pt))))+(-6.69625e-09*(pt*(pt*(pt/(1+(0.000590847*pt))))));
+			effl = (((-0.0310046+(0.00307803*pt))+(-7.94145e-06*(pt*pt)))+(1.06889e-08*(pt*(pt*pt))))+(-6.08971e-12*(pt*(pt*(pt*pt))));
+		}
+
+		if ((fabs(eta)>=1.5) &&  (fabs(eta)<=2.4))
+		{
+			SFl =(1.14554*((1+(-0.000128043*pt))+(4.10899e-07*(pt*pt))))+(-2.07565e-10*(pt*(pt*(pt/(1+(-0.00118618*pt))))));
+			SFl_dn = (1.04766*((1+(-6.87499e-05*pt))+(2.2454e-07*(pt*pt))))+(-1.18395e-10*(pt*(pt*(pt/(1+(-0.00128734*pt))))));
+			SFl_up = (1.24367*((1+(-0.000182494*pt))+(5.92637e-07*(pt*pt))))+(-3.3745e-10*(pt*(pt*(pt/(1+(-0.00107694*pt))))));
+			effl = (((-0.0274561+(0.00301096*pt))+(-8.89588e-06*(pt*pt)))+(1.40142e-08*(pt*(pt*pt))))+(-8.95723e-12*(pt*(pt*(pt*pt))));
+		}
+
+
+		// F values for rand comparison
+		float f = 0.0;
+		float f_up = 0.0;
+		float f_dn = 0.0;
+
+		if (SFl <1.0) f = (1.0 - SFl);
+		if (SFl_up <1.0) f_up = (1.0 - SFl_up);
+		if (SFl_dn <1.0) f_dn = (1.0 - SFl_dn);
+
+		if (SFl > 1.0) f = (1.0 - SFl)/(1.0 - 1.0/effl);
+		if (SFl_up > 1.0) f_up = (1.0 - SFl_up)/(1.0 - 1.0/effl);
+		if (SFl_dn > 1.0) f_dn = (1.0 - SFl_dn)/(1.0 - 1.0/effl);
+
+		// Initialize tagger outputs
+		bool tag_eff_up = tag_central;
+		bool tag_eff_down = tag_central;
+		bool tag_mis_up= tag_central;
+		bool tag_mis_down = tag_central;
+
+		// Modify tagger outputs
+		// Untag a tagged jet
+		if ( (SFl<1.0)    && (arand < f)    && (tag_central == true) )  tag_central = false;
+		if ( (SFl_up<1.0) && (arand < f_up) && (tag_mis_up == true) )   tag_mis_up = false;
+		if ( (SFl_dn<1.0) && (arand < f_dn) && (tag_mis_down == true) ) tag_mis_down = false;
+		// Tag an untagged jet
+		if ( (SFl>1.0)    && (arand < f)    && (tag_central == false) )  tag_central = true;
+		if ( (SFl_up>1.0) && (arand < f_up) && (tag_mis_up == false) )   tag_mis_up = true;
+		if ( (SFl_dn>1.0) && (arand < f_dn) && (tag_mis_down == false) ) tag_mis_down = true;
+
+		tag_eff_up = tag_central;
+		tag_eff_down = tag_central;
+		
+		// Return tags
+		tags.push_back(tag_central);
+		tags.push_back(tag_eff_up);
+		tags.push_back(tag_eff_down);
+		tags.push_back(tag_mis_up);
+		tags.push_back(tag_mis_down);
+		return tags;
+
+	}
+
 
 	tags.push_back(tag_central);
-	tags.push_back(tag_eff_up);
-	tags.push_back(tag_eff_down);
-	tags.push_back(tag_mis_up);
-	tags.push_back(tag_mis_down);
+	tags.push_back(tag_central);
+	tags.push_back(tag_central);
+	tags.push_back(tag_central);
+	tags.push_back(tag_central);
 	return tags;
 }
+
+
+
+
+
+
+
+// BTagging with data/MC rescaling for TCHEM
+vector<bool> BTagJPM(float pt, bool isdata,float discrim, float eta, int evt, int flavour)
+{
+
+	double dseedmod = fabs(eta*eta*1000000+42);
+	int dseed = int(floor(abs(dseedmod)));
+	int evtseed = abs( int(floor((1.0*evt)+10000)) -42 );
+
+	rr->SetSeed(evtseed + dseed );
+	float arand = rr->Rndm();
+
+	vector<bool> tags;
+	float discrim_cut = 0.545;
+	bool tag_central = discrim > discrim_cut;
+
+	// ---------------- DATA RESULTS --------------- //
+	if (isdata)
+	{
+		tags.push_back(tag_central);
+		tags.push_back(tag_central);
+		tags.push_back(tag_central);
+		tags.push_back(tag_central);
+		tags.push_back(tag_central);
+		return tags;
+	}
+
+	// ---------------- MC REAL B-jet RESULTS --------------- //
+
+	if (abs(flavour)==5)
+	{
+		// Payload b and c efficiencies
+		float x = discrim_cut;
+		float effb = 0.875995178317*x*x*x*x-0.562003433851*x*x*x-0.767325888445*x*x-0.0322665237579*x+0.917974902377;
+		// Payload SFb
+		if (pt > 670.0) pt = 670.0;
+		float SFb = 0.90806*((1.+(0.000236997*pt))/(1.+(5.49455e-05*pt)));
+
+		// Payload SFb error
+		float SFb_err = 0.0;
+		if	(pt	>=	30.0	&&	pt	<	40.0)	SFb_err	=	0.0352594;	
+		if	(pt	>=	40.0	&&	pt	<	50.0)	SFb_err	=	0.0353008;	
+		if	(pt	>=	50.0	&&	pt	<	60.0)	SFb_err	=	0.0299008;	
+		if	(pt	>=	60.0	&&	pt	<	70.0)	SFb_err	=	0.0276606;	
+		if	(pt	>=	70.0	&&	pt	<	80.0)	SFb_err	=	0.0292312;	
+		if	(pt	>=	80.0	&&	pt	<	100.0)	SFb_err	=	0.0336607;	
+		if	(pt	>=	100.0	&&	pt	<	120.0)	SFb_err	=	0.0284701;	
+		if	(pt	>=	120.0	&&	pt	<	160.0)	SFb_err	=	0.0295440;	
+		if	(pt	>=	160.0	&&	pt	<	210.0)	SFb_err	=	0.0358872;	
+		if	(pt	>=	210.0	&&	pt	<	260.0)	SFb_err	=	0.0367869;	
+		if	(pt	>=	260.0	&&	pt	<	320.0)	SFb_err	=	0.0375048;	
+		if	(pt	>=	320.0	&&	pt	<	400.0)	SFb_err	=	0.0597367;	
+		if	(pt	>=	400.0	&&	pt	<	500.0)	SFb_err	=	0.0653152;	
+		if	(pt	>=	500.0	&&	pt	<	670.0)	SFb_err	=	0.0742420;
+		if	(pt	>=	670.0)	                    SFb_err	=	0.0742420*2.0;					
+
+
+		// Modified SFb values
+		float SFb_dn = SFb - SFb_err;
+		float SFb_up = SFb + SFb_err;
+
+		// F values for rand comparison
+		float f = 0.0;
+		float f_up = 0.0;
+		float f_dn = 0.0;
+
+		if (SFb <1.0) f = (1.0 - SFb);
+		if (SFb_up <1.0) f_up = (1.0 - SFb_up);
+		if (SFb_dn <1.0) f_dn = (1.0 - SFb_dn);
+
+		if (SFb > 1.0) f = (1.0 - SFb)/(1.0 - 1.0/effb);
+		if (SFb_up > 1.0) f_up = (1.0 - SFb_up)/(1.0 - 1.0/effb);
+		if (SFb_dn > 1.0) f_dn = (1.0 - SFb_dn)/(1.0 - 1.0/effb);
+
+		// Initialize tagger outputs
+		bool tag_eff_up = tag_central;
+		bool tag_eff_down = tag_central;
+		bool tag_mis_up= tag_central;
+		bool tag_mis_down = tag_central;
+
+		// Modify tagger outputs
+		// Untag a tagged jet
+		if ( (SFb<1.0)    && (arand < f)    && (tag_central == true) )  tag_central = false;
+		if ( (SFb_up<1.0) && (arand < f_up) && (tag_eff_up == true) )   tag_eff_up = false;
+		if ( (SFb_dn<1.0) && (arand < f_dn) && (tag_eff_down == true) ) tag_eff_down = false;
+		// Tag an untagged jet
+		if ( (SFb>1.0)    && (arand < f)    && (tag_central == false) )  tag_central = true;
+		if ( (SFb_up>1.0) && (arand < f_up) && (tag_eff_up == false) )   tag_eff_up = true;
+		if ( (SFb_dn>1.0) && (arand < f_dn) && (tag_eff_down == false) ) tag_eff_down = true;
+
+		tag_mis_up = tag_central;
+		tag_mis_down = tag_central;
+
+		// Return tags
+		tags.push_back(tag_central);
+		tags.push_back(tag_eff_up);
+		tags.push_back(tag_eff_down);
+		tags.push_back(tag_mis_up);
+		tags.push_back(tag_mis_down);
+		return tags;
+
+	}
+
+
+
+	// ---------------- MC REAL C-jet RESULTS --------------- //
+
+	if (abs(flavour)==4)
+	{
+		// Payload b and c efficiencies
+		float x = discrim_cut;
+		float effc = -1.31691538262*x*x*x*x+2.18754138484*x*x*x-0.0360042485486*x*x-1.71795332635*x+0.86169401499;
+		// Payload SFl
+		if (pt > 670.0) pt = 670.0;
+		float SFc = 0.90806*((1.+(0.000236997*pt))/(1.+(5.49455e-05*pt)));
+
+		// Payload SFc error
+		float SFc_err = 0.0;
+		if	(pt	>=	30.0	&&	pt	<	40.0)	SFc_err	=	0.0352594;	
+		if	(pt	>=	40.0	&&	pt	<	50.0)	SFc_err	=	0.0353008;	
+		if	(pt	>=	50.0	&&	pt	<	60.0)	SFc_err	=	0.0299008;	
+		if	(pt	>=	60.0	&&	pt	<	70.0)	SFc_err	=	0.0276606;	
+		if	(pt	>=	70.0	&&	pt	<	80.0)	SFc_err	=	0.0292312;	
+		if	(pt	>=	80.0	&&	pt	<	100.0)	SFc_err	=	0.0336607;	
+		if	(pt	>=	100.0	&&	pt	<	120.0)	SFc_err	=	0.0284701;	
+		if	(pt	>=	120.0	&&	pt	<	160.0)	SFc_err	=	0.0295440;	
+		if	(pt	>=	160.0	&&	pt	<	210.0)	SFc_err	=	0.0358872;	
+		if	(pt	>=	210.0	&&	pt	<	260.0)	SFc_err	=	0.0367869;	
+		if	(pt	>=	260.0	&&	pt	<	320.0)	SFc_err	=	0.0375048;	
+		if	(pt	>=	320.0	&&	pt	<	400.0)	SFc_err	=	0.0597367;	
+		if	(pt	>=	400.0	&&	pt	<	500.0)	SFc_err	=	0.0653152;	
+		if	(pt	>=	500.0	&&	pt	<	670.0)	SFc_err	=	0.0742420;
+		if	(pt	>=	670.0)	                    SFc_err	=	0.0742420*2.0;					
+
+		// Modified SFc values
+		float SFc_dn = SFc - 2*SFc_err;
+		float SFc_up = SFc + 2*SFc_err;
+
+		// F values for rand comparison
+		float f = 0.0;
+		float f_up = 0.0;
+		float f_dn = 0.0;
+
+		if (SFc <1.0) f = (1.0 - SFc);
+		if (SFc_up <1.0) f_up = (1.0 - SFc_up);
+		if (SFc_dn <1.0) f_dn = (1.0 - SFc_dn);
+
+		if (SFc > 1.0) f = (1.0 - SFc)/(1.0 - 1.0/effc);
+		if (SFc_up > 1.0) f_up = (1.0 - SFc_up)/(1.0 - 1.0/effc);
+		if (SFc_dn > 1.0) f_dn = (1.0 - SFc_dn)/(1.0 - 1.0/effc);
+
+		// Initialize tagger outputs
+		bool tag_eff_up = tag_central;
+		bool tag_eff_down = tag_central;
+		bool tag_mis_up= tag_central;
+		bool tag_mis_down = tag_central;
+
+		// Modify tagger outputs
+		// Untag a tagged jet
+		if ( (SFc<1.0)    && (arand < f)    && (tag_central == true) )  tag_central = false;
+		if ( (SFc_up<1.0) && (arand < f_up) && (tag_mis_up == true) )   tag_mis_up = false;
+		if ( (SFc_dn<1.0) && (arand < f_dn) && (tag_mis_down == true) ) tag_mis_down = false;
+		// Tag an untagged jet
+		if ( (SFc>1.0)    && (arand < f)    && (tag_central == false) )  tag_central = true;
+		if ( (SFc_up>1.0) && (arand < f_up) && (tag_mis_up == false) )   tag_mis_up = true;
+		if ( (SFc_dn>1.0) && (arand < f_dn) && (tag_mis_down == false) ) tag_mis_down = true;
+
+		tag_eff_up = tag_central;
+		tag_eff_down = tag_central;
+
+
+		// Return tags
+		tags.push_back(tag_central);
+		tags.push_back(tag_eff_up);
+		tags.push_back(tag_eff_down);
+		tags.push_back(tag_mis_up);
+		tags.push_back(tag_mis_down);
+		return tags;
+
+	}
+
+
+
+	// ---------------- MC REAL Light-jet RESULTS --------------- //
+
+	if (abs(flavour)<4)
+	{
+		// Payload SFl
+		if (pt > 670.0) pt = 670.0;
+
+		// Payload SFl error
+		float SFl = 1.0;
+		float SFl_dn    = 1.0;
+		float SFl_up      = 1.0;
+		float effl = 0.0;
+
+		if( fabs(eta) >=0.0 && fabs(eta) < 0.8)
+		{
+			SFl = ((0.970028+(0.00118179*pt))+(-4.23119e-06*(pt*pt)))+(3.61065e-09*(pt*(pt*pt)));
+			SFl_dn = ((0.840326+(0.000626372*pt))+(-2.08293e-06*(pt*pt)))+(1.57604e-09*(pt*(pt*pt)));
+			SFl_up = ((1.09966+(0.00173739*pt))+(-6.37946e-06*(pt*pt)))+(5.64527e-09*(pt*(pt*pt)));
+			effl = (0.00727084+(4.48901e-05*pt))+(-4.42894e-09*(pt*pt));
+		}
+		if( fabs(eta) >=0.8 && fabs(eta) < 1.6)
+		{
+			SFl = ((0.918387+(0.000898595*pt))+(-2.00643e-06*(pt*pt)))+(1.26486e-09*(pt*(pt*pt)));
+			SFl_dn = ((0.790843+(0.000548016*pt))+(-6.70941e-07*(pt*pt)))+(1.90355e-11*(pt*(pt*pt)));
+			SFl_up = ((1.0459+(0.00124924*pt))+(-3.34192e-06*(pt*pt)))+(2.51068e-09*(pt*(pt*pt)));
+			effl = (0.00389156+(6.35508e-05*pt))+(1.54183e-08*(pt*pt));
+		}
+		if( fabs(eta) >=1.6 && fabs(eta) < 2.4)
+		{
+			SFl = ((0.790103+(0.00117865*pt))+(-2.07334e-06*(pt*pt)))+(1.42608e-09*(pt*(pt*pt)));
+			SFl_dn = ((0.667144+(0.00105593*pt))+(-1.43608e-06*(pt*pt)))+(5.24039e-10*(pt*(pt*pt)));
+			SFl_up = ((0.913027+(0.00130143*pt))+(-2.71061e-06*(pt*pt)))+(2.32812e-09*(pt*(pt*pt)));
+			effl = (0.0032816+(4.18867e-05*pt))+(7.44912e-08*(pt*pt));
+		}
+
+
+		// F values for rand comparison
+		float f = 0.0;
+		float f_up = 0.0;
+		float f_dn = 0.0;
+
+		if (SFl <1.0) f = (1.0 - SFl);
+		if (SFl_up <1.0) f_up = (1.0 - SFl_up);
+		if (SFl_dn <1.0) f_dn = (1.0 - SFl_dn);
+
+		if (SFl > 1.0) f = (1.0 - SFl)/(1.0 - 1.0/effl);
+		if (SFl_up > 1.0) f_up = (1.0 - SFl_up)/(1.0 - 1.0/effl);
+		if (SFl_dn > 1.0) f_dn = (1.0 - SFl_dn)/(1.0 - 1.0/effl);
+
+		// Initialize tagger outputs
+		bool tag_eff_up = tag_central;
+		bool tag_eff_down = tag_central;
+		bool tag_mis_up= tag_central;
+		bool tag_mis_down = tag_central;
+
+		// Modify tagger outputs
+		// Untag a tagged jet
+		if ( (SFl<1.0)    && (arand < f)    && (tag_central == true) )  tag_central = false;
+		if ( (SFl_up<1.0) && (arand < f_up) && (tag_mis_up == true) )   tag_mis_up = false;
+		if ( (SFl_dn<1.0) && (arand < f_dn) && (tag_mis_down == true) ) tag_mis_down = false;
+		// Tag an untagged jet
+		if ( (SFl>1.0)    && (arand < f)    && (tag_central == false) )  tag_central = true;
+		if ( (SFl_up>1.0) && (arand < f_up) && (tag_mis_up == false) )   tag_mis_up = true;
+		if ( (SFl_dn>1.0) && (arand < f_dn) && (tag_mis_down == false) ) tag_mis_down = true;
+
+		tag_eff_up = tag_central;
+		tag_eff_down = tag_central;
+		
+		// Return tags
+		tags.push_back(tag_central);
+		tags.push_back(tag_eff_up);
+		tags.push_back(tag_eff_down);
+		tags.push_back(tag_mis_up);
+		tags.push_back(tag_mis_down);
+		return tags;
+
+	}
+
+
+	tags.push_back(tag_central);
+	tags.push_back(tag_central);
+	tags.push_back(tag_central);
+	tags.push_back(tag_central);
+	tags.push_back(tag_central);
+	return tags;
+}
+
+
+
+
+
+
+// // BTagging with data/MC rescaling for TCHEL
+// vector<bool> BTagTCHEL(float pt, bool isdata,float discrim, float eta, int evt)
+// {
+
+// 	double dseedmod = fabs(eta*eta*1000000+42);
+// 	int dseed = int(floor(abs(dseedmod)));
+// 	int evtseed = abs( int(floor((1.0*evt)+10000)) -42 );
+
+// 	rr->SetSeed(evtseed + dseed );
+
+// 	vector<bool> tags;
+// 	float discrim_cut = 1.7;
+
+// 	float eff_central  = 0.603913*((1.+(0.286361*pt))/(1.+(0.170474*pt)));
+
+// 	float mistag_central = 0.0;
+// 	float mistag_down    = 0.0;
+// 	float mistag_up      = 0.0;
+// 	float mistag_nominal = 0.0;
+
+// 	if ((fabs(eta)>=0.0) &&  (fabs(eta)<=0.5))
+// 	{
+// 		mistag_central =(1.13615*((1+(-0.00119852*pt))+(1.17888e-05*(pt*pt))))+(-9.8581e-08*(pt*(pt*(pt/(1+(0.00689317*pt))))));
+// 		mistag_down = (1.0369*((1+(-0.000945578*pt))+(7.73273e-06*(pt*pt))))+(-4.47791e-08*(pt*(pt*(pt/(1+(0.00499343*pt))))));
+// 		mistag_up = (1.22179*((1+(-0.000946228*pt))+(7.37821e-06*(pt*pt))))+(-4.8451e-08*(pt*(pt*(pt/(1+(0.0047976*pt))))));
+// 		mistag_nominal = (((-0.0235318+(0.00268868*pt))+(-6.47688e-06*(pt*pt)))+(7.92087e-09*(pt*(pt*pt))))+(-4.06519e-12*(pt*(pt*(pt*pt))));
+// 	}
+
+// 	if ((fabs(eta)>=0.5) &&  (fabs(eta)<=1.0))
+// 	{
+// 		mistag_central =(1.13277*((1+(-0.00084146*pt))+(3.80313e-06*(pt*pt))))+(-8.75061e-09*(pt*(pt*(pt/(1+(0.00118695*pt))))));
+// 		mistag_down = (0.983748*((1+(7.13613e-05*pt))+(-1.08648e-05*(pt*pt))))+(2.96162e-06*(pt*(pt*(pt/(1+(0.282104*pt))))));
+// 		mistag_up = (1.22714*((1+(-0.00085562*pt))+(3.74425e-06*(pt*pt))))+(-8.91028e-09*(pt*(pt*(pt/(1+(0.00109346*pt))))));
+// 		mistag_nominal = (((-0.0257274+(0.00289337*pt))+(-7.48879e-06*(pt*pt)))+(9.84928e-09*(pt*(pt*pt))))+(-5.40844e-12*(pt*(pt*(pt*pt))));
+// 	}
+
+// 	if ((fabs(eta)>=1.0) &&  (fabs(eta)<=1.5))
+// 	{
+// 		mistag_central =(1.17163*((1+(-0.000828475*pt))+(3.0769e-06*(pt*pt))))+(-4.692e-09*(pt*(pt*(pt/(1+(0.000337759*pt))))));
+// 		mistag_down = (1.0698*((1+(-0.000731877*pt))+(2.56922e-06*(pt*pt))))+(-3.0318e-09*(pt*(pt*(pt/(1+(5.04118e-05*pt))))));
+// 		mistag_up = (1.27351*((1+(-0.000911891*pt))+(3.5465e-06*(pt*pt))))+(-6.69625e-09*(pt*(pt*(pt/(1+(0.000590847*pt))))));
+// 		mistag_nominal = (((-0.0310046+(0.00307803*pt))+(-7.94145e-06*(pt*pt)))+(1.06889e-08*(pt*(pt*pt))))+(-6.08971e-12*(pt*(pt*(pt*pt))));
+// 	}
+
+// 	if ((fabs(eta)>=1.5) &&  (fabs(eta)<=2.4))
+// 	{
+// 		mistag_central =(1.14554*((1+(-0.000128043*pt))+(4.10899e-07*(pt*pt))))+(-2.07565e-10*(pt*(pt*(pt/(1+(-0.00118618*pt))))));
+// 		mistag_down = (1.04766*((1+(-6.87499e-05*pt))+(2.2454e-07*(pt*pt))))+(-1.18395e-10*(pt*(pt*(pt/(1+(-0.00128734*pt))))));
+// 		mistag_up = (1.24367*((1+(-0.000182494*pt))+(5.92637e-07*(pt*pt))))+(-3.3745e-10*(pt*(pt*(pt/(1+(-0.00107694*pt))))));
+// 		mistag_nominal = (((-0.0274561+(0.00301096*pt))+(-8.89588e-06*(pt*pt)))+(1.40142e-08*(pt*(pt*pt))))+(-8.95723e-12*(pt*(pt*(pt*pt))));
+// 	}
+
+// 	float efferr = 0.0;
+
+// 	if (pt >=  30. && pt <  40.) efferr =   0.0244956;
+// 	if (pt >=  40. && pt <  50.) efferr =   0.0237293;
+// 	if (pt >=  50. && pt <  60.) efferr =   0.0180131;
+// 	if (pt >=  60. && pt <  70.) efferr =   0.0182411;
+// 	if (pt >=  70. && pt <  80.) efferr =   0.0184592;
+// 	if (pt >=  80. && pt < 100.) efferr =   0.0106444;
+// 	if (pt >= 100. && pt < 120.) efferr =   0.011073;
+// 	if (pt >= 120. && pt < 160.) efferr =   0.0106296;
+// 	if (pt >= 160. && pt < 210.) efferr =   0.0175259;
+// 	if (pt >= 210. && pt < 260.) efferr =   0.0161566;
+// 	if (pt >= 260. && pt < 320.) efferr =   0.0158973;
+// 	if (pt >= 320. && pt < 400.) efferr =   0.0186782;
+// 	if (pt >= 400. && pt < 500.) efferr =   0.0371113;
+// 	if (pt >= 500. && pt < 670.) efferr =   0.0289788;
+// 	if (pt >= 670.) efferr  =   0.0289788*2.0;
+
+// 	float eff_up = eff_central + efferr;
+// 	float eff_down = eff_central - efferr;
+
+// 	float rand_efftag = rr->Rndm();
+// 	float rand_mistag = rr->Rndm();
+
+// 	bool untag_central  = rand_efftag > eff_central;
+// 	bool untag_up       = rand_efftag > eff_up;
+// 	bool untag_down     = rand_efftag > eff_down;
+
+// 	bool forcemistag_central = (rand_mistag > mistag_nominal) && (rand_mistag < mistag_nominal*mistag_central);
+// 	bool forcemistag_up      = (rand_mistag > mistag_nominal) && (rand_mistag < mistag_nominal*mistag_up);
+// 	bool forcemistag_down    = (rand_mistag > mistag_nominal) && (rand_mistag < mistag_nominal*mistag_down);
+
+// 	bool basic_tag = discrim > discrim_cut;
+
+// 	bool tag_central  = basic_tag;
+// 	bool tag_eff_up   = basic_tag;
+// 	bool tag_eff_down = basic_tag;
+// 	bool tag_mis_up   = basic_tag;
+// 	bool tag_mis_down = basic_tag;
+
+// 	if (isdata)
+// 	{
+// 		tags.push_back(tag_central);
+// 		tags.push_back(tag_central);
+// 		tags.push_back(tag_central);
+// 		tags.push_back(tag_central);
+// 		tags.push_back(tag_central);
+// 		return tags;
+// 	}
+
+// 	if ( (tag_central == true ) && (untag_central == true) )         tag_central = false;
+// 	if ( (tag_central == false) && (forcemistag_central == true) )   tag_central = true;
+
+// 	if ( (tag_eff_up == true ) && (untag_up == true) )               tag_eff_up = false;
+// 	if ( (tag_eff_up == false) && (forcemistag_central == true) )    tag_eff_up = true;
+
+// 	if ( (tag_eff_down == true ) && (untag_down == true) )           tag_eff_down = false;
+// 	if ( (tag_eff_down == false) && (forcemistag_central == true) )  tag_eff_down = true;
+
+// 	if ( (tag_mis_up == true ) && (untag_central == true) )          tag_mis_up = false;
+// 	if ( (tag_mis_up == false) && (forcemistag_up == true) )     tag_mis_up = true;
+
+// 	if ( (tag_mis_down == true ) && (untag_central == true) )        tag_mis_down = false;
+// 	if ( (tag_mis_down == false) && (forcemistag_down == true) ) tag_mis_down = true;
+
+// 	tags.push_back(tag_central);
+// 	tags.push_back(tag_eff_up);
+// 	tags.push_back(tag_eff_down);
+// 	tags.push_back(tag_mis_up);
+// 	tags.push_back(tag_mis_down);
+// 	return tags;
+// }
 
 
 // The Main analysis loop. 
@@ -835,6 +1549,13 @@ void placeholder::Loop()
 	BRANCH(PFJet30JPTCountEffDown);
 	BRANCH(PFJet30JPTCountMisUp);
 	BRANCH(PFJet30JPTCountMisDown);
+
+	BRANCH(PFJet30JPMCountCentral);
+	BRANCH(PFJet30JPMCountEffUp);
+	BRANCH(PFJet30JPMCountEffDown);
+	BRANCH(PFJet30JPMCountMisUp);
+	BRANCH(PFJet30JPMCountMisDown);
+
 
 	BRANCH(PFJet30TCHEMCountCentral);
 	BRANCH(PFJet30TCHEMCountEffUp);
@@ -1558,6 +2279,12 @@ void placeholder::Loop()
 		PFJet30JPTCountMisUp = 0.0;
 		PFJet30JPTCountMisDown = 0.0;
 
+		PFJet30JPMCountCentral = 0.0;
+		PFJet30JPMCountEffUp = 0.0;
+		PFJet30JPMCountEffDown = 0.0;
+		PFJet30JPMCountMisUp = 0.0;
+		PFJet30JPMCountMisDown = 0.0;
+
 		PFJet30TCHEMCountCentral = 0.0;
 		PFJet30TCHEMCountEffUp = 0.0;
 		PFJet30TCHEMCountEffDown = 0.0;
@@ -1571,7 +2298,7 @@ void placeholder::Loop()
 		PFJet30TCHELCountMisDown = 0.0;
 
 		HT_pfjets = 0.0;
-
+		// std::cout<<" ------------------------------- "<<std::endl;
 		for(unsigned int ijet=0; ijet<v_idx_pfjet_prefinal.size(); ijet++)
 		{
 			jetindex = v_idx_pfjet_prefinal[ijet];
@@ -1615,13 +2342,18 @@ void placeholder::Loop()
 
 				HT_pfjets +=thisjet.Pt();
 
+
 				float tchpt   = PFJetTrackCountingHighPurBTag->at(jetindex);
 				float tchem   = PFJetTrackCountingHighEffBTag->at(jetindex);
 				float tchel   = PFJetTrackCountingHighEffBTag->at(jetindex);
 
 				float ssvhpt  = PFJetSimpleSecondaryVertexHighPurBTag->at(jetindex);
 				float jpt     = PFJetJetProbabilityBTag->at(jetindex);
+				float jpm     = PFJetJetProbabilityBTag->at(jetindex);
 
+				int jetflavour = PFJetPartonFlavour->at(jetindex);
+
+				// std::cout<<"Jet Flavour: "<<jetflavour<<std::endl;
 				// vector<bool> btags = BTags(thisjet.Pt(),isData,tchpt,ssvhpt,jpt,jpbt);
 				vector<bool> btags_tchpt = BTagTCHPT(thisjet.Pt(),isData,tchpt,thisjet.Eta(), event);
 				vector<bool> btags_tchpt_uncorr = BTagTCHPTUnCorr(thisjet.Pt(),isData,tchpt,thisjet.Eta(), event);
@@ -1629,8 +2361,10 @@ void placeholder::Loop()
 				vector<bool> btags_ssvhpt = BTagSSVHPT(thisjet.Pt(),isData,ssvhpt,thisjet.Eta(), event);
 				vector<bool> btags_jpt = BTagJPT(thisjet.Pt(),isData,jpt,thisjet.Eta(), event);
 
-				vector<bool> btags_tchem = BTagTCHEM(thisjet.Pt(),isData,tchem,thisjet.Eta(), event);
-				vector<bool> btags_tchel = BTagTCHEL(thisjet.Pt(),isData,tchel,thisjet.Eta(), event);
+				vector<bool> btags_tchem = BTagTCHEM(thisjet.Pt(),isData,tchem,thisjet.Eta(), event,jetflavour);
+				vector<bool> btags_tchel = BTagTCHEL(thisjet.Pt(),isData,tchel,thisjet.Eta(), event,jetflavour);
+				vector<bool> btags_jpm = BTagJPM(thisjet.Pt(),isData,jpt,thisjet.Eta(), event,jetflavour);
+
 
 				PFJet30Count += 1.0;
 				PFJet30TCHPTCountCentral += 1.0*(btags_tchpt[0]);
@@ -1651,6 +2385,12 @@ void placeholder::Loop()
 				PFJet30JPTCountMisUp   += 1.0*(btags_jpt[3]);
 				PFJet30JPTCountMisDown += 1.0*(btags_jpt[4]);
 
+				PFJet30JPMCountCentral += 1.0*(btags_jpm[0]);
+				PFJet30JPMCountEffUp   += 1.0*(btags_jpm[1]);
+				PFJet30JPMCountEffDown += 1.0*(btags_jpm[2]);
+				PFJet30JPMCountMisUp   += 1.0*(btags_jpm[3]);
+				PFJet30JPMCountMisDown += 1.0*(btags_jpm[4]);
+
 				PFJet30TCHEMCountCentral += 1.0*(btags_tchem[0]);
 				PFJet30TCHEMCountEffUp   += 1.0*(btags_tchem[1]);
 				PFJet30TCHEMCountEffDown += 1.0*(btags_tchem[2]);
@@ -1662,6 +2402,14 @@ void placeholder::Loop()
 				PFJet30TCHELCountEffDown += 1.0*(btags_tchel[2]);
 				PFJet30TCHELCountMisUp   += 1.0*(btags_tchel[3]);
 				PFJet30TCHELCountMisDown += 1.0*(btags_tchel[4]);
+
+				// if ((abs(jetflavour) < 5)&&btags_tchem[0]!=btags_tchem[1]) 
+				// {
+				// 	std::cout<<"Jet Flavour: "<<jetflavour<<std::endl;
+				// 	std::cout<<"  tags: "<<(btags_tchem[0])<<" "<<1.0*(btags_tchem[1])<<" "<<1.0*(btags_tchem[2])<<" "<<1.0*(btags_tchem[3])<<" "<<1.0*(btags_tchem[4])<<std::endl;
+				// }
+
+
 
 			}
 		}
