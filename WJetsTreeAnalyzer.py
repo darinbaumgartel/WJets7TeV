@@ -1441,14 +1441,11 @@ def GetSmartSVD(data_histo,Params, binning,forcetau,software,forcemethod,isitmcu
 				if 'nan' in binline:
 					print 'BAD BIN DETECTED'
 					isgood = False
-<<<<<<< HEAD
 
 				if (unfres.GetBinError(nb) > 100*(unfres.GetBinContent(nb))):
 					print 'BAD ERROR DETECTED'
 					isgood = False
 					
-=======
->>>>>>> bf2f121053d2b333e079cb1aa0bb55c7e3e0fd7b
 			if isgood ==True:
 				print '   ... Good Unfolding detected (no nans). Moving on.'
 				break
@@ -3312,7 +3309,6 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 
 		# h_rec_WJets_flat.Multiply(h_bscale)
 		# h_response_WJets.Multiply(h2_bscale)
-<<<<<<< HEAD
 
 
 		print 'Creating rescaled sherpa btag veto hists with:  ',BtagRescalingString
@@ -3323,18 +3319,6 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 		h_response_WJets=Create2DHisto('h_response_WJets','ResponseMatrix',t_WJets_MG_RG,baregenvariable,recomodvariable,varbinning,'(weight_pu_central*4955)'+fW+'*'+BtagRescalingString,[xlabel+" Reco",xlabel+" Truth"])
 
 
-=======
-
-
-		print 'Creating rescaled sherpa btag veto hists with:  ',BtagRescalingString
-		# Reco histograms (MadGraph and Other) 
-		h_rec_WJets_flat=CreateHisto('h_rec_WJets_flat','W+Jets '+gtag+' [Reco]',t_WJets_MG_R,recomodvariable,varbinning,'(weight_pu_central*4955)'+fW+'*'+BtagRescalingString, MCRecoStyle,Label)	
-
-		# Response Matrix 
-		h_response_WJets=Create2DHisto('h_response_WJets','ResponseMatrix',t_WJets_MG_RG,baregenvariable,recomodvariable,varbinning,'(weight_pu_central*4955)'+fW+'*'+BtagRescalingString,[xlabel+" Reco",xlabel+" Truth"])
-
-
->>>>>>> bf2f121053d2b333e079cb1aa0bb55c7e3e0fd7b
 		print '------------------ RESCALED Sherpa -------------------'
 		h_rec_WJets_flat.Print("range")
 
@@ -3863,21 +3847,12 @@ def FullAnalysisWithUncertainty(genvariable,recovariable,default_value,xlabel, b
 		[null,data_btag_minus,mc_btag_minus]=[tau,data_standard,mc_standard]
 		[null,data_btag_misplus,mc_btag_misplus]=[tau,data_standard,mc_standard]
 		[null,data_btag_misminus,mc_btag_misminus]=[tau,data_standard,mc_standard]
-<<<<<<< HEAD
 		[null,data_altunf,mc_altunf]=[tau,data_standard,mc_standard]
 		# [null,data_roounfbayes,mc_roounfbayes]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',tau,'roounfbayes')
 
 		# [null,data_altunf,mc_altunf]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',taush,'altunf')
 		# [null,data_mcunf,mc_mcunf]=[tau,data_standard,mc_standard]
 		[null,data_mcunf,mc_mcunf]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',tau,'mcunf')
-=======
-		# [null,data_altunf,mc_altunf]=[tau,data_standard,mc_standard]
-		# [null,data_roounfbayes,mc_roounfbayes]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',tau,'roounfbayes')
-
-		[null,data_altunf,mc_altunf]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',taush,'altunf')
-		[null,data_mcunf,mc_mcunf]=[tau,data_standard,mc_standard]
-		# [null,data_mcunf,mc_mcunf]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',taush,'mcunf')
->>>>>>> bf2f121053d2b333e079cb1aa0bb55c7e3e0fd7b
 
 		# [null,data_mcunf,mc_mcunf]=MakeUnfoldedPlots(genvariable,recovariable, default_value,xlabel, binning,presentationbinning,selection,gen_selection,weight,optvar,NormalDirectory,'',taush,'mcunf')
 
@@ -5535,11 +5510,7 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 			units = '[pb]'
 			Max *= 1.11
 			Min = Min/1.5
-<<<<<<< HEAD
 			# tlatalign = 0.45
-=======
-			tlatalign = 0.45
->>>>>>> bf2f121053d2b333e079cb1aa0bb55c7e3e0fd7b
 		if 'HT' in filename:
 			undervar = "H_{T}"	
 			units = '[pb/GeV]'
@@ -5550,11 +5521,7 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 			units = '[pb]'
 			Max *= 2.0
 			Min = Min/1.6
-<<<<<<< HEAD
 			tlatalign = 0.55
-=======
-			tlatalign = 0.70
->>>>>>> bf2f121053d2b333e079cb1aa0bb55c7e3e0fd7b
 		label0 = label
 		label = [label, 'd#sigma/d'+undervar+' '+units]
 
@@ -6099,11 +6066,7 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	l1.SetNDC()
 	l1.SetTextSize(0.05)
 	# l1.DrawLatex(0.15,0.90,"CMS Preliminary                         "+sqrts+"                        L_{int} = 5.0 fb^{-1}")
-<<<<<<< HEAD
 	l1.DrawLatex(0.6,0.7,"CMS ")
-=======
-	l1.DrawLatex(0.6,0.7,"CMS Preliminary Test2")
->>>>>>> bf2f121053d2b333e079cb1aa0bb55c7e3e0fd7b
 	l1.DrawLatex(0.16,0.94,sqrts+", L_{int} = 5.0 fb^{-1}")
 
 	# Labels
@@ -6230,11 +6193,7 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	cent1bh.GetYaxis().SetTitleFont(42);
 
 	cent1lower = cent1.Clone()
-<<<<<<< HEAD
 	cent1lower.GetXaxis().SetTitleOffset(0.9);
-=======
-	cent1lower.GetXaxis().SetTitleOffset(1.1);
->>>>>>> bf2f121053d2b333e079cb1aa0bb55c7e3e0fd7b
 	cent1lower.GetYaxis().SetTitleSize(0.115)
 
 	cent1lower.GetYaxis().SetTitleOffset(0.56);
@@ -6242,7 +6201,6 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	cent1lower.GetYaxis().SetTitleFont(42);
 	cent1lower.GetYaxis().SetLabelSize(0.10)
 
-<<<<<<< HEAD
 	# print Meas_verbose
 	modbinning = Meas_verbose[-1]
 	# sys.exit()
@@ -6261,8 +6219,6 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 		# 	break
 		# l2timevschain->GetHistogram()->GetXaxis()->SetBinLabel(k+1,names[k].c_str())
 	# sys.exit()
-=======
->>>>>>> bf2f121053d2b333e079cb1aa0bb55c7e3e0fd7b
 	# lowersize = 0.16*(float(pad4.GetWh()*pad4.GetAbsHNDC()))/float((pad3.GetWh()*pad3.GetAbsHNDC()))
 	# lowersize = 0.16*(float(pad4.GetAbsHNDC()))/(float(pad3.GetAbsHNDC()))
 
@@ -6278,7 +6234,6 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	grat3.SetMinimum(grat2down)
 	grat3.SetMaximum(grat2up)
 
-<<<<<<< HEAD
 
 	cent1lowerh.SetMaximum(grat2up)
 	cent1lowerh.SetMinimum(grat2down)
@@ -6307,11 +6262,6 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	cent1lowerh.GetXaxis().SetLimits(XRANGE[0],XRANGE[-1])          
 	cent1lowerh.GetXaxis().SetLimits(XRANGE[0],XRANGE[-1])        
 
-=======
-	grat2.GetXaxis().SetLimits(XRANGE[0],XRANGE[-1])          
-	grat3.GetXaxis().SetLimits(XRANGE[0],XRANGE[-1])          
-
->>>>>>> bf2f121053d2b333e079cb1aa0bb55c7e3e0fd7b
 	grat3window = grat3.Clone()
 
 	grat3window.SetFillColor(kOrange-2)
@@ -6319,14 +6269,10 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 
 
 	if dobhonly == False:
-<<<<<<< HEAD
 		if 'preexc' in filename:
 			cent1lowerh.Draw("")
 		else:
 			cent1lower.Draw("A2")
-=======
-		cent1lower.Draw("A2")
->>>>>>> bf2f121053d2b333e079cb1aa0bb55c7e3e0fd7b
 
 		grat3window.Draw("2")
 		grat3.Draw("p")
@@ -6337,11 +6283,7 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 		lb2.SetTextFont(42)
 		lb2.SetNDC()
 		lb2.SetTextSize(0.08)
-<<<<<<< HEAD
 		lb2.DrawLatex(0.20,0.38,"Madgraph (LO+PS), normalized to #sigma_{NNLO}")
-=======
-		lb2.DrawLatex(0.20,0.38,"Madgraph (LO+PS), Normalized to #sigma_{NNLO}")
->>>>>>> bf2f121053d2b333e079cb1aa0bb55c7e3e0fd7b
 	else:
 		cent1bh.Draw("A2")
 
@@ -6385,11 +6327,7 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 		lb3.SetTextFont(42)
 		lb3.SetNDC()
 		lb3.SetTextSize(0.11)
-<<<<<<< HEAD
 		lb3.DrawLatex(0.20,0.13,"Sherpa (LO+PS), normalized to #sigma_{NNLO}")
-=======
-		lb3.DrawLatex(0.20,0.13,"Sherpa (LO+PS), Normalized to #sigma_{NNLO}")
->>>>>>> bf2f121053d2b333e079cb1aa0bb55c7e3e0fd7b
 
 	else:
 		cent1bh.Draw("A2")
@@ -6407,11 +6345,7 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 		lb3.SetTextFont(42)
 		lb3.SetNDC()
 		lb3.SetTextSize(0.11)
-<<<<<<< HEAD
 		lb3.DrawLatex(0.20,0.13,"Blackhat+Sherpa (#leq 4 jets NLO, MSTW with PDF unc.)")
-=======
-		lb3.DrawLatex(0.20,0.13,"Blackhat+Sherpa (#leq 4 jets NLO, MSTW with PDF Unc.)")
->>>>>>> bf2f121053d2b333e079cb1aa0bb55c7e3e0fd7b
 
 	pad3.RedrawAxis()
 
@@ -6435,11 +6369,7 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 		lb4.SetTextFont(42)
 		lb4.SetNDC()
 		lb4.SetTextSize(0.11)
-<<<<<<< HEAD
 		lb4.DrawLatex(0.20,0.13,"Blackhat+Sherpa (#leq 4 jets NLO, with PDF and ren./fac. scale unc.)")
-=======
-		lb4.DrawLatex(0.20,0.13,"Blackhat+Sherpa (#leq 4 jets NLO, with PDF and Ren./Fac. Scale Unc.)")
->>>>>>> bf2f121053d2b333e079cb1aa0bb55c7e3e0fd7b
 	else:
 		cent1bh.Draw("A2")
 
@@ -6507,13 +6437,8 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 		cteqband.GetXaxis().SetTitleOffset(0.9)
 		cteqband.GetYaxis().SetLabelSize(0.05)
 		cteqband.GetXaxis().SetLabelSize(0.05)
-<<<<<<< HEAD
 		cteqband.SetMaximum(2.0)
 		cteqband.SetMinimum(0.5)
-=======
-		cteqband.SetMaximum(1.25)
-		cteqband.SetMinimum(0.75)
->>>>>>> bf2f121053d2b333e079cb1aa0bb55c7e3e0fd7b
 		# CentralRatioBand.GetYaxis().SetTitle("")
 
 
@@ -6542,11 +6467,7 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 
 		unityc.Draw("SAME")
 
-<<<<<<< HEAD
 		leg = TLegend(0.53,0.68,0.95,0.86,"","brNDC")
-=======
-		leg = TLegend(0.53,0.7,0.95,0.86,"","brNDC")
->>>>>>> bf2f121053d2b333e079cb1aa0bb55c7e3e0fd7b
 		# leg.AddEntry(cteqband,"Sherpa (CT10)")
 		leg.AddEntry(gcomp_data,"Data")
 		leg.AddEntry(gcomp_mstw,"BlackHat+Sherpa (MSTW)")
@@ -6567,11 +6488,7 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 		l1c.SetNDC()
 		l1c.SetTextSize(0.05)
 		# l1.DrawLatex(0.15,0.90,"CMS Preliminary                         "+sqrts+"                        L_{int} = 5.0 fb^{-1}")
-<<<<<<< HEAD
 		l1c.DrawLatex(0.22,0.83,"CMS ")
-=======
-		l1c.DrawLatex(0.22,0.83,"CMS Preliminary")
->>>>>>> bf2f121053d2b333e079cb1aa0bb55c7e3e0fd7b
 		l1c.DrawLatex(0.16,0.94,sqrts+", L_{int} = 5.0 fb^{-1}")
 		print compfilename
 
@@ -6802,7 +6719,6 @@ def ParseTablesToRecoHistograms():
 	relabels.append(['Pt_pfjet1','Leading jet p_{T} [GeV]','p_{T}'])
 	relabels.append(['Pt_muon1','Muon p_{T} [GeV]','p_{T}'])
 	relabels.append(['N_GoodVertices','N_{Vertices}','N_{Vertices}'])
-<<<<<<< HEAD
 	relabels.append(['Pt_pfjet2','Second leading jet p_{T} [GeV]','p_{T}'])
 	relabels.append(['Pt_pfjet3','Third leading jet p_{T} [GeV]','p_{T}'])
 	relabels.append(['Pt_pfjet4','Fourth leading jet p_{T} [GeV]','p_{T}'])
@@ -6821,26 +6737,6 @@ def ParseTablesToRecoHistograms():
 	# 	relabels[-1][1]+=' (No b-tag veto)'
 	# else:
 	# 	relabels[-1][1]+=' (With b-tag veto)'		
-=======
-	relabels.append(['Pt_pfjet2','Second Leading Jet p_{T} [GeV]','p_{T}'])
-	relabels.append(['Pt_pfjet3','Third Leading Jet p_{T} [GeV]','p_{T}'])
-	relabels.append(['Pt_pfjet4','Fourth Leading Jet p_{T} [GeV]','p_{T}'])
-	relabels.append(['Pt_pfjet5','Fifth Leading Jet p_{T} [GeV]','p_{T}'])
-
-
-
-	relabels.append(['Eta_pfjet1','Leading Jet |#eta|','|#eta|'])
-	relabels.append(['Eta_pfjet2','Second Leading Jet |#eta|','|#eta|'])
-	relabels.append(['Eta_pfjet3','Third Leading Jet |#eta|','|#eta|'])
-	relabels.append(['Eta_pfjet4','Fourth Leading Jet |#eta|','|#eta|'])
-	relabels.append(['Eta_pfjet5','Fifth Leading Jet |#eta|','|#eta|'])
-	relabels.append(['preexc','Inclusive Jet Multiplicity','N_{Jet}'])
-	relabels.append(['PFJet30Count','Exclusive Jet Multiplicity','N_{Jet}'])
-	if 'BTagOff' in 'pyplots':
-		relabels[-1][1]+=' (No b-tag veto)'
-	else:
-		relabels[-1][1]+=' (With b-tag veto)'		
->>>>>>> bf2f121053d2b333e079cb1aa0bb55c7e3e0fd7b
 	relabels.append(['MT_muon1METR','M_{T}(#mu,E_{T}^{miss}) [GeV]','M_{T}'])
 	relabels.append(['Pt_MET','E_{T}^{miss} [GeV]','E_{T}^{miss}'])
 	relabels.append(['DeltaPhi_pfjet1muon1','#Delta #phi(jet_{1},#mu)'	,'#Delta #phi(jet_{1},#mu)'])
@@ -7403,35 +7299,6 @@ def ParseTablesToRecoHistograms():
 		hs_rec_Data_ratio.GetYaxis().SetNdivisions(505)
 
 
-<<<<<<< HEAD
-=======
-	relabels = []
-	relabels.append(['Pt_pfjet1','Leading Jet p_{T} [GeV]','p_{T}'])
-	relabels.append(['Pt_muon1','Muon p_{T} [GeV]','p_{T}'])
-	relabels.append(['N_GoodVertices','N_{Vertices}','N_{Vertices}'])
-	relabels.append(['Pt_pfjet2','Second Leading Jet p_{T} [GeV]','p_{T}'])
-	relabels.append(['Pt_pfjet3','Third Leading Jet p_{T} [GeV]','p_{T}'])
-	relabels.append(['Pt_pfjet4','Fourth Leading Jet p_{T} [GeV]','p_{T}'])
-	relabels.append(['Pt_pfjet5','Fifth Leading Jet p_{T} [GeV]','p_{T}'])
-	relabels.append(['|#eta|_pfjet1','Leading Jet #|#eta|','#|#eta|'])
-	relabels.append(['|#eta|_pfjet2','Second Leading Jet #|#eta|','#|#eta|'])
-	relabels.append(['|#eta|_pfjet3','Third Leading Jet #|#eta|','#|#eta|'])
-	relabels.append(['|#eta|_pfjet4','Fourth Leading Jet #|#eta|','#|#eta|'])
-	relabels.append(['|#eta|_pfjet5','Fifth Leading Jet #|#eta|','#|#eta|'])
-	relabels.append(['preexc','Inclusive Jet Multiplicity','N_{Jet}'])
-	relabels.append(['PFJet30Count','Exclusive Jet Multiplicity','N_{Jet}'])
-	if 'BTagOff' in 'pyplots':
-		relabels[-1][1]+=' (No b-tag veto)'
-	else:
-		relabels[-1][1]+=' (With b-tag veto)'		
-	relabels.append(['MT_muon1METR','M_{T}(#mu,E_{T}^{miss}) [GeV]','M_{T}'])
-	relabels.append(['Pt_MET','E_{T}^{miss} [GeV]','E_{T}^{miss}'])
-	relabels.append(['DeltaPhi_pfjet1muon1','#Delta #phi(jet_{1},#mu)'	,'#Delta #phi(jet_{1},#mu)'])
-	relabels.append(['DeltaPhi_pfjet2muon1','#Delta #phi(jet_{2},#mu)'	,'#Delta #phi(jet_{2},#mu)'])
-	relabels.append(['DeltaPhi_pfjet3muon1','#Delta #phi(jet_{3},#mu)'	,'#Delta #phi(jet_{3},#mu)'])
-	relabels.append(['DeltaPhi_pfjet4muon1','#Delta #phi(jet_{4},#mu)'	,'#Delta #phi(jet_{4},#mu)'])
-	relabels.append(['DeltaPhi_pfjet5muon1','#Delta #phi(jet_{5},#mu)'	,'#Delta #phi(jet_{5},#mu)'])
->>>>>>> bf2f121053d2b333e079cb1aa0bb55c7e3e0fd7b
 
 		hs_rec_Data_ratio.Draw("][SAME")
 
@@ -7471,14 +7338,9 @@ def ParseTablesToFinalResults(WRenorm,sel):
 		# if 'Pt_pfjet1' not in f:
 		# 	continue
 		# print f
-<<<<<<< HEAD
 		# if 'PFJet30Count' not in f:
 		# 	continue
 		continue
-=======
-		# if 'PFJet30Count' not in f or 'pre' in f:
-		# 	continue
->>>>>>> bf2f121053d2b333e079cb1aa0bb55c7e3e0fd7b
 		# if ('Pt_pf' not in f and 'Count' not in f) and 'pre' not in f:
 		# 	continue
 		# if 'Del' not in f or 'jet3' not in f:
@@ -7587,7 +7449,6 @@ def ParseTablesToFinalResults(WRenorm,sel):
 			label = 'Fifth leading jet p_{T} [GeV]'
 			quantity = 'p_{T}'			
 			
-<<<<<<< HEAD
 		if label=='Eta_pfjet1':
 			label = 'Leading Jet |#eta|'
 			quantity = '|#eta|'
@@ -7607,27 +7468,6 @@ def ParseTablesToFinalResults(WRenorm,sel):
 		if label=='Eta_pfjet5':
 			label = 'Fifth leading jet |#eta|'
 			quantity = '|#eta|'				
-=======
-		if label=='|#eta|_pfjet1':
-			label = 'Leading Jet #|#eta|'
-			quantity = '#|#eta|'
-			
-		if label=='|#eta|_pfjet2':
-			label = 'Second Leading Jet #|#eta|'
-			quantity = '#|#eta|'						
-
-		if label=='|#eta|_pfjet3':
-			label = 'Third Leading Jet #|#eta|'
-			quantity = '#|#eta|'	
-
-		if label=='|#eta|_pfjet4':
-			label = 'Fourth Leading Jet #|#eta|'
-			quantity = '#|#eta|'	
-
-		if label=='|#eta|_pfjet5':
-			label = 'Fifth Leading Jet #|#eta|'
-			quantity = '#|#eta|'				
->>>>>>> bf2f121053d2b333e079cb1aa0bb55c7e3e0fd7b
 
 		if label=='PFJet30Count':
 			label = 'Exclusive jet multiplicity'
