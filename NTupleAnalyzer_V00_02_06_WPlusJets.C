@@ -1530,6 +1530,8 @@ void placeholder::Loop()
 	// Particle Counts
 	BRANCH(PFJetCount); BRANCH(BpfJetCount);
 	BRANCH(GenJet30Count);
+	BRANCH(PFJet30CountTrueB);
+
 	BRANCH(PFJet30Count);
 
 	BRANCH(PFJet30TCHPTCountCentral);
@@ -2259,6 +2261,7 @@ void placeholder::Loop()
 		// Filter out jets that are actually muons or electrons
 
 		PFJet30Count = 0.0;
+		PFJet30CountTrueB = 0.0;
 
 		PFJet30TCHPTCountCentral = 0.0;
 		PFJet30TCHPTCountEffUp = 0.0;
@@ -2350,9 +2353,15 @@ void placeholder::Loop()
 				float ssvhpt  = PFJetSimpleSecondaryVertexHighPurBTag->at(jetindex);
 				float jpt     = PFJetJetProbabilityBTag->at(jetindex);
 				float jpm     = PFJetJetProbabilityBTag->at(jetindex);
+<<<<<<< HEAD
+
+				int jetflavour = PFJetPartonFlavour->at(jetindex);
+				if (abs(jetflavour)==5) PFJet30CountTrueB += 1.0;
+=======
 
 				int jetflavour = PFJetPartonFlavour->at(jetindex);
 
+>>>>>>> bf2f121053d2b333e079cb1aa0bb55c7e3e0fd7b
 				// std::cout<<"Jet Flavour: "<<jetflavour<<std::endl;
 				// vector<bool> btags = BTags(thisjet.Pt(),isData,tchpt,ssvhpt,jpt,jpbt);
 				vector<bool> btags_tchpt = BTagTCHPT(thisjet.Pt(),isData,tchpt,thisjet.Eta(), event);

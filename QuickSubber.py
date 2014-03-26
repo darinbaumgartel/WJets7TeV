@@ -39,6 +39,12 @@ TAGGERS = ['TCHEM','TCHEMBTAGOFF','TCHEMNOJESTAG','TCHEMNOJESTAGBTAGOFF','TCHEMB
 # TAGGERS = ['TCHELNOSYS','JPMNOSYS']
 # TAGGERS = ['TCHEMNOSYS']
 
+<<<<<<< HEAD
+TAGGERS = ['TCHEM']
+
+
+=======
+>>>>>>> bf2f121053d2b333e079cb1aa0bb55c7e3e0fd7b
 if False:
 	for n in range(len(TAGGERS)):
 		TAGGERS[n]+= 'NOSYS'
@@ -170,6 +176,7 @@ for TAGGER in TAGGERS:
 		fsub.write('bsub -q '+q+'  -R "pool>100000" -e /dev/null -J SubTemp'+TAGGER+'_'+str(x)+'< ../SubTemp'+TAGGER+'_'+str(x)+'.tcsh\n\n')
 		os.system('cat RunWJetsBatch.tcsh | sed \'s#WJetsTreeAnalyzer.py#SubTemp'+TAGGER+'_'+str(x)+'.py#g\' | sed \'s#ResDir#'+ResDir+'#g\' | sed \'s#OutDir#'+ResDir+'pyplots'+TAGGER+'#g\' | sed \'s#AFSDir#'+thisdir+ResDir+'pyplots'+TAGGER+'#g\'  > SubTemp'+TAGGER+'_'+str(x)+'.tcsh ')
 		# print('cat RunWJetsBatch.tcsh | sed \'s#WJetsTreeAnalyzer.py#SubTemp'+TAGGER+'_'+str(x)+'.py#g\' | sed \'s#ResDir#'+ResDir+'#g\' | sed \'s#OutDir#'+ResDir+'pyplots'+TAGGER+'#g\' | sed \'s#AFSDir#'+thisdir+ResDir+'pyplots'+TAGGER+'#g\'  > SubTemp'+TAGGER+'_'+str(x)+'.tcsh ')
+		fsub.write('bsub -q 2nd  -R "pool>100000" -e /dev/null -J SubTemp'+TAGGER+'_'+str(x)+'< ../SubTemp'+TAGGER+'_'+str(x)+'.tcsh\n\n')
 
 	fsub.close()
 
