@@ -73,7 +73,7 @@ jtags = ['jet1','jet2','jet3','jet4']
 for jtag in jtags:
 	for f in filedata:
 		# print jtag, jtag in f[0], f[0]
-		print f
+		# print f
 		if jtag not in f[0]:
 			continue
 		if 'Eta' in f[0]:
@@ -96,11 +96,11 @@ for f in filedata:
 		continue
 	MultData = f[-1][:4]
 
-print EtaData
-print PtData
-print HTData
-print DPhiData
-print MultData
+# print EtaData
+# print PtData
+# print HTData
+# print DPhiData
+# print MultData
 
 
 sys.argv.append('-b')
@@ -117,9 +117,12 @@ hE = TH1F('hE','hE',4,0.5,4.5)
 hP = TH1F('hP','hP',4,0.5,4.5)
 hH = TH1F('hH','hH',4,0.5,4.5)
 
+print PtData
+print MultData
+print ' --------------------------------- '
 for bin in [1,2,3,4]:
 	j = bin-1
-	print hM.GetBinCenter(bin)
+	# print hM.GetBinCenter(bin)
 	hM.SetBinContent(bin,MultData[j][0]/MultData[j][0])
 	hM.SetBinError(bin,MultData[j][1]/MultData[j][0])	
 
@@ -128,7 +131,8 @@ for bin in [1,2,3,4]:
 
 	hE.SetBinContent(bin,EtaData[j][0]/MultData[j][0])
 	hE.SetBinError(bin,EtaData[j][1]/EtaData[j][0])
-
+	print '----',bin,'-----'
+	print j, PtData[j], MultData[j]
 	hP.SetBinContent(bin,PtData[j][0]/MultData[j][0])
 	hP.SetBinError(bin,PtData[j][1]/PtData[j][0])
 
@@ -140,8 +144,8 @@ hM.SetMarkerColor(18)
 hM.SetFillColor(18)
 hM.GetXaxis().SetTitle("Inclusive Jet Multiplicity")
 hM.GetYaxis().SetTitle("Integral w.r.t. Inclusive Multiplicity Bin")
-hM.SetMinimum(0.1)
-hM.SetMaximum(1.9)
+hM.SetMinimum(0.90)
+hM.SetMaximum(1.10)
 hM.Draw('E2')
 
 hH.SetMarkerColor(1)
@@ -170,9 +174,9 @@ hE.SetMarkerSize(2)
 hD.SetMarkerSize(2)
 
 hH.Draw('E1PSAME')
-# hP.Draw('E1PSAME')
-# hE.Draw('E1PSAME')
-# hD.Draw('E1PSAME')
+hP.Draw('E1PSAME')
+hE.Draw('E1PSAME')
+hD.Draw('E1PSAME')
 ratunity=TLine(0.5, 1.0 , 4.5,1.0)
 ratunity.SetLineStyle(3)
 
@@ -183,7 +187,7 @@ leg.SetTextFont(42)
 leg.SetFillColor(0)
 leg.SetBorderSize(0)
 leg.SetTextSize(.03)
-leg.AddEntry(hM, "Inclusive Mult Bins")
+leg.AddEntry(hM, "Inclusive Mult w/ Unfolding Unc.")
 leg.AddEntry(hH, "H_{T}(jet) Integrals")
 leg.AddEntry(hP, "p_{T}(jet) Integrals")
 leg.AddEntry(hE, "#eta(jet) Integrals")

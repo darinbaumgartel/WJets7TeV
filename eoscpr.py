@@ -38,7 +38,7 @@ for m in mkdirs:
 f.write('\n')
 for c in cps:
 	f.write('echo "Transferring: '+c+'"\n')
-	f.write(c+' & \nsleep 20\n')
+	f.write(c+' \n')
 f.close()
 os.system('chmod 755 '+F)
 

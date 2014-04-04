@@ -4,6 +4,7 @@ from glob import glob
 import math
 
 def round_sigfigs(num, sig_figs):
+    sig_figs=2
     if num != 0:
         return round(num, -int(math.floor(math.log10(abs(num))) - (sig_figs - 1)))
     else:
@@ -159,36 +160,77 @@ def GetFiles(adir):
 	nfiles = allfiles = glob(adir+'/pyplotsTCHEMBTagOff/PF*standard_s*.hlog')
 	bvfiles = allfiles = glob(adir+'/pyplotsTCHEM/PF*btag*s_simp*.hlog')
 
+	# print bvfiles
 	centraldata = HArrayFromHlog(bfiles[0])
-	updata = HArrayFromHlog(bvfiles[1])
 	downdata = HArrayFromHlog(bvfiles[0])
+	downmdata = HArrayFromHlog(bvfiles[1])
+	upmdata = HArrayFromHlog(bvfiles[2])
+	updata = HArrayFromHlog(bvfiles[3])
+
 	nobdata = HArrayFromHlog(nfiles[0])
 
-	return [centraldata, updata, downdata, nobdata]
+	# print 'C', centraldata
+	# print 'U', updata
+	# print 'D', downdata
+	# print 'N', nobdata
+
+	return [centraldata, updata, downdata,upmdata,downmdata, nobdata]
 
 
-[centraldata, updata, downdata, nobdata] = GetFiles(sys.argv[1])
+[centraldata, updata, downdata,upmdata,downmdata, nobdata] = GetFiles(sys.argv[1])
 
 for bin in range(len(centraldata)):
 	C = centraldata[bin]
+	# print ' '
+	# print C
 	U = updata[bin]
 	D = downdata[bin]
+	UM = upmdata[bin]
+	DM = downmdata[bin]	
+
 	N = nobdata[bin]
 
 	[lhsC,rhsC,qC,eqC,sC,esC,vC,evC,zC,ezC,tC,etC,wC,ewC,TC,eTC,datC] = C
 	[lhsU,rhsU,qU,eqU,sU,esU,vU,evU,zU,ezU,tU,etU,wU,ewU,TU,eTU,datU] = U
 	[lhsD,rhsD,qD,eqD,sD,esD,vD,evD,zD,ezD,tD,etD,wD,ewD,TD,eTD,datD] = D
+	[lhsUM,rhsUM,qUM,eqUM,sUM,esUM,vUM,evUM,zUM,ezUM,tUM,etUM,wUM,ewUM,TUM,eTUM,datUM] = UM
+	[lhsDM,rhsDM,qDM,eqDM,sDM,esDM,vDM,evDM,zDM,ezDM,tDM,etDM,wDM,ewDM,TDM,eTDM,datDM] = DM
 	[lhsN,rhsN,qN,eqN,sN,esN,vN,evN,zN,ezN,tN,etN,wN,ewN,TN,eTN,datN] = N
+
+
 
 	bin_tex = int(0.5*(rhsC + lhsC))
 	
+	#print wC,wU,wD,wUM,wDM
+
 	wpurC = 100.0*wC/TC
-	wpurD = abs(100.0*wD/TD - wpurC)
-	wpurU = abs(100.0*wU/TU - wpurC)
+	wpurD = (100.0*wD/TD - wpurC)
+	wpurU = (100.0*wU/TU - wpurC)
+	wpurDM = (100.0*wDM/TDM - wpurC)
+	wpurUM = (100.0*wUM/TUM - wpurC)
+
+	wpurUs = []
+	wpurDs = []
+
+	for x in [wpurU,wpurUM,wpurD,wpurDM]:
+		if x > 0 and len(wpurUs)<2:
+			wpurUs.append(x)
+		if x < 0 and len(wpurDs)<2:
+			wpurDs.append(x)
+
+
+	wpurUt = math.sqrt(sum([z*z for z in wpurUs]))
+	wpurDt = math.sqrt(sum([z*z for z in wpurDs]))
+
+	WpurErrs = [wpurUt,wpurDt]
+	# sys.exit()
+
 	wpurN = 100.0*wN/TN
 
 	wpur_central = str(round(wpurC,9))
-	wpur_err = max([wpurD, wpurU])
+	# print wpurD
+	# print wpurU
+	wpur_err = max(WpurErrs)
 	wpur_nom = str(round(wpurN,9))
 	wpur_err = str(round(wpur_err,9))
 
@@ -199,13 +241,36 @@ for bin in range(len(centraldata)):
 
 	wpur_diglhs = (len(wpur_dig.split('.')[1]))
 	# print wpur_diglhs
-	wpur_nom = str(round(float(wpur_nom), wpur_diglhs))
+	# wpur_nom = str(round(float(wpur_nom), wpur_diglhs))
 
 
 	wredCN = 100.0*(wN - wC)/wN
 	wredDN = abs(100.0*(wN - wD)/wN - wredCN)
 	wredUN = abs(100.0*(wN - wU)/wN - wredCN)
-	wrederr = max([wredDN, wredUN])
+	wredDNM = abs(100.0*(wN - wDM)/wN - wredCN)
+	wredUNM = abs(100.0*(wN - wUM)/wN - wredCN)	
+
+	# print wredCN,wredDN,wredUN,wredDNM,wredUNM
+	wredUs = []
+	wredDs = []
+
+	for x in [wredUN,wredUNM,wredDN,wredDNM]:
+		if x > 0 and len(wredUs)<2:
+			wredUs.append(x)
+		if x < 0 and len(wredDs)<2:
+			wredDs.append(x)
+
+
+
+	wredUt = math.sqrt(sum([z*z for z in wredUs]))
+	wredDt = math.sqrt(sum([z*z for z in wredDs]))
+
+	WredErrs = [wredUt,wredDt]
+
+
+	wrederr = max(WredErrs)
+
+
 
 	wredCN = str(round(wredCN,9))
 	wrederr = str(round(wrederr,9))
@@ -216,9 +281,37 @@ for bin in range(len(centraldata)):
 	tredCN = 100.0*(tN - tC)/tN
 	tredDN = abs(100.0*(tN - tD)/tN - tredCN)
 	tredUN = abs(100.0*(tN - tU)/tN - tredCN)
+	tredDNM = abs(100.0*(tN - tDM)/tN - tredCN)
+	tredUNM = abs(100.0*(tN - tUM)/tN - tredCN)
 	trederr = max([tredDN, tredUN])
 
 	tredCN = str(round(tredCN,9))
+
+
+
+	tredUs = []
+	tredDs = []
+
+	for x in [tredUN,tredUNM,tredDN,tredDNM]:
+		if x > 0 and len(tredUs)<2:
+			tredUs.append(x)
+		if x < 0 and len(tredDs)<2:
+			tredDs.append(x)
+
+
+
+	tredUt = math.sqrt(sum([z*z for z in tredUs]))
+	tredDt = math.sqrt(sum([z*z for z in tredDs]))
+
+	TredErrs = [tredUt,tredDt]
+
+
+	trederr = max(TredErrs)
+
+
+
+
+
 	trederr = str(round(trederr,9))
 
 	treduction = BeautifiedEntry([tredCN, trederr])

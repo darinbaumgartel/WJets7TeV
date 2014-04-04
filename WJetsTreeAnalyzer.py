@@ -3319,18 +3319,18 @@ def MakeUnfoldedPlots(genvariables,recovariable, default_value, labelmods, binni
 		h_response_WJets=Create2DHisto('h_response_WJets','ResponseMatrix',t_WJets_MG_RG,baregenvariable,recomodvariable,varbinning,'(weight_pu_central*4955)'+fW+'*'+BtagRescalingString,[xlabel+" Reco",xlabel+" Truth"])
 
 
-		print '------------------ RESCALED Sherpa -------------------'
-		h_rec_WJets_flat.Print("range")
+		# print '------------------ RESCALED Sherpa -------------------'
+		# h_rec_WJets_flat.Print("range")
 
 
-		print '------------------ MG BTAG ON -------------------'
-		h_rec_WJets_flatMG_wbtag.Print("range")
+		# print '------------------ MG BTAG ON -------------------'
+		# h_rec_WJets_flatMG_wbtag.Print("range")
 
-		print '------------------ MG BTAG OFF -------------------'
-		h_rec_WJets_flatMG_nobtag.Print("range")
+		# print '------------------ MG BTAG OFF -------------------'
+		# h_rec_WJets_flatMG_nobtag.Print("range")
 
-		print '------------------ GEN SHERPA -------------------'
-		h_gen_WJets_flat.Print("range")
+		# print '------------------ GEN SHERPA -------------------'
+		# h_gen_WJets_flat.Print("range")
 
 
 	h_response_WJets.Draw("COLZ") # Draw it with color scheme
@@ -5523,11 +5523,18 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 			Min = Min/1.6
 			tlatalign = 0.55
 		label0 = label
-		label = [label, 'd#sigma/d'+undervar+' '+units]
+		injet = 1
+		for posj in [1,2,3,4]:
+			if 'jet'+str(posj) in filename or 'inc'+str(posj) in filename:
+				injet = posj
+		label = [label, 'd#sigma(W(#rightarrowl#nu)+#geq '+str(injet)+' jet)/d'+undervar+' '+units]
 
 
 		if "Count" in filename:
-			label = [label0, 'd#sigma/dN [pb]']
+			charequiv = '+'
+			if 'pre' in filename:
+				charequiv = '+#geq'
+			label = ['N_{jet}', '#sigma(W(#rightarrowl#nu)'+charequiv+' N_{jet}) [pb]']
 			units = '[pb]'
 			Min = Min/3.0
 
@@ -5789,6 +5796,7 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	Meas.GetXaxis().SetTitleSize(.25);
 	Meas.GetXaxis().SetTitleOffset(1.);
 
+	# Meas.GetYaxis().SetTitleSize(0.5*Meas.GetYaxis().GetTitleSize());
 	# Meas.GetYaxis().SetTitleSize(.14);
 	# Meas.GetXaxis().CenterTitle(0);
 	# Meas.GetYaxis().CenterTitle(1);
@@ -5961,7 +5969,7 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 
 	# Meas.GetYaxis().SetTitle(" func test ")
 	Meas.GetYaxis().SetTitleOffset(1.0);
-	Meas.GetYaxis().SetTitleSize(.07);
+	Meas.GetYaxis().SetTitleSize(.06);
 	Meas.GetYaxis().SetLabelSize(.06);
 
 	Meas.GetXaxis().SetTitleOffset(1.1);
@@ -6029,7 +6037,7 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 
 	if dobhonly == False:
 		# leg = TLegend(0.42,0.75,1.0,1.00,"","brNDC")
-		leg = TLegend(0.47,0.75,1.0,1.00,"","brNDC")
+		leg = TLegend(0.52,0.75,1.0,1.00,"","brNDC")
 
 	else:
 		leg = TLegend(0.5,0.64,0.99,0.89,"","brNDC")
@@ -6066,8 +6074,8 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 	l1.SetNDC()
 	l1.SetTextSize(0.05)
 	# l1.DrawLatex(0.15,0.90,"CMS Preliminary                         "+sqrts+"                        L_{int} = 5.0 fb^{-1}")
-	l1.DrawLatex(0.6,0.7,"CMS ")
-	l1.DrawLatex(0.16,0.94,sqrts+", L_{int} = 5.0 fb^{-1}")
+	# l1.DrawLatex(0.4,0.78,"CMS ")
+	l1.DrawLatex(0.15,0.94,"CMS, "+sqrts+", L_{int}= 5.0 fb^{-1}")
 
 	# Labels
 	l2=TLatex()
@@ -6283,7 +6291,7 @@ def FinalHisto(binning, label, quantity, filename ,expectation_means, expectatio
 		lb2.SetTextFont(42)
 		lb2.SetNDC()
 		lb2.SetTextSize(0.08)
-		lb2.DrawLatex(0.20,0.38,"Madgraph (LO+PS), normalized to #sigma_{NNLO}")
+		lb2.DrawLatex(0.20,0.38,"MadGraph+Pythia (LO+PS), normalized to #sigma_{NNLO}")
 	else:
 		cent1bh.Draw("A2")
 
@@ -6731,8 +6739,8 @@ def ParseTablesToRecoHistograms():
 	relabels.append(['Eta_pfjet3','Third leading jet |#eta|','|#eta|'])
 	relabels.append(['Eta_pfjet4','Fourth leading jet |#eta|','|#eta|'])
 	relabels.append(['Eta_pfjet5','Fifth leading jet |#eta|','|#eta|'])
-	relabels.append(['preexc','Inclusive jet multiplicity','N_{Jet}'])
-	relabels.append(['PFJet30Count','Exclusive jet multiplicity','N_{Jet}'])
+	relabels.append(['preexc','N_{Jet}','N_{Jet}'])
+	relabels.append(['PFJet30Count','N_{Jet}','N_{Jet}'])
 	# if 'BTagOff' in 'pyplots':
 	# 	relabels[-1][1]+=' (No b-tag veto)'
 	# else:
@@ -6954,7 +6962,7 @@ def ParseTablesToRecoHistograms():
 		hs_rec_ZJets=NullHisto('hs_rec_ZJets','Z+Jets',presentationbinning,ZStackStyle,Label)
 		hs_rec_TTBar=NullHisto('hs_rec_TTBar','t#bar{t}',presentationbinning,TTStackStyle,Label)
 		hs_rec_SingleTop=NullHisto('hs_rec_SingleTop','Single t',presentationbinning,StopStackStyle,Label)
-		hs_rec_QCDMu=NullHisto('hs_rec_QCDMu','QCD',presentationbinning,QCDStackStyle,Label)
+		hs_rec_QCDMu=NullHisto('hs_rec_QCDMu','Multijet',presentationbinning,QCDStackStyle,Label)
 
 
 		# Declare the MC Stack
@@ -7188,7 +7196,7 @@ def ParseTablesToRecoHistograms():
 		for _dbin in range(hs_rec_Data.GetNbinsX()+2):
 			if hs_rec_Data.GetBinContent(_dbin) > 0:
 				hs_rec_Data.SetBinError(_dbin,math.sqrt(hs_rec_Data.GetBinContent(_dbin)))
-		hs_rec_Data.Print("range")
+		# hs_rec_Data.Print("range")
 
 		# sys.exit()
 		# if _inclu == True:
@@ -7323,6 +7331,7 @@ def ParseTablesToFinalResults(WRenorm,sel):
 		# 	continue
 		if 'MT' in f:
 			continue
+		continue
 		# if 'Eta_mu' not in f:
 		# 	continue
 		# if "Delta" not in f or 'et3' not in f:
@@ -7333,14 +7342,14 @@ def ParseTablesToFinalResults(WRenorm,sel):
 		# 	continue
 		# if 'Pt_pfjet4' not in f:
 		# 	continue
-		# if 'Count' not in f or 'pre' in f:
+		# if 'Count' not in f:
 		# 	continue
-		# if 'Pt_pfjet1' not in f:
+		# if 'Pt_pfjet2' not in f:
 		# 	continue
 		# print f
 		# if 'PFJet30Count' not in f:
 		# 	continue
-		continue
+		# continue
 		# if ('Pt_pf' not in f and 'Count' not in f) and 'pre' not in f:
 		# 	continue
 		# if 'Del' not in f or 'jet3' not in f:
@@ -8070,7 +8079,7 @@ def CleanUpAndMakeTables():
 		relabels.append(['|#eta|_pfjet4','Fourth Leading Jet #|#eta|','#|#eta|'])
 		relabels.append(['|#eta|_pfjet5','Fifth Leading Jet #|#eta|','#|#eta|'])
 		relabels.append(['preexc','Jet Multiplicity (Inclusive)','N_{Jet}'])
-		relabels.append(['PFJet30Count','Jet Multiplicity (Exclusive)','N_{Jet}'])
+		relabels.append(['PFJet30Count','N_{Jet}','N_{Jet}'])
 		relabels.append(['MT_muon1METR','M_{T}(#mu,E_{T}^{miss}) [GeV]','M_{T}'])
 		relabels.append(['Pt_MET','E_{T}^{miss} [GeV]','E_{T}^{miss}'])
 		relabels.append(['DeltaPhi_pfjet1muon1','#Delta #phi(jet_{1},#mu)'	,'#Delta #phi(jet_{1},#mu)'])
@@ -8128,9 +8137,9 @@ def CleanUpAndMakeTables():
 		UN = TH1D('UN','Statistical',n,array('d',binset))
 		Gen = TH1D('Gen','Generator',n,array('d',binset))
 		BT = TH1D('BT','BTagging',n,array('d',binset))
-		OT = TH1D('OT','All Other',n,array('d',binset))
+		OT = TH1D('OT','All other',n,array('d',binset))
 		BB = TH1D('BB','Bayes/Bin',n,array('d',binset))
-		MCT = TH1D('MCT','MC',n,array('d',binset))
+		MCT = TH1D('MCT','MC Stat',n,array('d',binset))
 		allvals = []
 		for x in range(len(binset)-1):
 			[pu,bg,lu,bt,btm,js,jr,ms,mr,st,gn,mct,hl,mt,by,bb,ma] = vcont[x]
@@ -8192,10 +8201,11 @@ def CleanUpAndMakeTables():
 			histos[x].SetLineStyle(styles[x])
 			histos[x].GetXaxis().SetTitle(label)
 			histos[x].SetMarkerSize(0.0)
-			histos[x].GetYaxis().SetTitle("Uncertainty (%)")
+			histos[x].GetYaxis().SetTitle("Uncertainty [%]")
 			histos[x].SetMinimum(plotmin)
 			histos[x].SetMaximum(plotmax)
 			histos[x].SetLineWidth(2)
+			histos[x].GetXaxis().SetNdivisions(110)
 			
 			histos[x].Draw("HIST"+"SAME"*(x!=0))
 
@@ -8210,8 +8220,8 @@ def CleanUpAndMakeTables():
 		l1.SetNDC()
 		l1.SetTextSize(0.05)
 		# l1.DrawLatex(0.15,0.90,"CMS Preliminary                         "+sqrts+"                        L_{int} = 5.0 fb^{-1}")
-		l1.DrawLatex(0.2,0.84,"CMS ")
-		l1.DrawLatex(0.2,0.94,sqrts+", L_{int} = 5.0 fb^{-1}")
+		# l1.DrawLatex(0.2,0.84,"CMS ")
+		l1.DrawLatex(0.18,0.94,"CMS        "+sqrts+"         L_{int} = 5.0 fb^{-1}")
 
 		pdf = afile.replace('.tex','.pdf')
 		png = afile.replace('.tex','.png')
