@@ -4,7 +4,7 @@ import sys
 os.system('rm -r outdir')
 os.system('mkdir outdir')
 pwd = (os.popen('pwd').readlines()[0]).replace('\n','')
-cmssrc = pwd.split('RivetCode')[0] + 'RivetCode/CMSSW_5_0_0/src'
+cmssrc = pwd.split('RivetCode')[0] + 'RivetCode/CMSSW_5_3_5/src'
 
 flist = 'lhefiles.txt'
 
