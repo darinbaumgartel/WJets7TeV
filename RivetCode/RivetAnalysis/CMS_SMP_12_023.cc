@@ -20,13 +20,13 @@
 namespace Rivet
 {
 
-	class CMS_SMP_12_23 : public Analysis
+	class CMS_SMP_12_023 : public Analysis
 	{
 		public:
 
 			// Definition of the analysis, with pp collisions
-			CMS_SMP_12_23()
-				: Analysis("CMS_SMP_12_23")
+			CMS_SMP_12_023()
+				: Analysis("CMS_SMP_12_023")
 			{
 				setBeams(PROTON, PROTON);
 				setNeedsCrossSection(true);
@@ -66,33 +66,128 @@ namespace Rivet
 				// ----------------  RESULTS AS HISTOGRAMS --------------- //
 				// ------------------------------------------------------- //
 
-				// Inclusive and exclusive jet multiplicity
-				_histJetMultWmu       = bookHistogram1D("njetWmunu", 6, 0.5, 6.5);
-				_histJetMultWmuInc    = bookHistogram1D("njetWmunuInc", 6, 0.5, 6.5);
+				std::vector<double> _binsPtJet1;
+				_binsPtJet1.push_back(30);
+				_binsPtJet1.push_back(50);
+				_binsPtJet1.push_back(70);
+				_binsPtJet1.push_back(90);
+				_binsPtJet1.push_back(110);
+				_binsPtJet1.push_back(150);
+				_binsPtJet1.push_back(190);
+				_binsPtJet1.push_back(250);
+				_binsPtJet1.push_back(310);
+				_binsPtJet1.push_back(430);
+				_binsPtJet1.push_back(850);
+				_histPtJet1 = bookHistogram1D("_histPtJet1",_binsPtJet1);
 
-				// The pT of the four leading jets
-				_histJetPT1Wmu    = bookHistogram1D("JetPT1Wmunu", 26,30,300);
-				_histJetPT2Wmu    = bookHistogram1D("JetPT2Wmunu", 26,30,300);
-				_histJetPT3Wmu    = bookHistogram1D("JetPT3Wmunu", 13,30,300);
-				_histJetPT4Wmu    = bookHistogram1D("JetPT4Wmunu", 13,30,300);
+				std::vector<double> _binsPtJet2;
+				_binsPtJet2.push_back(30);
+				_binsPtJet2.push_back(50);
+				_binsPtJet2.push_back(70);
+				_binsPtJet2.push_back(90);
+				_binsPtJet2.push_back(110);
+				_binsPtJet2.push_back(150);
+				_binsPtJet2.push_back(190);
+				_binsPtJet2.push_back(250);
+				_binsPtJet2.push_back(550);
+				_histPtJet2 = bookHistogram1D("_histPtJet2",_binsPtJet2);
 
-				// The HT for jet multiplicities of 1 to 4
-				_histJetHT1Wmu    = bookHistogram1D("JetHT1Wmunu", 26,30,300);
-				_histJetHT2Wmu    = bookHistogram1D("JetHT2Wmunu", 26,30,300);
-				_histJetHT3Wmu    = bookHistogram1D("JetHT3Wmunu", 13,30,300);
-				_histJetHT4Wmu    = bookHistogram1D("JetHT4Wmunu", 13,30,300);
 
-				// The pseudorapidity of the four leading jets
-				_histJetETA1Wmu    = bookHistogram1D("JetETA1Wmunu", 12,-2.4,2.4);
-				_histJetETA2Wmu    = bookHistogram1D("JetETA2Wmunu", 12,-2.4,2.4);
-				_histJetETA3Wmu    = bookHistogram1D("JetETA3Wmunu", 12,-2.4,2.4);
-				_histJetETA4Wmu    = bookHistogram1D("JetETA4Wmunu", 12,-2.4,2.4);
+				std::vector<double> _binsPtJet3;
+				_binsPtJet3.push_back(30);
+				_binsPtJet3.push_back(60);
+				_binsPtJet3.push_back(90);
+				_binsPtJet3.push_back(120);
+				_binsPtJet3.push_back(150);
+				_binsPtJet3.push_back(210);
+				_binsPtJet3.push_back(450);
+				_histPtJet3 = bookHistogram1D("_histPtJet3",_binsPtJet3);
 
-				// The DeltaPhi between the nth leading jet and the muon, n = 1,2,3,4
-				_histJetMuDphi1Wmu    = bookHistogram1D("JetMuDphi1Wmunu", 12,-2.4,2.4);
-				_histJetMuDphi2Wmu    = bookHistogram1D("JetMuDphi2Wmunu", 12,-2.4,2.4);
-				_histJetMuDphi3Wmu    = bookHistogram1D("JetMuDphi3Wmunu", 12,-2.4,2.4);
-				_histJetMuDphi4Wmu    = bookHistogram1D("JetMuDphi4Wmunu", 12,-2.4,2.4);
+
+				std::vector<double> _binsPtJet4;
+				_binsPtJet4.push_back(30);
+				_binsPtJet4.push_back(60);
+				_binsPtJet4.push_back(90);
+				_binsPtJet4.push_back(210);
+				_histPtJet4 = bookHistogram1D("_histPtJet4",_binsPtJet4);
+
+
+				std::vector<double> _binsHT1JetInc;
+				_binsHT1JetInc.push_back(30);
+				_binsHT1JetInc.push_back(60);
+				_binsHT1JetInc.push_back(90);
+				_binsHT1JetInc.push_back(120);
+				_binsHT1JetInc.push_back(180);
+				_binsHT1JetInc.push_back(240);
+				_binsHT1JetInc.push_back(300);
+				_binsHT1JetInc.push_back(360);
+				_binsHT1JetInc.push_back(420);
+				_binsHT1JetInc.push_back(540);
+				_binsHT1JetInc.push_back(660);
+				_binsHT1JetInc.push_back(840);
+				_binsHT1JetInc.push_back(1680);
+				_histHT1JetInc = bookHistogram1D("_histHT1JetInc",_binsHT1JetInc);
+
+
+				std::vector<double> _binsHT2JetInc;
+				_binsHT2JetInc.push_back(60);
+				_binsHT2JetInc.push_back(90);
+				_binsHT2JetInc.push_back(120);
+				_binsHT2JetInc.push_back(180);
+				_binsHT2JetInc.push_back(240);
+				_binsHT2JetInc.push_back(300);
+				_binsHT2JetInc.push_back(360);
+				_binsHT2JetInc.push_back(420);
+				_binsHT2JetInc.push_back(540);
+				_binsHT2JetInc.push_back(660);
+				_binsHT2JetInc.push_back(840);
+				_binsHT2JetInc.push_back(1680);
+				_histHT2JetInc = bookHistogram1D("_histHT2JetInc",_binsHT2JetInc);
+
+
+
+				std::vector<double> _binsHT3JetInc;
+				_binsHT3JetInc.push_back(90);
+				_binsHT3JetInc.push_back(120);
+				_binsHT3JetInc.push_back(180);
+				_binsHT3JetInc.push_back(240);
+				_binsHT3JetInc.push_back(300);
+				_binsHT3JetInc.push_back(360);
+				_binsHT3JetInc.push_back(420);
+				_binsHT3JetInc.push_back(540);
+				_binsHT3JetInc.push_back(660);
+				_binsHT3JetInc.push_back(840);
+				_binsHT3JetInc.push_back(1680);
+				_histHT3JetInc = bookHistogram1D("_histHT3JetInc",_binsHT3JetInc);
+
+
+				std::vector<double> _binsHT4JetInc;
+				_binsHT4JetInc.push_back(120);
+				_binsHT4JetInc.push_back(180);
+				_binsHT4JetInc.push_back(240);
+				_binsHT4JetInc.push_back(300);
+				_binsHT4JetInc.push_back(360);
+				_binsHT4JetInc.push_back(420);
+				_binsHT4JetInc.push_back(540);
+				_binsHT4JetInc.push_back(660);
+				_binsHT4JetInc.push_back(840);
+				_binsHT4JetInc.push_back(1680);
+				_histHT4JetInc = bookHistogram1D("_histHT4JetInc",_binsHT4JetInc);
+
+
+				_histJet30MultExc  = bookHistogram1D("_histJet30MultExc", 6, 0.5, 6.5);
+				_histJet30MultInc  = bookHistogram1D("_histJet30MultInc", 6, 0.5, 6.5);
+
+				_histEtaJet1 = bookHistogram1D("_histEtaJet1",24,0.0,2.4);
+				_histEtaJet2 = bookHistogram1D("_histEtaJet2",24,0.0,2.4);
+				_histEtaJet3 = bookHistogram1D("_histEtaJet3",8,0.0,2.4);
+				_histEtaJet4 = bookHistogram1D("_histEtaJet4",6,0.0,2.4);
+
+				_histDPhiMuJet1 = bookHistogram1D("_histDPhiMuJet1",20,0.0,3.1415927);
+				_histDPhiMuJet2 = bookHistogram1D("_histDPhiMuJet2",15,0.0,3.1415927);
+				_histDPhiMuJet3 = bookHistogram1D("_histDPhiMuJet3",10,0.0,3.1415927);
+				_histDPhiMuJet4 = bookHistogram1D("_histDPhiMuJet4",6,0.0,3.1415927);
+
 
 				// ------------------------------------------------------- //
 				// ----------------  RESULTS AS A TTree ------------------ //
@@ -139,6 +234,16 @@ namespace Rivet
 				_rivetTree->Branch("dphijet3muon", &_dphijet3muon, "dphijet3muon/D");
 				_rivetTree->Branch("dphijet4muon", &_dphijet4muon, "dphijet4muon/D");
 
+				// Zero event counters
+				N_total = 0.0;
+				N_Wmunu = 0.0;
+				N_0jet = 0.0;
+				N_1jet  = 0.0;
+				N_2jet  = 0.0;
+				N_3jet  = 0.0;
+				N_4jet  = 0.0;
+		
+
 			}
 
 			double DeltaPhi(double phi1, double phi2)
@@ -163,6 +268,7 @@ namespace Rivet
 
 			void analyze(const Event& event)
 			{
+				// std::cout<<" ------------- "<<std::endl;
 
 				// Check gen particles to flag events with a W decaying to mu nu from the hard interaction
 				bool WdecayToMuNu = false;
@@ -174,10 +280,15 @@ namespace Rivet
 					int pdg = p->pdg_id();
 					if ((st==3) && abs(pdg)==13) has_muon_status3 = true;
 					if ((st==3) && abs(pdg)==14) has_numu_status3 = true;
+					// if (abs(pdg)==13) std::cout<<"Muon Stat "<<st<<" :"<<p->momentum().perp()<<std::endl;
+					// if ( abs(pdg)==22) std::cout<<"photon "<<st<<" "<<p->momentum().perp()<<std::endl;
+
 				}
 
-				if (has_muon_status3 && has_numu_status3) WdecayToMuNu = true;
-
+				if (has_muon_status3 && has_numu_status3) 
+				{
+					WdecayToMuNu = true;
+				}
 				// Initialize Values
 				bool isWmn =false;
 
@@ -219,6 +330,8 @@ namespace Rivet
 				const double weight = event.weight();
 				_nevt = (event.genEvent()).event_number();
 				_evweight = weight;
+				N_total += weight;
+				if (WdecayToMuNu) N_Wmunu += weight;
 
 				// The W Final State
 				const InvMassFinalState& invMassFinalStateW = applyProjection<InvMassFinalState>(event, "INVFSW");
@@ -308,6 +421,7 @@ namespace Rivet
 
 				// Muon Four-Momentum
 				FourMomentum finalmuon(WDecayProducts[muind].momentum());
+				// std::cout<<"Starting Muon: "<<finalmuon.pT()<<std::endl;
 
 				// Initialize a pseudojet vector to store jet input particles with no neutrinos and cleaned from
 				// From photons around the muon
@@ -324,6 +438,8 @@ namespace Rivet
 					fastjet::PseudoJet p_seudo = fastjet::PseudoJet(p4.px(), p4.py(), p4.pz(), p4.E());
 					double dr = deltaR(AllParticles[nn].momentum(),WDecayProducts[muind].momentum());
 
+					// if ((abs(_nn_pid) == 22)) std::cout<<" Photon2 "<<_nn_pid<<" "<<AllParticles[nn].momentum().pT()<<std::endl;
+
 					// If it is a photon within a cone of 0.1, add particle to the muon
 					if ((_nn_pid == 22) && (dr<0.1)) finalmuon = add(finalmuon,AllParticles[nn].momentum());
 
@@ -339,8 +455,10 @@ namespace Rivet
 
 					// Add particle to set of jet particle candidates
 					if (keep_part_for_jet) input_particles_nonu_dresscleaned.push_back(p_seudo);
+					// if (keep_part_for_jet) std::cout<<"Jet part "<<_nn_pid<<" "<<p4.perp()<<std::endl;
 
 				}
+				// std::cout<<"Dressed Muon: "<<finalmuon.pT()<<std::endl;
 
 				// Switch the muon kinematics to the dressed-muon values
 				_ptmuon  = finalmuon.pT();
@@ -383,19 +501,59 @@ namespace Rivet
 					}
 				}
 
-				//Multiplicity plots.
-				if(isWmn)FillWithValue(_histJetMultWmu, weight, finaljet_pT_list.size());
+				N_0jet += weight;
+				// ------------------------------------------------------------
+				// ------------ Filling of histograms below -------------------
+				// ------------------------------------------------------------
+				// Fill as many jets as there are into the exclusive jet multiplicity
+				FillWithValue(_histJet30MultExc, weight, finaljet_pT_list.size());
+				// Fill bins 1 through N for inclusive jet multiplicity, given N jets
+				for (unsigned int ij = 0; ij < finaljet_pT_list.size(); ij++)
+				{
+					FillWithValue(_histJet30MultInc, weight, ij+1);
+				}
 
-				if((isWmn)&&(finaljet_pT_list.size()>=1)) FillWithValue(_histJetPT1Wmu,weight,finaljet_pT_list[0]);
-				if((isWmn)&&(finaljet_pT_list.size()>=2)) FillWithValue(_histJetPT2Wmu,weight,finaljet_pT_list[1]);
-				if((isWmn)&&(finaljet_pT_list.size()>=3)) FillWithValue(_histJetPT3Wmu,weight,finaljet_pT_list[2]);
-				if((isWmn)&&(finaljet_pT_list.size()>=4)) FillWithValue(_histJetPT4Wmu,weight,finaljet_pT_list[3]);
+				if (finaljet_pT_list.size()>=1) 
+				{
+					FillWithValue(_histPtJet1,weight,finaljet_pT_list[0]);
+					FillWithValue(_histEtaJet1,weight,fabs(finaljet_eta_list[0]) );
+					FillWithValue(_histDPhiMuJet1,weight,DeltaPhi(finaljet_phi_list[0],_phimuon));
+					FillWithValue(_histHT1JetInc, weight, _htjets);
+					N_1jet +=weight;
+				}
+				
 
-				if((isWmn)&&(finaljet_pT_list.size()>=1)) FillWithValue(_histJetETA1Wmu,weight,finaljet_eta_list[0]);
-				if((isWmn)&&(finaljet_pT_list.size()>=2)) FillWithValue(_histJetETA2Wmu,weight,finaljet_eta_list[1]);
-				if((isWmn)&&(finaljet_pT_list.size()>=3)) FillWithValue(_histJetETA3Wmu,weight,finaljet_eta_list[2]);
-				if((isWmn)&&(finaljet_pT_list.size()>=4)) FillWithValue(_histJetETA4Wmu,weight,finaljet_eta_list[3]);
+				if (finaljet_pT_list.size()>=2) 
+				{
+					FillWithValue(_histPtJet2,weight,finaljet_pT_list[1]);
+					FillWithValue(_histEtaJet2,weight,fabs(finaljet_eta_list[1]));
+					FillWithValue(_histDPhiMuJet2,weight,DeltaPhi(finaljet_phi_list[1],_phimuon));
+					FillWithValue(_histHT2JetInc, weight, _htjets);
+					N_2jet += weight;
+				}
 
+				if (finaljet_pT_list.size()>=3) 
+				{
+					FillWithValue(_histPtJet3,weight,finaljet_pT_list[2]);
+					FillWithValue(_histEtaJet3,weight,fabs(finaljet_eta_list[2]));
+					FillWithValue(_histDPhiMuJet3,weight,DeltaPhi(finaljet_phi_list[2],_phimuon));
+					FillWithValue(_histHT3JetInc, weight, _htjets);
+					N_3jet += weight;
+				}				
+
+				if (finaljet_pT_list.size()>=4) 
+				{
+					FillWithValue(_histPtJet4,weight,finaljet_pT_list[3]);
+					FillWithValue(_histEtaJet4,weight,fabs(finaljet_eta_list[3]));
+					FillWithValue(_histDPhiMuJet4,weight,DeltaPhi(finaljet_phi_list[3],_phimuon));
+					FillWithValue(_histHT4JetInc, weight, _htjets);
+					N_4jet += weight;
+				}				
+
+
+				// ------------------------------------------------------------
+				// ------------ Assign tree branch values below ---------------
+				// ------------------------------------------------------------
 				_njet_WMuNu = finaljet_pT_list.size();
 
 				if (finaljet_pT_list.size()>0)
@@ -433,34 +591,70 @@ namespace Rivet
 			// Write the tree.
 			void finalize()
 			{
+
 				_rivetTree->Write();
 				_treeFile->Close();
+				
+				double inclusive_cross_section = 31314.0;
+				double norm_1jet_histo = inclusive_cross_section*N_1jet/N_total;
+				double norm_2jet_histo = inclusive_cross_section*N_2jet/N_total;
+				double norm_3jet_histo = inclusive_cross_section*N_3jet/N_total;
+				double norm_4jet_histo = inclusive_cross_section*N_4jet/N_total;
+
+
+				std::cout<<"Total normalized events processed: "<<N_total<<std::endl;
+				std::cout<<"Events with W decaying to mu+nu  : "<<N_Wmunu<<std::endl;
+				std::cout<<"Events passing muon fiducial cuts: "<<N_0jet<<std::endl;
+				std::cout<<"Events containing at least 1 jet:  "<<N_1jet<<std::endl;
+				std::cout<<"Events containing at least 2 jets: "<<N_2jet<<std::endl;
+				std::cout<<"Events containing at least 3 jets: "<<N_3jet<<std::endl;
+				std::cout<<"Events containing at least 4 jets: "<<N_4jet<<std::endl;
+				normalize(_histJet30MultExc, norm_1jet_histo);
+
+				normalize(_histPtJet1, norm_1jet_histo);
+				normalize(_histEtaJet1, norm_1jet_histo);
+				normalize(_histDPhiMuJet1, norm_1jet_histo);
+
+				normalize(_histPtJet2, norm_2jet_histo);
+				normalize(_histEtaJet2, norm_2jet_histo);
+				normalize(_histDPhiMuJet2, norm_2jet_histo);
+
+				normalize(_histPtJet3, norm_3jet_histo);
+				normalize(_histEtaJet3, norm_3jet_histo);
+				normalize(_histDPhiMuJet3, norm_3jet_histo);
+
+				normalize(_histPtJet4, norm_4jet_histo);
+				normalize(_histEtaJet4, norm_4jet_histo);
+				normalize(_histDPhiMuJet4, norm_4jet_histo);								
 			}
 
 		private:
 
-			AIDA::IHistogram1D*  _histJetMultWmu ;
-			AIDA::IHistogram1D*  _histJetMultWmuInc ;
 
-			AIDA::IHistogram1D*  _histJetPT1Wmu ;
-			AIDA::IHistogram1D*  _histJetPT2Wmu ;
-			AIDA::IHistogram1D*  _histJetPT3Wmu ;
-			AIDA::IHistogram1D*  _histJetPT4Wmu ;
 
-			AIDA::IHistogram1D*  _histJetHT1Wmu ;
-			AIDA::IHistogram1D*  _histJetHT2Wmu ;
-			AIDA::IHistogram1D*  _histJetHT3Wmu ;
-			AIDA::IHistogram1D*  _histJetHT4Wmu ;
 
-			AIDA::IHistogram1D*  _histJetETA1Wmu ;
-			AIDA::IHistogram1D*  _histJetETA2Wmu ;
-			AIDA::IHistogram1D*  _histJetETA3Wmu ;
-			AIDA::IHistogram1D*  _histJetETA4Wmu ;
+			AIDA::IHistogram1D*  _histJet30MultExc ;
+			AIDA::IHistogram1D*  _histJet30MultInc ;
 
-			AIDA::IHistogram1D*  _histJetMuDphi1Wmu ;
-			AIDA::IHistogram1D*  _histJetMuDphi2Wmu ;
-			AIDA::IHistogram1D*  _histJetMuDphi3Wmu ;
-			AIDA::IHistogram1D*  _histJetMuDphi4Wmu ;
+			AIDA::IHistogram1D*  _histPtJet1 ;
+			AIDA::IHistogram1D*  _histPtJet2 ;
+			AIDA::IHistogram1D*  _histPtJet3 ;
+			AIDA::IHistogram1D*  _histPtJet4 ;
+
+			AIDA::IHistogram1D*  _histEtaJet1 ;
+			AIDA::IHistogram1D*  _histEtaJet2 ;
+			AIDA::IHistogram1D*  _histEtaJet3 ;
+			AIDA::IHistogram1D*  _histEtaJet4 ;
+
+			AIDA::IHistogram1D*  _histDPhiMuJet1 ;
+			AIDA::IHistogram1D*  _histDPhiMuJet2 ;
+			AIDA::IHistogram1D*  _histDPhiMuJet3 ;
+			AIDA::IHistogram1D*  _histDPhiMuJet4 ;
+
+			AIDA::IHistogram1D*  _histHT1JetInc ;
+			AIDA::IHistogram1D*  _histHT2JetInc ;
+			AIDA::IHistogram1D*  _histHT3JetInc ;
+			AIDA::IHistogram1D*  _histHT4JetInc ;
 
 			TTree* _rivetTree;
 			TString _treeFileName;
@@ -501,8 +695,16 @@ namespace Rivet
 			double _dphijet3muon;
 			double _dphijet4muon;
 
+			double N_total;
+			double N_Wmunu;
+			double N_0jet;
+			double N_1jet;
+			double N_2jet;
+			double N_3jet;
+			double N_4jet;
+
 	};
 
-	AnalysisBuilder<CMS_SMP_12_23> plugin_CMS_SMP_12_23;
+	AnalysisBuilder<CMS_SMP_12_023> plugin_CMS_SMP_12_023;
 
 }

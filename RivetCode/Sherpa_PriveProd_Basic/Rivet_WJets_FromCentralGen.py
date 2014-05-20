@@ -34,7 +34,7 @@ process.GlobalTag.globaltag = 'MC_60_V4::All'
 
 process.load("GeneratorInterface.RivetInterface.rivetAnalyzer_cfi")
 
-process.rivetAnalyzer.AnalysisNames = cms.vstring("CMS_SMP_12_23")
+process.rivetAnalyzer.AnalysisNames = cms.vstring("CMS_SMP_12_023")
 process.rivetAnalyzer.UseExternalWeight = cms.bool(True)
 
 

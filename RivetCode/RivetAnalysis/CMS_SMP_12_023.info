@@ -1,28 +1,29 @@
-Name: CMS_SMP_12_23
+Name: CMS_SMP_12_023
 Year: 2011
-Summary: Rates of Jets Produced in Association with W Bosons in pp Collisions at sqrt(s) = 7 TeV
+Summary: Measurement of the Differential Cross Section of W-Bosons Produced in Association with Jets in pp collisions at sqrt(s)=7 TeV
 Experiment: CMS
 Collider: LHC
 SpiresID: 
 Status: UNVALIDATED
 Authors:
- - Lovedeep Kaur Saini  <lovedeep@cern.ch>
- - Anil Pratap Singh  <anil@cern.ch>
+ - Darin Baumgartel (darinb@cern.ch)
+ - Emanuela Barberis (barberis@fnal.gov)
 References:
- - http://cms.cern.ch/iCMS/analysisadmin/get?analysis=EWK-10-012-paper-v1.pdf
+ - https://cds.cern.ch/record/1664744
 RunInfo:
-   Run MC generators with W/Z decaying to leptonic modes at 7TeV comEnergy
+   Run MC generators with W decaying to a muon at 7TeV comEnergy
 NumEvents: 100k
 Beams: [p+, p+]
 Energies: [7000]
 PtCuts: 
-  leptons Pt>20GeV and |leading_muon_eta|<2.1,|secondLeading_muon_eta|<2.4 and 
-  |electron_eta|<2.5, Jets>30GeV and |eta|<2.4
+  Leading Muon Pt>25GeV and Leading Muon |eta|<2.1 
+  Jet pT>30GeV and |eta|<2.4
 Description:
-  A study of jet production in association with W bosons for a jet transverse
-  momentum threshold of 40 GeV of proton-proton collision data at 7 TeV cms energy 
-  has been done. The study includes the measurement of the normalized inclusive rates 
-  of jets produced.
+  A study of the jet production is association with W bosons has been perormed, in
+  events with the W decaying to a muon. Jets are required to have pT>30 GeV and |eta|<2.4. 
+  Muons are required to have pT>25 and |eta|<2.1. Jets are only considered if they are 
+  separated from the muon by DeltaR>0.5. Muons are dressed with photons in a cone of 0.1 
+  around the muon. 
 BibKey: 
    '<Insert SPIRES BibTeX key>'
 BibTeX: 

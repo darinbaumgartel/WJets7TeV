@@ -163,7 +163,7 @@ for path in process.paths:
 
 # End of customisation functions
 process.load('GeneratorInterface.RivetInterface.rivetAnalyzer_cfi')
-process.rivetAnalyzer.AnalysisNames = cms.vstring("CMS_SMP_12_23")
+process.rivetAnalyzer.AnalysisNames = cms.vstring("CMS_SMP_12_023")
 process.rivetAnalyzer.CrossSection = cms.double(26030)
 process.rivetAnalyzer.UseExternalWeight = cms.bool(True)
 process.rivetAnalyzer.OutputFile = cms.string("output.aida")
