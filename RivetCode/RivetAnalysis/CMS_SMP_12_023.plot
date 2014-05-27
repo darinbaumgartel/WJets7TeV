@@ -1,24 +1,175 @@
 
-# BEGIN PLOT CMS_SMP_12_023/PFJet30Count
-Title=$W \rightarrow \mu \nu$ Jet Multiplicity at $\sqrt(s)= 7 TeV$
-XLabel=Exclusive Jet Multiplicity
-YLabel=Sigma
+# BEGIN PLOT /CMS_SMP_12_023/_histJet30MultExc
+XLabel=$N_{\text{jet}}$ (Exclusive)
+YLabel=$\sigma (\text{W}\rightarrow \mu \nu + N_{\text{jet}})$ [pb]
+LogX=0
 LogY=1
+LegendXPos=0.7
+LegendYPos=0.9
 # END PLOT
 
 
+# BEGIN PLOT /CMS_SMP_12_023/_histJet30MultInc
+XLabel=$N_{\text{jet}}$ (Inclusive)
+YLabel=$\sigma (\text{W}\rightarrow \mu \nu + N_{\text{jet}})$ [pb]
+LogX=0
+LogY=1
+LegendXPos=0.7
+LegendYPos=0.9
+# END PLOT
 
 
-# BEGIN HISTOGRAM CMS_SMP_12_023/PFJet30Count
-AidaPath=CMS_SMP_12_023/PFJet30Count
-Title=Exclusive Jet Multiplicity
-## Area: 2.377592e+06
-Num bins: 6
-##  xlow	xhigh		val		errminus	errplus
-5.000000e-01	1.500000e+00	1.903844e+06	8.216733e+04	7.505314e+04
-1.500000e+00	2.500000e+00	3.917871e+05	2.938236e+04	3.080693e+04
-2.500000e+00	3.500000e+00	6.749957e+04	8.035700e+03	9.247380e+03
-3.500000e+00	4.500000e+00	1.228478e+04	1.538120e+03	1.960730e+03
-4.500000e+00	5.500000e+00	1.896170e+03	3.942200e+02	4.495600e+02
-5.500000e+00	6.500000e+00	2.806200e+02	8.771000e+01	9.194000e+01
-# END HISTOGRAM
+# BEGIN PLOT /CMS_SMP_12_023/_histPtJet1
+XLabel=Leading jet $p_\text{T}$ [GeV]
+YLabel=$d\sigma (\text{W}\rightarrow \mu \nu +\geq 1 \text{jet})/dp_{\text{T}}$ [pb/GeV]
+LogX=0
+LogY=1
+LegendXPos=0.7
+LegendYPos=0.9
+# END PLOT
+
+
+# BEGIN PLOT /CMS_SMP_12_023/_histPtJet2
+XLabel=Second leading jet $p_\text{T}$ [GeV]
+YLabel=$d\sigma (\text{W}\rightarrow \mu \nu +\geq 2 \text{jet})/dp_{\text{T}}$ [pb/GeV]
+LogX=0
+LogY=1
+LegendXPos=0.7
+LegendYPos=0.9
+# END PLOT
+
+
+# BEGIN PLOT /CMS_SMP_12_023/_histPtJet3
+XLabel=Third leading jet $p_\text{T}$ [GeV]
+YLabel=$d\sigma (\text{W}\rightarrow \mu \nu +\geq 3 \text{jet})/dp_{\text{T}}$ [pb/GeV]
+LogX=0
+LogY=1
+LegendXPos=0.7
+LegendYPos=0.9
+# END PLOT
+
+
+# BEGIN PLOT /CMS_SMP_12_023/_histPtJet4
+XLabel=Fourth leading jet $p_\text{T}$ [GeV]
+YLabel=$d\sigma (\text{W}\rightarrow \mu \nu +\geq 4 \text{jet})/dp_{\text{T}}$ [pb/GeV]
+LogX=0
+LogY=1
+LegendXPos=0.7
+LegendYPos=0.9
+# END PLOT
+
+# BEGIN PLOT /CMS_SMP_12_023/_histEtaJet1
+XLabel=Leading jet $|\eta|$ 
+YLabel=$d\sigma (\text{W}\rightarrow \mu \nu +\geq 1 \text{jet})/d|\eta|$ [pb]
+LogX=0
+LogY=1
+LegendXPos=0.7
+LegendYPos=0.9
+# END PLOT
+
+
+# BEGIN PLOT /CMS_SMP_12_023/_histEtaJet2
+XLabel=Second leading jet $|\eta|$
+YLabel=$d\sigma (\text{W}\rightarrow \mu \nu +\geq 2 \text{jet})/d|\eta|$ [pb]
+LogX=0
+LogY=1
+LegendXPos=0.7
+LegendYPos=0.9
+# END PLOT
+
+
+# BEGIN PLOT /CMS_SMP_12_023/_histEtaJet3
+XLabel=Third leading jet $|\eta|$
+YLabel=$d\sigma (\text{W}\rightarrow \mu \nu +\geq 3 \text{jet})/d|\eta|$ [pb]
+LogX=0
+LogY=1
+LegendXPos=0.7
+LegendYPos=0.9
+# END PLOT
+
+
+# BEGIN PLOT /CMS_SMP_12_023/_histEtaJet4
+XLabel=Fourth leading jet $|\eta|$
+YLabel=$d\sigma (\text{W}\rightarrow \mu \nu +\geq 4 \text{jet})/d|\eta|$ [pb]
+LogX=0
+LogY=1
+LegendXPos=0.7
+LegendYPos=0.9
+# END PLOT
+
+
+# BEGIN PLOT /CMS_SMP_12_023/_histHT1JetInc
+XLabel=$H_{\text{T}}$ $(\geq 1 \text{jet})$ [GeV]
+YLabel=$d\sigma (\text{W}\rightarrow \mu \nu +\geq 1 \text{jet})/dH_{\text{T}}$ [pb/GeV]
+LogX=0
+LogY=1
+LegendXPos=0.7
+LegendYPos=0.9
+# END PLOT
+
+# BEGIN PLOT /CMS_SMP_12_023/_histHT2JetInc
+XLabel=$H_{\text{T}}$ $(\geq 2 \text{jet})$ [GeV]
+YLabel=$d\sigma (\text{W}\rightarrow \mu \nu +\geq 2 \text{jet})/dH_{\text{T}}$ [pb/GeV]
+LogX=0
+LogY=1
+LegendXPos=0.7
+LegendYPos=0.9
+# END PLOT
+
+# BEGIN PLOT /CMS_SMP_12_023/_histHT3JetInc
+XLabel=$H_{\text{T}}$ $(\geq 3 \text{jet})$ [GeV]
+YLabel=$d\sigma (\text{W}\rightarrow \mu \nu +\geq 3 \text{jet})/dH_{\text{T}}$ [pb/GeV]
+LogX=0
+LogY=1
+LegendXPos=0.7
+LegendYPos=0.9
+# END PLOT
+
+# BEGIN PLOT /CMS_SMP_12_023/_histHT4JetInc
+XLabel=$H_{\text{T}}$ $(\geq 4 \text{jet})$ [GeV]
+YLabel=$d\sigma (\text{W}\rightarrow \mu \nu +\geq 4 \text{jet})/dH_{\text{T}}$ [pb/GeV]
+LogX=0
+LogY=1
+LegendXPos=0.7
+LegendYPos=0.9
+# END PLOT
+
+
+# BEGIN PLOT /CMS_SMP_12_023/_histDPhiMuJet1
+XLabel=$\Delta \phi (\text{jet)_1,\mu)$ [rad]
+YLabel=$d\sigma (\text{W}\rightarrow \mu \nu +\geq 1 \text{jet})/d\Delta\phi$ [pb/rad]
+LogX=0
+LogY=1
+LegendXPos=0.7
+LegendYPos=0.9
+# END PLOT
+
+
+# BEGIN PLOT /CMS_SMP_12_023/_histDPhiMuJet2
+XLabel=$\Delta \phi (\text{jet)_2,\mu)$ [rad]
+YLabel=$d\sigma (\text{W}\rightarrow \mu \nu +\geq 2 \text{jet})/d\Delta\phi$ [pb/rad]
+LogX=0
+LogY=1
+LegendXPos=0.7
+LegendYPos=0.9
+# END PLOT
+
+
+# BEGIN PLOT /CMS_SMP_12_023/_histDPhiMuJet3
+XLabel=$\Delta \phi (\text{jet)_3,\mu)$ [rad]
+YLabel=$d\sigma (\text{W}\rightarrow \mu \nu +\geq 3 \text{jet})/d\Delta\phi$ [pb/rad]
+LogX=0
+LogY=1
+LegendXPos=0.7
+LegendYPos=0.9
+# END PLOT
+
+
+# BEGIN PLOT /CMS_SMP_12_023/_histDPhiMuJet4
+XLabel=$\Delta \phi (\text{jet)_4,\mu)$ [rad]
+YLabel=$d\sigma (\text{W}\rightarrow \mu \nu +\geq 4 \text{jet})/d\Delta\phi$ [pb/rad]
+LogX=0
+LogY=1
+LegendXPos=0.7
+LegendYPos=0.9
+# END PLOT

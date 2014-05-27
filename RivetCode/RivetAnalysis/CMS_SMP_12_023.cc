@@ -242,7 +242,7 @@ namespace Rivet
 				N_2jet  = 0.0;
 				N_3jet  = 0.0;
 				N_4jet  = 0.0;
-		
+				N_inclusivebinsummation = 0.0;
 
 			}
 
@@ -511,6 +511,7 @@ namespace Rivet
 				for (unsigned int ij = 0; ij < finaljet_pT_list.size(); ij++)
 				{
 					FillWithValue(_histJet30MultInc, weight, ij+1);
+					N_inclusivebinsummation += weight;
 				}
 
 				if (finaljet_pT_list.size()>=1) 
@@ -600,7 +601,7 @@ namespace Rivet
 				double norm_2jet_histo = inclusive_cross_section*N_2jet/N_total;
 				double norm_3jet_histo = inclusive_cross_section*N_3jet/N_total;
 				double norm_4jet_histo = inclusive_cross_section*N_4jet/N_total;
-
+				double norm_incmultiplicity = inclusive_cross_section*N_inclusivebinsummation/N_total;
 
 				std::cout<<"Total normalized events processed: "<<N_total<<std::endl;
 				std::cout<<"Events with W decaying to mu+nu  : "<<N_Wmunu<<std::endl;
@@ -610,6 +611,7 @@ namespace Rivet
 				std::cout<<"Events containing at least 3 jets: "<<N_3jet<<std::endl;
 				std::cout<<"Events containing at least 4 jets: "<<N_4jet<<std::endl;
 				normalize(_histJet30MultExc, norm_1jet_histo);
+				normalize(_histJet30MultInc, norm_incmultiplicity);
 
 				normalize(_histPtJet1, norm_1jet_histo);
 				normalize(_histEtaJet1, norm_1jet_histo);
@@ -702,6 +704,7 @@ namespace Rivet
 			double N_2jet;
 			double N_3jet;
 			double N_4jet;
+			double N_inclusivebinsummation;
 
 	};
 
