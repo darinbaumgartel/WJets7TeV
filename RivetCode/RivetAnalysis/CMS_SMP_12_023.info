@@ -12,7 +12,6 @@ References:
  - https://cds.cern.ch/record/1664744
 RunInfo:
    Run MC generators with W decaying to a muon at 7TeV comEnergy
-NumEvents: 100k
 Beams: [p+, p+]
 Energies: [7000]
 PtCuts: 

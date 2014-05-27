@@ -66,127 +66,32 @@ namespace Rivet
 				// ----------------  RESULTS AS HISTOGRAMS --------------- //
 				// ------------------------------------------------------- //
 
-				std::vector<double> _binsPtJet1;
-				_binsPtJet1.push_back(30);
-				_binsPtJet1.push_back(50);
-				_binsPtJet1.push_back(70);
-				_binsPtJet1.push_back(90);
-				_binsPtJet1.push_back(110);
-				_binsPtJet1.push_back(150);
-				_binsPtJet1.push_back(190);
-				_binsPtJet1.push_back(250);
-				_binsPtJet1.push_back(310);
-				_binsPtJet1.push_back(430);
-				_binsPtJet1.push_back(850);
-				_histPtJet1 = bookHistogram1D("_histPtJet1",_binsPtJet1);
 
-				std::vector<double> _binsPtJet2;
-				_binsPtJet2.push_back(30);
-				_binsPtJet2.push_back(50);
-				_binsPtJet2.push_back(70);
-				_binsPtJet2.push_back(90);
-				_binsPtJet2.push_back(110);
-				_binsPtJet2.push_back(150);
-				_binsPtJet2.push_back(190);
-				_binsPtJet2.push_back(250);
-				_binsPtJet2.push_back(550);
-				_histPtJet2 = bookHistogram1D("_histPtJet2",_binsPtJet2);
+				_histPtJet1 = bookHistogram1D(15,1,1);
+				_histPtJet2 = bookHistogram1D(16,1,1);
+				_histPtJet3 = bookHistogram1D(17,1,1);
+				_histPtJet4 = bookHistogram1D(18,1,1);
 
 
-				std::vector<double> _binsPtJet3;
-				_binsPtJet3.push_back(30);
-				_binsPtJet3.push_back(60);
-				_binsPtJet3.push_back(90);
-				_binsPtJet3.push_back(120);
-				_binsPtJet3.push_back(150);
-				_binsPtJet3.push_back(210);
-				_binsPtJet3.push_back(450);
-				_histPtJet3 = bookHistogram1D("_histPtJet3",_binsPtJet3);
+				_histHT1JetInc = bookHistogram1D(9,1,1);
+				_histHT2JetInc = bookHistogram1D(10,1,1);
+				_histHT3JetInc = bookHistogram1D(11,1,1);
+				_histHT4JetInc = bookHistogram1D(12,1,1);
 
+				// _histJet30MultExc  = bookHistogram1D("_histJet30MultExc", 6, 0.5, 6.5);
+				_histJet30MultExc  = bookHistogram1D(13,1,1);
 
-				std::vector<double> _binsPtJet4;
-				_binsPtJet4.push_back(30);
-				_binsPtJet4.push_back(60);
-				_binsPtJet4.push_back(90);
-				_binsPtJet4.push_back(210);
-				_histPtJet4 = bookHistogram1D("_histPtJet4",_binsPtJet4);
+				_histJet30MultInc  = bookHistogram1D(14,1,1);
 
+				_histEtaJet1 = bookHistogram1D(5,1,1);
+				_histEtaJet2 = bookHistogram1D(6,1,1);
+				_histEtaJet3 = bookHistogram1D(7,1,1);
+				_histEtaJet4 = bookHistogram1D(8,1,1);
 
-				std::vector<double> _binsHT1JetInc;
-				_binsHT1JetInc.push_back(30);
-				_binsHT1JetInc.push_back(60);
-				_binsHT1JetInc.push_back(90);
-				_binsHT1JetInc.push_back(120);
-				_binsHT1JetInc.push_back(180);
-				_binsHT1JetInc.push_back(240);
-				_binsHT1JetInc.push_back(300);
-				_binsHT1JetInc.push_back(360);
-				_binsHT1JetInc.push_back(420);
-				_binsHT1JetInc.push_back(540);
-				_binsHT1JetInc.push_back(660);
-				_binsHT1JetInc.push_back(840);
-				_binsHT1JetInc.push_back(1680);
-				_histHT1JetInc = bookHistogram1D("_histHT1JetInc",_binsHT1JetInc);
-
-
-				std::vector<double> _binsHT2JetInc;
-				_binsHT2JetInc.push_back(60);
-				_binsHT2JetInc.push_back(90);
-				_binsHT2JetInc.push_back(120);
-				_binsHT2JetInc.push_back(180);
-				_binsHT2JetInc.push_back(240);
-				_binsHT2JetInc.push_back(300);
-				_binsHT2JetInc.push_back(360);
-				_binsHT2JetInc.push_back(420);
-				_binsHT2JetInc.push_back(540);
-				_binsHT2JetInc.push_back(660);
-				_binsHT2JetInc.push_back(840);
-				_binsHT2JetInc.push_back(1680);
-				_histHT2JetInc = bookHistogram1D("_histHT2JetInc",_binsHT2JetInc);
-
-
-
-				std::vector<double> _binsHT3JetInc;
-				_binsHT3JetInc.push_back(90);
-				_binsHT3JetInc.push_back(120);
-				_binsHT3JetInc.push_back(180);
-				_binsHT3JetInc.push_back(240);
-				_binsHT3JetInc.push_back(300);
-				_binsHT3JetInc.push_back(360);
-				_binsHT3JetInc.push_back(420);
-				_binsHT3JetInc.push_back(540);
-				_binsHT3JetInc.push_back(660);
-				_binsHT3JetInc.push_back(840);
-				_binsHT3JetInc.push_back(1680);
-				_histHT3JetInc = bookHistogram1D("_histHT3JetInc",_binsHT3JetInc);
-
-
-				std::vector<double> _binsHT4JetInc;
-				_binsHT4JetInc.push_back(120);
-				_binsHT4JetInc.push_back(180);
-				_binsHT4JetInc.push_back(240);
-				_binsHT4JetInc.push_back(300);
-				_binsHT4JetInc.push_back(360);
-				_binsHT4JetInc.push_back(420);
-				_binsHT4JetInc.push_back(540);
-				_binsHT4JetInc.push_back(660);
-				_binsHT4JetInc.push_back(840);
-				_binsHT4JetInc.push_back(1680);
-				_histHT4JetInc = bookHistogram1D("_histHT4JetInc",_binsHT4JetInc);
-
-
-				_histJet30MultExc  = bookHistogram1D("_histJet30MultExc", 6, 0.5, 6.5);
-				_histJet30MultInc  = bookHistogram1D("_histJet30MultInc", 6, 0.5, 6.5);
-
-				_histEtaJet1 = bookHistogram1D("_histEtaJet1",24,0.0,2.4);
-				_histEtaJet2 = bookHistogram1D("_histEtaJet2",24,0.0,2.4);
-				_histEtaJet3 = bookHistogram1D("_histEtaJet3",8,0.0,2.4);
-				_histEtaJet4 = bookHistogram1D("_histEtaJet4",6,0.0,2.4);
-
-				_histDPhiMuJet1 = bookHistogram1D("_histDPhiMuJet1",20,0.0,3.1415927);
-				_histDPhiMuJet2 = bookHistogram1D("_histDPhiMuJet2",15,0.0,3.1415927);
-				_histDPhiMuJet3 = bookHistogram1D("_histDPhiMuJet3",10,0.0,3.1415927);
-				_histDPhiMuJet4 = bookHistogram1D("_histDPhiMuJet4",6,0.0,3.1415927);
+				_histDPhiMuJet1 = bookHistogram1D(1,1,1);
+				_histDPhiMuJet2 = bookHistogram1D(2,1,1);
+				_histDPhiMuJet3 = bookHistogram1D(3,1,1);
+				_histDPhiMuJet4 = bookHistogram1D(4,1,1);
 
 
 				// ------------------------------------------------------- //
@@ -614,18 +519,22 @@ namespace Rivet
 				normalize(_histJet30MultInc, norm_incmultiplicity);
 
 				normalize(_histPtJet1, norm_1jet_histo);
+				normalize(_histHT1JetInc, norm_1jet_histo);
 				normalize(_histEtaJet1, norm_1jet_histo);
 				normalize(_histDPhiMuJet1, norm_1jet_histo);
 
 				normalize(_histPtJet2, norm_2jet_histo);
+				normalize(_histHT2JetInc, norm_2jet_histo);
 				normalize(_histEtaJet2, norm_2jet_histo);
 				normalize(_histDPhiMuJet2, norm_2jet_histo);
 
 				normalize(_histPtJet3, norm_3jet_histo);
+				normalize(_histHT3JetInc, norm_3jet_histo);				
 				normalize(_histEtaJet3, norm_3jet_histo);
 				normalize(_histDPhiMuJet3, norm_3jet_histo);
 
 				normalize(_histPtJet4, norm_4jet_histo);
+				normalize(_histHT4JetInc, norm_4jet_histo);				
 				normalize(_histEtaJet4, norm_4jet_histo);
 				normalize(_histDPhiMuJet4, norm_4jet_histo);								
 			}
