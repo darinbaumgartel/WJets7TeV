@@ -136,7 +136,7 @@ LegendYPos=0.9
 
 
 # BEGIN PLOT /CMS_SMP_12_023/_histDPhiMuJet1
-XLabel=$\Delta \phi (\text{jet)_1,\mu)$ [rad]
+XLabel=$\Delta \phi (\text{jet}_1,\mu)$ [rad]
 YLabel=$d\sigma (\text{W}\rightarrow \mu \nu +\geq 1 \text{jet})/d\Delta\phi$ [pb/rad]
 LogX=0
 LogY=1
@@ -146,7 +146,7 @@ LegendYPos=0.9
 
 
 # BEGIN PLOT /CMS_SMP_12_023/_histDPhiMuJet2
-XLabel=$\Delta \phi (\text{jet)_2,\mu)$ [rad]
+XLabel=$\Delta \phi (\text{jet}_2,\mu)$ [rad]
 YLabel=$d\sigma (\text{W}\rightarrow \mu \nu +\geq 2 \text{jet})/d\Delta\phi$ [pb/rad]
 LogX=0
 LogY=1
@@ -156,7 +156,7 @@ LegendYPos=0.9
 
 
 # BEGIN PLOT /CMS_SMP_12_023/_histDPhiMuJet3
-XLabel=$\Delta \phi (\text{jet)_3,\mu)$ [rad]
+XLabel=$\Delta \phi (\text{jet}_3,\mu)$ [rad]
 YLabel=$d\sigma (\text{W}\rightarrow \mu \nu +\geq 3 \text{jet})/d\Delta\phi$ [pb/rad]
 LogX=0
 LogY=1
@@ -166,7 +166,7 @@ LegendYPos=0.9
 
 
 # BEGIN PLOT /CMS_SMP_12_023/_histDPhiMuJet4
-XLabel=$\Delta \phi (\text{jet)_4,\mu)$ [rad]
+XLabel=$\Delta \phi (\text{jet}_4,\mu)$ [rad]
 YLabel=$d\sigma (\text{W}\rightarrow \mu \nu +\geq 4 \text{jet})/d\Delta\phi$ [pb/rad]
 LogX=0
 LogY=1
