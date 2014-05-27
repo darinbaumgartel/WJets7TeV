@@ -2,12 +2,12 @@
 <!DOCTYPE aida SYSTEM "http://aida.freehep.org/schemas/3.3/aida.dtd">
 <aida version="3.3">
   <implementation version="1.1" package="FreeHEP"/>
-  <dataPointSet name="PFJet30Count" dimension="2"
+  <dataPointSet name="_histJet30MultExc" dimension="2"
     path="/CMS_SMP_12_023" title="Exclusive Jet Multiplicity">
     <annotation>
       <item key="Title" value="Exclusive Jet Multiplicity" sticky="true"/>
-      <item key="AidaPath" value="CMS_SMP_12_023/PFJet30Count" sticky="true"/>
-      <item key="FullPath" value="CMS_SMP_12_023.aida/CMS_SMP_12_023/PFJet30Count" sticky="true"/>
+      <item key="AidaPath" value="CMS_SMP_12_023/_histJet30MultExc" sticky="true"/>
+      <item key="FullPath" value="CMS_SMP_12_023.aida/CMS_SMP_12_023/_histJet30MultExc" sticky="true"/>
     </annotation>
     <dataPoint>
       <measurement errorPlus="5.000000e-01" value="1.000000e+00" errorMinus="5.000000e-01"/>
