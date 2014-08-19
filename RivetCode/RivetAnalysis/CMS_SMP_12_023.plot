@@ -1,7 +1,7 @@
 
 # BEGIN PLOT /CMS_SMP_12_023/d14-x01-y01
 Title = Inclusive Jet Multiplicity
-XLabel=$N_{\text{jet}}$ (Exclusive)
+XLabel=$N_{\text{jet}}$ (Inclusive)
 YLabel=$\sigma (\text{W}\rightarrow \mu \nu + N_{\text{jet}})$ [pb]
 LogX=0
 LogY=1
@@ -12,7 +12,7 @@ LegendYPos=0.9
 
 
 # BEGIN PLOT /CMS_SMP_12_023/d13-x01-y01
-XLabel=$N_{\text{jet}}$ (Inclusive)
+XLabel=$N_{\text{jet}}$ (Exclusive)
 YLabel=$\sigma (\text{W}\rightarrow \mu \nu + N_{\text{jet}})$ [pb]
 LogX=0
 LogY=1

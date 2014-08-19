@@ -78,9 +78,7 @@ namespace Rivet
 				_histHT3JetInc = bookHistogram1D(11,1,1);
 				_histHT4JetInc = bookHistogram1D(12,1,1);
 
-				// _histJet30MultExc  = bookHistogram1D("_histJet30MultExc", 6, 0.5, 6.5);
 				_histJet30MultExc  = bookHistogram1D(13,1,1);
-
 				_histJet30MultInc  = bookHistogram1D(14,1,1);
 
 				_histEtaJet1 = bookHistogram1D(5,1,1);
@@ -93,51 +91,6 @@ namespace Rivet
 				_histDPhiMuJet3 = bookHistogram1D(3,1,1);
 				_histDPhiMuJet4 = bookHistogram1D(4,1,1);
 
-
-				// ------------------------------------------------------- //
-				// ----------------  RESULTS AS A TTree ------------------ //
-				// ------------------------------------------------------- //
-				_treeFileName = "rivetTree.root";
-				// Create a file for the Tree
-				_treeFile = new TFile(_treeFileName, "recreate");
-
-				// Book the ntuple.
-				_rivetTree = new TTree("RivetTree", "RivetTree");
-
-				// Add Branches
-				_rivetTree->Branch("nevt", &_nevt, "nevt/I");
-				_rivetTree->Branch("evweight", &_evweight, "evweight/D");
-
-				_rivetTree->Branch("njet_WMuNu", &_njet_WMuNu, "njet_WMuNu/I");
-				_rivetTree->Branch("mt_munu", &_mt_munu, "mt_munu/D");
-				_rivetTree->Branch("mt_mumet", &_mt_mumet, "mt_mumet/D");
-
-				_rivetTree->Branch("htjets", &_htjets, "htjets/D");
-				_rivetTree->Branch("ptmuon", &_ptmuon, "ptmuon/D");
-				_rivetTree->Branch("etamuon", &_etamuon, "etamuon/D");
-				_rivetTree->Branch("phimuon", &_phimuon, "phimuon/D");
-
-				_rivetTree->Branch("ptneutrino", &_ptneutrino, "ptneutrino/D");
-				_rivetTree->Branch("etaneutrino", &_etaneutrino, "etaneutrino/D");
-				_rivetTree->Branch("phineutrino", &_phineutrino, "phineutrino/D");
-
-				_rivetTree->Branch("ptmet", &_ptmet, "ptmet/D");
-				_rivetTree->Branch("phimet", &_phimet, "phimet/D");
-
-				_rivetTree->Branch("ptjet1", &_ptjet1, "ptjet1/D");
-				_rivetTree->Branch("ptjet2", &_ptjet2, "ptjet2/D");
-				_rivetTree->Branch("ptjet3", &_ptjet3, "ptjet3/D");
-				_rivetTree->Branch("ptjet4", &_ptjet4, "ptjet4/D");
-
-				_rivetTree->Branch("etajet1", &_etajet1, "etajet1/D");
-				_rivetTree->Branch("etajet2", &_etajet2, "etajet2/D");
-				_rivetTree->Branch("etajet3", &_etajet3, "etajet3/D");
-				_rivetTree->Branch("etajet4", &_etajet4, "etajet4/D");
-
-				_rivetTree->Branch("dphijet1muon", &_dphijet1muon, "dphijet1muon/D");
-				_rivetTree->Branch("dphijet2muon", &_dphijet2muon, "dphijet2muon/D");
-				_rivetTree->Branch("dphijet3muon", &_dphijet3muon, "dphijet3muon/D");
-				_rivetTree->Branch("dphijet4muon", &_dphijet4muon, "dphijet4muon/D");
 
 				// Zero event counters
 				N_total = 0.0;
@@ -256,7 +209,7 @@ namespace Rivet
 				// "1" will be for neutrino, and "2" for muon
 				double pt1=-9999.,  pt2=-9999.;
 				double phi1=-9999., phi2=-9999.;
-				double eta1=-9999., eta2=-9999.;
+				double eta1=-9999.;
 				double mt = 999999;
 
 				// Get the missing momentum
@@ -276,7 +229,6 @@ namespace Rivet
 						pt1  = WDecayProducts[0].momentum().pT();
 						pt2  = WDecayProducts[1].momentum().Et();
 						eta1 = WDecayProducts[0].momentum().eta();
-						eta2 = WDecayProducts[1].momentum().eta();
 						phi1 = WDecayProducts[0].momentum().phi();
 						phi2 = WDecayProducts[1].momentum().phi();
 						mt=sqrt(2.0*pt1*pt2*(1.0-cos(phi1-phi2)));
@@ -288,7 +240,6 @@ namespace Rivet
 						pt1  = WDecayProducts[1].momentum().pT();
 						pt2  = WDecayProducts[0].momentum().Et();
 						eta1 = WDecayProducts[1].momentum().eta();
-						eta2 = WDecayProducts[0].momentum().eta();
 						phi1 = WDecayProducts[1].momentum().phi();
 						phi2 = WDecayProducts[0].momentum().phi();
 						mt=sqrt(2.0*pt1*pt2*(1.0-cos(phi1-phi2)));
@@ -411,8 +362,12 @@ namespace Rivet
 				// ------------ Filling of histograms below -------------------
 				// ------------------------------------------------------------
 				// Fill as many jets as there are into the exclusive jet multiplicity
-				FillWithValue(_histJet30MultExc, weight, finaljet_pT_list.size());
-				// Fill bins 1 through N for inclusive jet multiplicity, given N jets
+				if ((finaljet_pT_list.size()) >=1)
+				{
+					FillWithValue(_histJet30MultExc, weight, finaljet_pT_list.size());
+				}
+				// Fill bins 0 through N for inclusive jet multiplicity, given N jets
+				// N_inclusivebinsummation += weight;
 				for (unsigned int ij = 0; ij < finaljet_pT_list.size(); ij++)
 				{
 					FillWithValue(_histJet30MultInc, weight, ij+1);
@@ -490,16 +445,12 @@ namespace Rivet
 					_dphijet4muon = DeltaPhi(finaljet_phi_list[3],_phimuon);
 				}
 
-				_rivetTree->Fill();
-
 			}
 
 			// Write the tree.
 			void finalize()
 			{
 
-				_rivetTree->Write();
-				_treeFile->Close();
 				
 				double inclusive_cross_section = 31314.0;
 				double norm_1jet_histo = inclusive_cross_section*N_1jet/N_total;
@@ -566,10 +517,6 @@ namespace Rivet
 			AIDA::IHistogram1D*  _histHT2JetInc ;
 			AIDA::IHistogram1D*  _histHT3JetInc ;
 			AIDA::IHistogram1D*  _histHT4JetInc ;
-
-			TTree* _rivetTree;
-			TString _treeFileName;
-			TFile* _treeFile;
 
 			int _nevt;
 			int _njet_WMuNu;
