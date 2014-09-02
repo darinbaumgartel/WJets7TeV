@@ -12,7 +12,7 @@ References:
  - https://inspirehep.net/record/1303894
  - Submitted to Phys. Lett. B 
 RunInfo:
-   Run MC generators with W decaying leptonically at 7TeV com energy. A large number of events are required to populate the high jet multiplicity region. The number of W+jets events in the 5/fb of 7TeV data corresponds to approximately 15 million events.
+   Run MC generators with W decaying leptonically at 7TeV com energy. A large number of events are required to populate the high jet multiplicity region. Suitable results can be achieved with 85M events.
 Beams: [p+, p+]
 Energies: [7000]
 PtCuts: 

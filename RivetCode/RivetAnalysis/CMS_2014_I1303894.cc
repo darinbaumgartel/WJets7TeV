@@ -83,8 +83,6 @@ namespace Rivet {
 
         // Zero event counters
         _n_total = 0.0;
-        _n_Wmunu = 0.0;
-        _n_0jet = 0.0;
         _n_1jet  = 0.0;
         _n_2jet  = 0.0;
         _n_3jet  = 0.0;
@@ -114,20 +112,6 @@ namespace Rivet {
 
 
       void analyze(const Event& event) {
-        // Check gen particles to flag events with a W decaying to mu nu from the hard interaction
-        bool WdecayToMuNu = false;
-        bool has_muon_status3 = false;
-        bool has_numu_status3 = false;
-        foreach (GenParticle* p, Rivet::particles(event.genEvent())) {
-          int st = p->status();
-          int pdg = p->pdg_id();
-          if ((st==3) && abs(pdg)==13) has_muon_status3 = true;
-          if ((st==3) && abs(pdg)==14) has_numu_status3 = true;
-        }
-
-        if (has_muon_status3 && has_numu_status3) {
-          WdecayToMuNu = true;
-        }
 
         // Initialize Values
         bool isWmn =false;
@@ -171,7 +155,6 @@ namespace Rivet {
         _nevt = (event.genEvent()).event_number();
         _evweight = weight;
         _n_total += weight;
-        if (WdecayToMuNu) _n_Wmunu += weight;
 
         // The W Final State
         const InvMassFinalState& invMassFinalStateW = applyProjection<InvMassFinalState>(event, "INVFSW");
@@ -181,7 +164,6 @@ namespace Rivet {
 
         bool isW = (!(invMassFinalStateW.empty()));
         if (!isW) vetoEvent;
-        if (!WdecayToMuNu) vetoEvent;
 
         // Vector of W decay product particles and vector of all particles
         const ParticleVector&  WDecayProducts =  invMassFinalStateW.particles();
@@ -228,6 +210,18 @@ namespace Rivet {
 
         // Boolean to determine that we are in the W->MuNu final state
         isWmn  = isW && ((fabs(WDecayProducts[0].pdgId()) == 14) || (fabs(WDecayProducts[1].pdgId()) == 14));
+
+        // Make sure the muon and muon-neutrino did not originate from tau
+        if (WDecayProducts[0].hasAncestor(15))   isWmn = false;
+        if (WDecayProducts[0].hasAncestor(-15))  isWmn = false;
+        if (WDecayProducts[0].hasAncestor(16))   isWmn = false;
+        if (WDecayProducts[0].hasAncestor(-16))  isWmn = false;
+        if (WDecayProducts[1].hasAncestor(15))   isWmn = false;
+        if (WDecayProducts[1].hasAncestor(-15))  isWmn = false;
+        if (WDecayProducts[1].hasAncestor(16))   isWmn = false;
+        if (WDecayProducts[1].hasAncestor(-16))  isWmn = false;
+
+        // isWmn  *= WDecayProducts[1].hasAncestor(15);
         if(!isWmn) vetoEvent;
 
         // Enforce the generator-level phase space ()
@@ -243,7 +237,6 @@ namespace Rivet {
         if (fabs(WDecayProducts[0].pdgId()) == 13) muind = 0;
         if (fabs(WDecayProducts[1].pdgId()) == 13) muind = 1;
         nuind = 1*(muind==0);
-
         // Get the muon and neutrino momenta, and the transverse mass of the mu
         _mt_munu = mt;
         _ptmuon  = WDecayProducts[muind].momentum().pT();
@@ -330,8 +323,6 @@ namespace Rivet {
         // ------------ Filling of histograms below -------------------
         // ------------------------------------------------------------
 
-        _n_0jet += weight;
-
         // Fill as many jets as there are into the exclusive jet multiplicity
         if ((finaljet_pT_list.size()) >=1) {
           FillWithValue(_histJet30MultExc, weight, finaljet_pT_list.size());
@@ -417,9 +408,6 @@ namespace Rivet {
         double norm_4jet_histo = inclusive_cross_section*_n_4jet/_n_total;
         double norm_incmultiplicity = inclusive_cross_section*_n_inclusivebinsummation/_n_total;
 
-        std::cout<<"Total normalized events processed: "<<_n_total<<std::endl;
-        std::cout<<"Events with W decaying to mu+nu  : "<<_n_Wmunu<<std::endl;
-        std::cout<<"Events passing muon fiducial cuts: "<<_n_0jet<<std::endl;
         std::cout<<"Events containing at least 1 jet:  "<<_n_1jet<<std::endl;
         std::cout<<"Events containing at least 2 jets: "<<_n_2jet<<std::endl;
         std::cout<<"Events containing at least 3 jets: "<<_n_3jet<<std::endl;
@@ -511,8 +499,6 @@ namespace Rivet {
       double _dphijet4muon;
 
       double _n_total;
-      double _n_Wmunu;
-      double _n_0jet;
       double _n_1jet;
       double _n_2jet;
       double _n_3jet;
