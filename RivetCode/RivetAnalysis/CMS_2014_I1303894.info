@@ -26,8 +26,7 @@ Description:
   around the muon. 
 BibKey: 
    '<Insert SPIRES BibTeX key>'
-BibTeX: 
-  @article{Khachatryan:2014uva,
+BibTeX: '@article{Khachatryan:2014uva,
         author         = "Khachatryan, Vardan and others",
         title          = "{Differential cross section measurements for the
                           production of a W boson in association with jets in
@@ -39,7 +38,7 @@ BibTeX:
         primaryClass   = "hep-ex",
         reportNumber   = "CMS-SMP-12-023, CERN-PH-EP-2014-134",
         SLACcitation   = "%%CITATION = ARXIV:1406.7533;%%",
-  }
+}'
 ToDo:
  - update reference when paper published
 
