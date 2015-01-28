@@ -20,7 +20,7 @@ namespace Rivet {
   class CMS_2014_I1303894 : public Analysis {
     public:
 
-      // Definition of the analysis, with pp collisions
+      // Definition of the analysis
       CMS_2014_I1303894(): Analysis("CMS_2014_I1303894") {
       }
 

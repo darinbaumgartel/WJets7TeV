@@ -4,13 +4,14 @@ Summary: Measurement of the Differential Cross Section of W-Bosons Produced in A
 Experiment: CMS
 Collider: LHC
 SpiresID: 
-Status: UNVALIDATED
+Status: VALIDATED
 Authors:
  - Darin Baumgartel (darinb@cern.ch)
  - Emanuela Barberis (barberis@fnal.gov)
 References:
+ - Phys. Lett. B741 (2014) 12-37
  - https://inspirehep.net/record/1303894
- - Submitted to Phys. Lett. B 
+ - http://arxiv.org/abs/1406.7533
 RunInfo:
    Run MC generators with W decaying leptonically at 7TeV com energy. A large number of events are required to populate the high jet multiplicity region. Suitable results can be achieved with 85M events.
 Beams: [p+, p+]
@@ -27,18 +28,19 @@ Description:
 BibKey: 
    '<Insert SPIRES BibTeX key>'
 BibTeX: '@article{Khachatryan:2014uva,
-        author         = "Khachatryan, Vardan and others",
-        title          = "{Differential cross section measurements for the
-                          production of a W boson in association with jets in
-                          proton-proton collisions at sqrt(s) = 7 TeV}",
-        collaboration  = "CMS Collaboration",
-        year           = "2014",
-        eprint         = "1406.7533",
-        archivePrefix  = "arXiv",
-        primaryClass   = "hep-ex",
-        reportNumber   = "CMS-SMP-12-023, CERN-PH-EP-2014-134",
-        SLACcitation   = "%%CITATION = ARXIV:1406.7533;%%",
-}'
-ToDo:
- - update reference when paper published
-
+      author         = "Khachatryan, Vardan and others",
+      title          = "{Differential cross section measurements for the
+                        production of a W boson in association with jets in
+                        proton–proton collisions at $\sqrt s=7$ TeV}",
+      collaboration  = "CMS Collaboration",
+      journal        = "Phys.Lett.",
+      volume         = "B741",
+      pages          = "12-37",
+      doi            = "10.1016/j.physletb.2014.12.003",
+      year           = "2014",
+      eprint         = "1406.7533",
+      archivePrefix  = "arXiv",
+      primaryClass   = "hep-ex",
+      reportNumber   = "CMS-SMP-12-023, CERN-PH-EP-2014-134",
+      SLACcitation   = "%%CITATION = ARXIV:1406.7533;%%",
+}

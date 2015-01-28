@@ -157,7 +157,7 @@ YLabel=$d\sigma (\text{W}\rightarrow \mu \nu +\geq 1 \text{jet})/d\Delta\phi$ [p
 Title=$\text{CMS}~~~~~~~\sqrt{s}=7~\text{TeV}~~~~~~~\text{L}_\text{int}=5.0~\text{fb}^{-1}$
 LogX=0
 LogY=1
-LegendXPos=0.7
+LegendXPos=0.07
 LegendYPos=0.9
 # END PLOT
 
