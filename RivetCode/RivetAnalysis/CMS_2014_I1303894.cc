@@ -203,7 +203,7 @@ namespace Rivet {
       // Finalize the histograms.
       void finalize() {
         
-        double inclusive_cross_section = 31314.0;
+        double inclusive_cross_section = crossSection();
         double norm_1jet_histo = inclusive_cross_section*_n_1jet/sumOfWeights();
         double norm_2jet_histo = inclusive_cross_section*_n_2jet/sumOfWeights();
         double norm_3jet_histo = inclusive_cross_section*_n_3jet/sumOfWeights();
